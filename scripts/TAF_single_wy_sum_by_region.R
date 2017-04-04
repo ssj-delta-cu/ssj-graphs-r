@@ -1,34 +1,10 @@
 # Total Acre-feet for crops summed over entire water year figure & table
 
-if(!require(ggplot2)){
-  install.packages("ggplot2")
-  library(ggplot2)
-}
-
-if(!require(dplyr)){
-  install.packages("dplyr")
-  library(dplyr)
-}
-
-if(!require(tidyr)){
-  install.packages("tidyr")
-  library(tidyr)
-}
-
-
-
-
 # load data (rds created in json2df.R)
 data <- readRDS("wy_2015.rds")
 
-# load the crop id name table
-crops <- read.csv('data/crops.csv', stringsAsFactors=FALSE)
-
-# lookup crop name from csv
-lookup_cropname <- function(id){
-  cropname = crops$Commodity[match(id, crops$Number)]
-  return(cropname)
-}
+# load helper function
+source("scripts/helper_functions.R")
 
 # Summarize the wy total acre feet by crop type
 acre_feet_by_crop <- data %>% 

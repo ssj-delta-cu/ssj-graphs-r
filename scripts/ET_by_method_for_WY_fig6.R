@@ -1,43 +1,11 @@
 # compare ET by method
-
 # Figure 6 in interim report
 
-if(!require(ggplot2)){
-  install.packages("ggplot2")
-  library(ggplot2)
-}
+source("scripts/helper_functions.R")
 
-if(!require(dplyr)){
-  install.packages("dplyr")
-  library(dplyr)
-}
-
-if(!require(gridExtra)){
-  install.packages("gridExtra")
-  library(gridExtra)
-}
-
-# load data (rds created in json2df.R)
-data <- readRDS("wy_2015.rds")
-
-# load the crop id name table
-crops <- read.csv('data/crops.csv', stringsAsFactors=FALSE)
-
-# lookup crop name from csv
-lookup_cropname <- function(id){
-  cropname = crops$Commodity[match(id, crops$Number)]
-  return(cropname)
-}
-
-
-# filter data by water year & crop type for a given region
-data_wy_crop <- function(crop_id, water_year, aoi_region){
-  df <- filter(data, region == aoi_region, level_2 == crop_id, wateryear == water_year, model!="eto")
-}
-
-# single plot for fig 6
-plot_crop_et_by_month <- function(crop_id, water_year, aoi_region){
-  sub<-data_wy_crop(crop_id, water_year, aoi_region)
+# single plot showing monthly et for all seven methods for a single crop
+plot_crop_et_by_month <- function(data, crop_id, water_year, aoi_region){
+  sub<-filter_cropid_wy_region(data, crop_id, water_year, aoi_region) %>% filter_no_eto
   
   cropname <- lookup_cropname(crop_id)
   
@@ -71,10 +39,11 @@ plot_crop_et_by_month <- function(crop_id, water_year, aoi_region){
 
 ###########################################
 
-
+# load data (rds created in json2df.R)
+data <- readRDS("wy_2015.rds")
 # example of creating a single crop (alfala)
-alf <- plot_crop_et_by_month(1, 2015, "dsa")
-
+alf <- plot_crop_et_by_month(data, 1, 2015, "dsa")
+alf
 ###########################################
 
 # grid_arrange_2x4 <- function(...) {
@@ -89,37 +58,37 @@ alf <- plot_crop_et_by_month(1, 2015, "dsa")
 # grid <- grid_arrange_2x4(alf, alm, corn,past, potat, rice, toma, vine)
 
 
-# hack to get the legend
-p <- plot_crop_et_by_month(1, 2015, "dsa")
-g <- ggplotGrob(p + theme(legend.position="bottom"))$grobs
-legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
-plot(legend)
+# # hack to get the legend
+# p <- plot_crop_et_by_month(1, 2015, "dsa")
+# g <- ggplotGrob(p + theme(legend.position="bottom"))$grobs
+# legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+# plot(legend)
 
 ###########################################
 
-
-# loop through all the crops and save as png
-folder = 'figs/fig6/'
-
-save_fig6 <- function(x, wy) {
-  Number <- x[1]
-  Number <- gsub(" ", "", Number)
-  crop <- x[2]
-  crop <- gsub(" ", "", crop)
-  crop <- gsub("/", "", crop)
-  if(x[3]=="yes"){
-    base <- paste(Number, crop, wy, sep="-")
-    name <- paste(folder, base, ".png", sep="")
-    # make plot
-    p <- plot_crop_et_by_month(Number, wy, "dsa") # note AOI region hardcoded here
-    ggsave(name, p, width=7, height=4, units="in")
-    print(name)
-  }
-  else{
-    print("skip")
-  }
-  
-}
-
-apply(crops, 1, save_fig6, wy=2015)
+# 
+# # loop through all the crops and save as png
+# folder = 'figs/fig6/'
+# 
+# save_fig6 <- function(x, wy) {
+#   Number <- x[1]
+#   Number <- gsub(" ", "", Number)
+#   crop <- x[2]
+#   crop <- gsub(" ", "", crop)
+#   crop <- gsub("/", "", crop)
+#   if(x[3]=="yes"){
+#     base <- paste(Number, crop, wy, sep="-")
+#     name <- paste(folder, base, ".png", sep="")
+#     # make plot
+#     p <- plot_crop_et_by_month(Number, wy, "dsa") # note AOI region hardcoded here
+#     ggsave(name, p, width=7, height=4, units="in")
+#     print(name)
+#   }
+#   else{
+#     print("skip")
+#   }
+#   
+# }
+# 
+# apply(crops, 1, save_fig6, wy=2015)
 

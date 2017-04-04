@@ -1,20 +1,6 @@
 # json2df to process json results into a pretty r data frame
-
-if(!require(rjson)){
-  install.packages("rjson")
-  library(rjson)
-}
-
-if(!require(plyr)){
-  install.packages("plyr")
-  library(plyr)
-}
-
-# load the crop id name table
-crops <- read.csv('data/crops.csv', stringsAsFactors=FALSE)
-
-# load the months
-months <- read.csv('data/months.csv', stringsAsFactors=FALSE)
+library(jsonlite)
+source("scripts/helper_functions.R")
 
 ee_json_2_df <-function(json, model, aoi, wy){
   # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
@@ -38,21 +24,6 @@ ee_json_2_df <-function(json, model, aoi, wy){
   return(df)
 }
 
-lookup_cropname <- function(id){
-  cropname = crops$Commodity[match(id, crops$Number)]
-  return(cropname)
-}
-
-lookup_include <- function(id){
-  include = crops$Include[match(id, crops$Number)]
-  return(include)
-}
-
-num_days_in_month <- function(wy, month){
-  wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
-  days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
-  return(days)
-}
 
 crop_acre_feet <- function(mean_et, cell_count, number_days){
   # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
@@ -62,7 +33,6 @@ crop_acre_feet <- function(mean_et, cell_count, number_days){
   crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
   return(crop_acft)
 }
-
 
 
 ##################################################################################
@@ -89,5 +59,5 @@ load_json <- function(file_list) {
 }
 
 wy_2015 <- load_json(list_of_files)
-saveRDS(wy_2015, file="wy_2015.rds")
+saveRDS(wy_2015, file="wy_2015_v2.rds")
 
