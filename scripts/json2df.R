@@ -24,7 +24,6 @@ ee_json_2_df <-function(json, model, aoi, wy){
   return(df)
 }
 
-
 crop_acre_feet <- function(mean_et, cell_count, number_days){
   # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
   reducer_size <- 200
@@ -34,11 +33,10 @@ crop_acre_feet <- function(mean_et, cell_count, number_days){
   return(crop_acft)
 }
 
-
 ##################################################################################
 
 list_of_files <- list.files(path="data/", pattern=".json", full.names=TRUE)
-
+# files shoulds be named "data/model-region-wy.json"
 
 # for loop to load in all the raw json files to single data frame
 load_json <- function(file_list) {

@@ -39,11 +39,11 @@ plot_crop_et_by_month <- function(data, crop_id, water_year, aoi_region){
 
 ###########################################
 
-# load data (rds created in json2df.R)
-data <- readRDS("wy_2015.rds")
-# example of creating a single crop (alfala)
-alf <- plot_crop_et_by_month(data, 1, 2015, "dsa")
-alf
+# # load data (rds created in json2df.R)
+# data <- readRDS("wy_2015.rds")
+# # example of creating a single crop (alfala)
+# alf <- plot_crop_et_by_month(data, 1, 2015, "dsa")
+# alf
 ###########################################
 
 # grid_arrange_2x4 <- function(...) {

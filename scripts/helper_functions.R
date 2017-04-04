@@ -16,12 +16,10 @@ if(!require(dplyr)){
   library(dplyr)
 }
 
-
 if(!require(tidyr)){
   install.packages("tidyr")
   library(tidyr)
 }
-
 
 if(!require(jsonlite)){
   install.packages("jsonlite")
@@ -34,8 +32,6 @@ if(!require(plyr)){
 }
 
 
-
-
 ####################################################################
 #### Lookups 
 ####################################################################
@@ -45,6 +41,13 @@ lookup_cropname <- function(id){
   crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
   cropname = crops$Commodity[match(id, crops$Number)]
   return(cropname)
+}
+
+lookup_cropid <- function(cropname){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  cropid = crops$Number[match(cropname, crops$Commodity)]
+  return(cropid)
 }
 
 lookup_include <- function(id){
@@ -93,4 +96,9 @@ filter_cropid_wy_region <- function(data, crop_id, water_year, aoi_region){
 # return data for a specific month
 filter_month <- function(data, selected_month){
   df <- data %>% filter(month == selected_month)
+}
+
+# return data for a specific model
+filter_model <- function(data, selected_model){
+  df <- data %>% filter(model == selected_model)
 }
