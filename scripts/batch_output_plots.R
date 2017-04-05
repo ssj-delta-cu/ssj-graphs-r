@@ -89,5 +89,5 @@ for(i in 1:length(crops_2_gen)){
 # fig5 --------------------------------------------------------------------
 folder <- "figs/fig5/"
 
-wy15sum <- sum_TAFxModel_dsa_legal(data, 2015)
-ggsave(wy15sum, paste(folder, "TAF_wy2015_dsa_legal", ".png", sep=""))
+wy15sum <- sum_TAFxModel_dsa_legal(data, wy)
+ggsave(paste(folder, "TAF_wy2015_dsa_legal", ".png", sep=""), wy15sum, width=7, height=4, units="in")
