@@ -78,6 +78,31 @@ lookup_month_year <- function(wy, month){
   return(fullname_year)
 }
 
+# looks up model name by casing to lower and striping out dashes 
+lookup_model_name <- function(name){
+  lower <- tolower(name)
+  db_name <- gsub("-", "", lower)
+}
+
+# list of all crop names
+crop_list <-  function(){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  lu_crops_only <- crops %>% filter(Include == "yes")
+  crops_list <- unique(lu_crops_only$Commodity)
+}
+
+month_list <- function(){
+  # load the crop id name table
+  months <- read.csv('data/months.csv', stringsAsFactors=FALSE)
+  mlist <- unique(months$Month)
+}
+
+methods_list <- function(){
+  methods<-c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
+  m <- tolower(methods)
+  m2 <- gsub("-", "", m)
+}
 
 ####################################################################
 #### Filters
