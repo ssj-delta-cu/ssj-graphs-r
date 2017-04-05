@@ -7,19 +7,17 @@ data <- readRDS("wy_2015.rds")
 source("scripts/helper_functions.R")
 
 # Summarize the wy total acre feet by crop type
-acre_feet_by_crop <- data %>% 
-  group_by(model, region, cropname, wateryear, include) %>% 
-  summarise(sum_af=sum(crop_acft)) 
+acre_feet_by_crop <- data %>% dplyr::group_by(model, region, cropname, wateryear, include) %>%  dplyr::summarise(sum_af=sum(crop_acft)) 
 
 # summarize total acre-ft using all landtypes
 af_all_lu <- data %>% 
-  group_by(model, region, wateryear) %>% 
-  summarise(sum_af=sum(crop_acft)) 
+  dplyr::group_by(model, region, wateryear) %>% 
+  dplyr::summarise(sum_af=sum(crop_acft)) 
 
 # summarize total acre-ft just using crops (ie include = "yes")
 af_crops <- data %>% filter(include == "yes") %>%
-  group_by(model, region, wateryear) %>% 
-  summarise(sum_af=sum(crop_acft)) 
+  dplyr::group_by(model, region, wateryear) %>% 
+  dplyr::summarise(sum_af=sum(crop_acft)) 
 
 
 
