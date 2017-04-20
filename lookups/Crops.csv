@@ -1,32 +1,32 @@
-Number,Commodity,Include
-1,Alfalfa,yes
-12,Safflower,no
-22,Sunflower,no
-23,Corn,yes
-24,Rice,yes
-108,Bush Berries,yes
-109,Vineyards,yes
-246,Potatoes,yes
-277,Cucurbit,yes
-278,Tomatoes,yes
-279,Truck Crops,yes
-403,Cherries,yes
-409,Olives,yes
-412,Pears,yes
-425,Citrus,no
-500,Almonds,yes
-502,Pistachios,yes
-503,Walnuts,yes
-800,Pasture,yes
-916,Fallow,yes
-913,Semi-agricultural/ROW,yes
-914,Other Deciduous,yes
-908,Turf,yes
-2002,Floating Vegetation,no
-2003,Forage Grass,yes
-2004,Riparian,no
-2005,Upland Herbaceous,no
-2006,Urban,no
-2007,Water,no
-2008,Wet herbaceous/sub irrigated pasture,yes
-0,NA,no
+Number,Commodity,Include,LandIQ_2015_Acres
+1,Alfalfa,yes,80201
+12,Safflower,no,0
+22,Sunflower,no,0
+23,Corn,yes,91833
+24,Rice,yes,7637
+108,Bush Berries,yes,1186
+109,Vineyards,yes,36930
+246,Potatoes,yes,4144
+277,Cucurbit,yes,3923
+278,Tomatoes,yes,36290
+279,Truck Crops,yes,9547
+403,Cherries,yes,2069
+409,Olives,yes,1451
+412,Pears,yes,5947
+425,Citrus,no,8
+500,Almonds,yes,5210
+502,Pistachios,yes,148
+503,Walnuts,yes,3474
+800,Pasture,yes,48062
+916,Fallow,yes,51955
+913,Semi-agricultural/ROW,yes,48523
+914,Other Deciduous,yes,7713
+908,Turf,yes,2175
+2002,Floating Vegetation,no,3559
+2003,Forage Grass,yes,4507
+2004,Riparian,no,21585.00
+2005,Upland Herbaceous,no,54344
+2006,Urban,no,62147
+2007,Water,no,60197.00
+2008,Wet herbaceous/sub irrigated pasture,yes,24960
+0,NA,no,
