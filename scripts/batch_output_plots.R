@@ -91,3 +91,22 @@ folder <- "figs/fig5/"
 
 wy15sum <- sum_TAFxModel_dsa_legal(data, wy)
 ggsave(paste(folder, "TAF_wy2015_dsa_legal", ".png", sep=""), wy15sum, width=7, height=4, units="in")
+
+# pie chart --------------------------------------------------------------------
+folder <- "figs/Other/"
+
+# loop through the models
+for(m in 1:length(methods_2_gen)){
+  mod <- methods_2_gen[m]
+  print(mod)
+  base <- paste("piechart", wy, mod, sep="-")
+  name <- paste(folder, base, ".png", sep="")
+  print(name)
+  
+  #plot
+  p <- pichart_TAFxCrop_PERCENT_wy_by_topcrops(data, wy, aoi, mod)
+  
+  ggsave(name, p, width=7, height=4, units="in")
+  
+  }
+
