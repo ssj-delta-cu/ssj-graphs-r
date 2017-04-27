@@ -43,6 +43,6 @@ All data for the charts and figures are exported from Google Earth Engine as .js
 |![#e44746](https://placehold.it/15/e44746/000000?text=+) |`#e44746`| rgb(228, 71, 70)  | Tomatoes |
 |![#7b5baa](https://placehold.it/15/7b5baa/000000?text=+) |`#7b5baa`| rgb(123, 91, 170) | Vineyards |
 |![#b3dda5](https://placehold.it/15/b3dda5/000000?text=+) |`#b3dda5`| rgb(179, 221, 165) |  Other Crops |
-|![#267300](https://placehold.it/15/267300/000000?text=+) |`#267300`|  |  Native Vegetation |
-|![#397dea](https://placehold.it/15/397dea/000000?text=+) |`#397dea`|  |  Water |
-|![#b2b2b2](https://placehold.it/15/b2b2b2/000000?text=+) |`#b2b2b2`|  |  Urban |
+|![#d7d79e](https://placehold.it/15/d7d79e/000000?text=+) |`#d7d79e`| rgb(215, 215, 158) |  Native Vegetation |
+|![#6699cb](https://placehold.it/15/6699cb/000000?text=+) |`#6699cb`| rgb(102, 153, 203) |  Water |
+|![#b2b2b2](https://placehold.it/15/b2b2b2/000000?text=+) |`#b2b2b2`| rgb(178, 178, 178) |  Urban |
