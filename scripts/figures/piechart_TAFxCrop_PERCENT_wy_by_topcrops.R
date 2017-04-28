@@ -61,7 +61,5 @@ piechart_TAFxCrop_PERCENT_wy_by_topcrops <- function(data, wy, aoi, select_model
   p
 }
 
-p <- piechart_TAFxCrop_PERCENT_wy_by_topcrops(data, wy, aoi, "ucdpt")
-p
 
 

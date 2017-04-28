@@ -1,0 +1,108 @@
+---
+title: "R Notebook for prelim results"
+output: 
+  html_notebook:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 4
+    collapsed: TRUE
+    smooth_scroll: TRUE
+    theme: cerulean
+---
+
+```{r "setup", include=FALSE}
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+```
+
+This R notebook is for a template for each method. Each method's results should be copied to another notebook and run separately. 
+
+```{r source, echo=FALSE, include=FALSE}
+# load in library and data
+source("scripts/helper_functions.R") # functions to help tidy the data
+source("scripts/figures.R") # load all the ggplot2 figure functions
+
+# data source 
+data <- readRDS("wy_2015.rds") # geojson parsed and stored as a rds object (json2df.R)
+
+crops_2_gen <- crop_list()
+month_2_gen <- month_list()
+
+```
+
+# SIMS
+```{r, echo=FALSE}
+# methods_2_gen # list of method names in the dataframe
+selected_model <- "sims" # 
+print(paste("Model for this workbook:", selected_model))
+print(paste("Last Updated: ", Sys.time()))
+```
+
+## Data
+```{r head, echo=FALSE}
+subset <- data %>% filter(model == selected_model)
+subset
+
+```
+
+## Plots
+
+### Pie Chart
+
+#### 2015 Water Year 
+```{r plot_pie_15, fig.width=7, fig.height=4, echo=FALSE}
+
+print(piechart_TAFxCrop_PERCENT_wy_by_topcrops(data, 2015, "dsa", selected_model))
+
+```
+
+
+
+#### 2016 Water Year 
+```{r plot_pie_16, fig.width=7, fig.height=4, echo=FALSE}
+
+print(piechart_TAFxCrop_PERCENT_wy_by_topcrops(data, 2016, "dsa", selected_model))
+
+```
+
+### Line Plots
+
+#### 2015 Water Year 
+```{r plot_line_15, fig.width=7, fig.height=4, echo=FALSE}
+
+for(i in 1:length(crops_2_gen)){
+  id <- lookup_cropid(crops_2_gen[i])
+  print(line_ETxMonths(subset,id, 2015, "dsa"))
+}
+
+```
+
+#### 2016 Water Year 
+```{r plot_line_16, fig.width=7, fig.height=4, echo=FALSE}
+
+for(i in 1:length(crops_2_gen)){
+  id <- lookup_cropid(crops_2_gen[i])
+  print(line_ETxMonths(subset,id, 2016, "dsa"))
+}
+
+```
+
+### Boxplots
+#### 2015 Water Year
+```{r plot_box_15, fig.width=7, fig.height=4, echo=FALSE}
+
+for(i in 1:length(crops_2_gen)){
+  id <- lookup_cropid(crops_2_gen[i])
+  print(whisker_ETxMonths_per_crop_method(data, "dsa", 2015, selected_model, id))
+}
+
+```
+#### 2016 Water Year
+```{r plot_box_16, fig.width=7, fig.height=4, echo=FALSE}
+
+for(i in 1:length(crops_2_gen)){
+  id <- lookup_cropid(crops_2_gen[i])
+  print(whisker_ETxMonths_per_crop_method(data, "dsa", 2016, selected_model, id))
+}
+
+```
