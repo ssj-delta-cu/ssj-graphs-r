@@ -31,18 +31,18 @@ All data for the charts and figures are exported from Google Earth Engine as .js
 
 ### Crops types
 
-|Color| HEX | Crop |
-| --- | --- | ----- |
-|![#00b838](https://placehold.it/15/00b838/000000?text=+) |`#00b838`| Alfalfa |
-|![#d8813a](https://placehold.it/15/d8813a/000000?text=+) |`#d8813a`| Almonds |
-|![#ffdf50](https://placehold.it/15/ffdf50/000000?text=+) |`#ffdf50`| Corn |
-|![#f5a27a](https://placehold.it/15/f5a27a/000000?text=+) |`#f5a27a`| Fallow |
-|![#c4ac80](https://placehold.it/15/c4ac80/000000?text=+) |`#c4ac80`| Pasture |
-|![#916e46](https://placehold.it/15/916e46/000000?text=+) |`#916e46`| Potatoes |
-|![#9e5123](https://placehold.it/15/9e5123/000000?text=+) |`#9e5123`| Rice |
-|![#de2513](https://placehold.it/15/de2513/000000?text=+) |`#de2513`| Tomatoes |
-|![#6a3387](https://placehold.it/15/6a3387/000000?text=+) |`#6a3387`| Vineyards |
-|![#96c990](https://placehold.it/15/96c990/000000?text=+) |`#96c990`| Other Crops |
-|![#267300](https://placehold.it/15/267300/000000?text=+) |`#267300`| Native Vegetation |
-|![#397dea](https://placehold.it/15/397dea/000000?text=+) |`#397dea`| Water |
-|![#b2b2b2](https://placehold.it/15/b2b2b2/000000?text=+) |`#b2b2b2`| Urban |
+|Color| HEX | rgb |Crop |
+| --- | --- | ----- | ----- |
+|![#0ab54e](https://placehold.it/15/0ab54e/000000?text=+) |`#0ab54e`| rgb(10, 181, 78) | Alfalfa |
+|![#feaca7](https://placehold.it/15/feaca7/000000?text=+) |`#feaca7`| rgb(254, 172, 167 | Almonds |
+|![#fffb58](https://placehold.it/15/fffb58/000000?text=+) |`#fffb58`| rgb(255, 251, 88)  | Corn |
+|![#fe9a2f](https://placehold.it/15/fe9a2f/000000?text=+) |`#fe9a2f`| rgb(254, 154, 47) |  Fallow |
+|![#ffc98b](https://placehold.it/15/ffc98b/000000?text=+) |`#ffc98b`| rgb(255, 201, 139) | Pasture |
+|![#c7b8dc](https://placehold.it/15/c7b8dc/000000?text=+) |`#c7b8dc`| rgb(199, 184, 220) |  Potatoes |
+|![#99cbee](https://placehold.it/15/99cbee/000000?text=+) |`#99cbee`| rgb(153, 203, 238) | Rice |
+|![#e44746](https://placehold.it/15/e44746/000000?text=+) |`#e44746`| rgb(228, 71, 70)  | Tomatoes |
+|![#7b5baa](https://placehold.it/15/7b5baa/000000?text=+) |`#7b5baa`| rgb(123, 91, 170) | Vineyards |
+|![#b3dda5](https://placehold.it/15/b3dda5/000000?text=+) |`#b3dda5`| rgb(179, 221, 165) |  Other Crops |
+|![#d7d79e](https://placehold.it/15/d7d79e/000000?text=+) |`#d7d79e`| rgb(215, 215, 158) |  Native Vegetation |
+|![#6699cb](https://placehold.it/15/6699cb/000000?text=+) |`#6699cb`| rgb(102, 153, 203) |  Water |
+|![#b2b2b2](https://placehold.it/15/b2b2b2/000000?text=+) |`#b2b2b2`| rgb(178, 178, 178) |  Urban |
