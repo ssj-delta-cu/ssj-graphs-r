@@ -104,9 +104,46 @@ for(m in 1:length(methods_2_gen)){
   print(name)
   
   #plot
-  p <- pichart_TAFxCrop_PERCENT_wy_by_topcrops(data, wy, aoi, mod)
+  p <- piechart_TAFxCrop_PERCENT_wy_by_topcrops(data, wy, aoi, mod)
   
   ggsave(name, p, width=7, height=4, units="in")
   
   }
 
+
+# percent AF + landuse --------------------------------------------------------------------
+folder <- "figs/Other/"
+
+landuse <- read.csv("lookups/Crops.csv",  stringsAsFactors=FALSE)
+p <- barchart_TAFxModel_PERCENT_wy_by_topcrops(data, wy, aoi, landuse)
+name <- paste(folder, "barchart_TAFxModel_percent_wlanduse_2015", ".png", sep="")
+ggsave(name, p, width=7, height=4, units="in")
+
+
+# barcart taf x model  --------------------------------------------------------------------
+folder <- "figs/Other/"
+
+p <- barchart_TAFxModel_sum_wy_by_topcrops(data, wy, aoi)
+p
+name <- paste(folder, "barchart_TAFxModel_2015", ".png", sep="")
+ggsave(name, p, width=7, height=4, units="in")
+
+
+
+# barcart taf x model facet on months --------------------------------------------------------------------
+folder <- "figs/Other/"
+
+p <- barchart_TAFxModel_sum_monthsfacet_by_topcrop(data, wy, aoi)
+p
+name <- paste(folder, "barchart_TAFxModelxMonth_2015", ".png", sep="")
+ggsave(name, p, width=11, height=4, units="in")
+
+
+# piechart facet
+# barcart taf x model facet on months --------------------------------------------------------------------
+folder <- "figs/Other/"
+
+p <- piechart_TAFxCropxModel(data, wy, aoi)
+p
+name <- paste(folder, "pie_facet_wy2015", ".png", sep="")
+ggsave(name, p, width=7, height=4, units="in")
