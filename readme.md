@@ -18,15 +18,15 @@ All data for the charts and figures are exported from Google Earth Engine as .js
 
 ### Modeling Groups
 
-|Color| HEX | Group |
-| --- | --- | ----- |
-|![#3366cc](https://placehold.it/15/3366cc/000000?text=+) |`#3366cc`| CalSIMETAW |
-|![#dc3912](https://placehold.it/15/dc3912/000000?text=+) |`#dc3912`| DETAW |
-|![#ff9900](https://placehold.it/15/ff9900/000000?text=+) |`#ff9900`| DisALEXI |
-|![#109618](https://placehold.it/15/109618/000000?text=+) |`#109618`| ITRC |
-|![#990099](https://placehold.it/15/990099/000000?text=+) |`#990099`| SIMS |
-|![#0099c6](https://placehold.it/15/0099c6/000000?text=+) |`#0099c6`| UCD-Metric |
-|![#dd4477](https://placehold.it/15/dd4477/000000?text=+) |`#dd4477`| UCD-PT |
+|Color| HEX | rgb |Group |
+| --- | --- | ---- | ----- |
+|![#0072b2](https://placehold.it/15/0072b2/000000?text=+) |`#0072b2`| rgb(0, 114, 178) | CalSIMETAW |
+|![#d55e00](https://placehold.it/15/d55e00/000000?text=+) |`#d55e00`| rgb(213, 94, 0) | DETAW |
+|![#e69f00](https://placehold.it/15/e69f00/000000?text=+) |`#e69f00`| rgb(230, 159, 0) | DisALEXI |
+|![#009e73](https://placehold.it/15/009e73/000000?text=+) |`#009e73`| rgb(0, 158, 115) | ITRC |
+|![#cc79a7](https://placehold.it/15/cc79a7/000000?text=+) |`#cc79a7`| rgb(204, 121, 167) | SIMS |
+|![#56b4df](https://placehold.it/15/56b4df/000000?text=+) |`#56b4df`| rgb(86, 180, 223) | UCD-Metric |
+|![#f0e442](https://placehold.it/15/f0e442/000000?text=+) |`#f0e442`| rgb(240, 228, 66) | UCD-PT |
 
 
 ### Crops types
