@@ -16,9 +16,10 @@ whisker_ETxModel_per_crop_month <- function(data, aoi_region, wy, month, cropid)
   p <- ggplot(data_subset, aes(x=model, ymin=p9, lower=p25, middle=median, upper=p75,  ymax=p91))+
     geom_boxplot(stat="identity", colour='#193366', fill='#3366cc', lwd=1, fatten=0.5) +
     ggtitle(plot_title) +
-    scale_y_continuous(labels = axis_units, limits = c(0, 100)) +
+    scale_y_continuous(labels = axis_units)+ #  limits = c(0, 100)) +
+    coord_cartesian(ylim=c(0,120))+ # changes the plot visual zoom instead of rm data (http://stackoverflow.com/questions/11617267/how-to-get-geom-boxplot-to-apply-y-limits-before-calculating-boxes)
     ylab("ET (mm/day)") +
-    scale_x_discrete(labels=c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT"))+
+    scale_x_discrete(labels=methods_named_list)+ #labels=c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
     theme_bw() +  
     theme(panel.border = element_blank(),
           panel.grid.major = element_blank(),

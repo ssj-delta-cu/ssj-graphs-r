@@ -13,8 +13,8 @@ line_ETxMonths<- function(data, crop_id, water_year, aoi_region){
   # construct the plot object
   p <- ggplot(sub, aes(month, mean/10, color=model, group=model)) + 
     geom_line(size=1)+
-    coord_cartesian(ylim=c(0, 8))+
-    ggtitle(cropname) +
+    coord_cartesian(ylim=c(0, 10))+
+    ggtitle(paste(cropname, "\n", "Water Year", water_year)) +
     ylab("ET (mm/day)") +
     scale_color_manual(values=model_palette) +
     theme_bw() +  # change theme simple with no axis or tick marks

@@ -2,9 +2,9 @@
 library(jsonlite)
 source("scripts/helper_functions.R")
 
-ee_json_2_df <-function(json, model, aoi, wy){
+ee_geojson_properties_2_df <-function(json, model, aoi, wy){
   # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
-  lists_dfs_by_month <- fromJSON(json)
+  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
   df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
   names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
   df$model <- model
@@ -35,7 +35,7 @@ crop_acre_feet <- function(mean_et, cell_count, number_days){
 
 ##################################################################################
 
-list_of_files <- list.files(path="data/", pattern=".json", full.names=TRUE)
+list_of_files <- list.files(path="data/full_20170509", pattern=".geojson", full.names=TRUE)
 # files shoulds be named "data/model-region-wy.json"
 
 # for loop to load in all the raw json files to single data frame
@@ -47,15 +47,18 @@ load_json <- function(file_list) {
     f <- file_list[i]
     print(f)
     p <- strsplit(f, split="[-./]")[[1]]
-    method <- p[2]
-    region <- p[3]
-    wy <- as.integer(p[4])
-    d <- ee_json_2_df(f, method, region, wy)
+    method <- p[3]
+    region <- p[4]
+    wy <- as.integer(p[5])
+    print(method)
+    print(region)
+    print(wy)
+    d <- ee_geojson_properties_2_df(f, method, region, wy)
     listofdfs[[i]]<-d
   }
   df <- ldply(listofdfs, data.frame) # make into one dataframe 
 }
 
-wy_2015 <- load_json(list_of_files)
-saveRDS(wy_2015, file="wy_2015_v2.rds")
+data <- load_json(list_of_files)
+saveRDS(data, file="data/full_20170509/data_both_wy_20170509.rds")
 

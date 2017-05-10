@@ -53,13 +53,26 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi, landuse){
   
   af_crop_percent <- af_crops_landuse %>%  
     dplyr::group_by(model)%>% 
-    dplyr::mutate(model_percent=sum_af/sum(sum_af))
+    dplyr::mutate(model_percent=sum_af/sum(sum_af))%>%
+    dplyr::mutate(rank=dense_rank(sum_af))
+  
+  
+  # ggplot stacks bars based on the order of the apperence in the dataframe
+  af_crop_percent <- arrange(af_crop_percent, model, model_percent)
+  
+  
+  # create two groups to seperate landuse as seperate facet
+  af_crop_percent$facet_var <- ifelse(af_crop_percent$model == "landuse", c('Landuse'), c('zET'))
   
   af_crop_percent$model <- factor(af_crop_percent$model, levels=c("landuse", "calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"))
   
-  p <- ggplot(af_crop_percent, aes(x=model, y=model_percent, fill=cropname))+geom_bar(stat="identity") +  
-    scale_x_discrete(labels=c("Landuse", "CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT"))+
+  
+  p <- ggplot(af_crop_percent, aes(x=model, y=model_percent, fill=reorder(cropname, rank)))+ # reorder uses the percentage to change stack order
+    geom_bar(stat="identity", position="dodge") +  
+    #scale_x_discrete(labels=c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT"))+
+    scale_x_discrete()+
     theme_bw() + 
+    facet_grid(~ model, scales= 'free', space= 'free')+
     scale_fill_manual(values=crop_palette)+
     scale_y_continuous(labels = axis_units, limits = c(0, 1)) +
     ylab("% Total") +
@@ -68,12 +81,20 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi, landuse){
           plot.title = element_text(hjust = 0.5),
           panel.grid.minor = element_blank(),
           axis.title.x = element_blank(),
-          legend.position="bottom", # position of legend or none
-          legend.direction="horizontal", # orientation of legend
+          legend.position="right", # position of legend or none
+          legend.direction="vertical", # orientation of legend
           legend.title= element_blank(), # no title for legend
-          legend.key.size = unit(0.5, "cm"), # size of legend
-          axis.line.x = element_line(color="black", size = 1),
-          axis.line.y = element_line(color="black", size = 1)) # manually add in axis
+          legend.key.size = unit(0.75, "cm"), # size of legend
+          axis.line.x = element_line(color="black", size = 1), # manually add in axis
+          axis.line.y = element_line(color="black", size = 1), # manually add in axis
+          strip.text.x = element_blank()) 
+    #theme(strip.background = element_blank(), strip.placement = "outside", strip.text.x = element_blank())
+  p <- p + geom_text(aes(label=model_percent), size = 3, position = position_stack(vjust = 0.5))
   p
-  
 }
+
+landuse <- read.csv("lookups/Crops.csv",  stringsAsFactors=FALSE)
+wy <- 2015
+aoi <- "dsa"
+a <- barchart_TAFxModel_PERCENT_wy_by_topcrops(data, 2015, "dsa", landuse)
+a

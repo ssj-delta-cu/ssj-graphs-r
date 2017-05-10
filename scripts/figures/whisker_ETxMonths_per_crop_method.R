@@ -1,9 +1,11 @@
-whisker_ETxMonths_per_crop_method <- function(data, aoi_region, wy, model, cropid){
-  # get only data for a giver region, water year, month, crop
+whisker_ETxMonths_per_crop_method <- function(data, aoi_region, wy, model_name, cropid){
+  model <- lookup_model_name(model_name) # returns model name as lowercase and without the dash
+  
+  # get only data for a given region, water year, month, crop for a single model
   data_subset <- filter_cropid_wy_region(data, cropid, wy, aoi_region) %>% 
-    filter_no_eto %>% # removes ETO from models
     filter_model(model) # selects only one model
   
+  # alters the y-axis units for labels
   axis_units <-function(x){
     x/10
   }
@@ -11,13 +13,12 @@ whisker_ETxMonths_per_crop_method <- function(data, aoi_region, wy, model, cropi
   # change order of months to match water year
   data_subset$month <- factor(data_subset$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
   
-  plot_title <-paste(toupper(model), "-", lookup_cropname(cropid))
-  
-  # make a plot
+  # make a boxplot showing each month's range of values
   p <- ggplot(data_subset, aes(x=month, ymin=p9, lower=p25, middle=median, upper=p75,  ymax=p91))+
     geom_boxplot(stat="identity", colour='#193366', fill='#3366cc', lwd=1, fatten=0.5) +
-    ggtitle(plot_title) +
-    scale_y_continuous(labels = axis_units, limits = c(0, 100)) +
+    ggtitle(paste(model_name, "\n", lookup_cropname(cropid), "\n", "Water Year:", wy)) + # plot title
+    scale_y_continuous(labels = axis_units)+
+    coord_cartesian(ylim=c(0,120))+ # changes the plot visual zoom instead of rm data (http://stackoverflow.com/questions/11617267/how-to-get-geom-boxplot-to-apply-y-limits-before-calculating-boxes)
     ylab("ET (mm/day)") +
     theme_bw() +  
     theme(panel.border = element_blank(),

@@ -2,12 +2,17 @@
 source("scripts/helper_functions.R")
 source("scripts/figures.R")
 
-data <- readRDS("wy_2015.rds")
+data <- readRDS("data/full_20170509/data_both_wy_20170509.rds")
 crops_2_gen <- crop_list()
 month_2_gen <- month_list()
-methods_2_gen <- methods_list()
-wy <- 2015
+methods_2_gen <- methods_names
+
+methods_2_gen <- methods_2_gen[!methods_2_gen %in% c("CalSIMETAW", "DETAW")]
+
+wy <- 2016
 aoi <- "dsa"
+p <- whisker_ETxMonths_per_crop_method(data, aoi, wy, "UCD-Metric", 2008)
+p
 
 # fig6 --------------------------------------------------------------------
 
@@ -50,7 +55,7 @@ for(i in 1:length(crops_2_gen)){
     # build ouput name
     crop <- gsub(" ", "", crop)
     crop <- gsub("/", "", crop)
-    base <- paste(cropid, crop, wy, mon, region, sep="-")
+    base <- paste(cropid, crop, wy, mon, aoi, sep="-")
     name <- paste(folder, base, ".png", sep="")
     
     # save
@@ -77,7 +82,8 @@ for(i in 1:length(crops_2_gen)){
     # build ouput name
     crop <- gsub(" ", "", crop)
     crop <- gsub("/", "", crop)
-    base <- paste(cropid, crop, wy, mod, region, sep="-")
+    m_lower <- lookup_model_name(mod) # get lowercase name
+    base <- paste(cropid, crop, wy, m_lower, aoi, sep="-")
     name <- paste(folder, base, ".png", sep="")
     
     # save
