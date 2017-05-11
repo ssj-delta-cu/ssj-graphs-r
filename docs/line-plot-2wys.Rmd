@@ -1,0 +1,64 @@
+---
+title: "R Notebook for prelim results"
+output:
+  html_notebook:
+    collapsed: yes
+    smooth_scroll: yes
+    theme: cerulean
+    toc: yes
+    toc_float: yes
+  html_document:
+    collapsed: yes
+    df_print: paged
+    smooth_scroll: yes
+    theme: cerulean
+    toc: yes
+    toc_float: yes
+---
+
+```{r "setup", include=FALSE}
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+```
+
+
+
+```{r source, echo=FALSE, include=FALSE}
+# load in library and data
+library(dplyr)
+source("scripts/helper_functions.R") # functions to help tidy the data
+source("scripts/figures.R") # load all the ggplot2 figure functions
+
+# data source 
+data <- readRDS("data/full_20170509/data_both_wy_20170509.rds") # geojson parsed and stored as a rds object (json2df.R)
+
+crops_2_gen <- crop_list()
+month_2_gen <- month_list()
+
+```
+
+# About
+```{r, echo=FALSE}
+# methods_2_gen # list of method names in the dataframe
+print(paste("Last Updated: ", Sys.time()))
+```
+
+# Legend
+
+```{r echo=FALSE, out.width='100%'}
+wd <- getwd()
+knitr::include_graphics(paste(wd,'/figs/fig6/legend_horizontal.png', sep=''))
+```
+
+
+# Plots
+
+## Line Plots 
+```{r plot_line, fig.width=7, fig.height=4, echo=FALSE}
+for(i in 1:length(crops_2_gen)){
+  id <- lookup_cropid(crops_2_gen[i])
+  print(line_ETxMonths_2wateryears(data,id, "dsa"))
+}
+
+```
