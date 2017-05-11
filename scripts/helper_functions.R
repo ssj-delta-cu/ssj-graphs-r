@@ -111,6 +111,13 @@ methods_names<-c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC"
 methods_named_list <-c("calsimetaw"="CalSIMETAW", "detaw"="DETAW", "disalexi"="DisALEXI", "itrc"="ITRC",
                        "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT")
 
+
+date_from_wy_month <- function(water_year, month){
+  year <- ifelse(month %in% c("OCT", "NOV", "DEC"), yes=(water_year-1), no=(water_year))
+  first <- paste(year, month, 1) # fake date for first of the month
+  d <- as.Date(strptime(first, format='%Y %b %d'))
+  return(d)}
+
 ####################################################################
 #### Filters
 ####################################################################
