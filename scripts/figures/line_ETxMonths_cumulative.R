@@ -1,4 +1,4 @@
-line_ETxMonths<- function(data, crop_id, aoi_region){
+line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
   # creates a line plot for ET by months of a single water year for a specifc crop and region
 
   # subset data by selected crop id number, water year, region
@@ -23,7 +23,7 @@ line_ETxMonths<- function(data, crop_id, aoi_region){
     geom_line(size=1)+
     coord_cartesian(ylim=c(0, 1200))+
     ggtitle(paste(cropname, "\n")) +
-    ylab("Cumulative ET") +
+    ylab("Cumulative ET (mm)") +
     scale_color_manual(values=model_palette) +
     theme_bw() +  # change theme simple with no axis or tick marks
     theme(panel.border = element_blank(), panel.grid.major = element_blank(),
@@ -41,5 +41,3 @@ line_ETxMonths<- function(data, crop_id, aoi_region){
 
   p
 }
-
-line_ETxMonths(data, 1, "dsa")
