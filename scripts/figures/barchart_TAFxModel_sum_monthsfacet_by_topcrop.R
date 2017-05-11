@@ -1,42 +1,41 @@
-barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, region){
-  
+barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi){
+
   top_crops <- c("Alfalfa", "Almonds", "Corn", "Fallow", "Pasture", "Potatoes", "Rice",  "Tomatoes", "Vineyards")
-  
-  
-  af_crops_top_only <- data %>% 
-    filter_no_eto() %>% 
-    filter(wateryear == wy) %>% 
-    filter(region == aoi) %>% 
-    filter(include == "yes") %>% 
+
+  af_crops_top_only <- data %>%
+    filter_no_eto() %>%
+    filter(wateryear == water_year) %>%
+    filter(region == aoi) %>%
+    filter(include == "yes") %>%
     filter(cropname %in% top_crops) %>%
-    dplyr::group_by(model, cropname, month) %>% 
+    dplyr::group_by(model, cropname, month) %>%
     dplyr::summarise(sum_af=sum(crop_acft))
-  
-  af_crops_others <- data %>% 
-    filter_no_eto() %>% 
-    filter(wateryear == wy) %>% 
-    filter(region == aoi) %>% 
-    filter(include == "yes") %>% 
-    filter(!cropname %in% top_crops) %>% 
+
+  af_crops_others <- data %>%
+    filter_no_eto() %>%
+    filter(wateryear == water_year) %>%
+    filter(region == aoi) %>%
+    filter(include == "yes") %>%
+    filter(!cropname %in% top_crops) %>%
     mutate(cropname = "Other") %>%
-    dplyr::group_by(model, cropname, month) %>% 
+    dplyr::group_by(model, cropname, month) %>%
     dplyr::summarise(sum_af=sum(crop_acft))
-  
+
   #  merge af_crops_top_only and af_crops_others
   af_crops_w_others <- dplyr::union(af_crops_top_only, af_crops_others)
-  
+
   # modify axis units (acre-ft -> thousands acre-feet)
   axis_units <-function(x){
     x/1000
   }
-  
+
   # change order of months to follow water year Oct -> Sept
   af_crops_w_others$month <- factor(af_crops_w_others$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
-  
-  p <- ggplot(af_crops_w_others, aes(x=model, y=sum_af, fill=cropname))+geom_bar(stat = "identity") +  
+
+  p <- ggplot(af_crops_w_others, aes(x=model, y=sum_af, fill=cropname))+geom_bar(stat = "identity") +
     facet_grid(. ~ month)+
     scale_x_discrete(labels=c("C", "D", "D", "I", "S", "M", "P"))+
-    theme_bw() + 
+    theme_bw() +
     scale_fill_manual(values=crop_palette)+
     scale_y_continuous(labels = axis_units, limits = c(0, 300000)) +
     ylab("Thousand Acre-Feet") +

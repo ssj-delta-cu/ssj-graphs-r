@@ -2,7 +2,7 @@
 
 
 ####################################################################
-#### Packages 
+#### Packages
 ####################################################################
 
 
@@ -35,7 +35,7 @@ if(!require(jsonlite)){
 
 
 ####################################################################
-#### Lookups 
+#### Lookups
 ####################################################################
 
 lookup_cropname <- function(id){
@@ -71,16 +71,16 @@ num_days_in_month <- function(wy, month){
 lookup_month_year <- function(wy, month){
   # load the months table
   months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
-  
+
   sub_wy <- months %>% filter(WaterYear == wy)
   full =  sub_wy$Full[match(month, sub_wy$Month)]
-  
+
   fullname_year <- paste(full, wy)
-  
+
   return(fullname_year)
 }
 
-# looks up model name by casing to lower and striping out dashes 
+# looks up model name by casing to lower and striping out dashes
 lookup_model_name <- function(name){
   lower <- tolower(name)
   db_name <- gsub("-", "", lower)
@@ -132,6 +132,11 @@ filter_cropid_wy_region <- function(data, crop_id, water_year, aoi_region){
   df <- filter(data, region == aoi_region, level_2 == crop_id, wateryear == water_year)
 }
 
+# return data for a given crop and region
+filter_cropid_region <- function(data, crop_id, aoi_region){
+	df <- filter(data, region == aoi_region, level_2 == crop_id)
+}
+
 # return data for a specific month
 filter_month <- function(data, selected_month){
   df <- data %>% filter(month == selected_month)
@@ -146,9 +151,9 @@ filter_model <- function(data, selected_model){
 #### Color Standards
 ####################################################################
 crop_palette <- c(Alfalfa = "#0ab54e", Almonds = "#feaca7", Corn = "#fffb58",
-                  Fallow = "#fe9a2f", Other="#b3dda5", Pasture ="#ffc98b", 
+                  Fallow = "#fe9a2f", Other="#b3dda5", Pasture ="#ffc98b",
                   Potatoes="#c7b8dc", Rice="#99cbee", Tomatoes="#e44746", Vineyards="#7b5baa")
 
-model_palette = c("calsimetaw"="#0072b2", "detaw"="#d55e00", "disalexi"="#e69f00", 
+model_palette = c("calsimetaw"="#0072b2", "detaw"="#d55e00", "disalexi"="#e69f00",
                   "itrc"="#009e73", "sims"="#cc79a7",
                   "ucdmetric"="#56b4df", "ucd_metric"="#56b4df", "ucdpt"="#f0e442", "ucd_pt"="#f0e442")
