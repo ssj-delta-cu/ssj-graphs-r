@@ -156,4 +156,9 @@ crop_palette <- c(Alfalfa = "#0ab54e", Almonds = "#feaca7", Corn = "#fffb58",
 
 model_palette = c("calsimetaw"="#0072b2", "detaw"="#d55e00", "disalexi"="#e69f00",
                   "itrc"="#009e73", "sims"="#cc79a7",
-                  "ucdmetric"="#56b4df", "ucd_metric"="#56b4df", "ucdpt"="#f0e442", "ucd_pt"="#f0e442")
+                  "ucdmetric"="#56b4df", "ucd_metric"="#56b4df", "ucdpt"="#f0e442", "ucd_pt"="#f0e442", 'eto'='#000000')
+
+model_lny = c("calsimetaw"=1, "detaw"=1, "disalexi"=1,
+                  "itrc"=1, "sims"=1,"ucdmetric"=1,
+                  "ucd_metric"=1, "ucdpt"=1, "ucd_pt"=1, 'eto'=2)
+

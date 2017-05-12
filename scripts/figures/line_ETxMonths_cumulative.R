@@ -17,10 +17,10 @@ line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
   													arrange(month) %>%
   													mutate(monthly_et=(mean/10)*num_days) %>%
   													mutate(cum_et=cumsum(monthly_et))
-
+  
   # construct the plot object
   p <- ggplot(cumulative_et, aes(month, cum_et, color=model, group=model)) +
-    geom_line(size=1)+
+    geom_line(size=1.25)+
     coord_cartesian(ylim=c(0, 1200))+
     ggtitle(paste(cropname, "\n")) +
     ylab("Cumulative ET (mm)") +
@@ -35,9 +35,15 @@ line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
           legend.title= element_blank(), # no title for legend
           legend.key.size = unit(0.5, "cm") # size of legend
     )+
+    facet_wrap(~wateryear) +
+    theme(strip.background = element_blank(), strip.placement = "outside", strip.text.x = element_text(size = 14))+
     theme(axis.line.x = element_line(color="black", size = 1),
-          axis.line.y = element_line(color="black", size = 1)) + # manually add in axis
-  	facet_wrap(~wateryear)
+          axis.line.y = element_line(color="black", size = 1))  # manually add in axis
+  
 
   p
 }
+
+
+p <- line_ETxMonths_cumulative(data, 1, 'dsa')
+p
