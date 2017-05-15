@@ -10,7 +10,7 @@ load_json <- function(file_list) {
   
   for (i in 1:length(file_list)) {
     print(file_list[i])
-    g <- add_fields(file_list[i])
+    g <- subregions_add_fields(file_list[i], 30)
     listofdfs[[i]]<-g
   }
   df <- ldply(listofdfs, data.frame) # make into one dataframe 
