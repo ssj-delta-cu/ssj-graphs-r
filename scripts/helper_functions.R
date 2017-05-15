@@ -279,5 +279,14 @@ subregions_add_fields <- function(geojson, reducer_size){
   return(d)
 }
 
+####################################################################
+# data loading functions for processsing EE geojson for fieldpoints
+fieldpts_tidyup <- function(geojson){
+  model_year <- get_filename_info(geojson)
+  d <- st_read(geojson) # read geojson file to dataframe
+  d$model <- model_year[1] # add name of model parsed from filename
+  d$wateryear <- model_year[2] # add water year parsed from filename
+  return(d)
+}
 
 

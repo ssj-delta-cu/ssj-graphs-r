@@ -23,12 +23,6 @@ barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
   af_dsa$region_name <- factor(af_dsa$region_name, levels=c("103", "153", "UNION ISLAND  (EAST)",
                                                     "UNION ISLAND  (WEST)", "WEBB TRACT", "STATEN ISLAND", "DSA"))
   
-  # modify axis units (acre-ft -> thousands acre-feet)
-  axis_units <-function(x){
-    x/1000
-  }
-  
-  
   # normalize acre-feet by island area
   af_area <- af_dsa %>% mutate(acftperacre=(WY_ACREFT / (AREA_m *0.000247105)))
   
@@ -50,7 +44,7 @@ barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
     scale_x_discrete(labels=label_area)+
     theme_bw() +
     scale_fill_manual(values=model_palette, labels=methods_named_list)+
-    scale_y_continuous(labels = axis_units) + #, limits = c(0, 300000)) +
+    scale_y_continuous() + #, limits = c(0, 300000)) +
     ylab("Acre-Feet per Acre") +
     theme(panel.border = element_blank(),
           panel.grid.major = element_blank(),
@@ -65,12 +59,12 @@ barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
           axis.line.y = element_line(color="black", size = 1))  # manually add in axis
   p}
 
-# 
-# source('scripts/helper_functions.R')
-# data <- readRDS('data/subregions/subregions_20170509.rds')
-# water_year <- 2016
-# p <- barchart_TAFxSubregions_normalizedAREA(data, water_year)
-# p
+
+source('scripts/helper_functions.R')
+data <- readRDS('data/subregions/subregions_20170509.rds')
+water_year <- 2016
+p <- barchart_TAFxSubregions_normalizedAREA(data, water_year)
+p
 
 
 

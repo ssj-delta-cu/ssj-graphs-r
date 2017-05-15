@@ -1,5 +1,5 @@
 # loads geojson file from the island sub-regions into a data frame and save it to a rds
-source("scripts/subregion_geojson_cleanup.R")
+source("scripts/helper_functions.R")
 
 list_of_files <- list.files(path="data/subregions", pattern=".geojson", full.names=TRUE)
 
