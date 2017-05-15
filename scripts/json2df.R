@@ -20,18 +20,10 @@ ee_geojson_properties_2_df <-function(json, model, aoi, wy){
   df <- mutate(df, num_days=num_days_in_month(wateryear, month))
   
   # calculate crop et acre feet
-  df <- mutate(df, crop_acft=crop_acre_feet(mean, count, num_days))
+  df <- mutate(df, crop_acft=acre_feet(mean, count, num_days, 200))
   return(df)
 }
 
-crop_acre_feet <- function(mean_et, cell_count, number_days){
-  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
-  reducer_size <- 200
-  mm2ft <- 0.00328084
-  sqm2acres <- 0.000247105
-  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
-  return(crop_acft)
-}
 
 ##################################################################################
 

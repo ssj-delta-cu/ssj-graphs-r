@@ -31,6 +31,10 @@ if(!require(jsonlite)){
   library(jsonlite)
 }
 
+if(!require(geosphere)){
+  install.packages("geosphere")
+  library(geosphere)
+}
 
 
 
@@ -61,6 +65,7 @@ lookup_include <- function(id){
 
 num_days_in_month <- function(wy, month){
   # load the months
+  month <- toupper(month)
   months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
   wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
   days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
@@ -69,6 +74,7 @@ num_days_in_month <- function(wy, month){
 
 # lookup month year from water year for a nicer title
 lookup_month_year <- function(wy, month){
+  month <- toupper(month)
   # load the months table
   months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
 
@@ -111,12 +117,22 @@ methods_names<-c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC"
 methods_named_list <-c("calsimetaw"="CalSIMETAW", "detaw"="DETAW", "disalexi"="DisALEXI", "itrc"="ITRC",
                        "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT")
 
-
+# get the actual date from the water year and the month
 date_from_wy_month <- function(water_year, month){
   year <- ifelse(month %in% c("OCT", "NOV", "DEC"), yes=(water_year-1), no=(water_year))
   first <- paste(year, month, 1) # fake date for first of the month
   d <- as.Date(strptime(first, format='%Y %b %d'))
   return(d)}
+
+
+# calculate acre-feet from monthly avg daily ET
+acre_feet <- function(mean_et, cell_count, number_days, reducer_size){
+  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
+  mm2ft <- 0.00328084
+  sqm2acres <- 0.000247105
+  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
+  return(crop_acft)
+}
 
 ####################################################################
 #### Filters
