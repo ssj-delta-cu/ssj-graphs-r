@@ -20,13 +20,12 @@ data <- load_json(list_of_files)
 
 
 # gather cases and select columns to keep
-d <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
+rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
   mutate(date = date_from_wy_month(as.numeric(wateryear), month))%>%
-  select(Station_ID, Crop, IslandName, model, wateryear, month, date, ET_mean)
+  select(Station_ID, Crop, IslandName, model, wateryear, month, date, ET_mean) %>% 
+  filter(between(as.Date(date), as.Date('2016-05-01'), as.Date('2016-10-01'))) %>%  # filter dates where there is field station data overlap
+  mutate(ET_mean = ET_mean/10)
 
-d
-
-saveRDS(d, file="data/fieldstation_20170515/fieldstation_20170515.rds")
 
 ######################################################################################################
 
@@ -45,4 +44,18 @@ load_csv <- function(file_list) {
   df <- ldply(listofdfs, data.frame) # make into one dataframe 
 }
 
-m <- load_csv(list_of_csvs)
+raw_field_data <- load_csv(list_of_csvs)
+
+# clean up station name and set model to field
+field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "IslandName", "Crop"), sep='_') %>%
+  filter(between(as.Date(date), as.Date('2016-05-01'), as.Date('2016-09-30'))) %>%   # filter out dates that are past sep 2016 
+  group_by(Station_ID, month=toupper(format(as.Date(date), '%b'))) %>%
+  summarise(ET_SR_aH_qc_Dgf=mean(ET_SR_aH_qc_Dgf, na.rm=TRUE), ET_EC_qc_Dgf = mean(ET_EC_qc_Dgf, na.rm=TRUE)) # calculate the monthly average
+
+######################################################################################################
+
+# bind the field data with the remote sensing data
+d <- inner_join(rs, field, by=c("Station_ID", "month"))
+d
+
+saveRDS(d, 'data/fieldstation_20170515/fieldstation_20170515.rds')
