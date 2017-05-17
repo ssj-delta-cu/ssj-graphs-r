@@ -20,3 +20,6 @@ methods_2_gen <- methods_2_gen[!methods_2_gen %in% c("CalSIMETAW", "DETAW")]
 aoi <- "dsa"
 
 water_years <- c(2015, 2016)
+
+# footer 
+footer <- paste('Updated ', Sys.Date())

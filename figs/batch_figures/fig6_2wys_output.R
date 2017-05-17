@@ -15,6 +15,9 @@ folder <- "figs/fig6_2wys/"
     #plot
     p <- line_ETxMonths_2wateryears(data, cropid,  aoi)
     
+    # add footer
+    p <- p + labs(caption=footer)
+    
     # build ouput name
     crop <- gsub(" ", "", crop)
     crop <- gsub("/", "", crop)

@@ -15,6 +15,9 @@ for(i in 1:length(crops_2_gen)){
   #plot
   p <- line_ETxMonths_cumulative(data, cropid,  aoi)
   
+  # add footer
+  p <- p + labs(caption=footer)
+  
   # build ouput name
   crop <- gsub(" ", "", crop)
   crop <- gsub("/", "", crop)
