@@ -23,6 +23,9 @@ for(y in 1:length(water_years)){
 
       #plot
       p <- whisker_ETxModel_per_crop_month(data_sub, aoi, wy, month, cropid)
+      
+      # add footer
+      p <- p + labs(caption=footer)
 
       # build ouput name
       crop <- gsub(" ", "", crop)
