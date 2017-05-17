@@ -1,7 +1,7 @@
 # loads geojson file from the island sub-regions into a data frame and save it to a rds
 source("scripts/helper_functions.R")
 
-list_of_files <- list.files(path="data/fieldstation_20170515", pattern=".geojson", full.names=TRUE)
+list_of_files <- list.files(path="data/fieldstations/wy2016", pattern=".geojson", full.names=TRUE)
 
 # for loop to load in all the raw json files to single data frame
 load_json <- function(file_list) {
@@ -29,7 +29,7 @@ rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, k
 
 ######################################################################################################
 
-list_of_csvs <- list.files(path="data/fieldstation_20170515", pattern=".csv", full.names=TRUE)
+list_of_csvs <- list.files(path="data/fieldstations/wy2016", pattern=".csv", full.names=TRUE)
 
 # for loop to load in all the raw csv files to single data frame
 load_csv <- function(file_list) {
@@ -58,4 +58,4 @@ field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "Island
 d <- inner_join(rs, field, by=c("Station_ID", "month"))
 d
 
-saveRDS(d, 'data/fieldstation_20170515/fieldstation_20170515.rds')
+saveRDS(d, 'data/fieldstations/wy2016/fieldstations_wy2016_20170515.rds')
