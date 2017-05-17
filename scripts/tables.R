@@ -22,3 +22,5 @@ table_taf_wy_regions <- function(data, wy){
   colnames(j) <- c("Method", "DSA", "LEGAL")
   j
 }
+
+
