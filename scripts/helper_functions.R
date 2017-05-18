@@ -94,6 +94,16 @@ lookup_month_year <- function(wy, month){
   return(fullname_year)
 }
 
+# lookup full month name for a nicer title
+lookup_month_fullname <- function(month){
+  month <- toupper(month)
+  # load the months table
+  months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
+  
+  full =  months$Full[match(month, months$Month)]
+  return(full)
+}
+
 # looks up model name by casing to lower and striping out dashes
 lookup_model_name <- function(name){
   lower <- tolower(name)

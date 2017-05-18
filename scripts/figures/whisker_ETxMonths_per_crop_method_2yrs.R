@@ -38,7 +38,7 @@ whisker_ETxMonths_per_crop_method_2yrs <- function(data, aoi_region, model_name,
           axis.line.y = element_line(color="black", size = 1)) # manually add in axis
 }
 
-# p <- whisker_ETxMonths_per_crop_method_2yrs(dsa_legal_data, 'dsa', 'UCD-PT', 24)
+# p <- whisker_ETxMonths_per_crop_method_2yrs(dsa_legal_data, 'dsa', 'SIMS', 913)
 # 
 # p
 # ggsave("box_2yrs_continuous.png", p, width=7, height=4, units="in")

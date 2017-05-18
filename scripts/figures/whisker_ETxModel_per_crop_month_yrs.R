@@ -24,7 +24,7 @@ whisker_ETxModel_per_crop_month_2yrs <- function(data, aoi_region, selected_mont
     geom_boxplot(aes( fill=wateryear),  stat="identity", lwd=1, fatten=0.75, position=position_dodge(width=0.85), fill=fill_colors_list) + #colour='#193366', fill='#3366cc',
     ggtitle(plot_title) +
     scale_y_continuous(labels = axis_units)+ #  limits = c(0, 100)) +
-    coord_cartesian(ylim=c(0,120))+ # changes the plot visual zoom instead of rm data (http://stackoverflow.com/questions/11617267/how-to-get-geom-boxplot-to-apply-y-limits-before-calculating-boxes)
+    coord_cartesian(ylim=c(0,100))+ # changes the plot visual zoom instead of rm data (http://stackoverflow.com/questions/11617267/how-to-get-geom-boxplot-to-apply-y-limits-before-calculating-boxes)
     ylab("ET (mm/day)") +
     scale_x_discrete(labels=methods_named_list)+ #labels=c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
     theme_bw() +  
@@ -44,7 +44,7 @@ whisker_ETxModel_per_crop_month_2yrs <- function(data, aoi_region, selected_mont
           axis.text.x=element_text(size=12)) # manually add in axis
 }
 
-p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data, 'dsa', 'JUL', 1)
-p
-ggsave("name.png", p, width=7, height=4, units="in")
-print(name)
+# p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data, 'dsa', 'JUL', 1)
+# p
+# ggsave("name.png", p, width=7, height=4, units="in")
+# print(name)
