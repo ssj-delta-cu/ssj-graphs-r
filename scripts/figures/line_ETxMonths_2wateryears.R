@@ -16,6 +16,8 @@ line_ETxMonths_2wateryears<- function(data, crop_id, aoi_region){
     ggtitle(cropname) +
     ylab("ET (mm/day)") +
     geom_vline(xintercept = as.numeric(as.Date('2015-10-01')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
+    annotate("text", x=as.Date('2015-04-01') , y=9, label="2015", size=5)+
+    annotate("text", x=as.Date('2016-04-01') , y=9, label="2016", size=5)+
     scale_color_manual(values=model_palette) +
     scale_linetype_manual(values=model_lny)+
     theme_bw() +  # change theme simple with no axis or tick marks
@@ -33,4 +35,3 @@ line_ETxMonths_2wateryears<- function(data, crop_id, aoi_region){
           axis.line = element_line(color="black", size=1)
           )
 }
-

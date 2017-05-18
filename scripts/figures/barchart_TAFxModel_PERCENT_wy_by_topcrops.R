@@ -93,8 +93,8 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi, landuse){
   p
 }
 
-landuse <- read.csv("lookups/Crops.csv",  stringsAsFactors=FALSE)
-wy <- 2015
-aoi <- "dsa"
-a <- barchart_TAFxModel_PERCENT_wy_by_topcrops(data, 2015, "dsa", landuse)
-a
+# landuse <- read.csv("lookups/Crops.csv",  stringsAsFactors=FALSE)
+# wy <- 2015
+# aoi <- "dsa"
+# a <- barchart_TAFxModel_PERCENT_wy_by_topcrops(data, 2015, "dsa", landuse)
+# a
