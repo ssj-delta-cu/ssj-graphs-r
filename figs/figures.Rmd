@@ -111,7 +111,7 @@ for(y in 1:length(water_years)){
   p <- sum_TAFxModel_dsa_legal(dsa_legal_data, wy)
   
   # add footer
-  p <- p + labs(caption=footer)
+  #p <- p + labs(caption=footer)
   
   
   # build name for export

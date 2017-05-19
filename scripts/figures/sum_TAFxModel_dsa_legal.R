@@ -34,10 +34,12 @@ sum_TAFxModel_dsa_legal <- function(data, wy){
   # remove wet herb semi ag from sims total (this will be their original estimate)
   sims_or <- sims
   sims_or$sum_af <- sims$sum_af - sims_est_wetherb_semi_ag$sum_wetherb_semiag
+  sims_or_taf <- sims_or$sum_af[1]
   
   # add the mean value for the two classes to their original estimate
   sims_enh <- sims
   sims_enh$sum_af <- sims$sum_af - sims_est_wetherb_semi_ag$sum_wetherb_semiag + mean_est_wetherb_semi_ag$mean_2classes
+  sims_enh_taf <- sims_enh$sum_af[1]
   
   # remove sims from af_crop_filter and add in the new estimated results
   af_crop_filter_wo_sims <- af_crops_filter %>% filter(!model=="sims")
@@ -81,5 +83,6 @@ sum_TAFxModel_dsa_legal <- function(data, wy){
   # add in the extra data point for sims
   p2 <- p + annotate("text", x = 'sims', y = sims_enh$sum_af, label = c("   *"), size=8) + 
     annotate("text", x = 'sims', y = sims_or$sum_af, label = c("   '"), size=8)
-  p2
-  }
+  p3 <- p2 + labs(caption=paste("SIMS: ", round(sims_or_taf/1000), "TAF", "\n", "SIMS + AVG: ", round(sims_enh_taf/1000), "TAF"))
+  p3
+}
