@@ -22,6 +22,7 @@ source("scripts/figures.R") # load all the functions that generate the graphs
 # data to use for generating the plots
 dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal_5methods_20170519.rds")
 fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016_20170519.rds")
+fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015_20170519.rds")
 subregions <- readRDS("data/subregions/subregions_20170519.rds")
 
 # list of crops to generate
@@ -57,38 +58,7 @@ fignum_folder <- function(fig_number){
 
 ```
 
-# Field
 
-## Field vs Remote methods facet plot
-
-```{r field_v_remote_facet, echo=FALSE, fig.width = 5, fig.height = 11}
-
-# figure number
-fig_num <- 5
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
-
-
-# facet version
-p <- lm_fieldxremote_facet_crop(fieldstations_data)
-
-# add footer
-p <- p + labs(caption=footer)
-
-
-# build name for export
-base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
-name <- paste(output_folder, base, sep="/")
-
-# save
-ggsave(name, p, width=5, height=11, units="in")
-
-# add plot to rmarkdown output
-plot(p)
-
-
-```
 
 # Delta
 
@@ -463,3 +433,100 @@ for(y in 1:length(water_years)){
 }
 
 ```
+
+# Field
+
+## Field vs Remote methods facet plot for Water Year 2016
+
+```{r field_v_remote_facet, echo=FALSE, fig.width = 5, fig.height = 11}
+
+# figure number
+fig_num <- 5
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+
+# facet version
+p <- lm_fieldxremote_facet_crop(fieldstations_data)
+
+# add footer
+p <- p + labs(caption=footer)
+
+
+# build name for export
+base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
+name <- paste(output_folder, base, sep="/")
+
+# save
+ggsave(name, p, width=5, height=11, units="in")
+
+# add plot to rmarkdown output
+plot(p)
+
+
+```
+
+## Field vs Remote methods facet plot for Water Year 2016
+```{r field_v_remote_2015, echo=FALSE, fig.width = 7, fig.height = 5}
+
+# figure number
+fig_num <- 5
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+#print(colnames(fieldstations_data_2015))
+
+  
+p <- ggplot(fieldstations_data_2015, aes(x=Station, y=ET_mean, color=model))+
+    geom_point(size=3.5)+
+    geom_hline(aes(yintercept=field_mean_et), colour="#990000", linetype="dashed", lwd=1.5)+
+    ylab("Model ET (mm/day)")+
+    xlab("Bare Field Station")+
+    scale_color_manual(values=model_palette, labels=methods_named_list)+
+    #coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
+    theme_bw()+
+    theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+          panel.grid.major = element_blank(),
+          plot.title = element_text(hjust = 0.5),
+          panel.grid.minor = element_blank(),
+          legend.position="bottom", # position of legend or none
+          legend.direction="horizontal", # orientation of legend
+          legend.title= element_blank(), # no title for legend
+          legend.key.size = unit(0.5, "cm"),
+          axis.text.y = element_text(size=12),
+          axis.text.x = element_blank(),
+          axis.title = element_text(size=14))+ 
+    guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+           fill = guide_legend(keywidth = 1, keyheight = 1),
+          linetype=guide_legend(keywidth = 3, keyheight = 1))+facet_wrap(~Station, ncol=5, scales="free_x")+theme(strip.background = element_blank(),
+          strip.placement = "outside", 
+          strip.text.x = element_text(size = 16))
+
+
+# facet version
+#p <- lm_fieldxremote_facet_crop(fieldstations_data)
+
+# add footer
+p <- p + labs(caption=footer)
+
+
+# build name for export
+base <- paste("Field_vs_Model_baresoil_wy2015", ".png", sep='')
+name <- paste(output_folder, base, sep="/")
+
+# save
+ggsave(name, p, width=7, height=5, units="in")
+
+# add plot to rmarkdown output
+plot(p)
+
+
+```
+
+
+
+
+
+
