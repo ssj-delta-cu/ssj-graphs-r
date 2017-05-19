@@ -82,7 +82,7 @@ base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
 name <- paste(output_folder, base, sep="/")
 
 # save
-ggsave(name, p, width=11, height=5, units="in")
+ggsave(name, p, width=5, height=11, units="in")
 
 # add plot to rmarkdown output
 plot(p)

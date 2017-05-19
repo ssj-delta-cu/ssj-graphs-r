@@ -47,6 +47,4 @@ line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
 
   p
 }
- 
-p <- line_ETxMonths_cumulative(dsa_legal_data, 1, "dsa")
-p
+
