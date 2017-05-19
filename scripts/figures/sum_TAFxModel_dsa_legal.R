@@ -27,7 +27,7 @@ sum_TAFxModel_dsa_legal <- function(data, wy){
   p <- ggplot(af_crops_filter, aes(x=model, y=sum_af, colour=region))+
     geom_point(size=3.5) +
     ggtitle(paste("Acre-feet totals for crops summed over the", wy ,"water year")) +
-    scale_y_continuous(labels = axis_units, limits = c(1000000, 2000000)) +
+    scale_y_continuous(labels = axis_units, limits = c(800000, 1500000)) +
     ylab("Thousands Acre-Feet") +
     scale_x_discrete(limit=c("calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"), labels=methods_named_list)+ 
     scale_color_manual(labels = c("Delta Service Area", "Legal Delta"), 

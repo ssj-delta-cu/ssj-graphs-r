@@ -24,3 +24,6 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 packrat/lib*/
+
+# figs folder
+/figs/*.png
