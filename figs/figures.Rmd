@@ -1,8 +1,8 @@
 ---
 title: "SSJ-DELTA-CU report figures"
 output:
-  html_document: default
   html_notebook: default
+  html_document: default
 ---
 
 ```{r "setup", include=FALSE}
@@ -142,7 +142,7 @@ for(y in 1:length(water_years)){
   
   # build name for export
   base <- paste("TAF_wy", wy, "_dsa_legal", ".csv", sep='')
-  name <- paste(file.path(mainDir, subDir), base, sep="/")
+  name <- paste(output_folder, base, sep="/")
   
   write.csv(t, name)
   }
