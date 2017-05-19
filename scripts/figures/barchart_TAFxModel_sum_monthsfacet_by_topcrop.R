@@ -1,6 +1,7 @@
 barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi){
 
-  top_crops <- c("Alfalfa", "Almonds", "Corn", "Fallow", "Pasture", "Potatoes", "Rice",  "Tomatoes", "Vineyards")
+  #top_crops <- c("Alfalfa", "Almonds",  "Corn", "Fallow", "Pasture", "Potatoes", "Rice",  "Tomatoes", "Vineyards")
+  top_crops <- c("Alfalfa", "Corn",  "Pasture", "Tomatoes", "Vineyards")
 
   af_crops_top_only <- data %>%
     filter_no_eto() %>%
@@ -28,18 +29,21 @@ barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi)
   axis_units <-function(x){
     x/1000
   }
+  
+  methods_first_letter_list <- c("calsimetaw"="C", "detaw"="D", "disalexi"="D", "itrc"="I", "sims"="S", "ucdmetric"="M", "ucdpt"="P")
 
   # change order of months to follow water year Oct -> Sept
   af_crops_w_others$month <- factor(af_crops_w_others$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
 
   p <- ggplot(af_crops_w_others, aes(x=model, y=sum_af, fill=cropname))+geom_bar(stat = "identity") +
     facet_grid(. ~ month)+
-    scale_x_discrete(labels=c("C", "D", "D", "I", "S", "M", "P"))+
+    scale_x_discrete(limit=c("calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"), labels=methods_first_letter_list)+
     theme_bw() +
+    ggtitle(paste("Water Year", water_year))+
     scale_fill_manual(values=crop_palette)+
     scale_y_continuous(labels = axis_units, limits = c(0, 300000)) +
     ylab("Thousand Acre-Feet") +
-    theme(panel.border = element_blank(),
+    theme(#panel.border = element_blank(),
           panel.grid.major = element_blank(),
           plot.title = element_text(hjust = 0.5),
           panel.grid.minor = element_blank(),
@@ -47,10 +51,8 @@ barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi)
           legend.position="bottom", # position of legend or none
           legend.direction="horizontal", # orientation of legend
           legend.title= element_blank(), # no title for legend
-          legend.key.size = unit(0.5, "cm"), # size of legend
-          axis.line.x = element_line(color="black", size = 1),
-          axis.line.y = element_line(color="black", size = 1)) + # manually add in axis
-          theme(strip.background = element_blank(), strip.placement = "outside")
+          legend.key.size = unit(0.5, "cm"))#+ # size of legend
+          #theme(strip.background = element_blank(), strip.placement = "outside",
+                #axis.line.x = element_line(color="black", size = 1),
+                #axis.line.y = element_line(color="black", size = 1))
     p}
-
-

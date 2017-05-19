@@ -17,4 +17,4 @@ load_json <- function(file_list) {
 }
 
 data <- load_json(list_of_files)
-saveRDS(data, file="data/subregions/subregions_20170509.rds")
+saveRDS(data, file="data/subregions/subregions_20170519.rds")

@@ -6,21 +6,16 @@ Data processed with ssj-delta-et/ssj-overview/et_fieldpts_wy2016.js
 
 Groups missing are detaw and calsimetaw
 
-Still waiting on ITRC to see which version of results to use in the report. For the time being, using
-itrc_co as ITRC's data since one of the raster for itrc_or has 13 bands (https://github.com/ssj-delta-cu/ssj-itrc-metric/issues/4)
-
 
 ## EE script with paths to asset sources 
 
 ```
-// get the value at each of the field stations for each month in the 12 month raster
 
 var select_water_year = function(water_year){
   if(water_year == 2015){
 
     var methods={
-      itrc:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2015_v2-1-0")},
-      //itrc_or:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2015_v2-0-1")},
+      itrc:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2015_v2-0-1")},
       disalexi:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-disalexi/disalexi_et_wy2015_v2-1-0")},
       ucdpt:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-ucd-priestley-taylor/ucd-pt_et_wy2015_v2-2-0")},
       ucdmetric:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-ucd-metric/ucd-metric_et_wy2015_v2-0-0")},
@@ -35,8 +30,7 @@ var select_water_year = function(water_year){
   else if(water_year == 2016){
 
     var methods={
-      itrc:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2016_v2-1-0")},
-      //itrc_or:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2016_v2-0-1")},
+      itrc:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-itrc-metric/itrc_et_wy2016_v2-0-3")},
       disalexi:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-disalexi/disalexi_et_wy2016_v2-1-0")},
       ucdpt:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-ucd-priestley-taylor/ucd-pt_et_wy2016_v2-2-0")},
       ucdmetric:{image:ee.Image("users/ucd-cws-ee-data/ssj-delta-cu/ssj-ucd-metric/ucd-metric_et_wy2016_v2-0-0")},
@@ -50,7 +44,7 @@ var select_water_year = function(water_year){
   }
   
   return({methods: methods, landcover: landcover});
-};//updated 5-17-17
+};//updated 5-19-17
 
 
 // fusion table with the station points

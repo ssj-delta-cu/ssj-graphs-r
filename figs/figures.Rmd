@@ -20,9 +20,9 @@ source("scripts/helper_functions.R") # load all the helper functions
 source("scripts/figures.R") # load all the functions that generate the graphs
 
 # data to use for generating the plots
-dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal_5methods_20170517.rds")
-fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016_20170517.rds")
-
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal_5methods_20170519.rds")
+fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016_20170519.rds")
+subregions <- readRDS("data/subregions/subregions_20170519.rds")
 
 # list of crops to generate
 crops_2_gen_all <- crop_list() 
@@ -47,7 +47,7 @@ footer <- paste('Updated ', Sys.Date())
 # creates a figure output folder if one does not already exist
 fignum_folder <- function(fig_number){
   mainDir <- getwd() # gets the current working directory 
-  subDir <-paste("figs/fig", fig_number, sep="") # construct path to subfolder
+  subDir <-paste("figs/output/fig", fig_number, sep="") # construct path to subfolder
   ifelse(!dir.exists(file.path(mainDir, subDir)), 
          dir.create(file.path(mainDir, subDir)), FALSE) # creates subDir if it doesn't exist
   subDir_path <- file.path(mainDir, subDir) # returns the path to the new subDir
@@ -107,7 +107,7 @@ plot(p)
 
 ```{r TAF_WY, echo=FALSE, fig.width = 8, fig.height = 4}
 source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
-source("scripts/figures.R")
+
 # figure number
 fig_num <- 6
 
@@ -332,6 +332,142 @@ for(y in 1:length(water_years)){
   
   # save
   ggsave(name, p, width=6, height=5, units="in")
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+
+```
+
+## Percent Total by a few of the top crop types
+
+Note: this doesn't include wet herb or semi-ag landuse classes.
+
+
+```{r landuse_percent, fig.width = 7, fig.height = 4}
+
+fig_num <- 8
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+# filter out wet herb and landuse
+dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
+
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  p <- barchart_TAFxModel_PERCENT_wy_by_topcrops(dsa_legal_data_wo_wetsemi, wy, 'dsa')
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # build name for export
+  base <- paste("Percent_TAF_by_model_", wy, ".png", sep='')
+  name <- paste(output_folder, base, sep="/")
+  
+  # save
+  ggsave(name, p, width=7, height=4, units="in")
+  
+  plot(p)
+}
+
+```
+
+## Total Acre feet by month and crop type
+
+Note: this doesn't include wet herb or semi-ag landuse classes.
+
+The abberivation for the model groups are: "calsimetaw"="C", "detaw"="D", "disalexi"="D", "itrc"="I", "sims"="S", "ucdmetric"="M", "ucdpt"="P".
+
+```{r crop breakdown facet, fig.width = 11, fig.height = 4}
+
+fig_num <- 9
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+# filter out wet herb and landuse
+dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
+
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  p <- barchart_TAFxModel_sum_monthsfacet_by_topcrop(dsa_legal_data_wo_wetsemi, wy, 'dsa')
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # build name for export
+  base <- paste("TAF_by_month_", wy, ".png", sep='')
+  name <- paste(output_folder, base, sep="/")
+  
+  # save
+  ggsave(name, p, width=11, height=4, units="in")
+  
+  plot(p)
+}
+
+```
+
+
+
+
+# Subregions
+
+## Select Subregions TAF
+
+```{r subregion_taf, echo=FALSE, fig.width = 7, fig.height = 4}
+# coeffient of variation grid
+fig_num <- 22
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+# loop through both water years and save the figure
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  
+  p <- barchart_TAFxSubregions(subregions, wy)
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # build name for export
+  base <- paste("Subregions_TAF_", wy, ".png", sep='')
+  name <- paste(output_folder, base, sep="/")
+  
+  # save
+  ggsave(name, p, width=7, height=4, units="in")
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+
+```
+
+## Select Subregions TAF Normalized by area
+
+```{r subregion_taf_norm, echo=FALSE, fig.width = 7, fig.height = 4}
+# coeffient of variation grid
+fig_num <- 23
+
+# make an ouput folder for the figure
+output_folder <- fignum_folder(fig_num)
+
+# loop through both water years and save the figure
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  
+  p <- barchart_TAFxSubregions_normalizedAREA(subregions, wy)
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # build name for export
+  base <- paste("Subregions_TAF_", wy, ".png", sep='')
+  name <- paste(output_folder, base, sep="/")
+  
+  # save
+  ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)

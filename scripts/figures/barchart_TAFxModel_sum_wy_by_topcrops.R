@@ -1,6 +1,6 @@
 barchart_TAFxModel_sum_wy_by_topcrops <- function(data, wy, aoi){
   
-  top_crops <- c("Alfalfa", "Almonds", "Corn", "Fallow", "Pasture", "Potatoes", "Rice",  "Tomatoes", "Vineyards")
+  top_crops <- c("Alfalfa", "Corn", "Fallow", "Pasture", "Rice",  "Tomatoes", "Vineyards")
   
   
   af_crops_top_only <- data %>% 
@@ -37,7 +37,7 @@ barchart_TAFxModel_sum_wy_by_topcrops <- function(data, wy, aoi){
     scale_x_discrete(labels=c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT"))+
     theme_bw() + 
     scale_fill_manual(values=crop_palette)+
-    scale_y_continuous(labels = axis_units, limits = c(0, 2000000)) +
+    scale_y_continuous(labels = axis_units, limits = c(0, 1500000)) +
     ylab("Thousands Acre-Feet") +
     theme(panel.border = element_blank(),
           panel.grid.major = element_blank(),

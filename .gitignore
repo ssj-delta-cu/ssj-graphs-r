@@ -26,4 +26,4 @@ vignettes/*.pdf
 packrat/lib*/
 
 # figs folder
-/figs/*.png
+/figs/output/*/*.png

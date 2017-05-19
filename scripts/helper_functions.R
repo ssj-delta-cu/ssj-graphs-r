@@ -133,7 +133,7 @@ methods_list <- function(){
 methods_names<-c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
 
 methods_named_list <-c("calsimetaw"="CalSIMETAW", "detaw"="DETAW", "disalexi"="DisALEXI", "itrc"="ITRC",
-                       "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT", "eto"="ETo")
+                       "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT", "eto"="ETo", "landuse"="Landuse")
 
 # get the actual date from the water year and the month
 date_from_wy_month <- function(water_year, month){

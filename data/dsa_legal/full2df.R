@@ -26,4 +26,4 @@ load_json <- function(file_list) {
 }
 
 data <- load_json(list_of_files)
-saveRDS(data, file="data/dsa_legal/dsa_legal_5methods_20170517.rds")
+saveRDS(data, file="data/dsa_legal/dsa_legal_5methods_20170519.rds")

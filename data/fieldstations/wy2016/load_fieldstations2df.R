@@ -58,4 +58,4 @@ field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "Island
 d <- inner_join(rs, field, by=c("Station_ID", "month"))
 d
 
-saveRDS(d, 'data/fieldstations/wy2016/fieldstations_wy2016_20170515.rds')
+saveRDS(d, 'data/fieldstations/wy2016/fieldstations_wy2016_20170519.rds')
