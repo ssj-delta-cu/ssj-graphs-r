@@ -1,6 +1,8 @@
 ---
 title: "SSJ-DELTA-CU report figures"
-output: html_notebook
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 ```{r "setup", include=FALSE}
@@ -105,7 +107,7 @@ plot(p)
 
 ```{r TAF_WY, echo=FALSE, fig.width = 8, fig.height = 4}
 source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
-
+source("scripts/figures.R")
 # figure number
 fig_num <- 6
 
