@@ -11,6 +11,9 @@ lm_fieldxremote_facet_crop <- function(data){
     string
   }
   
+  # rename maize to corn
+  t$Crop <- gsub('maize', 'corn', t$Crop)
+  
   
   p <- ggplot(t, aes(x=ET_SR_aH_qc_Dgf, y=ET_mean, color=model))+
     geom_point(size=1.5)+
@@ -18,9 +21,9 @@ lm_fieldxremote_facet_crop <- function(data){
     xlab("Field ET (mm/day)")+
     geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25) + # Add linear regression line
     scale_color_manual(values=model_palette, labels=methods_named_list)+
-    coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
+    #coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
     geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.5)+ #1:1 diagonal line
-    annotate(geom = "text", x = 0.5, y = 1, label = "1:1", colour="black", alpha=0.5, angle = 45)+
+    #annotate(geom = "text", x = 0.5, y = 1, label = "1:1", colour="black", alpha=0.5, angle = 45)+
     theme_bw()+
     theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
           panel.grid.major = element_blank(),
@@ -33,11 +36,11 @@ lm_fieldxremote_facet_crop <- function(data){
           axis.text.y = element_text(size=12),
           axis.text.x = element_text(size=12),
           axis.title = element_text(size=14))+ 
-    facet_grid(. ~ Crop, labeller = labeller(Crop = capitalize))+
+    facet_wrap(~Crop, nrow=3, ncol=1, labeller = labeller(Crop = capitalize), scale="free")+
     theme(strip.background = element_blank(),
           strip.placement = "outside", 
           strip.text.x = element_text(size = 16))+
-    guides(colour = guide_legend(nrow = 1, keywidth = 3, keyheight = 1),
+    guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
            fill = guide_legend(keywidth = 1, keyheight = 1),
           linetype=guide_legend(keywidth = 3, keyheight = 1))
   p
