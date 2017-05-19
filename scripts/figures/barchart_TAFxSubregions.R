@@ -31,6 +31,7 @@ barchart_TAFxSubregions <- function(data, water_year){
   p <- ggplot(af, aes(x=region_name, y=WY_ACREFT, fill=model))+geom_bar(stat = "identity", position='dodge') +
     scale_x_discrete(labels=label_area)+
     theme_bw() +
+    ggtitle(paste("Water Year ", water_year))+
     scale_fill_manual(values=model_palette, labels=methods_named_list)+
     scale_y_continuous(labels = axis_units) + #, limits = c(0, 300000)) +
     ylab("Thousand Acre-Feet") +

@@ -1,35 +1,35 @@
-Number,Commodity,Include,LandIQ_2015_Acres
-1,Alfalfa,yes,80201
-12,Safflower,yes,0
-22,Sunflower,yes,0
-23,Corn,yes,91833
-24,Rice,yes,7637
-108,Bush Berries,yes,1186
-109,Vineyards,yes,36930
-246,Potatoes,yes,4144
-277,Cucurbit,yes,3923
-278,Tomatoes,yes,36290
-279,Truck Crops,yes,9547
-403,Cherries,yes,2069
-409,Olives,yes,1451
-412,Pears,yes,5947
-425,Citrus,yes,8
-500,Almonds,yes,5210
-502,Pistachios,yes,148
-503,Walnuts,yes,3474
-800,Pasture,yes,48062
-916,Fallow,yes,51955
-913,Semi-agricultural/ROW,yes,48523
-914,Other Deciduous,yes,7713
-908,Turf,yes,2175
-2002,Floating Vegetation,no,3559
-2003,Forage Grass,yes,4507
-2004,Riparian,no,21585
-2005,Upland Herbaceous,no,54344
-2006,Urban,no,62147
-2007,Water,no,60197
-2008,Wet herbaceous/sub irrigated pasture,yes,24960
-0,NA,no,0
-201,Asparagus,yes,0
-211,Carrots,yes,0
-752,Young Orchard,yes,0
+Number,Commodity,Include,LandIQ_2015_Acres,LandIQ_2016_Acres
+1,Alfalfa,yes,74267.30891,64945.86584
+12,Safflower,yes,5903.684397,13581.40972
+22,Sunflower,yes,33.359175,252.195363
+23,Corn,yes,91711.93349,70844.43516
+24,Rice,yes,7629.910506,7952.604926
+108,Bush Berries,yes,1202.264667,1255.194558
+109,Vineyards,yes,36995.76986,37339.36937
+246,Potatoes,yes,4114.965434,3823.18385
+277,Cucurbit,yes,3983.975073,3047.471834
+278,Tomatoes,yes,36248.07956,25127.02019
+279,Truck Crops,yes,9556.736454,2620.474394
+403,Cherries,yes,2094.066612,2876.450463
+409,Olives,yes,1474.253141,1531.186133
+412,Pears,yes,5944.604985,5523.612197
+425,Citrus,yes,8.89578,6.4494405
+500,Almonds,yes,5216.262998,13274.9501
+502,Pistachios,yes,146.1131865,266.2062165
+503,Walnuts,yes,3469.131806,5260.964292
+800,Pasture,yes,48097.03612,42417.97017
+916,Fallow,yes,51855.94796,80801.25932
+913,Semi-agricultural/ROW,yes,48466.87817,48239.81339
+914,Other Deciduous,yes,7701.74393,1744.017669
+908,Turf,yes,2136.988751,2093.177034
+2002,Floating Vegetation,no,3525.842403,2720.10713
+2003,Forage Grass,yes,4466.126349,6726.544047
+2004,Riparian,no,21699.47615,22798.54977
+2005,Upland Herbaceous,no,54378.56877,63446.03733
+2006,Urban,no,62226.42589,62687.89448
+2007,Water,no,60072.09037,63045.28244
+2008,Wet herbaceous/sub irrigated pasture,yes,24964.00502,22614.40713
+0,NA,no,0,0
+201,Asparagus,yes,0,318.468924
+211,Carrots,yes,0,184.142646
+752,Young Orchard,yes,0,217.057032

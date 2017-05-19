@@ -43,6 +43,7 @@ barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
     geom_bar(stat = "identity", position='dodge') +
     scale_x_discrete(labels=label_area)+
     theme_bw() +
+    ggtitle(paste("Water Year ", water_year))+
     scale_fill_manual(values=model_palette, labels=methods_named_list)+
     scale_y_continuous() + #, limits = c(0, 300000)) +
     ylab("Acre-Feet per Acre") +
@@ -60,11 +61,11 @@ barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
   p}
 
 
-source('scripts/helper_functions.R')
-data <- readRDS('data/subregions/subregions_20170509.rds')
-water_year <- 2016
-p <- barchart_TAFxSubregions_normalizedAREA(data, water_year)
-p
+# source('scripts/helper_functions.R')
+# data <- readRDS('data/subregions/subregions_20170509.rds')
+# water_year <- 2016
+# p <- barchart_TAFxSubregions_normalizedAREA(data, water_year)
+# p
 
 
 
