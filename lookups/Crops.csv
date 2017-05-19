@@ -18,8 +18,8 @@ Number,Commodity,Include,LandIQ_2015_Acres
 502,Pistachios,yes,148
 503,Walnuts,yes,3474
 800,Pasture,yes,48062
-916,Fallow,no,51955
-913,Semi-agricultural/ROW,no,48523
+916,Fallow,yes,51955
+913,Semi-agricultural/ROW,yes,48523
 914,Other Deciduous,yes,7713
 908,Turf,yes,2175
 2002,Floating Vegetation,no,3559
@@ -28,7 +28,7 @@ Number,Commodity,Include,LandIQ_2015_Acres
 2005,Upland Herbaceous,no,54344
 2006,Urban,no,62147
 2007,Water,no,60197
-2008,Wet herbaceous/sub irrigated pasture,no,24960
+2008,Wet herbaceous/sub irrigated pasture,yes,24960
 0,NA,no,0
 201,Asparagus,yes,0
 211,Carrots,yes,0
