@@ -31,17 +31,17 @@ source("scripts/helper_functions.R") # functions to help tidy the data
 source("scripts/figures.R") # load all the ggplot2 figure functions
 
 # data source 
-data <- readRDS("data/full_20170509/data_both_wy_20170509.rds") # geojson parsed and stored as a rds object (json2df.R)
+data <- readRDS("data/dsa_legal/dsa_legal.rds") # geojson parsed and stored as a rds object (json2df.R)
 
-crops_2_gen <- crop_list()
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
 month_2_gen <- month_list()
 
 ```
 
-# UC Davis Priestley Taylor
+# CalSIMETAW
 ```{r, echo=FALSE}
 # methods_2_gen # list of method names in the dataframe
-selected_model_name <- "UCD-PT" # uppercase
+selected_model_name <- "CalSIMETAW" # uppercase
 selected_model <- lookup_model_name(selected_model_name)
 print(paste("Model for this workbook:", selected_model_name))
 print(paste("Last Updated: ", Sys.time()))
@@ -49,7 +49,7 @@ print(paste("Last Updated: ", Sys.time()))
 
 # Data
 
-Preview of dataframe. Not all data is shown - query is filtered by selected model and the DSA region. In addition, the following columns don't appear in the table: `level_2`, `median`, `p25`, `p75`, `p9`, `p91`, `model`, `source`, `include`, `num_days`.
+Preview of dataframe. Not all data is shown - query is filtered by selected model and the DSA region. In addition, the following columns don't appear in the table: `level_2`, `median`, `p25`, `p75`, `p9`, `p91`, `model`, `source`, `include`, `num_days`. Note: units for ET are in tenths of mm/day.
 ```{r head, echo=FALSE}
 subset_data <- data %>% filter(model == selected_model, region == "dsa")
 select_cols <- subset(subset_data, select=c("wateryear", "month", "cropname", "count", "mean", "crop_acft"))
@@ -59,13 +59,13 @@ DT::datatable(select_cols, rownames=FALSE)
 
 # Plots
 
-# WY 2015 Plots
+## Monthly ET lineplot
 
-## Line Plots 
+Monthly ET by Model for a single croptype for the two water years
 ```{r plot_line_15, fig.width=7, fig.height=4, echo=FALSE}
 for(i in 1:length(crops_2_gen)){
   id <- lookup_cropid(crops_2_gen[i])
-  print(line_ETxMonths(subset_data,id, 2015, "dsa"))
+  print(line_ETxMonths_2wateryears(subset_data,id, "dsa"))
 }
 
 ```
@@ -78,31 +78,7 @@ Boxplots show the 9th percentile (lower whisker), 25th percentile (lower box edg
 
 for(i in 1:length(crops_2_gen)){
   id <- lookup_cropid(crops_2_gen[i])
-  print(whisker_ETxMonths_per_crop_method(data, "dsa", 2015, selected_model_name, id))
-}
-
-```
-
-
-# WY 2016 Plots
-## Line Plots
-```{r plot_line_16, fig.width=7, fig.height=4, echo=FALSE}
-
-for(i in 1:length(crops_2_gen)){
-  id <- lookup_cropid(crops_2_gen[i])
-  print(line_ETxMonths(subset_data,id, 2016, "dsa"))
-}
-
-```
-
-## Boxplots
-Boxplots show the 9th percentile (lower whisker), 25th percentile (lower box edge), median (horizontal line), 75th percentile (upper box edge) and 91th percentile (upper whisker). 
-
-```{r plot_box_16, fig.width=7, fig.height=4, echo=FALSE}
-
-for(i in 1:length(crops_2_gen)){
-  id <- lookup_cropid(crops_2_gen[i])
-  print(whisker_ETxMonths_per_crop_method(data, "dsa", 2016, selected_model_name, id))
+  print(whisker_ETxMonths_per_crop_method_2yrs(data, "dsa", selected_model_name, id))
 }
 
 ```
