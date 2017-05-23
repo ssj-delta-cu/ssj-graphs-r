@@ -18,7 +18,7 @@ output:
 
 ```{r "setup", include=FALSE}
 require("knitr")
-opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+opts_knit$set(root.dir = "../..") # set working directory to be ssj-graph-r directory
 knitr::opts_chunk$set(error = TRUE)
 ```
 

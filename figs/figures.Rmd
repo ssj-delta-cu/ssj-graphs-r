@@ -20,7 +20,7 @@ source("scripts/helper_functions.R") # load all the helper functions
 source("scripts/figures.R") # load all the functions that generate the graphs
 
 # data to use for generating the plots
-dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal_5methods_20170519.rds")
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
 fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016_20170519.rds")
 fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015_20170519.rds")
 subregions <- readRDS("data/subregions/subregions_20170519.rds")
