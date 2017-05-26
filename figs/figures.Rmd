@@ -9,6 +9,7 @@ output:
 require("knitr")
 opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
 knitr::opts_chunk$set(error = TRUE)
+
 ```
 
 
@@ -66,11 +67,11 @@ fignum_folder <- function(fig_number){
 ```{r TAF_WY, echo=FALSE, fig.width = 8, fig.height = 4}
 source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
 
-# figure number
-fig_num <- 6
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# # figure number
+# fig_num <- 6
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 
 # loop through both water years and save the figure
@@ -113,11 +114,11 @@ for(y in 1:length(water_years)){
 ## Lineplot Monthly ET by Model for a single croptype for two water years
 
 ```{r lineplot_ET, echo=FALSE, fig.width = 7, fig.height = 4}
-# batch outputs monthly et + ref Eto for both water years on one plot
-fig_num <- 11
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# # batch outputs monthly et + ref Eto for both water years on one plot
+# fig_num <- 11
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # loop through the crops
 for(i in 1:length(crops_2_gen)){
@@ -129,16 +130,16 @@ for(i in 1:length(crops_2_gen)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build ouput name
-  crop <- gsub(" ", "", crop)
-  crop <- gsub("/", "", crop)
-  base <- paste(cropid, crop, aoi, sep="-")
-  base.ext <- paste(base, ".png", sep="")
-  name <- paste(output_folder, base.ext, sep="/")
-  
-  # save
-  ggsave(name, p, width=7, height=4, units="in")
+  # 
+  # # build ouput name
+  # crop <- gsub(" ", "", crop)
+  # crop <- gsub("/", "", crop)
+  # base <- paste(cropid, crop, aoi, sep="-")
+  # base.ext <- paste(base, ".png", sep="")
+  # name <- paste(output_folder, base.ext, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -149,10 +150,10 @@ for(i in 1:length(crops_2_gen)){
 
 ```{r lineplot_cumET, echo=FALSE, fig.width = 7, fig.height = 4}
 # batch outputs monthly et + ref Eto for both water years on one plot
-fig_num <- 12
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 12
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # loop through the crops
 for(i in 1:length(crops_2_gen)){
@@ -165,15 +166,15 @@ for(i in 1:length(crops_2_gen)){
   # add footer
   p <- p + labs(caption=footer)
   
-  # build ouput name
-  crop <- gsub(" ", "", crop)
-  crop <- gsub("/", "", crop)
-  base <- paste(cropid, crop, aoi, sep="-")
-  base.ext <- paste(base, ".png", sep="")
-  name <- paste(output_folder, base.ext, sep="/")
-  
-  # save
-  ggsave(name, p, width=7, height=4, units="in")
+  # # build ouput name
+  # crop <- gsub(" ", "", crop)
+  # crop <- gsub("/", "", crop)
+  # base <- paste(cropid, crop, aoi, sep="-")
+  # base.ext <- paste(base, ".png", sep="")
+  # name <- paste(output_folder, base.ext, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -185,10 +186,10 @@ for(i in 1:length(crops_2_gen)){
 
 ```{r whisker_ETxModel_per_crop_month_2yrs, echo=FALSE, fig.width = 7, fig.height = 4}
 # batch outputs monthly et + ref Eto for both water years on one plot
-fig_num <- 13
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 13
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 
 # loop through the crops
@@ -206,15 +207,15 @@ for(i in 1:length(crops_2_gen)){
     # add footer
     p <- p + labs(caption=footer)
 
-    # build ouput name
-    crop <- gsub(" ", "", crop)
-    crop <- gsub("/", "", crop)
-    base <- paste(cropid, crop, month, aoi, sep="-")
-    base.ext <- paste(base, ".png", sep="")
-    name <- paste(output_folder, base.ext, sep="/")
-    
-    # save
-    ggsave(name, p, width=7, height=4, units="in")
+    # # build ouput name
+    # crop <- gsub(" ", "", crop)
+    # crop <- gsub("/", "", crop)
+    # base <- paste(cropid, crop, month, aoi, sep="-")
+    # base.ext <- paste(base, ".png", sep="")
+    # name <- paste(output_folder, base.ext, sep="/")
+    # 
+    # # save
+    # ggsave(name, p, width=7, height=4, units="in")
     
     # add plot to rmarkdown output
     plot(p)
@@ -230,10 +231,10 @@ for(i in 1:length(crops_2_gen)){
 
 ```{r whisker_ETxMonths_per_crop_method, echo=FALSE, fig.width = 7, fig.height = 4}
 # batch outputs monthly et + ref Eto for both water years on one plot
-fig_num <- 14
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 14
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # loop through all crops types
 for(i in 1:length(crops_2_gen)){
@@ -249,17 +250,17 @@ for(i in 1:length(crops_2_gen)){
     
     # add footer
     p <- p + labs(caption=footer)
-    
-    # build ouput name
-    crop <- gsub(" ", "", crop)
-    crop <- gsub("/", "", crop)
-    m_lower <- lookup_model_name(mod) # get lowercase name
-    base <- paste(cropid, crop, m_lower, aoi, sep="-")
-    base.ext <- paste(base, ".png", sep="")
-    name <- paste(output_folder, base.ext, sep="/")
-    
-    # save
-    ggsave(name, p, width=7, height=4, units="in")
+    # 
+    # # build ouput name
+    # crop <- gsub(" ", "", crop)
+    # crop <- gsub("/", "", crop)
+    # m_lower <- lookup_model_name(mod) # get lowercase name
+    # base <- paste(cropid, crop, m_lower, aoi, sep="-")
+    # base.ext <- paste(base, ".png", sep="")
+    # name <- paste(output_folder, base.ext, sep="/")
+    # 
+    # # save
+    # ggsave(name, p, width=7, height=4, units="in")
 
     # add plot to rmarkdown output
     plot(p)
@@ -307,10 +308,10 @@ Note: this doesn't include wet herb or semi-ag landuse classes.
 
 ```{r landuse_percent, fig.width = 9, fig.height = 4}
 
-fig_num <- 8
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 8
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # filter out wet herb and landuse
 dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
@@ -321,13 +322,13 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build name for export
-  base <- paste("Percent_TAF_by_model_", wy, ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  # save
-  ggsave(name, p, width=9, height=4, units="in")
+  # 
+  # # build name for export
+  # base <- paste("Percent_TAF_by_model_", wy, ".png", sep='')
+  # name <- paste(output_folder, base, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=9, height=4, units="in")
   
   plot(p)
 }
@@ -342,10 +343,10 @@ The abberivation for the model groups are: "calsimetaw"="C", "detaw"="D", "disal
 
 ```{r crop breakdown facet, fig.width = 11, fig.height = 4}
 
-fig_num <- 9
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 9
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # filter out wet herb and landuse
 dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
@@ -356,13 +357,13 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build name for export
-  base <- paste("TAF_by_month_", wy, ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  # save
-  ggsave(name, p, width=11, height=4, units="in")
+  # 
+  # # build name for export
+  # base <- paste("TAF_by_month_", wy, ".png", sep='')
+  # name <- paste(output_folder, base, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=11, height=4, units="in")
   
   plot(p)
 }
@@ -378,10 +379,10 @@ for(y in 1:length(water_years)){
 
 ```{r subregion_taf, echo=FALSE, fig.width = 7, fig.height = 4}
 # coeffient of variation grid
-fig_num <- 22
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 22
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # loop through both water years and save the figure
 for(y in 1:length(water_years)){
@@ -391,13 +392,13 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build name for export
-  base <- paste("Subregions_TAF_", wy, ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  # save
-  ggsave(name, p, width=7, height=4, units="in")
+  # 
+  # # build name for export
+  # base <- paste("Subregions_TAF_", wy, ".png", sep='')
+  # name <- paste(output_folder, base, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -409,10 +410,10 @@ for(y in 1:length(water_years)){
 
 ```{r subregion_taf_norm, echo=FALSE, fig.width = 7, fig.height = 4}
 # coeffient of variation grid
-fig_num <- 23
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# fig_num <- 23
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 # loop through both water years and save the figure
 for(y in 1:length(water_years)){
@@ -422,13 +423,13 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build name for export
-  base <- paste("Subregions_TAF_", wy, ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  # save
-  ggsave(name, p, width=7, height=4, units="in")
+  # 
+  # # build name for export
+  # base <- paste("Subregions_TAF_", wy, ".png", sep='')
+  # name <- paste(output_folder, base, sep="/")
+  # 
+  # # save
+  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -440,13 +441,13 @@ for(y in 1:length(water_years)){
 
 ## Field vs Remote methods facet plot for Water Year 2016
 
-```{r field_v_remote_facet, echo=FALSE, fig.width = 5, fig.height = 11}
+```{r field_v_remote_facet, echo=FALSE, fig.width = 6, fig.height = 11}
 
-# figure number
-fig_num <- 5
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# # figure number
+# fig_num <- 5
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 
 # facet version
@@ -454,14 +455,14 @@ p <- lm_fieldxremote_facet_crop(fieldstations_data)
 
 # add footer
 p <- p + labs(caption=footer)
-
-
-# build name for export
-base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
-name <- paste(output_folder, base, sep="/")
-
-# save
-ggsave(name, p, width=5, height=11, units="in")
+# 
+# 
+# # build name for export
+# base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
+# name <- paste(output_folder, base, sep="/")
+# 
+# # save
+# ggsave(name, p, width=5, height=11, units="in")
 
 # add plot to rmarkdown output
 plot(p)
@@ -472,11 +473,11 @@ plot(p)
 ## Field vs Remote methods facet plot for Water Year 2016
 ```{r field_v_remote_2015, echo=FALSE, fig.width = 7, fig.height = 5}
 
-# figure number
-fig_num <- 5
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
+# # figure number
+# fig_num <- 5
+# 
+# # make an ouput folder for the figure
+# output_folder <- fignum_folder(fig_num)
 
 #print(colnames(fieldstations_data_2015))
 
@@ -512,14 +513,14 @@ p <- ggplot(fieldstations_data_2015, aes(x=Station, y=ET_mean, color=model))+
 
 # add footer
 p <- p + labs(caption=footer)
-
-
-# build name for export
-base <- paste("Field_vs_Model_baresoil_wy2015", ".png", sep='')
-name <- paste(output_folder, base, sep="/")
-
-# save
-ggsave(name, p, width=7, height=5, units="in")
+# 
+# 
+# # build name for export
+# base <- paste("Field_vs_Model_baresoil_wy2015", ".png", sep='')
+# name <- paste(output_folder, base, sep="/")
+# 
+# # save
+# ggsave(name, p, width=7, height=5, units="in")
 
 # add plot to rmarkdown output
 plot(p)
