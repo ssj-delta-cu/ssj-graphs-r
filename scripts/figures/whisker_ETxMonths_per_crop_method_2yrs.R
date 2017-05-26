@@ -15,8 +15,9 @@ whisker_ETxMonths_per_crop_method_2yrs <- function(data, aoi_region, model_name,
   #data_subset$month <- factor(data_subset$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
   
   # make a boxplot showing each month's range of values
-  p <- ggplot(data_subset, aes(x=date, ymin=p9, lower=p25, middle=median, upper=p75,  ymax=p91))+
-    geom_boxplot(stat="identity", colour='#193366', fill='#3366cc', lwd=0.75, fatten=0.5) +
+  p <- ggplot(data_subset, aes(x=date, ymin=p9, lower=p25, middle=median, upper=p75,  ymax=p91, fill=model))+
+    geom_boxplot(stat="identity") +
+    scale_fill_manual(values=model_palette, labels=methods_named_list)+
     ggtitle(paste(model_name, "\n", lookup_cropname(cropid), sep='')) + # plot title
     scale_y_continuous(labels = axis_units)+
     scale_x_date(date_breaks="3 month", date_labels  = "%b")+
@@ -28,7 +29,7 @@ whisker_ETxMonths_per_crop_method_2yrs <- function(data, aoi_region, model_name,
           plot.title = element_text(hjust = 0.5),
           panel.grid.minor = element_blank(),
           axis.title.x = element_blank(),
-          legend.position="bottom", # position of legend or none
+          legend.position="none", # position of legend or none
           legend.direction="horizontal", # orientation of legend
           legend.title= element_blank(), # no title for legend
           legend.key.size = unit(0.5, "cm"), # size of legend
