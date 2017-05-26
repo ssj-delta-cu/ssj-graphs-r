@@ -25,7 +25,7 @@ coefficient_variation_grid <- function(data, water_year){
   p <- ggplot(data_grid, aes(month, cropname))+
     geom_tile(data=data_grid, aes(fill=cv), color="white")+
     scale_fill_gradient2(low="green", high="red", mid="yellow", 
-                         midpoint=0.35, limit=c(0,0.7),name="SD")+
+                         midpoint=0.35, limit=c(0,1),name="SD")+
     geom_text(aes(label=round(cv,2)))+
     coord_equal()+
     ggtitle(paste("Water Year ", water_year, "\nCoefficient of Variation between model groups", sep=""))+

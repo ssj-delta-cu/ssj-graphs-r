@@ -34,7 +34,6 @@ month_2_gen <- 'JUL' #month_list()
 
 # lsit of methods to use for the plots
 methods_2_gen <- methods_names
-methods_2_gen <- methods_2_gen[!methods_2_gen %in% c("CalSIMETAW", "DETAW")]
 
 # region of interest (usually dsa or legal)
 aoi <- "dsa"
@@ -306,7 +305,7 @@ for(y in 1:length(water_years)){
 Note: this doesn't include wet herb or semi-ag landuse classes.
 
 
-```{r landuse_percent, fig.width = 7, fig.height = 4}
+```{r landuse_percent, fig.width = 9, fig.height = 4}
 
 fig_num <- 8
 
@@ -328,7 +327,7 @@ for(y in 1:length(water_years)){
   name <- paste(output_folder, base, sep="/")
   
   # save
-  ggsave(name, p, width=7, height=4, units="in")
+  ggsave(name, p, width=9, height=4, units="in")
   
   plot(p)
 }
