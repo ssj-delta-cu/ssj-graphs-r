@@ -104,6 +104,9 @@ for(y in 1:length(water_years)){
   name <- paste(output_folder, base, sep="/")
   
   write.csv(t, name)
+  
+  print(t)
+  
   }
 
 ```
