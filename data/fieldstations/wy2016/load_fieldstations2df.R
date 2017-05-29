@@ -29,7 +29,9 @@ rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, k
 
 ######################################################################################################
 
-list_of_csvs <- list.files(path="data/fieldstations/wy2016", pattern=".csv", full.names=TRUE)
+# pull in the daily csv from the ssj-field-measurements-2016 repo (assumes that there is a local copy)
+# the local copy should have the same directory folder as ssj-graphs-r
+list_of_csvs <- list.files(path="../ssj-field-measurements-2016/daily data", pattern="D[0-9][0-9](.*?)(.csv)", full.names=TRUE)
 
 # for loop to load in all the raw csv files to single data frame
 load_csv <- function(file_list) {
