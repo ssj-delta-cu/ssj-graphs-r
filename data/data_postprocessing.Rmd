@@ -1,0 +1,396 @@
+---
+title: "SSJ EE Data Post Processing"
+author: "Andy Bell"
+date: "May 30, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+```
+
+```{r}
+source("scripts/helper_functions.R")
+
+if(!require(jsonlite)){
+  install.packages("jsonlite")
+  library(jsonlite)
+}
+
+if(!require(sf)){
+  install.packages("sf")
+  library(sf)
+}
+
+if(!require(geosphere)){
+  install.packages("geosphere")
+  library(geosphere)
+}
+
+if(!require(lazyeval)){
+  install.packages("lazyeval")
+  library(lazyeval)
+}
+
+```
+
+
+## About
+
+This R Markdown document is for post-processing the results that are exported from EarthEngine. These scripts clean up and standardize the geojson output and save the results as rds files and csv files which can be used to produce the figures in the report. Running this markdown document will update all the dataframes.
+
+
+
+## DSA and Legal Delta
+
+```{r dsa_lega, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing full delta area
+
+lookup_cropname_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  cropname = crops$Commodity[match(id, crops$Number)]
+  return(cropname)
+}
+
+lookup_include_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  include = crops$Include[match(id, crops$Number)]
+  return(include)
+}
+
+num_days_in_month_csv <- function(wy, month){
+  # load the months
+  month <- toupper(month)
+  months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
+  wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
+  days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
+  return(days)
+}
+
+# calculate acre-feet from monthly avg daily ET
+acre_feet <- function(mean_et, cell_count, number_days, reducer_size){
+  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
+  mm2ft <- 0.00328084
+  sqm2acres <- 0.000247105
+  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
+  return(crop_acft)
+}
+
+ee_geojson_properties_2_df <-function(json, model, aoi, wy, reducer_size){
+  # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
+  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
+  df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
+  names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
+  df$model <- model
+  df$region <- aoi
+  df$wateryear <- wy
+  df$source <- json
+  
+  # Add cropname, include from crop lookup csv, also calculate number days in month and acre feet
+  df <- mutate(df, cropname=lookup_cropname_csv(level_2), 
+               include=lookup_include_csv(level_2), 
+               num_days=num_days_in_month_csv(wateryear, month),
+               crop_acft=acre_feet(mean, count, num_days, reducer_size))  
+  return(df)
+}
+
+####################################################################
+# files shoulds be named "data/model-region-wy.json"
+list_of_files <- list.files(path="data/dsa_legal", pattern=".geojson", full.names=TRUE)
+
+#Create a list in which you intend to save your df's.
+listofdfs <- list() 
+
+# for loop to load in all the raw json files to single data frame
+for (i in 1:length(list_of_files)) {
+  f <- list_of_files[i]
+  print(f)
+  p <- strsplit(f, split="[-./]")[[1]]
+  method <- p[3]
+  region <- p[4]
+  wy <- as.integer(p[5])
+  d <- ee_geojson_properties_2_df(f, method, region, wy, 30) # 30 m is the reducer size
+  listofdfs[[i]]<-d
+}
+
+# make into one dataframe  
+df_dsa_legal <- ldply(listofdfs, data.frame)  
+
+####################################################################
+
+saveRDS(df_dsa_legal, file="data/dsa_legal/dsa_legal.rds")
+write.csv(df_dsa_legal, 'data/dsa_legal/dsa_legal.csv', row.names = FALSE)
+
+```
+
+## DSA Subregions
+
+```{r subregions}
+
+####################################################################
+# data loading functions for processsing EE geojson for subregions
+# note this data does not include any crop information
+# All non-ag area should be masked out in EE
+
+# parse model and year from filename. Should be similiar to disalexi-DSAsubregions-2015.geojson
+get_filename_info <- function(file){
+  # get the basename from the file path
+  b <- basename(file)
+  
+  # split filename into parts
+  b_ex <- strsplit(b, "\\.") 
+  n <- b_ex[[1]][1] # name without extension
+  
+  n_split <- strsplit(n, "-")
+  m <- n_split[[1]][1]
+  yr <- n_split[[1]][3]
+  return(c(m, yr))
+}
+
+# calculate acre-feet per month
+acre_feet_per_month <- function(df, wy, month, reducer_size){
+  #num_days_in_month
+  numdays <- num_days_in_month(wy, month)
+  
+  # name of the field with the month's mean
+  mean_field <- paste(month, '_', 'mean', sep='')
+  
+  # name of the field with the month's count
+  count_field <- paste(month, '_', 'count', sep='')
+  
+  # output name for the field with the month's acre-feet total
+  output_fieldname <- paste(month, '_', 'ACREFT', sep='')
+  
+  # add field that calculates acre-feet for month using mean, count, number of days in month and reducer
+  d <- df %>% mutate_(xyz = interp(~acre_feet(m, c, numdays, reducer_size), m=as.name(mean_field), c=as.name(count_field)))
+  names(d)[names(d) == "xyz"] <- output_fieldname
+  return(d)
+} 
+
+# read in geojson export and add fields parsed from filename and calculate monthly and wy acre-feet
+subregions_add_fields <- function(geojson, reducer_size){
+  model_year <- get_filename_info(geojson)
+  d <- st_read(geojson) # read geojson file to dataframe
+  d$model <- model_year[1] # add name of model parsed from filename
+  d$wateryear <- model_year[2] # add water year parsed from filename
+  d$source <- geojson # add the filepath as the source
+  
+  # calculate island/region area from geojson (units in square meters)
+  d$AREA_m <- st_area(d)
+  
+  #add fields for each month's acre-feet
+  for(m in month.abb){
+    d<-acre_feet_per_month(d, model_year[2], toupper(m), reducer_size)
+  }
+  
+  # calculate water year total acre-feet by adding all the monthly acre-feet columns
+  d$WY_ACREFT <- d$OCT_ACREFT + d$NOV_ACREFT + d$DEC_ACREFT + d$JAN_ACREFT + 
+    d$FEB_ACREFT + d$MAR_ACREFT + d$APR_ACREFT + d$MAY_ACREFT + d$JUN_ACREFT + 
+    d$JUL_ACREFT + d$AUG_ACREFT + d$SEP_ACREFT
+  return(d)
+}
+
+####################################################################################
+####################################################################################
+
+list_of_files <- list.files(path="data/subregions", pattern=".geojson", full.names=TRUE)
+listofdfs <- list() #Create a list in which you intend to save your df's.
+
+# for loop to load in all the raw json files to single data frame
+for (i in 1:length(list_of_files)) {
+  print(list_of_files[i])
+  g <- subregions_add_fields(list_of_files[i], 30)
+  listofdfs[[i]]<-g
+}
+df_subregions <- ldply(listofdfs, data.frame) # make into one dataframe 
+
+saveRDS(df_subregions, file="data/subregions/subregions.rds")
+write.csv(df_subregions, file="data/subregions/subregions.csv", row.names = FALSE)
+
+```
+
+
+## Field Stations
+
+### Water Year 2015
+
+The fieldstation data for the 2015 water year was collected on bare soil at five stations for a short period of time (Sept 2015). Two of the field stations (D3 & D4) were located outside the DSA boundaries so not all remote sensing methods can be compared for those sites. 
+
+```{r field_2015, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing EE geojson for fieldpoints
+fieldpts_tidyup <- function(geojson){
+  model_year <- get_filename_info(geojson)
+  d <- st_read(geojson) # read geojson file to dataframe
+  d$model <- model_year[1] # add name of model parsed from filename
+  d$wateryear <- model_year[2] # add water year parsed from filename
+  return(d)
+}
+
+
+# parse model and year from filename. Should be similiar to disalexi-DSAsubregions-2015.geojson
+get_filename_info <- function(file){
+  # get the basename from the file path
+  b <- basename(file)
+  
+  # split filename into parts
+  b_ex <- strsplit(b, "\\.") 
+  n <- b_ex[[1]][1] # name without extension
+  
+  n_split <- strsplit(n, "-")
+  m <- n_split[[1]][1]
+  yr <- n_split[[1]][3]
+  return(c(m, yr))
+}
+
+######################################################################################################
+# EarthEngine Output
+
+# find all geojson files for water year 2015
+list_of_files <- list.files(path="data/fieldstations/wy2015", pattern=".geojson", full.names=TRUE)
+
+# loop to load in all the raw json files to single data frame
+load_json <- function(file_list) {
+  listofdfs <- list() #Create a list in which you intend to save your df's.
+  for (i in 1:length(file_list)) {
+    g <- fieldpts_tidyup(file_list[i])
+    listofdfs[[i]]<-g
+  }
+  df <- ldply(listofdfs, data.frame) # make into one dataframe 
+}
+data <- load_json(list_of_files)
+
+# gather cases and select columns to keep
+rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
+  mutate(date = date_from_wy_month(as.numeric(wateryear), month))%>%
+  select(Station, model, wateryear, month, date, ET_mean) %>% 
+  filter(between(as.Date(date), as.Date('2015-09-01'), as.Date('2015-10-01'))) %>%  # filter dates where there is field station data overlap
+  mutate(ET_mean = ET_mean/10)
+
+
+######################################################################################################
+# Bare Soil Measurements from https://github.com/ssj-delta-cu/ssj-field-measurements-2015
+# the ssj-field-measurements-2015 repo should be cloned and saved in the same directory as the ssj-graphs-r project
+
+# load the csv with the bare field measures
+bare_field_measure <- read.csv("../ssj-field-measurements-2015/DailyET_Delta2015_FallowFieldEst.csv", stringsAsFactors = F)
+
+# gather by station and daily_et
+bare_gather <- bare_field_measure %>% gather(station, daily_et, 2:7)
+
+# calculate the average for each station
+avg_by_station <- bare_gather %>% group_by(station) %>% 
+  na.omit %>% 
+  summarise(field_mean_et=mean(daily_et, na.rm=T)) %>%
+  separate(station, c("Station", "measure_type"), sep="ETa_")
+
+
+######################################################################################################
+# combine the field measurements with the remote sensing data by joining on the station ID and save
+
+# join the field data with the remote sensing data
+d <- inner_join(rs, avg_by_station, by=c("Station"))
+d
+
+saveRDS(d, 'data/fieldstations/wy2015/fieldstations_wy2015.rds')
+write.csv(d, 'data/fieldstations/wy2015/fieldstations_wy2015.csv', row.names = FALSE)
+
+```
+
+### Water Year 2016
+
+```{r field_2016, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing EE geojson for fieldpoints
+fieldpts_tidyup <- function(geojson){
+  model_year <- get_filename_info(geojson)
+  d <- st_read(geojson) # read geojson file to dataframe
+  d$model <- model_year[1] # add name of model parsed from filename
+  d$wateryear <- model_year[2] # add water year parsed from filename
+  return(d)
+}
+
+# parse model and year from filename. Should be similiar to disalexi-DSAsubregions-2015.geojson
+get_filename_info <- function(file){
+  # get the basename from the file path
+  b <- basename(file)
+  
+  # split filename into parts
+  b_ex <- strsplit(b, "\\.") 
+  n <- b_ex[[1]][1] # name without extension
+  
+  n_split <- strsplit(n, "-")
+  m <- n_split[[1]][1]
+  yr <- n_split[[1]][3]
+  return(c(m, yr))
+}
+
+######################################################################################################
+# EarthEngine Output
+
+# find all geojson files for water year 2016
+list_of_files <- list.files(path="data/fieldstations/wy2016", pattern=".geojson", full.names=TRUE)
+
+# for loop to load in all the raw json files to single data frame
+load_json <- function(file_list) {
+  listofdfs <- list() #Create a list in which you intend to save your df's.
+  for (i in 1:length(file_list)) {
+    g <- fieldpts_tidyup(file_list[i])
+    listofdfs[[i]]<-g
+  }
+  df <- ldply(listofdfs, data.frame) # make into one dataframe 
+}
+data <- load_json(list_of_files)
+
+# gather cases and select columns to keep
+rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
+  mutate(date = date_from_wy_month(as.numeric(wateryear), month))%>%
+  select(Station_ID, Crop, IslandName, model, wateryear, month, date, ET_mean) %>% 
+  filter(between(as.Date(date), as.Date('2016-05-01'), as.Date('2016-10-01'))) %>%  # filter dates where there is field station data overlap
+  mutate(ET_mean = ET_mean/10)
+
+
+######################################################################################################
+# field stations measurements
+# pull in the daily csv from the ssj-field-measurements-2016 repo (assumes that there is a local copy)
+# the local copy should have the same directory folder as ssj-graphs-r
+list_of_csvs <- list.files(path="../ssj-field-measurements-2016/daily data", pattern="D[0-9][0-9](.*?)(.csv)", full.names=TRUE)
+
+# for loop to load in all the raw csv files to single data frame
+load_csv <- function(file_list) {
+  listofdfs <- list() #Create a list in which you intend to save your df's.
+  for (i in 1:length(file_list)) {
+    print(file_list[i])
+    g <- read.csv(file_list[i], stringsAsFactors = FALSE)
+    listofdfs[[i]]<-g
+  }
+  df <- ldply(listofdfs, data.frame) # make into one dataframe 
+}
+
+raw_field_data <- load_csv(list_of_csvs)
+
+# clean up station name and set model name to field
+field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "IslandName", "Crop"), sep='_') %>%
+    filter(between(as.Date(date), as.Date('2016-05-01'), as.Date('2016-09-30'))) %>%   # filter out dates that are past sep 2016 
+    group_by(Station_ID, month=toupper(format(as.Date(date), '%b'))) %>%
+    summarise(ET_SR_aH_qc_Dgf=mean(ET_SR_aH_qc_Dgf, na.rm=TRUE), ET_EC_qc_Dgf = mean(ET_EC_qc_Dgf, na.rm=TRUE)) # calculate the monthly average
+
+######################################################################################################
+
+# bind the field data with the remote sensing data
+d <- inner_join(rs, field, by=c("Station_ID", "month"))
+d
+
+saveRDS(d, 'data/fieldstations/wy2016/fieldstations_wy2016.rds')
+write.csv(d, 'data/fieldstations/wy2016/fieldstations_wy2016.csv', row.names = FALSE)
+```
+
