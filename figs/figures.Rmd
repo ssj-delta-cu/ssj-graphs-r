@@ -1,182 +1,110 @@
 ---
 title: "SSJ-DELTA-CU report figures"
 output:
-  html_notebook: default
   html_document: default
 ---
 
+# About
+This Rmarkdown document (`figs/figures.Rmd`) is used for generating the figures for the SSJ-Delta-CU report. The chunks can be run individually but make sure to run the `setup` and `project_settings` chunk first to ensure that all the libraries and data are loaded. 
+
 ```{r "setup", include=FALSE}
+# knitr settings
 require("knitr")
 opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
 knitr::opts_chunk$set(error = TRUE)
 
 ```
 
-
-# About
-This Rmarkdown document is for generating the plots for the report. The chunks should be run individually.
-
-```{r output_settings, echo=FALSE, include=FALSE}
+```{r project_settings, echo=FALSE, include=FALSE}
+# source scripts for plots and helper functions
 source("scripts/helper_functions.R") # load all the helper functions
 source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
 
-# data to use for generating the plots
+# data sources
 dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
-fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016_20170519.rds")
-fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015_20170519.rds")
-subregions <- readRDS("data/subregions/subregions_20170519.rds")
+fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016.rds")
+fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015.rds")
+subregions <- readRDS("data/subregions/subregions.rds")
 
-# list of crops to generate
-crops_2_gen_all <- crop_list() 
-crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
-
-# list of months of the water year (Oct-> sept)
-month_2_gen <- 'JUL' #month_list()
-
-# lsit of methods to use for the plots
-methods_2_gen <- methods_names
-
-# region of interest (usually dsa or legal)
-aoi <- "dsa"
-
-# water years
+# vector containing the water years
 water_years <- c(2015, 2016)
 
 # footer 
 footer <- paste('Updated ', Sys.Date())
 
-# creates a figure output folder if one does not already exist
-fignum_folder <- function(fig_number){
-  mainDir <- getwd() # gets the current working directory 
-  subDir <-paste("figs/output/fig", fig_number, sep="") # construct path to subfolder
-  ifelse(!dir.exists(file.path(mainDir, subDir)), 
-         dir.create(file.path(mainDir, subDir)), FALSE) # creates subDir if it doesn't exist
-  subDir_path <- file.path(mainDir, subDir) # returns the path to the new subDir
-  return(subDir_path)
-}
-
-
 ```
 
+# Delta Level Analysis
 
-
-# Delta
-
-## Total Acre-feet Figures + csv files for Water Year 2015 + 2016
+## Total Acre-feet for Legal Delta and Delta Service Area
 
 ```{r TAF_WY, echo=FALSE, fig.width = 8, fig.height = 4}
-source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
 
-# # figure number
-# fig_num <- 6
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
-
-
-# loop through both water years and save the figure
-for(y in 1:length(water_years)){
+# loop through both water years 
+for(y in 1:length(water_years)){ 
+  
   wy <- water_years[y]
   
+  # create the sum_TAF plot for the selected water year
   p <- sum_TAFxModel_dsa_legal(dsa_legal_data, wy)
   
-  # add footer
+  # add footer (commented out to avoid overwriting the existing caption)
   #p <- p + labs(caption=footer)
   
-  
-  # build name for export
-  base <- paste("TAF_wy", wy, "_dsa_legal", ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-
-  # save
-  ggsave(name, p, width=8, height=4, units="in")
-  
-  # add plot to rmarkdown output
-  plot(p)
-  
-  # csv files
-  
-  # let's also generate a table with this data and save as csv
+  # let's also generate a table with this data.
   t <- table_taf_wy_regions(dsa_legal_data, wy)
   
-  # build name for export
-  base <- paste("TAF_wy", wy, "_dsa_legal", ".csv", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  write.csv(t, name)
-  
+  # add plot and table to rmarkdown output
+  plot(p)
   print(t)
-  
   }
 
 ```
 
-## Lineplot Monthly ET by Model for a single croptype for two water years
+## Lineplot Monthly ET by Model for a single crop for two water years
 
 ```{r lineplot_ET, echo=FALSE, fig.width = 7, fig.height = 4}
-# # batch outputs monthly et + ref Eto for both water years on one plot
-# fig_num <- 11
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
 
 # loop through the crops
 for(i in 1:length(crops_2_gen)){
-  crop<-crops_2_gen[i]
-  cropid <- lookup_cropid(crop)
   
-  #plot
-  p <- line_ETxMonths_2wateryears(dsa_legal_data, cropid,  aoi)
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
   
-  # add footer
+  # generate plot for the crop for the delta service area
+  p <- line_ETxMonths_2wateryears(dsa_legal_data, cropid,  "dsa")
+  
+  # add footer with the date
   p <- p + labs(caption=footer)
-  # 
-  # # build ouput name
-  # crop <- gsub(" ", "", crop)
-  # crop <- gsub("/", "", crop)
-  # base <- paste(cropid, crop, aoi, sep="-")
-  # base.ext <- paste(base, ".png", sep="")
-  # name <- paste(output_folder, base.ext, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
 }
 ```
 
-## Cumulative Lineplot Monthly ET by Model for a single croptype for two water years
+## Cumulative Lineplot Monthly ET by Model for a single crop for two water years
 
 ```{r lineplot_cumET, echo=FALSE, fig.width = 7, fig.height = 4}
-# batch outputs monthly et + ref Eto for both water years on one plot
-# fig_num <- 12
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
 
 # loop through the crops
 for(i in 1:length(crops_2_gen)){
-  crop<-crops_2_gen[i]
-  cropid <- lookup_cropid(crop)
+
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
   
   #plot
-  p <- line_ETxMonths_cumulative(dsa_legal_data, cropid,  aoi)
+  p <- line_ETxMonths_cumulative(dsa_legal_data, cropid,  "dsa")
   
   # add footer
   p <- p + labs(caption=footer)
   
-  # # build ouput name
-  # crop <- gsub(" ", "", crop)
-  # crop <- gsub("/", "", crop)
-  # base <- paste(cropid, crop, aoi, sep="-")
-  # base.ext <- paste(base, ".png", sep="")
-  # name <- paste(output_folder, base.ext, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=7, height=4, units="in")
-  
-  # add plot to rmarkdown output
   plot(p)
 }
 ```
@@ -185,38 +113,30 @@ for(i in 1:length(crops_2_gen)){
 ## Boxplot whisker_ETxModel_per_crop_month
 
 ```{r whisker_ETxModel_per_crop_month_2yrs, echo=FALSE, fig.width = 7, fig.height = 4}
-# batch outputs monthly et + ref Eto for both water years on one plot
-# fig_num <- 13
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# list of the months in the water year to generate (Oct-> sept)
+month_2_gen <- c('JUL') #month_list()
 
 
 # loop through the crops
 for(i in 1:length(crops_2_gen)){
-  crop<-crops_2_gen[i]
-  cropid <- lookup_cropid(crop)
+
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
 
   # loop through the months
   for(m in 1:length(month_2_gen)){
     month <- month_2_gen[m]
 
     #plot
-    p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data, aoi, month, cropid)
+    p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data, 'dsa', month, cropid)
     
     # add footer
     p <- p + labs(caption=footer)
 
-    # # build ouput name
-    # crop <- gsub(" ", "", crop)
-    # crop <- gsub("/", "", crop)
-    # base <- paste(cropid, crop, month, aoi, sep="-")
-    # base.ext <- paste(base, ".png", sep="")
-    # name <- paste(output_folder, base.ext, sep="/")
-    # 
-    # # save
-    # ggsave(name, p, width=7, height=4, units="in")
-    
     # add plot to rmarkdown output
     plot(p)
     
@@ -230,37 +150,28 @@ for(i in 1:length(crops_2_gen)){
 ## Boxplot whisker_ETxMonths_per_crop_method
 
 ```{r whisker_ETxMonths_per_crop_method, echo=FALSE, fig.width = 7, fig.height = 4}
-# batch outputs monthly et + ref Eto for both water years on one plot
-# fig_num <- 14
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# list of methods to use for the plots
+methods_2_gen <- methods_names
 
 # loop through all crops types
 for(i in 1:length(crops_2_gen)){
-  crop<-crops_2_gen[i]
-  cropid <- lookup_cropid(crop)
+
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
   
   # loop through the months
   for(m in 1:length(methods_2_gen)){
     mod <- methods_2_gen[m]
     
     # plot
-    p <- whisker_ETxMonths_per_crop_method_2yrs(dsa_legal_data, aoi, mod, cropid)
+    p <- whisker_ETxMonths_per_crop_method_2yrs(dsa_legal_data, 'dsa', mod, cropid)
     
     # add footer
     p <- p + labs(caption=footer)
-    # 
-    # # build ouput name
-    # crop <- gsub(" ", "", crop)
-    # crop <- gsub("/", "", crop)
-    # m_lower <- lookup_model_name(mod) # get lowercase name
-    # base <- paste(cropid, crop, m_lower, aoi, sep="-")
-    # base.ext <- paste(base, ".png", sep="")
-    # name <- paste(output_folder, base.ext, sep="/")
-    # 
-    # # save
-    # ggsave(name, p, width=7, height=4, units="in")
 
     # add plot to rmarkdown output
     plot(p)
@@ -274,10 +185,6 @@ for(i in 1:length(crops_2_gen)){
 
 ```{r coefficient_variation_grid, echo=FALSE, fig.width = 6, fig.height = 5}
 # coeffient of variation grid
-fig_num <- 24
-
-# make an ouput folder for the figure
-output_folder <- fignum_folder(fig_num)
 
 # loop through both water years and save the figure
 for(y in 1:length(water_years)){
@@ -287,31 +194,19 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  
-  # build name for export
-  base <- paste("CV_grid_", wy, ".png", sep='')
-  name <- paste(output_folder, base, sep="/")
-  
-  # save
-  ggsave(name, p, width=6, height=5, units="in")
-  
+
   # add plot to rmarkdown output
   plot(p)
 }
 
 ```
 
-## Percent Total by a few of the top crop types
+## Percent Total by the top crop types
 
 Note: this doesn't include wet herb or semi-ag landuse classes.
 
 
-```{r landuse_percent, fig.width = 9, fig.height = 4}
-
-# fig_num <- 8
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+```{r landuse_percent, echo=FALSE, fig.width = 9, fig.height = 4}
 
 # filter out wet herb and landuse
 dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
@@ -322,14 +217,7 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  # 
-  # # build name for export
-  # base <- paste("Percent_TAF_by_model_", wy, ".png", sep='')
-  # name <- paste(output_folder, base, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=9, height=4, units="in")
-  
+
   plot(p)
 }
 
@@ -341,12 +229,7 @@ Note: this doesn't include wet herb or semi-ag landuse classes.
 
 The abberivation for the model groups are: "calsimetaw"="C", "detaw"="D", "disalexi"="D", "itrc"="I", "sims"="S", "ucdmetric"="M", "ucdpt"="P".
 
-```{r crop breakdown facet, fig.width = 11, fig.height = 4}
-
-# fig_num <- 9
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+```{r crop breakdown_facet, echo=FALSE, fig.width = 11, fig.height = 4}
 
 # filter out wet herb and landuse
 dsa_legal_data_wo_wetsemi <- dsa_legal_data %>% filter(!level_2 %in% c(913, 2008))
@@ -357,34 +240,20 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  # 
-  # # build name for export
-  # base <- paste("TAF_by_month_", wy, ".png", sep='')
-  # name <- paste(output_folder, base, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=11, height=4, units="in")
-  
+
   plot(p)
 }
 
 ```
 
 
+# Subregion Level Analysis
 
-
-# Subregions
-
-## Select Subregions TAF
+## Selected Subset of Subregions TAF
 
 ```{r subregion_taf, echo=FALSE, fig.width = 7, fig.height = 4}
-# coeffient of variation grid
-# fig_num <- 22
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
 
-# loop through both water years and save the figure
+# loop through both water years 
 for(y in 1:length(water_years)){
   wy <- water_years[y]
   
@@ -392,13 +261,6 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  # 
-  # # build name for export
-  # base <- paste("Subregions_TAF_", wy, ".png", sep='')
-  # name <- paste(output_folder, base, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -406,14 +268,9 @@ for(y in 1:length(water_years)){
 
 ```
 
-## Select Subregions TAF Normalized by area
+## Selected Subset of Subregions TAF Normalized by area
 
 ```{r subregion_taf_norm, echo=FALSE, fig.width = 7, fig.height = 4}
-# coeffient of variation grid
-# fig_num <- 23
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
 
 # loop through both water years and save the figure
 for(y in 1:length(water_years)){
@@ -423,13 +280,6 @@ for(y in 1:length(water_years)){
   
   # add footer
   p <- p + labs(caption=footer)
-  # 
-  # # build name for export
-  # base <- paste("Subregions_TAF_", wy, ".png", sep='')
-  # name <- paste(output_folder, base, sep="/")
-  # 
-  # # save
-  # ggsave(name, p, width=7, height=4, units="in")
   
   # add plot to rmarkdown output
   plot(p)
@@ -437,32 +287,18 @@ for(y in 1:length(water_years)){
 
 ```
 
-# Field
+# Fieldstation Level Analysis
 
-## Field vs Remote methods facet plot for Water Year 2016
+## Fieldstation vs Remote methods facet plot for Water Year 2016
 
 ```{r field_v_remote_facet, echo=FALSE, fig.width = 6, fig.height = 11}
-
-# # figure number
-# fig_num <- 5
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
-
 
 # facet version
 p <- lm_fieldxremote_facet_crop(fieldstations_data)
 
 # add footer
 p <- p + labs(caption=footer)
-# 
-# 
-# # build name for export
-# base <- paste("Field_vs_Model_facet_crops", ".png", sep='')
-# name <- paste(output_folder, base, sep="/")
-# 
-# # save
-# ggsave(name, p, width=5, height=11, units="in")
+
 
 # add plot to rmarkdown output
 plot(p)
@@ -470,66 +306,60 @@ plot(p)
 
 ```
 
-## Field vs Remote methods facet plot for Water Year 2016
+## Fieldstation vs Remote methods facet plot for Water Year 2015
 ```{r field_v_remote_2015, echo=FALSE, fig.width = 7, fig.height = 5}
 
-# # figure number
-# fig_num <- 5
-# 
-# # make an ouput folder for the figure
-# output_folder <- fignum_folder(fig_num)
+# stations D3 and D4 are outside the DSA so SIMS, DETAW and CalSIMETAW don't provide estimates.
+# remove these stations for these models from the dataframe prior to plotting.
 
-#print(colnames(fieldstations_data_2015))
+fieldstations_data_2015_filter <- fieldstations_data_2015 %>% filter(!(Station %in% c("D3", "D4") & model %in% c("sims", "calsimetaw", "detaw")))
 
-  
-p <- ggplot(fieldstations_data_2015, aes(x=Station, y=ET_mean, color=model))+
-    geom_point(size=3.5)+
-    geom_hline(aes(yintercept=field_mean_et), colour="#990000", linetype="dashed", lwd=1.5)+
-    ylab("Model ET (mm/day)")+
-    xlab("Bare Field Station")+
-    scale_color_manual(values=model_palette, labels=methods_named_list)+
-    #coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
-    theme_bw()+
-    theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
-          panel.grid.major = element_blank(),
-          plot.title = element_text(hjust = 0.5),
-          panel.grid.minor = element_blank(),
-          legend.position="bottom", # position of legend or none
-          legend.direction="horizontal", # orientation of legend
-          legend.title= element_blank(), # no title for legend
-          legend.key.size = unit(0.5, "cm"),
-          axis.text.y = element_text(size=12),
-          axis.text.x = element_blank(),
-          axis.title = element_text(size=14))+ 
-    guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
-           fill = guide_legend(keywidth = 1, keyheight = 1),
-          linetype=guide_legend(keywidth = 3, keyheight = 1))+facet_wrap(~Station, ncol=5, scales="free_x")+theme(strip.background = element_blank(),
-          strip.placement = "outside", 
-          strip.text.x = element_text(size = 16))
+# remove D4
+fieldstations_data_2015_filter <- fieldstations_data_2015_filter %>% filter(!Station %in% c("D4"))
 
+# manually add asterisk to D3 and D4 in the dataframe
+fieldstations_data_2015_filter$Station <- gsub('D3', 'D3*', fieldstations_data_2015_filter$Station)
+fieldstations_data_2015_filter$Station <- gsub('D4', 'D4*', fieldstations_data_2015_filter$Station)
 
-# facet version
-#p <- lm_fieldxremote_facet_crop(fieldstations_data)
+# ETo should be a horizontal line
+eto_df <- fieldstations_data_2015_filter %>% filter(model=="eto") %>% select(Station, ET_mean) %>% rename(eto=ET_mean) %>% distinct(Station, eto)
+field_wo_eto <- fieldstations_data_2015_filter %>% filter(!model=="eto")
+
+# join the eto data with the model data
+d <- left_join(field_wo_eto, eto_df, by=c("Station"))
+
+p <- ggplot(d, aes(x=Station, y=ET_mean, color=model, group=measure_type))+
+  geom_point(size=3.5)+
+  geom_hline(aes(yintercept=field_mean_et), colour="#990000", linetype="dashed", lwd=1.5, alpha=0.5)+
+  geom_hline(aes(yintercept=eto), colour="#000000", linetype="dashed", lwd=1.5, alpha=0.5)+
+  geom_text(aes(x=1.35,y=eto), size=4, nudge_y = 0.2, colour="#000000", label='ETo')+
+  geom_text(aes(x=1.35,y=field_mean_et, group=measure_type), size=4, nudge_y = 0.2, colour="#990000", label='ETa')+
+  ylab("Model ET (mm/day)")+
+  xlab("Bare Field Station")+
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_blank(),
+        axis.title = element_text(size=14))+ 
+        guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+        fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))+
+        facet_wrap(~Station, ncol=5, scales="free_x")+theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))
 
 # add footer
 p <- p + labs(caption=footer)
-# 
-# 
-# # build name for export
-# base <- paste("Field_vs_Model_baresoil_wy2015", ".png", sep='')
-# name <- paste(output_folder, base, sep="/")
-# 
-# # save
-# ggsave(name, p, width=7, height=5, units="in")
 
 # add plot to rmarkdown output
 plot(p)
 
-
 ```
-
-
-
-
-
-

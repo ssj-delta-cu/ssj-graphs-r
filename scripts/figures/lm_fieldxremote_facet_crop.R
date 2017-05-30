@@ -19,7 +19,7 @@ lm_fieldxremote_facet_crop <- function(data){
     geom_point(size=1.5)+
     ylab("Model ET (mm/day)")+
     xlab("Field ET (mm/day)")+
-    geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25) + # Add linear regression line
+    geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.6) + # Add linear regression line
     scale_color_manual(values=model_palette, labels=methods_named_list)+
     #coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
     geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.5)+ #1:1 diagonal line

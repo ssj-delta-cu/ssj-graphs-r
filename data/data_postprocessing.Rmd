@@ -157,7 +157,7 @@ get_filename_info <- function(file){
 # calculate acre-feet per month
 acre_feet_per_month <- function(df, wy, month, reducer_size){
   #num_days_in_month
-  numdays <- num_days_in_month(wy, month)
+  numdays <- num_days_in_month_csv(wy, month)
   
   # name of the field with the month's mean
   mean_field <- paste(month, '_', 'mean', sep='')
@@ -195,6 +195,15 @@ subregions_add_fields <- function(geojson, reducer_size){
     d$FEB_ACREFT + d$MAR_ACREFT + d$APR_ACREFT + d$MAY_ACREFT + d$JUN_ACREFT + 
     d$JUL_ACREFT + d$AUG_ACREFT + d$SEP_ACREFT
   return(d)
+}
+
+num_days_in_month_csv <- function(wy, month){
+  # load the months
+  month <- toupper(month)
+  months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
+  wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
+  days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
+  return(days)
 }
 
 ####################################################################################

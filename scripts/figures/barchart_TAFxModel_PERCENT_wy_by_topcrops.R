@@ -3,19 +3,14 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi){
   top_crops <- c("Alfalfa", "Corn", "Fallow", "Pasture", "Tomatoes", "Vineyards")
   
   af_crops_top_only <- data %>% 
-    filter_no_eto() %>% 
-    filter(wateryear == wy) %>% 
-    filter(region == aoi) %>% 
-    filter(include == "yes") %>% 
-    filter(cropname %in% top_crops) %>%
+    filter(!model=="eto") %>%
+    filter(wateryear == wy, region == aoi, include == "yes", cropname %in% top_crops, crop_acft>0) %>% 
     dplyr::group_by(model, cropname) %>% 
     dplyr::summarise(sum_af=sum(crop_acft))
   
   af_crops_others <- data %>% 
-    filter_no_eto() %>% 
-    filter(wateryear == wy) %>% 
-    filter(region == aoi) %>% 
-    filter(include == "yes") %>% 
+    filter(!model=="eto") %>% 
+    filter(wateryear == wy, region == aoi, include == "yes", crop_acft>0) %>% 
     filter(!cropname %in% top_crops) %>% 
     mutate(cropname = "Other") %>%
     dplyr::group_by(model, cropname) %>% 

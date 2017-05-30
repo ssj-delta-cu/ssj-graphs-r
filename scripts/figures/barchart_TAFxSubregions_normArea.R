@@ -1,7 +1,7 @@
 barchart_TAFxSubregions_normalizedAREA <- function(data, water_year){
   
   af <- data %>%
-    filter_no_eto() %>%
+    filter(!model=='eto')%>%
     filter(wateryear == water_year) %>% 
     filter(subarea %in% c(103, 153, 1, 2, 119, 51))
   

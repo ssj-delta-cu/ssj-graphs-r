@@ -26,59 +26,63 @@ if(!require(tidyr)){
   library(tidyr)
 }
 
-if(!require(jsonlite)){
-  install.packages("jsonlite")
-  library(jsonlite)
-}
 
-if(!require(sf)){
-  install.packages("sf")
-  library(sf)
-}
-
-if(!require(geosphere)){
-  install.packages("geosphere")
-  library(geosphere)
-}
-
-if(!require(lazyeval)){
-  install.packages("lazyeval")
-  library(lazyeval)
-}
 
 ####################################################################
 #### Lookups
 ####################################################################
 
+crops <- c('Alfalfa'=1, 
+           'Safflower'=12, 
+           'Sunflower'=22, 
+           'Corn'=23, 
+           'Rice'=24, 
+           'Bush Berries'=108, 
+           'Vineyards'=109, 
+           'Potatoes'=246, 
+           'Cucurbit'=277, 
+           'Tomatoes'=278, 
+           'Truck Crops'=279, 
+           'Cherries'=403, 
+           'Olives'=409, 
+           'Pears'=412, 
+           'Citrus'=425, 
+           'Almonds'=500, 
+           'Pistachios'=502, 
+           'Walnuts'=503, 
+           'Pasture'=800, 
+           'Fallow'=916, 
+           'Semi-agricultural/ROW'=913, 
+           'Other Deciduous'=914, 
+           'Turf'=908, 
+           'Floating Vegetation'=2002, 
+           'Forage Grass'=2003, 
+           'Riparian'=2004, 
+           'Upland Herbaceous'=2005, 
+           'Urban'=2006, 
+           'Water'=2007, 
+           'Wet herbaceous/sub irrigated pasture'=2008, 
+           'Unknown'=0, 
+           'Asparagus'=201, 
+           'Carrots'=211, 
+           'Young Orchard'=752, 
+           'Sudan Grass'=14, 
+           'Nursery'=756, 
+           'Eucalyptus'=284
+           )
+
 lookup_cropname <- function(id){
-  # load the crop id name table
-  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
-  cropname = crops$Commodity[match(id, crops$Number)]
+  # load the crop id from the crop named list
+  cropname = names(which(crops == id))
   return(cropname)
 }
 
 lookup_cropid <- function(cropname){
   # load the crop id name table
-  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
-  cropid = crops$Number[match(cropname, crops$Commodity)]
+  cropid = crops[[cropname]]
   return(cropid)
 }
 
-lookup_include <- function(id){
-  # load the crop id name table
-  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
-  include = crops$Include[match(id, crops$Number)]
-  return(include)
-}
-
-num_days_in_month <- function(wy, month){
-  # load the months
-  month <- toupper(month)
-  months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
-  wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
-  days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
-  return(days)
-}
 
 # lookup month year from water year for a nicer title
 lookup_month_year <- function(wy, month){
@@ -143,15 +147,6 @@ date_from_wy_month <- function(water_year, month){
   return(d)}
 
 
-# calculate acre-feet from monthly avg daily ET
-acre_feet <- function(mean_et, cell_count, number_days, reducer_size){
-  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
-  mm2ft <- 0.00328084
-  sqm2acres <- 0.000247105
-  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
-  return(crop_acft)
-}
-
 ####################################################################
 #### Filters
 ####################################################################
@@ -197,106 +192,10 @@ model_lny = c("calsimetaw"=1, "detaw"=1, "disalexi"=1,
                   "ucd_metric"=1, "ucdpt"=1, "ucd_pt"=1, 'eto'=2)
 
 
-####################################################################
-#### Data Loading
-####################################################################
 
-####################################################################
-# data loading functions for processsing full delta area
 
-ee_geojson_properties_2_df <-function(json, model, aoi, wy, reducer_size){
-  # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
-  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
-  df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
-  names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
-  df$model <- model
-  df$region <- aoi
-  df$wateryear <- wy
-  df$source <- json
-  
-  # crop lookups
-  df <- mutate(df, cropname=lookup_cropname(level_2)) # add cropname from Crops.csv lookup
-  df <- mutate(df, include=lookup_include(level_2)) # add crop include from Crops.csv lookup
-  
-  # add number days in month
-  df <- mutate(df, num_days=num_days_in_month(wateryear, month))
-  
-  # calculate crop et acre feet
-  df <- mutate(df, crop_acft=acre_feet(mean, count, num_days, reducer_size))
-  return(df)
-}
 
-####################################################################
-# data loading functions for processsing EE geojson for subregions
-# note this data does not include any crop information
-# All non-ag area should be masked out in EE
 
-# parse model and year from filename. Should be similiar to disalexi-DSAsubregions-2015.geojson
-get_filename_info <- function(file){
-  # get the basename from the file path
-  b <- basename(file)
-  
-  # split filename into parts
-  b_ex <- strsplit(b, "\\.") 
-  n <- b_ex[[1]][1] # name without extension
-  
-  n_split <- strsplit(n, "-")
-  m <- n_split[[1]][1]
-  yr <- n_split[[1]][3]
-  return(c(m, yr))
-}
 
-# calculate acre-feet per month
-acre_feet_per_month <- function(df, wy, month, reducer_size){
-  #num_days_in_month
-  numdays <- num_days_in_month(wy, month)
-  
-  # name of the field with the month's mean
-  mean_field <- paste(month, '_', 'mean', sep='')
-  
-  # name of the field with the month's count
-  count_field <- paste(month, '_', 'count', sep='')
-  
-  # output name for the field with the month's acre-feet total
-  output_fieldname <- paste(month, '_', 'ACREFT', sep='')
-  
-  # add field that calculates acre-feet for month using mean, count, number of days in month and reducer
-  d <- df %>% mutate_(xyz = interp(~acre_feet(m, c, numdays, reducer_size), m=as.name(mean_field), c=as.name(count_field)))
-  names(d)[names(d) == "xyz"] <- output_fieldname
-  return(d)
-} 
-
-# read in geojson export and add fields parsed from filename and calculate monthly and wy acre-feet
-subregions_add_fields <- function(geojson, reducer_size){
-  model_year <- get_filename_info(geojson)
-  d <- st_read(geojson) # read geojson file to dataframe
-  d$model <- model_year[1] # add name of model parsed from filename
-  d$wateryear <- model_year[2] # add water year parsed from filename
-  d$source <- geojson # add the filepath as the source
-  
-  # calculate island/region area from geojson (units in square meters)
-  d$AREA_m <- st_area(d)
-  
-  #add fields for each month's acre-feet
-  for(m in month.abb){
-    d<-acre_feet_per_month(d, model_year[2], toupper(m), reducer_size)
-  }
-  
-  # calculate water year total acre-feet by adding all the monthly acre-feet columns
-  d$WY_ACREFT <- d$OCT_ACREFT + d$NOV_ACREFT + d$DEC_ACREFT + d$JAN_ACREFT + 
-    d$FEB_ACREFT + d$MAR_ACREFT + d$APR_ACREFT + d$MAY_ACREFT + d$JUN_ACREFT + 
-    d$JUL_ACREFT + d$AUG_ACREFT + d$SEP_ACREFT
-  return(d)
-}
-
-####################################################################
-# data loading functions for processsing EE geojson for fieldpoints
-fieldpts_tidyup <- function(geojson){
-  model_year <- get_filename_info(geojson)
-  d <- st_read(geojson) # read geojson file to dataframe
-  d$model <- model_year[1] # add name of model parsed from filename
-  d$wateryear <- model_year[2] # add water year parsed from filename
-  return(d)
-}
 
 
