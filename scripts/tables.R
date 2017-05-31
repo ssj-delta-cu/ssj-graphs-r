@@ -40,11 +40,11 @@ table_taf_wy_regions <- function(data, wy){
   
   # subtract the herb_sumi total from the orignal value and add the mean for the two crops
   sims_est <- sims_joined %>% mutate(sum_af_est=(sum_af - sum_wetherb_semiag + mean_2classes))  %>% 
-    select(c(model, region, sum_af_est)) %>% 
+    dplyr::select(c(model, region, sum_af_est)) %>% 
     rename(sum_af=sum_af_est)
   
   sims_wo_herb_semiag <- sims_joined %>% mutate(sum_af_est=(sum_af - sum_wetherb_semiag))  %>% 
-    select(c(model, region, sum_af_est)) %>% 
+    dplyr::select(c(model, region, sum_af_est)) %>% 
     rename(sum_af=sum_af_est)
   
   sims_wo_herb_semiag$model <- "sims_wo_herb_semiag"
@@ -61,3 +61,52 @@ table_taf_wy_regions <- function(data, wy){
   colnames(j) <- c("Method", "DSA", "LEGAL")
   j
 }
+
+
+# constructs a table for each month as rows and each model-stat type as column
+# the stat types that are included are mean and stdDev
+table_modelXmonth_mean_std <- function(full_data, crop_name){
+  
+  # filter out eto and legal delta records
+  filtered <- full_data %>% filter(!model=="eto") %>% filter(region=="dsa")
+  
+  # select only a few of the columns and construct date from wy and month
+  s <- filtered %>% select(model, wateryear, month, cropname,  mean, stdDev) %>%
+    mutate(date=date_from_wy_month(wateryear, month))
+  
+  # select crop
+  c <- s %>% filter(cropname==crop_name)
+  
+  # gather the cases
+  g <- c %>% gather("stat_type", "value", mean, stdDev)
+  
+  # spread to columns by constructing model-mean or model-std column names
+  sp <- g %>%  
+    mutate(model_stat_type=paste(model, stat_type, sep="-"))%>%
+    dplyr::select(-c(model, stat_type))%>%
+    group_by(wateryear, month, cropname, date) %>%
+    spread(model_stat_type, value)
+  
+  # order data frame by date
+  sp_ord <- sp[order(sp$date),]
+  sp_ord
+}
+
+# # constructs a table for each month as rows and summarize the model avg and std for significance
+# table_modelXmonth_group_sig <- function(data, crop_name){
+#   # filter out eto and legal delta records
+#   filtered <- data %>% filter(!model=="eto", region=="dsa")
+#   
+#   # select only a few of the columns and construct date from wy and month
+#   s <- filtered %>% select(model, wateryear, month, cropname,  mean, stdDev) %>%
+#     mutate(date=date_from_wy_month(wateryear, month))
+#   
+#   # select crop
+#   c <- s %>% filter(cropname==crop_name)
+#   
+#   # group by date and calculate group mean and p.values from t.test
+#   m <- c %>% group_by(wateryear, month, cropname, date) %>%
+#     summarize(group_mean=mean(mean), pvalue_mean=t.test(mean)$p.value,
+#               group_std=mean(stdDev), pvalue_std=t.test(stdDev)$p.value)
+#   m
+# }
