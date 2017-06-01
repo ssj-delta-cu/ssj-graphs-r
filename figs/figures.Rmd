@@ -363,3 +363,24 @@ p <- p + labs(caption=footer)
 plot(p)
 
 ```
+
+
+
+## ETrF plots
+
+```{r etrf, echo=FALSE, fig.width = 7, fig.height = 4}
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# loop through the crops
+for(c in crops_2_gen){
+  p <- etrf(dsa_legal_data, c)
+
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+```
+
