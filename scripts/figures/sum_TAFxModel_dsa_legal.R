@@ -44,7 +44,7 @@ sum_TAFxModel_dsa_legal <- function(data, wy){
   sims_joined_est <- sims_joined %>% mutate(sum_af_est=(sum_af - sum_wetherb_semiag + mean_2classes))
   
   # clean up columns by droping intermediate columns and renaming estimate to sum_af
-  sims_est <- sims_joined_est %>% select(c(model, region, sum_af_est)) %>% rename(sum_af=sum_af_est)
+  sims_est <- sims_joined_est %>% dplyr::select(c(model, region, sum_af_est)) %>% rename(sum_af=sum_af_est)
   
   # remove sims from af_crop_filter and add in the new estimated results
   af_cover_wo_sims <- af_cover %>% filter(!model=="sims")

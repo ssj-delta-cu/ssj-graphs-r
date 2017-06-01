@@ -16,15 +16,21 @@ line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
   # calculate the monthly cumulative et
   cumulative_et <- sub %>% 	group_by(wateryear, model) %>%
   													arrange(month) %>%
-  													mutate(monthly_et=(mean/10)*num_days) %>%
-  													mutate(cum_et=cumsum(monthly_et))
+  													mutate(cum_et=cumsum(crop_acft))
+  
+  # modify axis units (acre-ft -> thousands acre-feet)
+  axis_units <-function(x){
+    x/1000
+  }
+  
   
   # construct the plot object
   p <- ggplot(cumulative_et, aes(date, cum_et, color=model, group=model)) +
     geom_line(size=1.25)+
-    coord_cartesian(ylim=c(0, 1200))+
+    #coord_cartesian(ylim=c(0, 1200))+
+    scale_y_continuous(labels = axis_units) +
     ggtitle(cropname) +
-    ylab("Cumulative ET (mm)") +
+    ylab("Cumulative ET\n(thousands acre-feet)") +
     scale_color_manual(values=model_palette) +
     scale_x_date(date_breaks="3 month", date_labels  = "%b")+
     theme_bw() +  # change theme simple with no axis or tick marks

@@ -54,8 +54,8 @@ table_taf_wy_regions <- function(data, wy){
   bind <- bind_rows(af_cover_wo_sims,  sims_est, sims_wo_herb_semiag)
   
   # get summary table (by making data untidy)
-  dsa <- bind %>% filter(region=="dsa") %>% ungroup() %>% select(model, sum_af)
-  legal <- bind %>% filter(region=="legal") %>% ungroup() %>% select(model, sum_af)
+  dsa <- bind %>% filter(region=="dsa") %>% ungroup() %>% dplyr::select(model, sum_af)
+  legal <- bind %>% filter(region=="legal") %>% ungroup() %>% dplyr::select(model, sum_af)
   
   j <- full_join(dsa, legal, by="model")
   colnames(j) <- c("Method", "DSA", "LEGAL")
