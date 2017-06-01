@@ -309,13 +309,8 @@ plot(p)
 ## Fieldstation vs Remote methods facet plot for Water Year 2015
 ```{r field_v_remote_2015, echo=FALSE, fig.width = 7, fig.height = 5}
 
-# stations D3 and D4 are outside the DSA so SIMS, DETAW and CalSIMETAW don't provide estimates.
-# remove these stations for these models from the dataframe prior to plotting.
-
-fieldstations_data_2015_filter <- fieldstations_data_2015 %>% filter(!(Station %in% c("D3", "D4") & model %in% c("sims", "calsimetaw", "detaw")))
-
 # remove D4
-fieldstations_data_2015_filter <- fieldstations_data_2015_filter %>% filter(!Station %in% c("D4"))
+fieldstations_data_2015_filter <- fieldstations_data_2015 %>% filter(!Station %in% c("D4"))
 
 # manually add asterisk to D3 and D4 in the dataframe
 fieldstations_data_2015_filter$Station <- gsub('D3', 'D3*', fieldstations_data_2015_filter$Station)
@@ -328,12 +323,15 @@ field_wo_eto <- fieldstations_data_2015_filter %>% filter(!model=="eto")
 # join the eto data with the model data
 d <- left_join(field_wo_eto, eto_df, by=c("Station"))
 
-p <- ggplot(d, aes(x=Station, y=ET_mean, color=model, group=measure_type))+
+# remove EC points
+d <- d %>% filter(!measure_type=='EC')
+
+p <- ggplot(d, aes(x=model, y=ET_mean, color=model))+
   geom_point(size=3.5)+
   geom_hline(aes(yintercept=field_mean_et), colour="#990000", linetype="dashed", lwd=1.5, alpha=0.5)+
   geom_hline(aes(yintercept=eto), colour="#000000", linetype="dashed", lwd=1.5, alpha=0.5)+
-  geom_text(aes(x=1.35,y=eto), size=4, nudge_y = 0.2, colour="#000000", label='ETo')+
-  geom_text(aes(x=1.35,y=field_mean_et, group=measure_type), size=4, nudge_y = 0.2, colour="#990000", label='ETa')+
+  geom_text(aes(x=6.35,y=eto), size=4, nudge_y = 0.2, colour="#000000", label='ETo')+
+  geom_text(aes(x=6.35,y=field_mean_et, group=measure_type), size=4, nudge_y = 0.2, colour="#990000", label='ETa')+
   ylab("Model ET (mm/day)")+
   xlab("Bare Field Station")+
   scale_color_manual(values=model_palette, labels=methods_named_list)+

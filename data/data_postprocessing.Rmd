@@ -280,7 +280,7 @@ data <- load_json(list_of_files)
 # gather cases and select columns to keep
 rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
   mutate(date = date_from_wy_month(as.numeric(wateryear), month))%>%
-  select(Station, model, wateryear, month, date, ET_mean) %>% 
+  dplyr::select(Station, model, wateryear, month, date, ET_mean) %>% 
   filter(between(as.Date(date), as.Date('2015-09-01'), as.Date('2015-10-01'))) %>%  # filter dates where there is field station data overlap
   mutate(ET_mean = ET_mean/10)
 
@@ -302,11 +302,25 @@ avg_by_station <- bare_gather %>% group_by(station) %>%
   separate(station, c("Station", "measure_type"), sep="ETa_")
 
 
+
+######################################################################################################
+# sims independently provided daily values for stations D3 and D4 since the inital raster did not 
+# cover those statations. Data can be found in SIMS_ETcb_2015_D3-D4.xlsx.
+# The mean value for september was calculated in the spreadsheet using 
+# SIMS ETcb for the dates in september and replaces the values in the rs dataframe
+sims_manual <- data.frame(Station=c('D3', 'D4'), model='sims', wateryear='2015', month='SEP', date=as.Date('2015-09-01'), ET_mean=c(1.0213, 0.9714))
+
+# remove values for these stations from the RS df
+rs_f <- rs %>% filter(!(model=="sims" & Station %in% c('D3', 'D4')))
+
+# add in the manual values
+rs_m <- bind_rows(rs_f, sims_manual)
+
 ######################################################################################################
 # combine the field measurements with the remote sensing data by joining on the station ID and save
 
 # join the field data with the remote sensing data
-d <- inner_join(rs, avg_by_station, by=c("Station"))
+d <- inner_join(rs_m, avg_by_station, by=c("Station"))
 d
 
 saveRDS(d, 'data/fieldstations/wy2015/fieldstations_wy2015.rds')
@@ -363,7 +377,7 @@ data <- load_json(list_of_files)
 # gather cases and select columns to keep
 rs <- gather(data, OCT, NOV, DEC, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, key="month", value="ET_mean") %>% 
   mutate(date = date_from_wy_month(as.numeric(wateryear), month))%>%
-  select(Station_ID, Crop, IslandName, model, wateryear, month, date, ET_mean) %>% 
+  dplyr::select(Station_ID, Crop, IslandName, model, wateryear, month, date, ET_mean) %>% 
   filter(between(as.Date(date), as.Date('2016-05-01'), as.Date('2016-10-01'))) %>%  # filter dates where there is field station data overlap
   mutate(ET_mean = ET_mean/10)
 
