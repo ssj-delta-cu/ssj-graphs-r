@@ -382,3 +382,26 @@ for(c in crops_2_gen){
 }
 ```
 
+```{r}
+# ET totals for non-ag classes 
+# for numbers in text above table 3.
+
+# summarize total acre-ft just using non-crops (ie include = "no")
+af_noncrops <- dsa_legal_data %>% filter(include == "no", crop_acft > 0) %>%
+    dplyr::group_by(model, region, wateryear) %>% 
+    dplyr::summarise(sum_af=sum(crop_acft)) %>% filter(region == "dsa")
+
+# remove sims since they don't account for water or native classes + remove eto data
+af_noncrops_wo_sims <- af_noncrops %>% filter(!model %in% c("sims", "eto"))
+
+# average of noncrop by year
+af_noncrops_avg <- af_noncrops_wo_sims %>% group_by(wateryear) %>% summarize(mean=mean(sum_af))
+
+avg_2015 <- af_noncrops_avg$mean[af_noncrops_avg$wateryear==2015]
+avg_2016 <- af_noncrops_avg$mean[af_noncrops_avg$wateryear==2016]
+
+# print results
+print(paste("Not all methods are capable of estimating ET for other land uses (i.e. urban, open water, and vegetation), but available estimates for those excluded land classes averaged about", round(avg_2015/1000), "TAF in 2015 and increased to", round(avg_2016/1000) , "TAF in 2016"))
+
+```
+
