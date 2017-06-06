@@ -382,6 +382,8 @@ for(c in crops_2_gen){
 }
 ```
 
+# Calculations for numbers in the report
+
 ```{r}
 # ET totals for non-ag classes 
 # for numbers in text above table 3.
@@ -403,5 +405,37 @@ avg_2016 <- af_noncrops_avg$mean[af_noncrops_avg$wateryear==2016]
 # print results
 print(paste("Not all methods are capable of estimating ET for other land uses (i.e. urban, open water, and vegetation), but available estimates for those excluded land classes averaged about", round(avg_2015/1000), "TAF in 2015 and increased to", round(avg_2016/1000) , "TAF in 2016"))
 
+```
+
+```{r}
+
+# average evapotranspiration for september to january as percentage of total annual et
+
+# text after coefficient of variation grids
+
+# summarize total acre-ft just using crops (ie include = "yes")
+af_annual <- dsa_legal_data %>% filter(include == "yes", crop_acft > 0) %>%
+    dplyr::group_by(model, region, wateryear) %>% 
+    dplyr::summarise(sum_af=sum(crop_acft)) %>% filter(region == "dsa")
+
+af_annual_mean <- af_annual %>% group_by(wateryear) %>% summarize(total=mean(sum_af))
+
+
+# Between selected months (Sept to Jan)
+af_select <- dsa_legal_data %>% filter(include == "yes", crop_acft > 0) %>%
+    filter(month %in% c("SEP", "OCT", "NOV", "DEC", "JAN"))%>%
+    dplyr::group_by(model, region, wateryear) %>% 
+    dplyr::summarise(sum_af=sum(crop_acft)) %>% filter(region == "dsa")
+
+af_select_mean <- af_select %>% group_by(wateryear) %>% summarize(select=mean(sum_af))
+
+
+# join annual and select together using water year
+af_both <- merge(af_annual_mean, af_select_mean, by="wateryear") %>% mutate(percent=select/total*100)
+
+# both wateryears are approx 22 or 23 % so let's just take the avearage
+af_select_percent <- round(mean(af_both$percent), 1)
+
+print(paste("We employed the coefficient of variation to calculate degree of discrepancy among models by crop are higher from September to January. Evapotranspiration estimates in these months represent about", af_select_percent, "% of the annual ET"))
 ```
 
