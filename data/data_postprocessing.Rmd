@@ -417,3 +417,156 @@ saveRDS(d, 'data/fieldstations/wy2016/fieldstations_wy2016.rds')
 write.csv(d, 'data/fieldstations/wy2016/fieldstations_wy2016.csv', row.names = FALSE)
 ```
 
+
+## DSA ETRF
+
+```{r dsa_lega, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing full delta area
+
+lookup_cropname_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  cropname = crops$Commodity[match(id, crops$Number)]
+  return(cropname)
+}
+
+lookup_include_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  include = crops$Include[match(id, crops$Number)]
+  return(include)
+}
+
+
+ee_geojson_properties_2_df <-function(json, model, aoi, wy, reducer_size){
+  # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
+  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
+  df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
+  names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
+  df$model <- model
+  df$region <- aoi
+  df$wateryear <- wy
+  df$source <- json
+  
+  # Add cropname, include from crop lookup csv, also calculate number days in month and acre feet
+  df <- mutate(df, cropname=lookup_cropname_csv(level_2), 
+               include=lookup_include_csv(level_2))  
+  return(df)
+}
+
+####################################################################
+# files shoulds be named "data/model-region-wy.json"
+list_of_files <- list.files(path="data/dsa_etrf", pattern=".geojson", full.names=TRUE)
+
+#Create a list in which you intend to save your df's.
+listofdfs <- list() 
+
+# for loop to load in all the raw json files to single data frame
+for (i in 1:length(list_of_files)) {
+  f <- list_of_files[i]
+  print(f)
+  p <- strsplit(f, split="[-./]")[[1]]
+  method <- p[3]
+  region <- p[4]
+  wy <- as.integer(p[5])
+  d <- ee_geojson_properties_2_df(f, method, region, wy, 30) # 30 m is the reducer size
+  listofdfs[[i]]<-d
+}
+
+# make into one dataframe  
+df_dsa_etrf <- ldply(listofdfs, data.frame)  
+
+####################################################################
+
+saveRDS(df_dsa_etrf, file="data/dsa_etrf/dsa_etrf.rds")
+write.csv(df_dsa_legal, 'data/dsa_legal/dsa_etrf.csv', row.names = FALSE)
+
+```
+
+## Delta Regions
+
+```{r regions, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing full delta area regions (South, North, Central, West, Cache)
+
+lookup_cropname_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  cropname = crops$Commodity[match(id, crops$Number)]
+  return(cropname)
+}
+
+lookup_include_csv <- function(id){
+  # load the crop id name table
+  crops <- read.csv('lookups/crops.csv', stringsAsFactors=FALSE)
+  include = crops$Include[match(id, crops$Number)]
+  return(include)
+}
+
+num_days_in_month_csv <- function(wy, month){
+  # load the months
+  month <- toupper(month)
+  months <- read.csv('lookups/months.csv', stringsAsFactors=FALSE)
+  wateryr <- mutate(months, cmb=paste(months$WaterYear, months$Month))
+  days <- wateryr$NumberDays[match(paste(wy, month), wateryr$cmb)]
+  return(days)
+}
+
+# calculate acre-feet from monthly avg daily ET
+acre_feet <- function(mean_et, cell_count, number_days, reducer_size){
+  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
+  mm2ft <- 0.00328084
+  sqm2acres <- 0.000247105
+  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
+  return(crop_acft)
+}
+
+ee_geojson_properties_2_df <-function(json, model, aoi, wy, reducer_size){
+  # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
+  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
+  df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
+  names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
+  df$model <- model
+  df$region <- aoi
+  df$wateryear <- wy
+  df$source <- json
+  
+  # Add cropname, include from crop lookup csv, also calculate number days in month and acre feet
+  df <- mutate(df, cropname=lookup_cropname_csv(level_2), 
+               include=lookup_include_csv(level_2), 
+               num_days=num_days_in_month_csv(wateryear, month),
+               crop_acft=acre_feet(mean, count, num_days, reducer_size))  
+  return(df)
+}
+
+####################################################################
+# files shoulds be named "data/model-region-wy.json"
+list_of_files <- list.files(path="data/delta_regions", pattern=".geojson", full.names=TRUE)
+
+#Create a list in which you intend to save your df's.
+listofdfs <- list() 
+
+# for loop to load in all the raw json files to single data frame
+for (i in 1:length(list_of_files)) {
+  f <- list_of_files[i]
+  print(f)
+  p <- strsplit(f, split="[-./]")[[1]]
+  method <- p[3]
+  region <- p[4]
+  wy <- as.integer(p[5])
+  d <- ee_geojson_properties_2_df(f, method, region, wy, 30) # 30 m is the reducer size
+  listofdfs[[i]]<-d
+}
+
+# make into one dataframe  
+df_dsa_legal <- ldply(listofdfs, data.frame)  
+
+####################################################################
+
+saveRDS(df_dsa_legal, file="data/delta_regions/delta_regions.rds")
+write.csv(df_dsa_legal, 'data/delta_regions/delta_regions', row.names = FALSE)
+
+```
