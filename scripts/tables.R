@@ -110,3 +110,15 @@ table_modelXmonth_mean_std <- function(full_data, crop_name){
 #               group_std=mean(stdDev), pvalue_std=t.test(stdDev)$p.value)
 #   m
 # }
+
+# number of cells per crop type
+number_cells_by_crop <- function(data, wy){
+  # let's look at pt at the dsa for a specific month water yar
+  pt_data <- data %>% filter(model == "ucdpt", region == "dsa", month=="JUL")
+  
+  # keep only a few columns
+  cells_by_croptype <- pt_data %>% dplyr::select(level_2, cropname, wateryear, count, include)
+  
+  # calculate acres
+  cells_by_croptype_acres <- cells_by_croptype %>% mutate(acres=(count*30*30*0.000247105))
+}

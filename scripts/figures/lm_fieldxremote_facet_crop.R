@@ -22,7 +22,7 @@ lm_fieldxremote_facet_crop <- function(data){
     geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.6) + # Add linear regression line
     scale_color_manual(values=model_palette, labels=methods_named_list)+
     #coord_cartesian(xlim = c(0,8), ylim = c(0,8))+
-    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.5)+ #1:1 diagonal line
+    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
     #annotate(geom = "text", x = 0.5, y = 1, label = "1:1", colour="black", alpha=0.5, angle = 45)+
     theme_bw()+
     theme(panel.border = element_rect(colour = "black", fill="NA", size=1),

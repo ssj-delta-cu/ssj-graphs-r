@@ -481,7 +481,7 @@ df_dsa_etrf <- ldply(listofdfs, data.frame)
 ####################################################################
 
 saveRDS(df_dsa_etrf, file="data/dsa_etrf/dsa_etrf.rds")
-write.csv(df_dsa_legal, 'data/dsa_legal/dsa_etrf.csv', row.names = FALSE)
+write.csv(df_dsa_legal, 'data/dsa_etrf/dsa_etrf.csv', row.names = FALSE)
 
 ```
 
@@ -562,11 +562,67 @@ for (i in 1:length(list_of_files)) {
 }
 
 # make into one dataframe  
-df_dsa_legal <- ldply(listofdfs, data.frame)  
+df_regions <- ldply(listofdfs, data.frame)  
 
 ####################################################################
 
-saveRDS(df_dsa_legal, file="data/delta_regions/delta_regions.rds")
-write.csv(df_dsa_legal, 'data/delta_regions/delta_regions', row.names = FALSE)
+saveRDS(df_regions, file="data/delta_regions/delta_regions.rds")
+write.csv(df_regions, 'data/delta_regions/delta_regions.csv', row.names = FALSE)
+
+```
+
+
+## Refernce ETO for DSA
+
+```{r eto, echo=FALSE}
+
+####################################################################
+# data loading functions for processsing full delta area
+
+ee_geojson_properties_2_df <-function(json, model, aoi, wy, reducer_size){
+  # where json = path to json with results, model = model group name, aoi = region of the results, wy=water year
+  lists_dfs_by_month <- jsonlite::fromJSON(json)$features$properties
+  df <- ldply(lists_dfs_by_month, data.frame) # make into one dataframe
+  names(df)[names(df) == '.id'] <- 'month' # renames name of individual df column
+  df$model <- model
+  df$region <- aoi
+  df$wateryear <- wy
+  df$source <- json
+  
+  return(df)
+}
+
+####################################################################
+# files shoulds be named "data/model-region-wy.json"
+list_of_files <- list.files(path="data/eto", pattern=".geojson", full.names=TRUE)
+
+#Create a list in which you intend to save your df's.
+listofdfs <- list() 
+
+# for loop to load in all the raw json files to single data frame
+for (i in 1:length(list_of_files)) {
+  f <- list_of_files[i]
+  print(f)
+  p <- strsplit(f, split="[-./]")[[1]]
+  method <- p[3]
+  region <- p[4]
+  wy <- as.integer(p[5])
+  d <- ee_geojson_properties_2_df(f, method, region, wy, 30) # 30 m is the reducer size
+  listofdfs[[i]]<-d
+}
+
+# make into one dataframe  
+df_eto_rough <- ldply(listofdfs, data.frame)  
+
+df_eto_rough <- rename(df_eto_rough, value = X..i..)
+
+# separate
+s <- df_eto_rough %>% separate(month, c("month", "stat"))
+
+df_eto <- s %>% spread(stat, value)
+####################################################################
+
+saveRDS(df_eto, file="data/eto/eto.rds")
+write.csv(df_eto, 'data/eto/eto.csv', row.names = FALSE)
 
 ```

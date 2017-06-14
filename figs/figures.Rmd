@@ -23,9 +23,12 @@ source("scripts/tables.R") # load in the table file to calc acre-ft totals to ex
 
 # data sources
 dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
+dsa_etrf <- readRDS("data/dsa_etrf/dsa_etrf.rds")
+delta_regions <- readRDS("data/delta_regions/delta_regions.rds")
 fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016.rds")
 fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015.rds")
 subregions <- readRDS("data/subregions/subregions.rds")
+eto <- readRDS('data/eto/eto.rds')
 
 # vector containing the water years
 water_years <- c(2015, 2016)
@@ -201,6 +204,26 @@ for(y in 1:length(water_years)){
 
 ```
 
+## Grid absolute variation
+
+```{r absolute_variation_grid, echo=FALSE, fig.width = 6, fig.height = 5}
+# absolute variation grid
+
+# loop through both water years and save the figure
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  
+  p <- absolute_variation_grid(dsa_legal_data, wy)
+  
+  # add footer
+  p <- p + labs(caption=footer)
+
+  # add plot to rmarkdown output
+  plot(p)
+}
+
+```
+
 ## Percent Total by the top crop types
 
 Note: this doesn't include wet herb or semi-ag landuse classes.
@@ -364,7 +387,7 @@ plot(p)
 
 
 
-## ETrF plots
+## ETrF plots - using spatial cimis for all methods
 
 ```{r etrf, echo=FALSE, fig.width = 7, fig.height = 4}
 # list of crops to generate
@@ -381,6 +404,27 @@ for(c in crops_2_gen){
   plot(p)
 }
 ```
+
+## ETRF plots (pixel level calc in EE)
+
+DETAW & DisAlexi provided seperate ETo. The rest of the methods use spatial cimis.
+
+```{r etrf_ee, echo=FALSE, fig.width = 7, fig.height = 4}
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# loop through the crops
+for(c in crops_2_gen){
+  p <- etrf2(dsa_etrf, c)
+
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+```
+
 
 # Calculations for numbers in the report
 
@@ -437,5 +481,71 @@ af_both <- merge(af_annual_mean, af_select_mean, by="wateryear") %>% mutate(perc
 af_select_percent <- round(mean(af_both$percent), 1)
 
 print(paste("We employed the coefficient of variation to calculate degree of discrepancy among models by crop are higher from September to January. Evapotranspiration estimates in these months represent about", af_select_percent, "% of the annual ET"))
+```
+
+
+
+## Region Level Analysis (North, South, West, Yolo, Central)
+
+```{r regions_taf, echo=FALSE}
+
+# loop through both water years 
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  
+  p <- barchart_TAFxDeltaregions(delta_regions, wy)
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+
+```
+
+## ETO
+
+```{r eto, echo=FALSE}
+
+
+# add date
+eto_data <- eto %>% mutate(date=date_from_wy_month(wateryear, month)) # add a date field by combining month and water year
+
+# construct the plot object
+p <- ggplot(eto_data, aes(date, mean/10, color=model, group=model)) + 
+  geom_line(size=1.25)+
+  geom_line(aes(date, mean/10-stdDev/10, color=model, group=model), size=1, alpha=0.4, lty="dashed")+
+  geom_line(aes(date, mean/10+stdDev/10, color=model, group=model), size=1, alpha=0.4, lty="dashed")+
+  #geom_ribbon(aes(ymin=mean/10-stdDev/10,ymax=mean/10+stdDev/10, color=model),alpha=0.3)+
+  #geom_errorbar(aes(ymin=mean/10-stdDev/10, ymax=mean/10+stdDev/10), width=.1) +
+  scale_x_date(date_breaks="3 month", date_labels  = "%b")+
+  coord_cartesian(ylim=c(0, 15))+
+  ggtitle("ETo") +
+  ylab("ETo (mm/day)") +
+  geom_vline(xintercept = as.numeric(as.Date('2015-10-01')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
+  annotate("text", x=as.Date('2015-04-01') , y=15, label="2015", size=5)+
+  annotate("text", x=as.Date('2016-04-01') , y=15, label="2016", size=5)+
+  scale_color_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
+  scale_fill_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
+  #scale_linetype_manual(values=model_lny)+
+  theme_bw() +  # change theme simple with no axis or tick marks
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5, size=16),
+        panel.grid.minor = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position="none", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y=element_text(size=14),
+        axis.text.x=element_text(size=12),
+        axis.title.y=element_text(size=14),
+        axis.line = element_line(color="black", size=1)
+        )
+  
+
+p
+
 ```
 
