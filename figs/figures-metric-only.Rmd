@@ -1,0 +1,66 @@
+---
+title: "SSJ-DELTA-CU Metric figures"
+output:
+  html_document: default
+---
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+
+```
+
+```{r project_settings, echo=FALSE, include=FALSE}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
+
+# data sources
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
+dsa_etrf <- readRDS("data/dsa_etrf/dsa_etrf.rds")
+delta_regions <- readRDS("data/delta_regions/delta_regions.rds")
+fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016.rds")
+fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015.rds")
+subregions <- readRDS("data/subregions/subregions.rds")
+eto <- readRDS('data/eto/eto.rds')
+
+# vector containing the water years
+water_years <- c(2015, 2016)
+
+# footer 
+footer <- paste('Updated ', Sys.Date())
+
+```
+
+
+
+```{r lineplot_ET, echo=FALSE, fig.width = 7, fig.height = 4}
+
+# list of crops to generate
+#crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+crops_2_gen <- crop_list()
+
+dsa_legal_data_metric <- dsa_legal_data %>% filter(model %in% c("itrc", "ucdmetric"))
+
+# loop through the crops
+for(i in 1:length(crops_2_gen)){
+  
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
+  
+  # generate plot for the crop for the delta service area
+  p <- line_ETxMonths_2wateryears(dsa_legal_data_metric, cropid,  "dsa")
+  
+  # add footer with the date
+  p <- p + labs(caption=footer)
+  
+  # add plot to rmarkdown output
+  plot(p)
+}
+```
+
+
+
