@@ -520,12 +520,12 @@ p <- ggplot(eto_data, aes(date, mean/10, color=model, group=model)) +
   #geom_ribbon(aes(ymin=mean/10-stdDev/10,ymax=mean/10+stdDev/10, color=model),alpha=0.3)+
   #geom_errorbar(aes(ymin=mean/10-stdDev/10, ymax=mean/10+stdDev/10), width=.1) +
   scale_x_date(date_breaks="3 month", date_labels  = "%b")+
-  coord_cartesian(ylim=c(0, 15))+
+  coord_cartesian(ylim=c(0, 10))+
   ggtitle("ETo") +
   ylab("ETo (mm/day)") +
   geom_vline(xintercept = as.numeric(as.Date('2015-10-01')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
-  annotate("text", x=as.Date('2015-04-01') , y=15, label="2015", size=5)+
-  annotate("text", x=as.Date('2016-04-01') , y=15, label="2016", size=5)+
+  annotate("text", x=as.Date('2015-04-01') , y=10, label="2015", size=5)+
+  annotate("text", x=as.Date('2016-04-01') , y=10, label="2016", size=5)+
   scale_color_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
   scale_fill_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
   #scale_linetype_manual(values=model_lny)+

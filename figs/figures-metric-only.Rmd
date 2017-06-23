@@ -63,4 +63,42 @@ for(i in 1:length(crops_2_gen)){
 ```
 
 
+## Boxplot whisker_ETxModel_per_crop_month
+
+```{r whisker_ETxModel_per_crop_month_2yrs, echo=FALSE, fig.width = 7, fig.height = 4}
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# list of the months in the water year to generate (Oct-> sept)
+month_2_gen <- c('JUL') #month_list()
+
+dsa_legal_data_metric <- dsa_legal_data %>% filter(model %in% c("itrc", "ucdmetric"))
+
+
+# loop through the crops
+for(i in 1:length(crops_2_gen)){
+
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
+
+  # loop through the months
+  for(m in 1:length(month_2_gen)){
+    month <- month_2_gen[m]
+
+    #plot
+    p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data_metric, 'dsa', month, cropid)
+    
+    # add footer
+    p <- p + labs(caption=footer)
+
+    # add plot to rmarkdown output
+    plot(p)
+    
+  }
+}
+
+
+```
+
 
