@@ -1,0 +1,105 @@
+---
+title: "R Notebook"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+This Rmarkdown notebook is from post-processing the monthly data for the 3x3 grid around each of the field station.
+
+```{r}
+# packages
+if(!require(sf)){
+  install.packages("sf")
+  library(sf)
+}
+
+if(!require(tidyverse)){
+  install.packages("tidyverse")
+  library(tidyverse)
+}
+```
+
+```{r}
+# data loading
+grid_monthly_file <- 'fieldstation_grid_monthly.geojson'
+grid_monthly <- sf::st_read(grid_monthly_file)
+
+# remove the geometry attributes
+st_geometry(grid_monthly) <- NULL
+```
+
+```{r}
+# data cleanup
+h_drop <- grid_monthly %>% select(-c(id, Crop, ElevationM, Deployed, Equipment, IslandName, Longitude, Long_dd, Lat_dd, Latitude, Removed, Type, geometry_vertex_count))
+
+g <- gather(h_drop, 1:60, key="month_stat", value="value") 
+s <- g %>% separate(month_stat, into=c("month", "stat"), sep='_', remove=TRUE) %>% mutate(value=value/10)
+
+head(s)
+write.csv(s, 'fieldstation_grid_monthly.csv', row.names = FALSE)
+
+```
+
+## May 2016
+```{r}
+# tibble to match format of excel sheet
+
+spread_mean_et <- s %>% filter(stat=="mean") %>% select(-stat) %>% spread(model, value)
+
+single_month <- spread_mean_et %>% filter(water_year==2016, month=="MAY", Station_ID %in% c('D01', 'D02', 'D11'))
+
+as_tibble(single_month)
+
+```
+
+## June 2016
+```{r}
+# tibble to match format of excel sheet
+
+spread_mean_et <- s %>% filter(stat=="mean") %>% select(-stat) %>% spread(model, value)
+
+single_month <- spread_mean_et %>% filter(water_year==2016, month=="JUN", Station_ID %in% c('D01', 'D02', 'D03', 'D04', 'D05', 'D11', 'D12'))
+
+as_tibble(single_month)
+
+```
+
+
+## July 2016
+```{r}
+# tibble to match format of excel sheet
+
+spread_mean_et <- s %>% filter(stat=="mean") %>% select(-stat) %>% spread(model, value)
+
+
+single_month <- spread_mean_et %>% filter(water_year==2016, month=="JUL", Station_ID %in% c('D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'D11', 'D12', 'D13', 'D14'))
+
+as_tibble(single_month)
+
+```
+
+## August 2016
+```{r}
+# tibble to match format of excel sheet
+
+spread_mean_et <- s %>% filter(stat=="mean") %>% select(-stat) %>% spread(model, value)
+
+single_month <- spread_mean_et %>% filter(water_year==2016, month=="AUG", Station_ID %in% c('D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'D11', 'D12', 'D13', 'D14'))
+
+as_tibble(single_month)
+
+```
+
+
+## September 2016
+```{r}
+# tibble to match format of excel sheet
+
+spread_mean_et <- s %>% filter(stat=="mean") %>% select(-stat) %>% spread(model, value)
+
+single_month <- spread_mean_et %>% filter(water_year==2016, month=="AUG", Station_ID %in% c('D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'D11', 'D12', 'D13', 'D14'))
+
+as_tibble(single_month)
+
+```
