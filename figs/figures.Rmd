@@ -515,26 +515,22 @@ eto_data <- eto %>% mutate(date=date_from_wy_month(wateryear, month)) # add a da
 # construct the plot object
 p <- ggplot(eto_data, aes(date, mean/10, color=model, group=model)) + 
   geom_line(size=1.25)+
-  geom_line(aes(date, mean/10-stdDev/10, color=model, group=model), size=1, alpha=0.4, lty="dashed")+
-  geom_line(aes(date, mean/10+stdDev/10, color=model, group=model), size=1, alpha=0.4, lty="dashed")+
-  #geom_ribbon(aes(ymin=mean/10-stdDev/10,ymax=mean/10+stdDev/10, color=model),alpha=0.3)+
-  #geom_errorbar(aes(ymin=mean/10-stdDev/10, ymax=mean/10+stdDev/10), width=.1) +
+  #geom_line(aes(date, mean/10-stdDev/10, color=model, group=model), size=1.25, alpha=0.6, lty="dashed")+
+  #geom_line(aes(date, mean/10+stdDev/10, color=model, group=model), size=1.25, alpha=0.6, lty="dashed")+
   scale_x_date(date_breaks="3 month", date_labels  = "%b")+
-  coord_cartesian(ylim=c(0, 10))+
+  coord_cartesian(ylim=c(0, 8))+
   ggtitle("ETo") +
   ylab("ETo (mm/day)") +
   geom_vline(xintercept = as.numeric(as.Date('2015-10-01')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
-  annotate("text", x=as.Date('2015-04-01') , y=10, label="2015", size=5)+
-  annotate("text", x=as.Date('2016-04-01') , y=10, label="2016", size=5)+
-  scale_color_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
-  scale_fill_manual(values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
-  #scale_linetype_manual(values=model_lny)+
+  annotate("text", x=as.Date('2015-04-01') , y=8, label="2015", size=5)+
+  annotate("text", x=as.Date('2016-04-01') , y=8, label="2016", size=5)+
+  scale_color_manual(labels=c(spatial_cimis_eto="Spatial CIMIS", disalexi_eto="DisALEXI", detaw_eto="DETAW"), values=c(spatial_cimis_eto="#619CFF", disalexi_eto="#00BA38", detaw_eto="#F8766D")) +
   theme_bw() +  # change theme simple with no axis or tick marks
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         plot.title = element_text(hjust = 0.5, size=16),
         panel.grid.minor = element_blank(),
         axis.title.x = element_blank(),
-        legend.position="none", # position of legend or none
+        legend.position="bottom", # position of legend or none
         legend.direction="horizontal", # orientation of legend
         legend.title= element_blank(), # no title for legend
         legend.key.size = unit(0.5, "cm"),
