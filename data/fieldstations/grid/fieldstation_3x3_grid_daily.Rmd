@@ -1,0 +1,87 @@
+---
+title: "R Notebook"
+output:
+  html_notebook: default
+  html_document: default
+---
+
+This Rmarkdown notebook is from post-processing the daily data for the 3x3 grid around each of the field station.
+
+```{r}
+# packages
+if(!require(sf)){
+  install.packages("sf")
+  library(sf)
+}
+
+if(!require(tidyverse)){
+  install.packages("tidyverse")
+  library(tidyverse)
+}
+
+if(!require(lubridate )){
+  install.packages("lubridate ")
+  library(lubridate )
+}
+```
+
+```{r}
+# data loading for remote sensing models
+grid_daily_file <- 'fieldstation_grid_daily.geojson'
+grid_daily <- sf::st_read(grid_daily_file)
+
+# remove the geometry attributes
+st_geometry(grid_daily) <- NULL
+
+head(grid_daily)
+
+rs_drop <- grid_daily %>% select(-c(id))
+
+
+head(rs_drop)
+
+```
+
+```{r}
+rs_drop2 <- rs_drop %>% mutate(date= date %m-% months(1))
+
+```
+
+
+```{r}
+# data loading for tabular models (calsimetaw, detaw)
+tab <- read.csv("fieldstation_grid_daily_detaw_calsimetaw.csv")
+tab_gather <- tab %>% gather(3:16, key="Station_ID", value="mean") 
+tab_gather$date <- as.Date(tab_gather$date)
+
+print(tab_gather)
+
+what_is_growing <- function(station_id){
+  # add crop info for stations 
+  ifelse(station_id %in% c("D01", "D06", "D08", "D09", "D11"), "maize", ifelse(station_id %in% c("D02", "D07", "D10", "D13", "D14"), "alfalfa", "pasture"))
+}
+
+tab_gather_crop <- tab_gather %>% mutate(Crop=what_is_growing(Station_ID))
+
+```
+
+
+
+```{r}
+# merge the tabular data witht the remote sensing resu
+
+m <- bind_rows(rs_drop2, tab_gather_crop)
+head(m)
+
+# resassign maize to corn
+# reassign depth values under 10 to zero
+m$Crop[m$Crop=="maize"] <- "corn"
+
+write.csv(m, 'fieldstation_grid_daily.csv', row.names = FALSE)
+saveRDS(m, file="fieldstation_grid_daily.rds")
+
+```
+
+
+
+
