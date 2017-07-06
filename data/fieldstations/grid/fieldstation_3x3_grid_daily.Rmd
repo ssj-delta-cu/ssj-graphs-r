@@ -52,7 +52,7 @@ rs_drop2 <- rs_drop %>% mutate(date= date %m-% months(1))
 
 ```{r}
 # data loading for tabular models (calsimetaw, detaw)
-tab <- read.csv("fieldstation_grid_dates_detaw_calsimetaw.csv")
+tab <- read.csv("fieldstation_grid_dates_detaw_calsimetaw.csv", stringsAsFactors = FALSE)
 tab_gather <- tab %>% gather(3:16, key="Station_ID", value="mean") 
 tab_gather$date <- as.Date(tab_gather$date)
 
@@ -99,8 +99,10 @@ st_geometry(grid_daily) <- NULL
 head(grid_daily)
 
 daily_drop <- grid_daily %>% select(-c(id))
-daily_drop2 <- daily_drop %>% mutate(date= date %m-% months(1))
+daily_drop2 <- daily_drop %>% mutate(date= date %m-% months(1)) %>% mutate_if(is.factor, as.character())
 
+daily_drop2$Crop <- as.character(daily_drop2$Crop)
+daily_drop2$Crop[daily_drop2$Crop=="maize"] <- "corn"
 write.csv(daily_drop2, 'fieldstation_grid_daily.csv', row.names = FALSE)
 saveRDS(daily_drop2, file="fieldstation_grid_daily.rds")
 
