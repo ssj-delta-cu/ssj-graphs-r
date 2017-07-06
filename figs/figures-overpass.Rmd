@@ -1,0 +1,451 @@
+---
+title: "SSJ-DELTA-CU Overpass Dates"
+output:
+  html_document: default
+---
+
+# About
+This Rmarkdown document (`figs/figures-overpass.Rmd`) is used for generating the overpass dates figures for the SSJ-Delta-CU report. The chunks can be run individually but make sure to run the `setup` and `project_settings` chunk first to ensure that all the libraries and data are loaded. 
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+
+```
+
+```{r project_settings, echo=FALSE, include=FALSE}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
+
+# data sources
+dates_grid_et <- readRDS("data/fieldstations/grid/fieldstation_grid_dates.rds")
+
+# vector containing the water years
+water_years <- c(2015, 2016)
+
+# footer 
+footer <- paste('Updated ', Sys.Date())
+
+dates_grid_et
+
+```
+
+
+```{r exclude_outliers}
+# there likey is some bad data with extreamly high/low values. Let's filter it out of the df
+
+dates_grid_et <- dates_grid_et %>% filter(mean < 20, mean > -20)
+
+
+
+```
+
+
+
+```{r pairwise_plot_function, fig.width = 7, fig.height = 6}
+
+model_x <- 'ucdmetric'
+model_y <- 'calsimetaw'
+
+model_pair_alldays <- function(model_x, model_y){
+
+model_x_data <- dates_grid_et %>% filter(model==model_x)
+model_y_data <- dates_grid_et %>% filter(model==model_y)
+
+# join using site_id and date
+model_pair <- inner_join(model_x_data, model_y_data, by=c("date", "Station_ID"))
+
+axis_limit <- max(max(model_pair$mean.y), max(model_pair$mean.x)) 
+
+p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2.5)+
+  ggtitle(paste(toupper(model_x), "vs.", toupper(model_y)))+
+  ylab(paste(toupper(model_y), "\n", "(mm/day)", sep=""))+
+  xlab(paste(toupper(model_x), "\n", "(mm/day)", sep=""))+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  theme_bw()+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+      plot.title = element_text(hjust = 0.5, size=16),
+      panel.grid.minor = element_blank(),
+      legend.position="bottom", # position of legend or none
+      legend.direction="horizontal", # orientation of legend
+      legend.title= element_blank(), # no title for legend
+      legend.key.size = unit(0.5, "cm"),
+      axis.text.y=element_text(size=14),
+      axis.text.x=element_text(size=14),
+      axis.title.y=element_text(size=14),
+      axis.title.x=element_text(size=14),
+      axis.line = element_line(color="black", size=1)
+  )
+p
+}
+
+#model_pair_alldays(model_x, model_y)
+
+```
+
+```{r, echo=FALSE, fig.width = 7, fig.height = 6}
+
+m <- methods_list()
+print(m)
+
+# create all combinations
+combinations <- combn(m, 2, simplify = FALSE)
+
+for(comb in combinations){
+  #print(comb)
+  x <- comb[1]
+  y <- comb[2]
+
+  p <- model_pair_alldays(x, y)
+  plot(p)
+}
+
+```
+
+
+## Add in field measurements
+
+```{r}
+# field stations measurements
+# pull in the dates csv from the ssj-field-measurements-2016 repo (assumes that there is a local copy)
+# the local copy should have the same directory folder as ssj-graphs-r
+list_of_csvs <- list.files(path="../ssj-field-measurements-2016/daily data", pattern="D[0-9][0-9](.*?)(.csv)", full.names=TRUE)
+
+# for loop to load in all the raw csv files to single data frame
+load_csv <- function(file_list) {
+  listofdfs <- list() #Create a list in which you intend to save your df's.
+  for (i in 1:length(file_list)) {
+    print(file_list[i])
+    g <- read.csv(file_list[i], stringsAsFactors = FALSE)
+    listofdfs[[i]]<-g
+  }
+  df <- ldply(listofdfs, data.frame) # make into one dataframe 
+}
+
+raw_field_data <- load_csv(list_of_csvs)
+
+# clean up station name and set model name to field
+field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "IslandName", "Crop"), sep='_') %>% mutate(date=as.Date(date))
+
+
+
+dates_grid_et_w_field <- left_join(dates_grid_et, field, by=c("date", "Station_ID"))
+
+
+
+
+```
+
+
+```{r, fig.width = 15, fig.height = 6}
+selected_date <- '2016-07-13'
+
+dates_grid_et_date <- dates_grid_et_w_field %>% filter(date==selected_date)
+
+axis_limit <- max(max(dates_grid_et_date$mean), max(dates_grid_et_date$ET_SR_aH_qc_Dgf)) 
+axis_limit <- ifelse(is.na(axis_limit), 0, axis_limit)
+
+p <- ggplot(dates_grid_et_date, aes(x=mean, y=ET_SR_aH_qc_Dgf, color=model))+geom_point(size=4)+facet_wrap(~Station_ID, ncol=7)+theme_bw()+
+  ylab("Field ET\n(mm/day ET_SR_aH_qc_Dgf)")+
+  xlab("Model ET\n(mm/day)")+
+  ggtitle(selected_date)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.5)+ #1:1 diagonal line
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+      plot.title = element_text(hjust = 0.5, size=16),
+      panel.grid.minor = element_blank(),
+      legend.position="bottom", # position of legend or none
+      legend.direction="horizontal", # orientation of legend
+      legend.title= element_blank(), # no title for legend
+      legend.key.size = unit(0.5, "cm"),
+      axis.text.y=element_text(size=14),
+      axis.text.x=element_text(size=14),
+      axis.title.y=element_text(size=14),
+      axis.title.x=element_text(size=14),
+      axis.line = element_line(color="black", size=1)
+  )
+#p
+
+```
+
+## Single Station for overpass dates
+
+```{r, fig.width = 8, fig.height = 6}
+
+station_at_overpass <- function(selected_station){
+  single_station<- dates_grid_et_w_field %>% filter(Station_ID==selected_station, ET_SR_aH_qc_Dgf != "NA") 
+  
+  single_station_selected_dates <- single_station %>% filter(date %in% as.Date(c('2016-05-26', '2016-06-27', '2016-07-13', '2016-07-29', '2016-08-14', '2016-08-30', '2016-09-15')))
+  
+  axis_limit <- max(max(single_station_selected_dates$mean), max(single_station_selected_dates$ET_SR_aH_qc_Dgf)) 
+  
+  single_station_selected_dates$date <- as.factor(single_station_selected_dates$date)
+  
+  p <- ggplot(single_station_selected_dates, aes(y=mean, x=ET_SR_aH_qc_Dgf, color=model, shape=date))+geom_point(size=4)+
+    xlab("Field ET\n(mm/day)")+
+    ylab("Model ET\n(mm/day)")+
+    ggtitle(selected_station)+
+    coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+    theme_bw()+
+    scale_color_manual(values=model_palette, labels=methods_named_list)+
+    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5, size=16),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y=element_text(size=14),
+        axis.text.x=element_text(size=14),
+        axis.title.y=element_text(size=14),
+        axis.title.x=element_text(size=14),
+        axis.line = element_line(color="black", size=1)
+    )
+  p
+}
+
+```
+
+
+```{r, fig.width = 8, fig.height = 6}
+stations <- c("D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12", "D13", "D14")
+
+for(s in stations){
+  p <- station_at_overpass(s)
+  plot(p)
+}
+
+```
+
+## Grouping field station by crop type
+
+```{r}
+
+crop_station_at_overpass <- function(selected_crop){
+  single_crop<- dates_grid_et_w_field %>% filter(Crop.x==selected_crop, ET_SR_aH_qc_Dgf != "NA") 
+  
+  single_crop_selected_dates <- single_crop %>% filter(date %in% as.Date(c('2016-05-26', '2016-06-27', '2016-07-13', '2016-07-29', '2016-08-14', '2016-08-30', '2016-09-15')))
+  
+  axis_limit <- max(max(single_crop_selected_dates$mean), max(single_crop_selected_dates$ET_SR_aH_qc_Dgf)) 
+  
+  single_crop_selected_dates$date <- as.factor(single_crop_selected_dates$date)
+  
+  p <- ggplot(single_crop_selected_dates, aes(y=mean, x=ET_SR_aH_qc_Dgf, color=model))+geom_point(size=4)+
+    xlab("Field ET\n(mm/day)")+
+    ylab("Model ET\n(mm/day)")+
+    ggtitle(toupper(selected_crop))+
+    coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+    theme_bw()+
+    scale_color_manual(values=model_palette, labels=methods_named_list)+
+    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.75, alpha=0.5)+ #1:1 diagonal line
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5, size=16),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y=element_text(size=14),
+        axis.text.x=element_text(size=14),
+        axis.title.y=element_text(size=14),
+        axis.title.x=element_text(size=14),
+        axis.line = element_line(color="black", size=1)
+    )
+  p
+}
+
+
+```
+
+```{r, fig.width = 8, fig.height = 6}
+crops_at_fieldstations <- c("corn", "alfalfa", "pasture")
+
+for(c in crops_at_fieldstations){
+  p <- crop_station_at_overpass(c)
+  plot(p)
+}
+
+```
+
+
+# Fieldstation Level Analysis
+
+## Fieldstation vs Remote methods facet plot for Water Year 2016
+
+```{r, fig.width = 7, fig.height = 6}
+selected_crop <- "alfalfa"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+p
+
+
+group_rsquared <- function(group){
+  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
+  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
+  rsq <- summary(lm_r)$r.squared
+}
+
+models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
+rs_holder <- c()
+for(m in models_rs){
+  rs <- group_rsquared(m)
+  rs_holder<-append(rs_holder, rs)
+}
+
+models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
+
+models_rsquared 
+
+
+
+```
+
+```{r, fig.width = 7, fig.height = 6}
+selected_crop <- "corn"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+p
+
+
+group_rsquared <- function(group){
+  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
+  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
+  rsq <- summary(lm_r)$r.squared
+}
+
+models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
+rs_holder <- c()
+for(m in models_rs){
+  rs <- group_rsquared(m)
+  rs_holder<-append(rs_holder, rs)
+}
+
+models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
+
+models_rsquared 
+```
+
+
+`
+
+```{r, fig.width = 7, fig.height = 6}
+selected_crop <- "pasture"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+p
+
+
+group_rsquared <- function(group){
+  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
+  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
+  rsq <- summary(lm_r)$r.squared
+}
+
+models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
+rs_holder <- c()
+for(m in models_rs){
+  rs <- group_rsquared(m)
+  rs_holder<-append(rs_holder, rs)
+}
+
+models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
+
+print(models_rsquared) 
+```

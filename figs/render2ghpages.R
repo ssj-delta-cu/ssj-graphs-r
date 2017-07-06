@@ -4,4 +4,6 @@
 
 rmarkdown::render('figs/figures.Rmd', 'html_document', output_file = 'report-figures.html', output_dir = 'docs')
 rmarkdown::render('figs/figures-daily.Rmd', 'html_document', output_file = 'daily-figures.html', output_dir = 'docs')
+rmarkdown::render('figs/figures-overpass.Rmd', 'html_document', output_file = 'overpass-figures.html', output_dir = 'docs')
+
 
