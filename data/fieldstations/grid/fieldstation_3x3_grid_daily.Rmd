@@ -5,7 +5,9 @@ output:
   html_document: default
 ---
 
-This Rmarkdown notebook is from post-processing the daily data for the 3x3 grid around each of the field station.
+This Rmarkdown notebook is from post-processing the overpass dates data for the 3x3 grid around each of the field station.
+
+## Overpass dates
 
 ```{r}
 # packages
@@ -27,15 +29,15 @@ if(!require(lubridate )){
 
 ```{r}
 # data loading for remote sensing models
-grid_daily_file <- 'fieldstation_grid_daily.geojson'
-grid_daily <- sf::st_read(grid_daily_file)
+grid_dates_file <- 'fieldstation_grid_dates.geojson'
+grid_dates <- sf::st_read(grid_dates_file)
 
 # remove the geometry attributes
-st_geometry(grid_daily) <- NULL
+st_geometry(grid_dates) <- NULL
 
-head(grid_daily)
+head(grid_dates)
 
-rs_drop <- grid_daily %>% select(-c(id))
+rs_drop <- grid_dates %>% select(-c(id))
 
 
 head(rs_drop)
@@ -50,7 +52,7 @@ rs_drop2 <- rs_drop %>% mutate(date= date %m-% months(1))
 
 ```{r}
 # data loading for tabular models (calsimetaw, detaw)
-tab <- read.csv("fieldstation_grid_daily_detaw_calsimetaw.csv")
+tab <- read.csv("fieldstation_grid_dates_detaw_calsimetaw.csv")
 tab_gather <- tab %>% gather(3:16, key="Station_ID", value="mean") 
 tab_gather$date <- as.Date(tab_gather$date)
 
@@ -77,11 +79,29 @@ head(m)
 # reassign depth values under 10 to zero
 m$Crop[m$Crop=="maize"] <- "corn"
 
-write.csv(m, 'fieldstation_grid_daily.csv', row.names = FALSE)
-saveRDS(m, file="fieldstation_grid_daily.rds")
+write.csv(m, 'fieldstation_grid_dates.csv', row.names = FALSE)
+saveRDS(m, file="fieldstation_grid_dates.rds")
 
 ```
 
 
 
+## Daily for UCD-PT & DisAlexi
 
+```{r}
+# data loading for remote sensing models
+grid_daily_file <- 'fieldstation_grid_daily.geojson'
+grid_daily <- sf::st_read(grid_daily_file)
+
+# remove the geometry attributes
+st_geometry(grid_daily) <- NULL
+
+head(grid_daily)
+
+daily_drop <- grid_daily %>% select(-c(id))
+daily_drop2 <- daily_drop %>% mutate(date= date %m-% months(1))
+
+write.csv(daily_drop2, 'fieldstation_grid_daily.csv', row.names = FALSE)
+saveRDS(daily_drop2, file="fieldstation_grid_daily.rds")
+
+```
