@@ -1,0 +1,47 @@
+---
+title: "Untitled"
+author: "Andy Bell"
+date: "July 12, 2017"
+output: html_document
+---
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+
+```
+
+## R Markdown
+
+
+```{r cars}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
+
+# data sources
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
+
+print(dsa_legal_data)
+```
+
+
+```{r}
+# filter to dsa only
+dsa_only <- dsa_legal_data %>% filter(region=='dsa', wateryear==2015)
+
+
+# produce summary by crop for August
+august <- dsa_only %>% filter(month=='JUN', cropname=='Alfalfa') %>% select(model, cropname, wateryear, mean) 
+
+print(august)
+```
+
+```{r}
+p <- ggplot(august, aes(x=model, y=mean))+geom_point()
+p
+```
+
