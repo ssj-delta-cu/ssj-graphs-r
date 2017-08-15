@@ -232,3 +232,204 @@ for(m in methods_list()){
 }
 
 ```
+
+
+# Fieldstation vs Remote methods facet plot for Water Year 2016
+
+
+```{r alfalfa, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Alfalfa"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75, alpha=0.35)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
+p
+
+```
+
+
+```{r corn, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Corn"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75, alpha=0.35)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
+p
+
+```
+
+
+```{r pasture, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Pasture"
+dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
+
+axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
+
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
+
+p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
+  geom_point(size=1.75, alpha=0.35)+
+  ggtitle(toupper(selected_crop))+
+  ylab("Model ET (mm/day)")+
+  xlab("Field ET (mm/day)")+
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
+  scale_color_manual(values=model_palette, labels=methods_named_list)+
+  coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(0.5, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+  theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))+
+  guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
+         fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
+p
+
+```
