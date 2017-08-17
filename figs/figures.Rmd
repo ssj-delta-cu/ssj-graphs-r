@@ -270,46 +270,6 @@ for(y in 1:length(water_years)){
 ```
 
 
-# Subregion Level Analysis
-
-## Selected Subset of Subregions TAF
-
-```{r subregion_taf, echo=FALSE, fig.width = 7, fig.height = 4}
-
-# loop through both water years 
-for(y in 1:length(water_years)){
-  wy <- water_years[y]
-  
-  p <- barchart_TAFxSubregions(subregions, wy)
-  
-  # add footer
-  p <- p + labs(caption=footer)
-  
-  # add plot to rmarkdown output
-  plot(p)
-}
-
-```
-
-## Selected Subset of Subregions TAF Normalized by area
-
-```{r subregion_taf_norm, echo=FALSE, fig.width = 7, fig.height = 4}
-
-# loop through both water years and save the figure
-for(y in 1:length(water_years)){
-  wy <- water_years[y]
-  
-  p <- barchart_TAFxSubregions_normalizedAREA(subregions, wy)
-  
-  # add footer
-  p <- p + labs(caption=footer)
-  
-  # add plot to rmarkdown output
-  plot(p)
-}
-
-```
-
 # Fieldstation Level Analysis
 
 ## Fieldstation vs Remote methods facet plot for Water Year 2016
@@ -347,14 +307,20 @@ field_wo_eto <- fieldstations_data_2015_filter %>% filter(!model=="eto")
 d <- left_join(field_wo_eto, eto_df, by=c("Station"))
 
 # remove EC points
-d <- d %>% filter(!measure_type=='EC')
+#d <- d %>% filter(!measure_type=='EC')
 
-p <- ggplot(d, aes(x=model, y=ET_mean, color=model))+
+# spread the measure type to two columns EC and SR
+ds <- d %>% spread(measure_type, field_mean_et)
+
+
+p <- ggplot(ds, aes(x=model, y=ET_mean, color=model))+
   geom_point(size=3.5)+
-  geom_hline(aes(yintercept=field_mean_et), colour="#990000", linetype="dashed", lwd=1.5, alpha=0.5)+
+  geom_hline(aes(yintercept=SR), colour="#990000", linetype="dashed", lwd=1.5, alpha=0.5)+
+  geom_hline(aes(yintercept=EC), colour="#990000", linetype="solid", lwd=1.5, alpha=0.5)+
   geom_hline(aes(yintercept=eto), colour="#000000", linetype="dashed", lwd=1.5, alpha=0.5)+
   geom_text(aes(x=6.35,y=eto), size=4, nudge_y = 0.2, colour="#000000", label='ETo')+
-  geom_text(aes(x=6.35,y=field_mean_et, group=measure_type), size=4, nudge_y = 0.2, colour="#990000", label='ETa')+
+  geom_text(aes(x=6.35,y=SR), size=4, nudge_y = 0.2, colour="#990000", label='ETa')+
+  #geom_text(aes(x=6.35,y=EC), size=4, nudge_y = -0.2, colour="#990000", label='EC')+
   ylab("Model ET (mm/day)")+
   xlab("Bare Field Station")+
   scale_color_manual(values=model_palette, labels=methods_named_list)+
