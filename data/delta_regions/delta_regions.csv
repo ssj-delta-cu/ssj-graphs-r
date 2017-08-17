@@ -3157,6 +3157,18 @@
 "SEP",0,756,NA,NA,NA,NA,NA,NA,NA,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Nursery","no",30,NA
 "SEP",77637,800,44.4936563751819,44,44,45,44,45,0.501092046030303,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Pasture","yes",30,7561.31255153877
 "SEP",0,908,NA,NA,NA,NA,NA,NA,NA,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Turf","yes",30,NA
+<<<<<<< HEAD
+"SEP",27621,913,49.036131928605,49,49,50,48,50,1.23999840489502,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Semi-agricultural/ROW","yes",30,2964.7354831737
+"SEP",2088,914,49.2744252873563,49,49,50,49,50,0.446224213838668,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Other Deciduous","yes",30,225.207272290294
+"SEP",28439,916,4,4,4,4,4,4,0,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Fallow","yes",30,249.00304676731
+"SEP",844,2002,50.8317535545024,51,50,51,50,53,1.06434513872876,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Floating Vegetation","no",30,93.9091451212343
+"SEP",2216,2003,44.3709386281588,44,44,45,44,45,0.483056065378126,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Forage Grass","yes",30,215.22797546013
+"SEP",11176,2004,50.0980672870437,50,50,50,49,52,1.07488568141635,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Riparian","no",30,1225.56884799773
+"SEP",57794,2005,4,4,4,4,4,4,0,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Upland Herbaceous","no",30,506.026304893629
+"SEP",57285,2006,37.1357074277734,37,37,37,36,38,0.584293123640333,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Urban","no",30,4656.53602839399
+"SEP",109275,2007,51.4323312743079,52,50,52,50,53,1.14666166650097,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Water","no",30,12302.330036647
+"SEP",8866,2008,44.8247236634333,45,45,45,44,46,0.65567853700988,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,869.912750396262
+=======
 "SEP",34491,913,48.4915775129744,48,48,49,47,50,0.9379629676303,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Semi-agricultural/ROW","yes",30,3661.02291561238
 "SEP",2196,914,49.1948998178506,49,49,50,49,50,0.568040314332324,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Other Deciduous","yes",30,236.473655441172
 "SEP",28399,916,4,4,4,4,4,4,0,"calsimetaw","West",2016,"data/delta_regions/calsimetaw-West-2016.geojson","Fallow","yes",30,248.652819197047
@@ -25283,3 +25295,4 @@
 "SEP",0,2006,NA,NA,NA,NA,NA,NA,NA,"ucdpt","Yolo",2016,"data/delta_regions/ucdpt-Yolo-2016.geojson","Urban","no",30,NA
 "SEP",32091,2007,40.4300582717896,42,33,48,25,53,10.4153225195518,"ucdpt","Yolo",2016,"data/delta_regions/ucdpt-Yolo-2016.geojson","Water","no",30,2839.99755618012
 "SEP",46742,2008,25.3392666124684,23,19,32,16,39,8.67353433705657,"ucdpt","Yolo",2016,"data/delta_regions/ucdpt-Yolo-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,2592.57710024593
+>>>>>>> 967ef995a5d1b011de96cf9d875db11bbc9ae8a4

@@ -3186,16 +3186,16 @@
 "APR",15585,503,29.5773500160411,29,25,34,19,42,7.77949644500229,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",30,1009.01219669292
 "APR",216008,800,35.8186456057183,36,31,41,26,45,7.19958362701776,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,16935.941481645
 "APR",9744,908,32.2145935960591,32,28,37,23,41,6.91158005924084,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,687.100525486232
-"APR",217786,913,27.7088931336266,27,23,32,19,37,7.06010888732857,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,13209.2902972101
+"APR",217711,913,27.7184386641006,27,23,32,19,37,7.04256498871473,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,13209.2902972101
 "APR",34636,914,24.0694652962236,23,19,27,17,34,6.37973586852955,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",30,1824.83886562909
 "APR",233575,916,31.9832473509579,32,25,39,20,44,8.68521547055846,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,16352.3156917928
-"APR",15889,2002,42.7287431556423,44,34,52,27,57,11.1323431074751,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1486.09657074899
+"APR",15877,2002,42.7610379794672,44,34,52,27,57,11.0743744625024,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1486.09657074899
 "APR",20181,2003,33.5154353104405,34,29,38,24,42,7.00279359087843,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,1480.53233022644
-"APR",97484,2004,40.6667350539576,42,33,48,26,53,9.95901333779379,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,8677.6673095948
-"APR",244203,2005,28.3552740957318,27,23,33,19,39,8.09329741350845,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,15157.0677956905
-"APR",279840,2006,21.3435963407662,22,17,26,10,31,7.99527950993436,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,13073.9776865169
-"APR",270486,2007,22.5571859541714,0,0,46,0,55,23.8129724160151,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,13355.4971742607
-"APR",111893,2008,37.0978613496823,37,30,44,23,52,10.2966320020942,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,9086.19682569431
+"APR",97456,2004,40.6784189788212,42,33,48,26,53,9.93655669493682,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,8677.6673095948
+"APR",244185,2005,28.357364293466,27,23,33,19,39,8.08993318508639,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,15157.0677956905
+"APR",279800,2006,21.3466476054325,22,17,26,10,31,7.99177694687475,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,13073.9776865169
+"APR",133875,2007,45.5753725490196,46,38,53,33,58,9.83065735921264,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,13355.4971742607
+"APR",111884,2008,37.1008455185728,37,30,44,23,52,10.2916686569979,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,9086.19682569431
 "AUG",60,0,21.5333333333333,21,17.5,26.5,11,30,7.79201870862459,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,2.92235721753118
 "AUG",360625,1,35.3901254766031,36,30,41,25,45,7.3243421953311,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,28867.4698294145
 "AUG",412946,23,41.0443423595337,43,37,47,28,50,8.13936277635033,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,38336.9318487508
@@ -3215,45 +3215,45 @@
 "AUG",15585,503,40.8165543792108,41,34,48,28,53,8.9072306062095,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,1438.84474253811
 "AUG",216008,800,38.3178724862042,39,34,43,27,47,7.66504418165775,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,18721.5590183571
 "AUG",9744,908,34.7077175697865,35,31,39,27,42,6.16870428246503,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,764.95188243909
-"AUG",217786,913,31.2648012268925,31,26,36,21,42,7.88048534800883,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,15401.265866122
+"AUG",217697,913,31.2775830626972,31,26,36,21,42,7.85669480546729,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,15401.265866122
 "AUG",34636,914,28.8111213766024,27,23,34,20,41,8.05873023758006,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,2257.1409536291
-"AUG",233575,916,24.9191523065397,24,20,30,16,34,7.21212284455084,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,13165.2893834561
-"AUG",15889,2002,44.8607212536975,47,36,54,28,60,12.1756936413582,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1612.25452461183
+"AUG",233573,916,24.9193656801086,24,20,30,16,34,7.21178508927243,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,13165.2893834561
+"AUG",15842,2002,44.9938139123848,47,36,54,28,60,11.9456682371828,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1612.25452461183
 "AUG",20181,2003,35.0762598483722,36,30,41,24,45,7.73521737475833,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,1601.13056733952
-"AUG",97484,2004,45.0523675680112,46,38,53,30,58,10.4698911715274,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,9933.94491355798
-"AUG",244203,2005,28.3237634263297,27,23,33,18,40,8.61204883880163,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,15644.8981730993
-"AUG",279840,2006,23.3246569468268,23,18,28,12,34,8.45122729589276,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,14763.7215203308
-"AUG",270486,2007,24.2340675672678,14,0,48,0,58,25.2432277334403,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,14826.6110095539
-"AUG",111893,2008,36.8547094098827,36,28,45,22,53,11.3809106305573,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,9327.53091016996
-"DEC",60,0,3.61666666666667,4,3,5,0,6,1.91565190528504,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,0.490829346907326
-"DEC",360625,1,4.34355632582322,5,3,6,2,6,1.78491121509938,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,3543.0075338659
-"DEC",412946,23,5.90825676965027,6,5,7,4,8,1.75574723558859,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,5518.53006046254
-"DEC",34440,24,3.80447154471545,5,0,7,0,9,3.66508509622176,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,296.365926303591
-"DEC",5373,108,3.38190954773869,3,3,4,2,5,1.30056907529184,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,41.1007376159125
-"DEC",166311,109,5.39746619285555,5,5,6,4,7,1.14659901469052,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,2030.40041422183
-"DEC",18552,246,6.35101336783096,6,6,7,5,8,0.992430410290486,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,266.504502165939
-"DEC",17718,277,5.639519133085,6,5,7,4,7,1.69377339370836,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,226.009950102889
-"DEC",163278,278,6.06542216342679,6,6,7,5,7,1.31350588725766,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,2240.05918760217
-"DEC",42931,279,6.03726910624025,6,6,7,4,7,1.34776045978907,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,586.24928620978
-"DEC",9362,403,4.66171758171331,5,4,5,3,6,0.993444630919425,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,98.7155077745458
-"DEC",6521,409,4.96442263456525,5,5,6,4,6,1.29830354499928,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,73.2240481448427
-"DEC",26707,412,4.58565170180103,5,4,5,3,6,1.11022138345487,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,277.010964453425
-"DEC",34,425,4.11764705882353,4,4,6,1,6,1.77837840680364,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",31,0.31666409477892
-"DEC",23403,500,6.49673118830919,7,6,7,5,8,1.27382645898974,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,343.903992589081
-"DEC",687,502,5.72780203784571,6,5,6,5,7,0.695273061745426,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,8.90052294967893
-"DEC",15585,503,5.20506897658005,5,5,6,4,7,1.17493334716584,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,183.486485946863
-"DEC",216008,800,4.30242398429688,4,4,5,2,6,1.58118838563626,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,2102.10221282534
-"DEC",9744,908,3.80880541871921,4,1,6,0,7,2.79816391856801,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,83.9453896395004
-"DEC",217786,913,5.23022141000799,5,5,6,3,7,1.58347038992461,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,2576.44466982664
-"DEC",34636,914,5.528265388613,6,5,6,4,7,1.25994517219937,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,433.099220542738
-"DEC",233575,916,5.47754254522102,6,5,6,3,7,1.69228399130547,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,2893.89590106973
-"DEC",15889,2002,5.41185725973944,6,4,7,1,8,2.38751348930356,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,194.497348899604
-"DEC",20181,2003,4.82894802041524,5,4,6,2,7,1.94894866535193,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,220.427614489215
-"DEC",97484,2004,5.65722580115711,6,5,7,3,8,1.88330846298423,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,1247.40546403951
-"DEC",244203,2005,4.91737611741052,5,4,6,3,7,1.73508251341719,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,2716.15913032949
-"DEC",279840,2006,3.77889150943396,4,3,5,0,6,2.02711563539544,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,2391.91093048062
-"DEC",270486,2007,2.7617769496388,0,0,6,0,8,3.69624835080198,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,1689.67889578527
-"DEC",111893,2008,5.62995004155756,6,5,7,0,8,2.44176397747933,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1424.87985595836
+"AUG",97428,2004,45.0782629223632,46,38,53,30,58,10.4170202322311,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,9933.94491355798
+"AUG",244178,2005,28.3266633357633,27,23,33,18,40,8.60771944369912,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,15644.8981730993
+"AUG",279736,2006,23.3333285669345,23,18,28,12,34,8.44082097399416,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,14763.7215203308
+"AUG",135424,2007,48.4033553875236,48,41,56,36,62,10.1421457122616,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,14826.6110095539
+"AUG",111882,2008,36.8583328864339,36,28,45,22,53,11.375601351597,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,9327.53091016996
+"DEC",59,0,2.16949152542373,3,0,4,-1,6,2.38748532605576,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,0.289521458083584
+"DEC",360563,1,3.73505878306981,4,3,5,1,7,2.04349216764017,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,3046.13668840747
+"DEC",412936,23,2.7289216730922,3,1,4,0,6,2.45759709627452,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,2548.85191773944
+"DEC",26047,24,3.81168656659116,4,1,5,0,10,3.2732350583354,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,224.566866585254
+"DEC",5373,108,4.61325144239717,5,2,7,0,8,2.93125962489113,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,56.0653779806078
+"DEC",166311,109,5.39464617493732,5,4,7,2,8,2.36365842754933,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,2029.33958950432
+"DEC",18552,246,2.73253557567917,2,1,4,0,7,2.45132478116582,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,114.664068719447
+"DEC",17718,277,2.52539790044023,3,1,4,0,4,1.9089512197207,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,101.208106577734
+"DEC",163278,278,2.26301767537574,2,1,4,0,4,1.80335682780061,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,835.769283463612
+"DEC",42931,279,3.20344273368894,3,1,4,0,7,2.32676382420786,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,311.07044973329
+"DEC",9362,403,5.24503311258278,5,4,7,3,8,1.9804075060871,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,111.067669357315
+"DEC",6521,409,7.24168072381537,7,5,10,4,11,2.67612568856679,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,106.813061055321
+"DEC",26707,412,6.61789044070843,7,4,8,4,10,2.45911315341687,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,399.774848340039
+"DEC",34,425,4.32352941176471,4,4,5,3,6,1.76102557410855,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",31,0.332497299517866
+"DEC",23403,500,7.00880229030466,7,5,9,4,11,2.65607690985199,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,371.010439102157
+"DEC",687,502,4.09315866084425,3,3,5,2,8,2.25778222187951,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,6.36042453227374
+"DEC",15585,503,7.12300288739172,8,5,9,3,10,2.45105050991881,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,251.096532068553
+"DEC",215997,800,3.15216878012195,3,2,4,0,6,2.10738322874862,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,1540.02570647915
+"DEC",9725,908,1.87280205655527,1,0,3,-1,6,2.77790874245068,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,41.1957368443462
+"DEC",215693,913,3.7631587487772,4,2,5,1,7,2.21897288527408,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,1835.94377927727
+"DEC",34636,914,4.1243503868807,4,3,5,1,7,2.02752327813229,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,323.112732880454
+"DEC",233033,916,2.37229920225891,2,0,4,0,5,2.19475291831184,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,1250.42508237187
+"DEC",15437,2002,6.09839994817646,6,4,8,3,10,2.97191111082186,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,212.936246761302
+"DEC",20168,2003,3.0038179293931,3,1,4,0,6,2.24947331774153,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,137.027339470013
+"DEC",96758,2004,6.46849872878728,6,4,9,3,10,2.82388793026524,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,1415.66719268668
+"DEC",241789,2005,3.23749632944427,3,1,4,0,7,2.54283659251019,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,1770.5843101149
+"DEC",261658,2006,3.22249654128672,3,2,5,0,7,2.44085945804815,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,1907.20451003448
+"DEC",129024,2007,7.09290519593254,7,4,9,3,12,3.81380424426278,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,2069.97664041002
+"DEC",107151,2008,5.97453126895689,5,4,8,2,11,3.28329062800966,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1448.00764430918
 "FEB",60,0,10.9666666666667,11,9.5,13,2,16,4.6617831590736,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",28,1.34429015719051
 "FEB",360625,1,13.6787909878683,14,12,15,10,17,2.89495943123221,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",28,10077.9144931114
 "FEB",412946,23,14.263574414088,14,12,17,9,20,4.12500521085393,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",28,12033.4112990967
@@ -3271,24 +3271,24 @@
 "FEB",23403,500,17.0179036875614,17,15,19,13,22,3.49081175541486,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",28,813.663284049035
 "FEB",687,502,14.1295487627365,14,14,15,13,16,1.36149489728639,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",28,19.8313443097999
 "FEB",15585,503,13.9794674366378,14,12,16,11,17,2.66768623731237,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",28,445.10713760957
-"FEB",216008,800,11.2726797155661,12,9,14,5,16,4.3466775004291,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",28,4974.66830633308
+"FEB",216007,800,11.2727319022069,12,9,14,5,16,4.34661989070662,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",28,4974.66830633308
 "FEB",9744,908,8.81434729064039,9,5,13,0,15,5.37130323334526,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",28,175.466639408239
-"FEB",217786,913,13.8009835342951,14,12,15,10,18,3.21332137770745,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",28,6140.54786953099
+"FEB",217582,913,13.813923026721,14,12,15,10,18,3.18690602614825,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",28,6140.54786953099
 "FEB",34636,914,13.1413558147592,13,12,14,11,16,2.09315009961075,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",28,929.897393780338
 "FEB",233575,916,12.7482650112384,13,11,15,7,17,3.79621945843293,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",28,6083.3746779672
-"FEB",15889,2002,19.1755302410473,19,16,22,14,25,4.45518411536224,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",28,622.459460627364
-"FEB",20181,2003,14.0699668004559,14,12,16,9,20,3.9928036380239,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",28,580.100019716743
-"FEB",97484,2004,18.2536826556153,18,16,21,13,23,4.14379878362637,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",28,3635.38961381672
-"FEB",244203,2005,13.2832602384082,14,11,16,6,20,4.9473293001832,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",28,6627.08897169676
-"FEB",279840,2006,11.789722698685,12,10,15,5,17,4.34545070536609,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",28,6740.31988001306
-"FEB",270486,2007,8.71220321939028,0,0,19,0,23,10.2890709868345,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",28,4814.37498455015
-"FEB",111893,2008,18.1368182102544,19,15,22,11,24,4.91827742917421,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",28,4146.01761712729
+"FEB",15829,2002,19.2482153010298,19,16,22,14,25,4.30404976791815,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",28,622.459460627364
+"FEB",20180,2003,14.0706640237859,14,12,16,9,20,3.99167389831753,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",28,580.100019716743
+"FEB",97312,2004,18.2859462347912,18,16,21,13,23,4.07571445661587,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",28,3635.38961381672
+"FEB",243954,2005,13.2968182526214,14,11,16,6,20,4.93160938126036,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",28,6627.08897169676
+"FEB",279508,2006,11.8037265480773,12,10,15,5,17,4.32898064318709,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",28,6740.31988001306
+"FEB",118479,2007,19.8898454578448,20,17,23,15,25,4.40077100606288,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",28,4814.37498455015
+"FEB",111407,2008,18.2159379572199,19,15,22,12,24,4.78055813956545,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",28,4146.01761712729
 "JAN",60,0,7.91666666666667,8,6.5,10,2,11,3.44621370331105,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,1.07439603585705
 "JAN",360625,1,8.62440762564991,9,8,10,6,12,2.37691191766627,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,7034.86703076584
-"JAN",412946,23,9.57760821027447,9,8,12,5,14,3.56778045000012,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,8945.83984352819
+"JAN",412938,23,9.57779376080671,9,8,12,5,14,3.56756594604644,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,8945.83984352818
 "JAN",34440,24,11.030981416957,11,9,13,7,15,3.22188519609932,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,859.306473251251
 "JAN",5373,108,7.85166573608785,8,6,10,4,11,2.78575440734239,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,95.422201188845
-"JAN",166311,109,8.61704276926962,9,8,10,6,11,1.97485783267322,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,3241.52974431802
+"JAN",166308,109,8.6171982105491,9,8,10,6,11,1.97453648826663,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,3241.52974431802
 "JAN",18552,246,10.0691030616645,10,8,12,6,15,3.3621550150365,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,422.524901663513
 "JAN",17718,277,7.89547352974376,8,7,9,4,11,2.69225661500973,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,316.419811048662
 "JAN",163278,278,8.25054202035792,8,7,9,6,11,2.29417727038023,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,3047.05953805512
@@ -3300,76 +3300,76 @@
 "JAN",23403,500,11.2545827458018,11,9,14,8,15,3.14875807812205,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,595.760518485104
 "JAN",687,502,9.14556040756914,9,9,9,8,11,1.16063775524417,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,14.2114321963997
 "JAN",15585,503,9.12768687840873,9,8,11,6,12,2.17017292040456,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,321.764648591252
-"JAN",216008,800,6.96862153253583,7,5,9,2,11,3.64552300142338,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,3404.76782329017
+"JAN",216002,800,6.96881510356386,7,5,9,2,11,3.64538861466792,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,3404.76782329016
 "JAN",9744,908,4.75410509031199,5,0,9,-1,11,4.54559590123566,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,104.779625189562
-"JAN",217786,913,8.9703378545912,9,8,10,6,12,2.73578063983158,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,4418.85292041018
+"JAN",217575,913,8.97903711363898,9,8,10,6,12,2.72280059087746,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,4418.85292041018
 "JAN",34636,914,8.20068714632175,8,7,9,6,10,1.7734131867461,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,642.463948692212
-"JAN",233575,916,8.16899068821578,8,7,10,4,12,3.0719479794662,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,4315.8420903786
-"JAN",15889,2002,13.4437031908868,14,11,16,9,18,3.79533263971324,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,483.15476638172
-"JAN",20181,2003,9.12194638521382,9,7,11,6,13,3.11145147292557,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,416.390665770367
-"JAN",97484,2004,12.9005990726683,13,10,16,9,18,3.65211875639857,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,2844.552849444
-"JAN",244203,2005,8.43678415089086,8,6,11,2,14,4.06133431434287,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,4660.13738931337
-"JAN",279840,2006,7.86772441395083,8,7,10,3,12,3.37032487903786,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,4980.00431522234
-"JAN",270486,2007,6.2414468771027,0,0,14,0,17,7.53225372109991,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,3818.57089102891
-"JAN",111893,2008,12.4383116012619,13,10,15,7,17,4.05051028048106,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,3148.00300392507
+"JAN",233561,916,8.16948034988718,8,7,10,4,12,3.07138889870441,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,4315.8420903786
+"JAN",15828,2002,13.4955142784938,14,11,16,9,18,3.70956152349564,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,483.15476638172
+"JAN",20180,2003,9.12239841427156,9,7,11,6,13,3.11086586307973,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,416.390665770367
+"JAN",97310,2004,12.9236666324119,13,11,16,9,18,3.61437457713799,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,2844.552849444
+"JAN",243878,2005,8.44802729233469,8,7,11,3,14,4.05233699068945,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,4660.13738931337
+"JAN",279491,2006,7.8775488298371,8,7,10,3,12,3.36093462493421,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,4980.00431522234
+"JAN",118460,2007,14.2514266419044,14,12,17,9,19,3.92326952973544,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,3818.57089102891
+"JAN",111395,2008,12.4939180394093,13,10,15,7,17,3.97306410484168,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,3148.00300392507
 "JUL",60,0,26.6166666666667,25,21,30.5,17,40,9.45355606225627,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,3.61223256687097
-"JUL",360625,1,43.6849941074523,44,38,50,32,55,8.63956842198514,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,35633.5342814409
-"JUL",412946,23,51.2941813215287,54,46,58,36,62,10.108053137205,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,47910.6600450658
-"JUL",34440,24,60.8455574912892,62,56,66,49,71,8.46070290346367,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,4739.83043253727
+"JUL",360603,1,43.6876592818141,44,38,50,32,55,8.63309105276376,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,35633.5342814409
+"JUL",412896,23,51.3003928349996,54,46,58,36,62,10.0928914509146,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,47910.6600450658
+"JUL",34439,24,60.8473242544789,62,56,66,49,71,8.45447037767583,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,4739.83043253727
 "JUL",5373,108,37.1405174018239,38,33,42,27,47,7.64257021323905,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,451.373000697873
-"JUL",166311,109,34.4116384364233,34,30,39,26,43,6.50239242731379,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,12944.8527214213
-"JUL",18552,246,41.4657718844329,43,35,49,25,54,10.5981578606966,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,1740.0081298776
+"JUL",166303,109,34.4132938070871,34,30,39,26,43,6.49816700716165,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,12944.8527214213
+"JUL",18551,246,41.4680071155194,43,35,49,25,54,10.5940697644005,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,1740.0081298776
 "JUL",17718,277,37.7932046506378,38,31,44,26,49,8.76920047394564,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,1514.60436532757
-"JUL",163278,278,42.9099450017761,43,37,50,30,55,9.27455685537167,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,15847.3415288915
-"JUL",42931,279,36.2725303393818,35,30,42,24,51,9.86629701086268,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,3522.24567868036
+"JUL",163264,278,42.9136245589965,43,37,50,30,55,9.26643824659181,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,15847.3415288915
+"JUL",42926,279,36.2767553464101,35,30,42,24,51,9.85910166909656,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,3522.24567868036
 "JUL",9362,403,44.1000854518265,44,38,50,33,56,8.82780039471763,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,933.853724934992
-"JUL",6521,409,46.6633951847876,48,42,52,37,55,7.85691073034426,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,688.273933774765
+"JUL",6518,409,46.6848726603253,48,42,52,37,55,7.79466391739862,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,688.273933774765
 "JUL",26707,412,52.4766915041,53,48,58,42,62,7.40419075124144,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,3170.02246794416
 "JUL",34,425,36.6764705882353,36,32,40,30,49,7.29512564192611,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",31,2.82057232992367
 "JUL",23403,500,47.9074050335427,48,39,57,29,66,12.8525576655648,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,2535.97499851389
 "JUL",687,502,30.1441048034934,23,21,40,20,56,13.9520249752127,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,46.8414052769761
 "JUL",15585,503,48.7620789220404,50,39,58,31,64,12.0613015242536,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,1718.93639625646
-"JUL",216008,800,45.4064432798785,46,40,52,31,58,9.59895784088381,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,22184.9323180453
-"JUL",9744,908,41.3288177339901,42,36,48,30,52,8.6259293541587,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,910.879744858781
-"JUL",217786,913,37.2043198369041,37,31,43,26,50,9.33950488224316,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,18327.1154362413
-"JUL",34636,914,34.5028005543365,33,26,41,22,50,10.2965817647048,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,2703.04245114647
-"JUL",233575,916,28.7579749545114,28,23,34,19,39,7.96997767087807,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,15193.4166018547
-"JUL",15889,2002,53.4103467807917,56,44,64,33,72,15.4398708419929,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1919.52048143499
-"JUL",20181,2003,44.8676973390813,46,39,51,31,56,9.56501217980764,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,2048.08158014245
-"JUL",97484,2004,54.101165319437,55,45,64,36,70,13.2115571129419,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,11929.1843038274
-"JUL",244203,2005,32.7688521435036,31,26,38,21,47,10.2307047357349,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,18100.1848983772
-"JUL",279840,2006,28.2046919668382,28,22,34,15,41,10.2567636624362,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,17852.6191709654
-"JUL",270486,2007,17.944566447062,0,0,46,0,69,28.5616852052671,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,10978.6401192112
-"JUL",111893,2008,44.3710062291654,43,35,54,27,63,13.487555187202,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,11229.824864849
+"JUL",215998,800,45.4085454494949,46,40,52,31,58,9.59420663454505,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,22184.9323180453
+"JUL",9741,908,41.3415460425008,42,36,48,30,52,8.59670662401874,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,910.879744858781
+"JUL",217574,913,37.2405710241113,37,31,43,26,50,9.27153321972374,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,18327.1154362413
+"JUL",34633,914,34.5057892761239,33,26,41,22,50,10.2920188264772,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,2703.04245114647
+"JUL",233549,916,28.7611764554762,28,23,34,19,39,7.96464290521249,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,15193.4166018547
+"JUL",15660,2002,54.1913793103448,56,44,64,34,72,14.1262313090438,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1919.52048143499
+"JUL",20178,2003,44.8743681236991,46,39,51,31,56,9.55006351355703,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,2048.08158014245
+"JUL",97038,2004,54.3498217193264,56,45,64,36,70,12.7213617310042,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,11929.1843038274
+"JUL",243979,2005,32.7989376134831,31,26,38,21,47,10.187082223991,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,18100.1848983772
+"JUL",279525,2006,28.2364761649226,28,22,34,15,41,10.2187220111989,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,17852.6191709654
+"JUL",80690,2007,60.1531044739125,61,50,71,41,78,13.9863726975037,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,10978.6401192112
+"JUL",111801,2008,44.4075187162906,43,35,54,28,63,13.4328854467446,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,11229.824864849
 "JUN",60,0,24.3666666666667,23.5,18,32,9,36,10.4705406843306,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",30,3.20020442327268
-"JUN",360625,1,41.6602481802426,41,32,51,25,59,12.3727365726191,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",30,32885.7712718476
-"JUN",412946,23,41.771652952202,42,34,50,26,57,11.4791047759497,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",30,37757.6775556521
-"JUN",34440,24,59.2159988385598,62,54,67,40,73,12.2431333532024,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",30,4464.0859785348
-"JUN",5373,108,35.249395123767,36,29,41,25,45,7.80778065613206,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",30,414.570941686545
-"JUN",166311,109,33.4751399486504,33,28,38,24,43,7.4812088960941,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",30,12186.3521767546
-"JUN",18552,246,39.7781910306166,39,30,49,24,58,12.1775492041282,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",30,1615.34805555433
+"JUN",360600,1,41.6631364392679,41,32,51,25,59,12.3683018055291,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",30,32885.7712718476
+"JUN",412893,23,41.7770148682588,42,34,50,26,57,11.4700809031336,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",30,37757.6775556521
+"JUN",34428,24,59.2366387823864,62,54,67,40,73,12.1952416784447,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",30,4464.0859785348
+"JUN",5371,108,35.2625209458201,36,29,41,25,45,7.77954300832839,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",30,414.570941686545
+"JUN",166303,109,33.4767502690871,33,28,38,24,43,7.47778514093393,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",30,12186.3521767546
+"JUN",18549,246,39.7846245080597,39,30,49,24,58,12.1680210007704,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",30,1615.34805555433
 "JUN",17718,277,32.7215825713963,31,26,37,22,46,9.91046828255104,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",30,1269.05178976812
-"JUN",163278,278,34.333412952143,34,27,41,22,48,9.74187815488141,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",30,12270.8599005366
-"JUN",42931,279,32.1876033635368,31,24,38,19,48,10.8527480285423,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",30,3024.7535441051
+"JUN",163264,278,34.3363570658565,34,27,41,22,48,9.73710624078019,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",30,12270.8599005366
+"JUN",42923,279,32.1936024974955,31,24,38,19,48,10.844858611487,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",30,3024.7535441051
 "JUN",9362,403,44.2470625934629,44,38,50,32,56,9.15316011669794,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",30,906.741368331668
 "JUN",6521,409,45.4123600674743,48,41,51,34,54,7.9817896152512,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",30,648.214320575535
-"JUN",26707,412,54.2473508817913,55,48,61,42,65,8.5084211368542,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",30,3171.27562596901
+"JUN",26704,412,54.2534451767525,55,48,61,42,65,8.48944795595711,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",30,3171.27562596901
 "JUN",34,425,33.7058823529412,35,29,37,26,41,6.17170684640188,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",30,2.50850497200444
 "JUN",23403,500,47.0415758663419,47,37,56,31,63,11.8215457719361,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",30,2409.81522054912
 "JUN",687,502,27.9344978165939,21,20,33,18,52,13.7340116069775,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",30,42.0076081306607
 "JUN",15585,503,45.8494706448508,45,37,55,30,63,12.4641155969926,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",30,1564.12508448114
-"JUN",216008,800,46.9580432206215,48,41,54,32,60,10.2306288091885,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,22202.9241650063
-"JUN",9744,908,37.7244458128079,38,31,44,26,51,9.47128111445512,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,804.61938668778
-"JUN",217786,913,36.572933981064,36,30,42,24,50,9.96175868208879,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,17434.926023454
+"JUN",215994,800,46.961086882043,48,41,54,32,60,10.2239726263139,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,22202.9241650063
+"JUN",9741,908,37.7360640591315,38,31,44,26,51,9.44956962792299,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,804.61938668778
+"JUN",217523,913,36.6171531286347,36,30,42,25,50,9.88622478696775,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,17434.926023454
 "JUN",34636,914,34.3126227047003,32,26,40,22,53,11.1355351055894,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",30,2601.42910208431
-"JUN",233575,916,32.3278903992294,30,24,40,20,49,10.67925591686,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,16528.5239380811
-"JUN",15889,2002,53.2355088425955,56,42,66,30,73,17.489575446144,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1851.51963971615
-"JUN",20181,2003,42.4991823992865,43,36,49,25,57,10.8538434789332,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,1877.38613470234
-"JUN",97484,2004,54.3803598539247,56,44,65,35,72,14.5526736011897,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,11603.9478055537
-"JUN",244203,2005,34.1203998312879,33,27,40,22,49,10.744686830384,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,18238.766153798
-"JUN",279840,2006,27.4083905088622,28,21,34,11,41,11.2523016353195,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,16788.9553482505
-"JUN",270486,2007,16.2451217438241,0,0,35,0,70,28.1938497273582,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,9618.29538427166
-"JUN",111893,2008,47.272233294308,46,37,57,29,67,14.2783911578094,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,11578.1557339262
+"JUN",233427,916,32.3483872902449,30,24,40,20,49,10.6515620738074,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,16528.5239380811
+"JUN",15566,2002,54.3401644610048,57,43,66,32,74,15.8809731537976,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1851.51963971615
+"JUN",20178,2003,42.5055010407374,43,36,49,25,57,10.8422717291447,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,1877.38613470234
+"JUN",96763,2004,54.7855585296033,56,45,65,35,72,13.8260366554996,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,11603.9478055537
+"JUN",243863,2005,34.1679713609691,33,27,40,22,49,10.6763211533756,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,18238.766153798
+"JUN",279510,2006,27.4407498837251,28,21,34,11,41,11.2194390308559,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,16788.9553482505
+"JUN",71905,2007,61.1094916904249,63,49,73,39,81,15.7645613924482,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,9618.29538427166
+"JUN",111690,2008,47.3581520279345,47,38,57,29,67,14.1482877424557,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,11578.1557339262
 "MAR",60,0,14.6833333333333,15,9.5,19,7,22,5.86086360720178,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,1.99272191071592
 "MAR",360625,1,19.8614128249567,20,18,22,15,24,3.54709271542606,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,16200.8110390293
 "MAR",412946,23,20.1008969695796,20,17,23,15,26,4.35053340454325,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,18774.9802511463
@@ -3387,28 +3387,28 @@
 "MAR",23403,500,25.1487843438875,25,22,29,19,31,4.81274325801708,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,1331.24906879141
 "MAR",687,502,18.8544395924309,18,17,20,17,23,2.49641488477348,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,29.2982144262239
 "MAR",15585,503,18.6392043631697,19,16,21,14,23,3.44012674198276,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,657.059901575129
-"MAR",216008,800,18.5030322951002,19,15,21,12,25,4.82077971952799,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,9040.31431431908
+"MAR",216007,800,18.5031179545107,19,15,21,12,25,4.8206264869576,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,9040.31431431909
 "MAR",9744,908,15.4769088669951,16,12,19,8,22,5.12896893151027,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,341.108301009461
-"MAR",217786,913,19.2797241328644,19,17,21,15,24,3.83059468239254,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,9497.33072156319
+"MAR",217582,913,19.2978003695159,19,17,21,15,24,3.78660554020546,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,9497.3307215632
 "MAR",34636,914,18.1956345998383,18,17,20,15,22,2.6531090737098,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,1425.49508905679
 "MAR",233575,916,19.2720710692497,20,17,22,14,25,4.23367698204178,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,10181.8227812917
-"MAR",15889,2002,27.0057901692995,28,23,31,19,34,5.75998132060091,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,970.564141065433
+"MAR",15829,2002,27.1081559163561,28,23,31,20,34,5.5252327939147,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,970.564141065433
 "MAR",20181,2003,20.1066845052277,20,17,23,14,26,4.58517175499521,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,917.812426648048
-"MAR",97484,2004,25.9617783431127,27,23,29,19,32,5.0246362670962,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,5724.51326845706
-"MAR",244203,2005,19.4001506942994,19,16,23,12,27,5.54209338232257,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,10715.8564201589
-"MAR",279840,2006,15.461488707833,16,12,19,8,22,5.32877843967136,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,9786.60111025735
-"MAR",270486,2007,12.4068565471041,0,0,27,0,32,14.4315646331966,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,7590.62156464841
-"MAR",111893,2008,24.9265101480879,26,21,29,17,32,6.0532837997365,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,6308.63185768625
+"MAR",97312,2004,26.0076660637948,27,23,29,19,32,4.90898781718887,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,5724.51326845706
+"MAR",243954,2005,19.4199521221214,19,16,23,12,27,5.51013669422788,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,10715.8564201589
+"MAR",279509,2006,15.4797985038049,16,12,19,8,22,5.30528742486143,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,9786.60111025735
+"MAR",118480,2007,28.3244513841999,28,25,32,22,34,4.96151696667127,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,7590.62156464841
+"MAR",111407,2008,25.0352491315626,26,22,29,17,32,5.8377893695495,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,6308.63185768625
 "MAY",60,0,23.3166666666667,24,16,27.5,12,33,8.75307882341344,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,3.16437906139792
-"MAY",360625,1,39.1009580589255,39,34,44,29,49,7.8299600268114,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,31894.3691740642
-"MAY",412946,23,28.6736304504705,28,23,34,18,41,8.62817267980918,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,26782.2299796362
+"MAY",360618,1,39.1017170523934,39,34,44,29,49,7.82814065637718,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,31894.3691740642
+"MAY",412945,23,28.6736998873942,28,23,34,18,41,8.62806774766059,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,26782.2299796362
 "MAY",34440,24,32.6832171893148,30,26,41,17,50,11.6857814617641,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,2546.00194088643
 "MAY",5373,108,31.856690861716,32,25,39,18,45,9.8686294768076,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,387.15804604949
 "MAY",166311,109,31.3567352730727,31,28,35,24,39,5.90533287858318,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,11795.669673923
 "MAY",18552,246,32.0442000862441,31,26,37,22,44,8.08242279337921,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,1344.65526943251
 "MAY",17718,277,27.6820182864883,27,23,32,20,37,6.59153891863207,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,1109.38741833012
-"MAY",163278,278,29.4029875427186,29,24,34,20,40,7.40641205762569,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,10859.0021623173
-"MAY",42931,279,30.8258833942838,29,23,37,19,46,9.68608096249542,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,2993.34878380783
+"MAY",163277,278,29.403167623119,29,24,34,20,40,7.40607727448107,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,10859.0021623173
+"MAY",42929,279,30.8273195275921,29,23,37,19,46,9.68402102524359,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,2993.34878380783
 "MAY",9362,403,40.680196539201,40,36,46,31,51,7.45097563136918,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,861.434908345444
 "MAY",6521,409,43.0969176506671,44,39,48,33,51,7.19812662039516,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,635.669241972813
 "MAY",26707,412,45.5220354214251,46,41,51,36,55,7.30625434371704,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,2749.90421340097
@@ -3418,74 +3418,74 @@
 "MAY",15585,503,42.6725697786333,43,34,52,28,57,10.8261619567088,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,1504.27206829222
 "MAY",216008,800,42.2352875819414,43,38,47,32,52,7.67734226874073,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,20635.5514494518
 "MAY",9744,908,35.930316091954,36,31,41,26,45,7.24412794181329,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,791.897735018384
-"MAY",217786,913,33.4563195063044,33,28,38,23,44,8.26608334644894,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,16480.8235267239
+"MAY",217685,913,33.4718423409973,33,28,38,23,44,8.23651980122352,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,16480.8235267239
 "MAY",34636,914,32.1018593371059,31,26,37,22,44,8.09216642290219,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,2514.94624073418
-"MAY",233575,916,35.5633479610403,35,27,44,22,49,10.2702605012086,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,18788.8320434065
-"MAY",15889,2002,50.0047202467116,51,41,60,32,66,13.0538677949555,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1797.12528503015
+"MAY",233571,916,35.5639569980862,35,27,44,22,49,10.2692939072779,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,18788.8320434065
+"MAY",15840,2002,50.1594065656566,51,41,60,32,66,12.7738648174743,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,1797.12528503015
 "MAY",20181,2003,36.6320301273475,36,31,42,26,47,7.65984853674347,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,1672.14701436648
-"MAY",97484,2004,49.3900640105043,51,41,58,33,64,11.7316092438828,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,10890.3971454282
-"MAY",244203,2005,33.2574497446796,32,27,38,23,46,8.99480772392569,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,18370.0663969253
-"MAY",279840,2006,26.3211513722127,27,21,32,13,39,9.97051986889006,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,16660.4014729867
-"MAY",270486,2007,23.680116530985,0,0,53,0,63,27.7239963646387,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,14487.6990002304
-"MAY",111893,2008,42.7787976012798,42,34,51,27,59,11.9400198819195,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,10826.8539710381
-"NOV",60,0,5.91666666666667,6,4,8,2,9,2.81834269661366,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",30,0.7770674215197
-"NOV",360625,1,6.58510363951473,7,5,8,3,10,2.40857530783704,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",30,5198.14983227091
-"NOV",412946,23,8.58296726448494,8,7,10,6,11,2.1206415511658,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",30,7758.20173585103
-"NOV",34440,24,9.89846109175378,10,8,12,6,13,2.57664124278383,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",30,746.210183657269
-"NOV",5373,108,6.56560580681184,7,5,8,4,9,2.01594813733972,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",30,77.2186124759168
-"NOV",166311,109,9.76694866845849,10,9,11,8,12,1.58450583033536,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",30,3555.57814989562
-"NOV",18552,246,8.41316300129366,8,8,9,7,10,1.77244288283519,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",30,341.649183713285
-"NOV",17718,277,8.30437972683147,8,7,9,7,10,1.36323867818973,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",30,322.071462535617
-"NOV",163278,278,7.99527799213611,8,7,9,6,10,1.60914472754876,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",30,2857.53520176101
-"NOV",42931,279,8.37203885304326,8,7,9,6,11,1.81390509486116,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",30,786.742458148199
-"NOV",9362,403,7.64654988250374,8,7,9,5,10,1.86019117603765,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",30,156.69838170234
-"NOV",6521,409,8.81965956141696,9,8,10,7,11,1.67245468816913,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",30,125.891489053134
-"NOV",26707,412,8.52390758977047,9,7,10,6,11,1.82167819306699,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",30,498.303786969343
-"NOV",34,425,6.20588235294118,6,6,7,4,8,1.92169367340231,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",30,0.46186260828354
-"NOV",23403,500,10.8267743451694,11,9,13,8,14,2.19088382508564,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",30,554.626947034479
-"NOV",687,502,8.14701601164483,7,6,11,6,13,2.65430670417001,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",30,12.2513981922416
-"NOV",15585,503,9.89598973371832,10,8,12,7,13,2.22509961434694,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",30,337.595299587498
-"NOV",216008,800,7.00183326543461,7,5,9,4,10,2.54894794650457,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,3310.63993186567
-"NOV",9744,908,6.95679392446634,7,5,9,3,11,2.89744682357829,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,148.380476908608
-"NOV",217786,913,8.27682679327413,8,7,9,6,11,1.99924153087591,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,3945.70101825554
-"NOV",34636,914,8.75409978057512,9,7,10,6,12,2.03805653452046,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",30,663.696568103447
-"NOV",233575,916,8.13881194477149,8,7,9,6,10,1.83168247480088,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,4161.19166439337
-"NOV",15889,2002,10.0533702561521,10,8,12,5,15,3.60888148235748,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,349.654072616095
-"NOV",20181,2003,7.87706258361825,8,6,9,4,11,2.60436480420766,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,347.966413511893
-"NOV",97484,2004,9.95466948422305,10,8,12,6,14,2.95757114500816,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,2124.17618101005
-"NOV",244203,2005,7.98254321199985,8,6,9,5,11,2.36533091234713,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,4266.99979121427
-"NOV",279840,2006,6.3710799028016,7,5,8,2,10,2.98449451502201,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,3902.59238220087
-"NOV",270486,2007,5.65048838017494,0,0,11,0,14,6.3228083915504,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,3345.50070864067
-"NOV",111893,2008,10.5701339672723,10,8,13,7,15,3.17032322212921,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,2588.89095506892
-"OCT",60,0,10.2,10,8,12,4,16,3.71842260463582,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,1.38427447146214
-"OCT",360625,1,14.8094086655113,15,12,18,9,20,4.00711335488342,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,12079.9277223741
-"OCT",412946,23,13.5805456403501,13,10,17,8,20,4.40763605038782,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,12684.7312626515
-"OCT",34440,24,15.6229674796748,16,13,18,10,21,3.73869660253652,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,1217.01928225908
-"OCT",5373,108,17.3424530057696,17,15,21,12,22,3.69450088249777,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,210.764835825675
-"OCT",166311,109,16.1344048198856,16,14,18,12,21,3.42628016439534,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,6069.38534842161
-"OCT",18552,246,11.2731241914618,11,9,13,7,16,3.11310331207715,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,473.04865798549
-"OCT",17718,277,11.3737442149227,11,10,13,8,15,2.57766884379881,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,455.815345570343
-"OCT",163278,278,10.5411445510112,10,8,12,7,15,3.00165223848793,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,3893.01635782504
-"OCT",42931,279,12.1779599822972,12,10,14,8,18,3.57149085694761,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,1182.54134799683
-"OCT",9362,403,17.4834437086093,18,16,20,13,21,2.98418414785151,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,370.225564524383
-"OCT",6521,409,18.7846955988345,20,17,21,14,22,3.00441102440264,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,277.069773499599
-"OCT",26707,412,18.8528101246864,19,17,21,14,24,3.58084081757373,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,1138.86432178126
-"OCT",34,425,12.1764705882353,12.5,10,14,10,15,2.51431885566618,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",31,0.936420965989092
-"OCT",23403,500,19.6225270264496,20,17,23,14,25,3.99594613484865,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,1038.71703992103
-"OCT",687,502,11.9330422125182,9,8,18,7,23,6.15507032818822,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,18.542944635697
-"OCT",15585,503,19.4531921719602,20,17,23,13,24,4.17956057213668,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,685.754192334882
-"OCT",216008,800,14.324307433058,14,12,17,9,20,4.00233967546725,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,6998.64970586869
-"OCT",9744,908,14.4480706075534,14,12,17,10,19,3.51772026792298,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,318.432889936899
-"OCT",217786,913,13.6224229289302,13,11,16,9,19,3.86074231153507,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,6710.50347471101
-"OCT",34636,914,14.3261057858875,14,11,17,9,20,3.89243447859095,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,1122.34576546575
-"OCT",233575,916,10.8187434442898,10,8,13,7,16,3.55655588486653,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,5715.75976812281
-"OCT",15889,2002,20.7186732959909,21,17,25,13,28,5.73426295550175,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,744.610738122326
-"OCT",20181,2003,14.3949754719786,14,12,17,9,19,3.71673442511329,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,657.089306098216
-"OCT",97484,2004,20.4384104058102,21,17,24,14,27,4.803415858227,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,4506.62315993733
-"OCT",244203,2005,12.6612818024349,12,9,15,7,19,4.60148511820881,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,6993.57855657945
-"OCT",279840,2006,11.8300850485992,12,9,15,5,17,4.59294293063441,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,7488.04501680395
-"OCT",270486,2007,10.4368950703548,0,0,22,0,26,11.6621660191081,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,6385.3821867151
-"OCT",111893,2008,18.187527369898,18,14,22,11,25,5.15147833341707,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,4603.06773377503
+"MAY",97378,2004,49.4438271478157,51,41,58,33,64,11.6242082255676,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,10890.3971454282
+"MAY",244164,2005,33.2627619141233,32,27,38,23,46,8.98569928631652,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,18370.0663969253
+"MAY",279765,2006,26.3282076028095,27,21,32,13,39,9.96253677217674,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,16660.4014729867
+"MAY",118777,2007,53.9257600377177,55,47,61,39,68,10.9237123089432,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,14487.6990002304
+"MAY",111872,2008,42.7868278032037,42,34,51,27,59,11.9267451243879,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,10826.8539710381
+"NOV",60,0,4.76666666666667,6,1,7,0,9,3.43689136025889,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",30,0.62603178184404
+"NOV",360625,1,8.17802426343154,8,7,10,5,11,2.47457383816294,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",30,6455.56968886169
+"NOV",412946,23,7.26176546085929,7,5,9,4,12,3.18415453402411,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",30,6563.95855509096
+"NOV",34440,24,7.98914053426249,8,5,10,3,13,3.59894946344245,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",30,602.273219046364
+"NOV",5373,108,9.28457100316397,9,7,12,4,14,3.33310694195365,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",30,109.196578563188
+"NOV",166311,109,10.2660978528179,10,9,12,6,14,2.76322692334289,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",30,3737.28934688164
+"NOV",18552,246,6.73598533850798,6,5,8,4,12,2.92416048503844,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",30,273.540865908819
+"NOV",17718,277,6.50553109831809,7,5,8,4,9,2.1586389695177,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",30,252.306130539347
+"NOV",163278,278,6.06495669961661,6,5,7,3,9,2.10020572907384,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",30,2167.63285571267
+"NOV",42931,279,7.24150380843679,7,5,9,4,11,2.64498123873904,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",30,680.503113631414
+"NOV",9362,403,10.3864558854946,10,9,12,7,13,2.26506215818938,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",30,212.846427982345
+"NOV",6521,409,12.0900168685784,12,10,15,8,16,2.90318556821854,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",30,172.572446324484
+"NOV",26707,412,12.1845583554873,12,10,14,9,16,2.58840986865966,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",30,712.30377701124
+"NOV",34,425,8.41176470588235,8.5,8,10,4,11,2.30239832832717,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",30,0.62603178184404
+"NOV",23403,500,11.4469512455668,11,9,14,8,15,2.86150642678376,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",30,586.396965501907
+"NOV",687,502,7.88791848617176,6,6,10,6,13,3.06227686967447,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",30,11.8617700203247
+"NOV",15585,503,11.7231312159127,12,10,14,8,15,2.73515254213069,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",30,399.927051404949
+"NOV",216008,800,8.02265193881708,8,6,10,4,11,2.66612433574744,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,3793.30824674511
+"NOV",9744,908,5.86483990147783,6,3,8,0,12,4.13938929488774,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,125.090343486159
+"NOV",217682,913,8.18114497294218,8,6,10,5,12,2.74120998635282,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,3898.22548218416
+"NOV",34636,914,8.21809677791893,8,7,10,5,12,2.50289413804857,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",30,623.059225341438
+"NOV",233566,916,6.35801871847786,6,4,8,3,10,2.65133085735568,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,3250.58684817724
+"NOV",15814,2002,11.9963323637283,12,10,14,7,17,3.73261991809495,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,415.260452215499
+"NOV",20181,2003,7.49041177345028,8,6,9,4,10,2.7032272241175,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,330.886252694659
+"NOV",97423,2004,12.2559251922031,12,10,15,8,16,3.17224320527566,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,2613.59294338399
+"NOV",244168,2005,7.64067773008748,7,5,9,4,12,3.25526912217735,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,4083.67316956041
+"NOV",279692,2006,6.83014887805157,7,5,9,1,11,3.42062382476014,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,4181.58147574958
+"NOV",130530,2007,13.1767869455298,13,10,16,9,18,4.24662809573008,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,3764.87195696212
+"NOV",111881,2008,11.7283631715841,12,9,15,6,17,3.9132672807479,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,2872.26227109054
+"OCT",60,0,6.38333333333333,5,2,10,0,15,5.48358662028988,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",31,0.866302487859474
+"OCT",360625,1,13.6916714038128,14,10,17,8,20,4.62275755110014,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",31,11168.1975082322
+"OCT",412946,23,12.7198326173398,12,9,16,7,20,5.17870723004889,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",31,11880.7935063724
+"OCT",34440,24,16.0573461091754,16,13,20,9,22,4.8082262957701,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Rice","yes",31,1250.8571026726
+"OCT",5373,108,11.5414107574912,12,8,15,6,17,4.35405080833376,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Bush Berries","yes",31,140.264098895931
+"OCT",166311,109,15.0016595414615,15,12,18,9,20,4.12322268520325,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Vineyards","yes",31,5643.27309494152
+"OCT",18552,246,11.4764445881846,10,8,15,7,18,4.38342428802462,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Potatoes","yes",31,481.58049345339
+"OCT",17718,277,10.9956541370358,10,9,13,6,16,4.01316172860878,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cucurbit","yes",31,440.662968635171
+"OCT",163278,278,9.1913117505114,9,7,11,5,15,3.5481828802805,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Tomatoes","yes",31,3394.50112096015
+"OCT",42931,279,10.8883790268105,10,8,14,5,18,4.44895818767542,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Truck Crops","yes",31,1057.31653171651
+"OCT",9362,403,15.9264046143986,16,14,18,11,20,3.47712475757171,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Cherries","yes",31,337.254046598724
+"OCT",6521,409,15.3792363134489,16,13,18,11,20,3.60899786685315,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Olives","yes",31,226.840062408488
+"OCT",26707,412,18.4144980716666,18,16,21,13,24,3.85525307034983,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pears","yes",31,1112.38667968496
+"OCT",34,425,9.97058823529412,11,8,12,6,13,2.94543808903399,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Citrus","yes",31,0.766779486643242
+"OCT",23403,500,16.536982438149,17,13,21,9,24,5.19731071806923,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Almonds","yes",31,875.383961720455
+"OCT",687,502,10.7292576419214,9,8,13,7,19,4.53125036507912,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pistachios","yes",31,16.6723645901101
+"OCT",15585,503,16.3383381456529,16,13,19,11,23,4.49783709442014,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",31,575.950917470291
+"OCT",216008,800,14.7894476130514,15,12,18,8,22,5.05290648482048,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",31,7225.91047914596
+"OCT",9744,908,16.2123357963875,15,13,20,11,23,4.54386661934525,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",31,357.31697888936
+"OCT",217738,913,12.3624034389955,12,9,15,7,18,4.4875937000788,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",31,6088.46662201843
+"OCT",34636,914,11.1185471763483,10,8,13,6,18,4.25969152152875,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",31,871.05697305394
+"OCT",233573,916,10.2441506509742,9,7,13,5,17,4.4139226790325,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",31,5412.14449593517
+"OCT",15851,2002,21.5293672323513,22,16,27,11,31,7.2818691655908,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",31,771.895873660313
+"OCT",20181,2003,12.3647490213567,12,10,15,7,18,4.22499190361237,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",31,564.415296874773
+"OCT",97463,2004,19.9932897612427,20,16,24,12,28,6.23636533267178,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",31,4407.52539336266
+"OCT",244185,2005,11.0228515265065,10,7,14,4,19,5.50541581783991,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",31,6088.12733905974
+"OCT",279770,2006,9.87244164849698,10,6,13,2,18,5.76300319539922,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",31,6247.35961723292
+"OCT",142136,2007,22.8720661901278,23,19,27,15,31,6.4389293120479,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",31,7353.26599240687
+"OCT",111887,2008,17.5734714488725,17,12,23,8,28,7.23072548792081,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,4447.41828364563
 "SEP",60,0,13.55,14,8.5,17,4,21,6.59652686393883,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson",NA,"no",30,1.77959384139582
 "SEP",360625,1,24.2148908145581,24,20,29,15,33,6.48629089681696,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Alfalfa","yes",30,19114.753163616
 "SEP",412946,23,23.1603212042253,24,17,29,12,33,7.48405321484254,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Corn","yes",30,20934.769833387
@@ -3505,16 +3505,16 @@
 "SEP",15585,503,29.786204683991,31,25,36,18,38,7.22118418676349,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Walnuts","yes",30,1016.13713882544
 "SEP",216008,800,25.1697390837376,26,21,30,15,34,6.8157544487512,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Pasture","yes",30,11900.8751174668
 "SEP",9744,908,24.2201354679803,25,21,28,17,31,5.36060871185499,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Turf","yes",30,516.587855059354
-"SEP",217786,913,20.1562726713379,20,16,24,13,28,6.04764350580705,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,9608.83048418532
+"SEP",217697,913,20.1645130617326,20,16,24,13,28,6.03512890333582,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Semi-agricultural/ROW","yes",30,9608.83048418532
 "SEP",34636,914,20.1041979443354,19,16,24,13,29,6.07407727640631,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Other Deciduous","yes",30,1524.21008608279
-"SEP",233575,916,14.7501188055229,14,11,17,9,22,5.63207638650543,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,7541.40430309166
-"SEP",15889,2002,32.3416829252942,34,25,39,19,44,9.27401212324753,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1124.83683202332
+"SEP",233573,916,14.7502451053846,14,11,17,9,22,5.63193510959467,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Fallow","yes",30,7541.40430309166
+"SEP",15842,2002,32.4376341371039,34,26,39,19,44,9.11866419883311,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Floating Vegetation","no",30,1124.83683202332
 "SEP",20181,2003,22.9794856548238,23,18,28,14,32,6.46811065392366,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Forage Grass","yes",30,1015.11053426011
-"SEP",97484,2004,31.4506688277051,32,25,38,20,42,8.42153437645847,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,6711.09791304745
-"SEP",244203,2005,17.8065093385421,17,13,21,10,28,6.91559469794392,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,9518.31635757332
-"SEP",279840,2006,15.6835441680961,16,11,20,6,24,6.9259696767849,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,9606.92393284971
-"SEP",270486,2007,17.6723601221505,8,0,35,0,43,18.5387650508907,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,10463.3244658008
-"SEP",111893,2008,24.4911388558712,24,17,31,13,38,9.36009237420351,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,5998.49425367917
+"SEP",97428,2004,31.4687461510038,32,25,38,20,42,8.39012130335262,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Riparian","no",30,6711.09791304745
+"SEP",244178,2005,17.8083324460025,17,13,21,10,28,6.91360109486845,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Upland Herbaceous","no",30,9518.31635757332
+"SEP",279736,2006,15.689374982126,16,11,20,6,24,6.92065083852086,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Urban","no",30,9606.92393284971
+"SEP",135424,2007,35.2974805056711,35,30,41,26,46,8.020634285819,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Water","no",30,10463.3244658008
+"SEP",111882,2008,24.4935467724924,24,17,31,13,38,9.35740159416975,"disalexi","dsa",2015,"data/dsa_legal/disalexi-dsa-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,5998.49425367917
 "APR",58,0,18.6551724137931,20,7,27,3,31,10.0782314474418,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson",NA,"no",30,2.36841394389948
 "APR",292078,1,28.1834989283685,28,25,32,21,35,5.2870703130763,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson","Alfalfa","yes",30,18018.7269270914
 "APR",61001,12,22.2762085867445,22,19,25,16,29,5.09832047023512,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson","Safflower","yes",30,2974.46305393774
@@ -3959,354 +3959,354 @@
 "SEP",281937,2006,17.5156648471112,18,13,22,7,26,7.40325210768751,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson","Urban","no",30,10809.58570883
 "SEP",283974,2007,18.6935670166987,0,0,38,0,47,20.5324168798847,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson","Water","no",30,11619.8656486221
 "SEP",101274,2008,27.1534451093074,27,20,34,15,40,9.29821249295404,"disalexi","dsa",2016,"data/dsa_legal/disalexi-dsa-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,6019.40065070152
-"APR",7238,0,25.860044211108,25,20,31,13,40,10.2083383554453,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,409.711534149154
-"APR",389019,1,32.8301831015966,33,28,38,24,42,6.83063962515926,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,27955.9636149894
-"APR",423096,23,26.1420126874279,25,21,31,17,37,7.85404870730174,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,24210.7525582529
+"APR",7174,0,26.0907443546139,25,20,31,14,40,9.9559380920716,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,409.711534149154
+"APR",389000,1,32.8319555744033,33,28,38,24,42,6.82695172208335,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,27956.1074675555
+"APR",421897,23,26.2163905773115,25.0079984754083,21,31,17,37.0059288048689,7.74039294595411,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,24210.8303424741
 "APR",29882,24,26.0501974432769,27,21,29,16,35,7.9559743003378,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,1703.92717484063
 "APR",5373,108,22.1736460078169,23,16,28,10,33,8.32318743922458,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,260.786015584326
-"APR",171555,109,24.0308414211186,24,21,27,19,29,4.18799697839397,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,9024.07521041902
+"APR",171493,109,24.0397240440806,24,21,27,19,29,4.16374914347195,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,9024.14831055559
 "APR",18552,246,23.8097240189737,23,20,27,17,32,5.75288107596167,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,966.886386757293
 "APR",17037,277,23.4443857486647,23,19,27,15,33,6.68667781781764,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",30,874.303728558427
 "APR",163756,278,22.2279000464105,21,18,25,15,31,6.11839831432251,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,7967.57215519852
-"APR",44833,279,24.6164878549283,23,18,29,15,39,8.76432380005172,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,2415.76252247664
+"APR",44475,279,24.8156441376131,23,19,30,15,39,8.51555448950412,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,2415.86052713994
 "APR",9307,403,32.8140109594929,32,29,36,26,41,5.61375474060101,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",30,668.496874738356
 "APR",6995,409,34.2611865618299,35,31,38,27,41,5.36245668460706,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",30,524.59055503985
 "APR",26707,412,31.7845883101809,32,28,35,25,38,4.9110244757533,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,1858.11267372634
 "APR",34,425,24.7352941176471,25,23,27,20,28,2.94367540899041,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",30,1.84088366619174
-"APR",24968,500,37.8482057033002,38,30,45,24,51,9.83581717031495,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,2068.51845332842
+"APR",24891,500,37.9648416850062,38,30,45,25,51,9.62275872151213,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,2068.4941002138
 "APR",687,502,25.8748180494905,22,21,31,20,42,8.08823559856526,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",30,38.9102830561526
 "APR",15165,503,29.7693372898121,29,25,35,19,42,7.86036706406161,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",30,988.193356563131
-"APR",238972,800,35.8406424183586,36,31,41,26,45,7.15241005691661,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,18747.9226176008
+"APR",238969,800,35.8411416898263,36,31,41,26,45,7.15132753199537,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,18747.9484216592
 "APR",9715,908,32.2171899125064,32,28,37,23,41,6.91904313683983,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,685.110795102679
-"APR",224131,913,27.9324100637574,27,23,32,19,37,7.06992536218235,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,13703.7897371974
+"APR",223805,913,27.9732564732664,27,23,32,19,37,6.99417682761304,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,13703.8678051104
 "APR",36738,914,23.8493929990745,23,19,27,17,33,6.32038287469383,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",30,1917.88776428087
-"APR",243042,916,31.9802997012862,32,25,39,20,44,8.79354420074624,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,17013.5212663027
-"APR",15822,2002,42.7806219188472,44,34,52,27,57,11.1359076892377,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1481.62679138351
+"APR",242900,916,31.9992965679773,32,25,39,20,44,8.76204194139063,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,17013.6813561168
+"APR",15810,2002,42.8130929791271,44,34,52,27,57,11.0775618975253,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1481.62679138351
 "APR",27238,2003,33.1649166605478,33,28,38,24,42,7.02693044390129,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,1977.35421678911
-"APR",104659,2004,41.0714988677515,42,34,48,27,54,10.0739068324283,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,9409.08694517542
-"APR",271383,2005,28.2547617205204,28,23,32,19,39,8.06846280665571,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,16784.3542335462
-"APR",354099,2006,22.2979590453517,23,18,28,10,33,8.71253193818161,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,17283.0410819205
-"APR",281434,2007,22.1243701898136,0,0,45,0,55,23.83568619035,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,13629.4342351084
-"APR",126029,2008,36.9922160772521,37,30,44,23,52,11.1471556094008,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,10204.9572093736
-"AUG",7238,0,26.9980657640232,26,20,33,15,42,10.1104427103335,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,441.999743492417
-"AUG",389019,1,35.5539935067439,36,30,41,25,45,7.41027448193925,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,31284.5555554301
-"AUG",423096,23,40.9133269990735,43,37,47,28,50,8.44698399974144,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,39153.8528329159
+"APR",104565,2004,41.108420599627,42,34,48,27,54,10.002851329575,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,9409.08694517542
+"APR",271344,2005,28.2588763220012,28,23,32,19,39,8.06192836420636,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,16784.3860532906
+"APR",348509,2006,22.6539931039179,23.0225077678339,18,28,11,33,8.30800184136561,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,17281.8053973036
+"APR",136358,2007,45.6631471470753,46,39,53,33,58,9.88643819558969,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,13629.4023177337
+"APR",124361,2008,37.4876088633159,37.0365900765797,31,44,24,52,10.3598001590235,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,10204.748223878
+"AUG",7172,0,27.2465142219743,26,20,33,15,42,9.81796220616578,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,441.999743492417
+"AUG",389001,1,35.5558422088256,36,30,41,25,45,7.40649808111374,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,31284.7346404556
+"AUG",421897,23,41.0294611194847,43,37,47,28.010681915387,50,8.17212912911106,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,39153.7206435869
 "AUG",29882,24,46.8371260290476,48,41,52,35,57,7.93635645058284,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,3165.7067887096
 "AUG",5373,108,30.6461939326261,31,28,34,23,37,5.33306138799145,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,372.446736960618
-"AUG",171555,109,30.7745562647547,31,28,34,24,37,5.2393270426501,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,11941.6947974575
+"AUG",171493,109,30.7859187226976,31,28,34,24,37,5.2074900025793,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,11941.7865384648
 "AUG",18552,246,32.5706123329021,33,27,38,22,42,7.47348878349457,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,1366.74485192973
 "AUG",17037,277,31.7324646357927,32,28,35,24,39,6.23635247089344,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,1222.83459217106
 "AUG",163756,278,33.5447067588363,34,29,39,23,43,7.53009533826641,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,12424.8744445896
-"AUG",44833,279,31.9745499966543,32,26,38,21,43,8.74157280844279,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3242.44807019288
+"AUG",44475,279,32.2321421815601,32,26,38,21.0007750836969,43,8.29062150839039,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3242.46961132422
 "AUG",9307,403,36.5195014505211,37,32,42,26,47,7.81297454464545,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,768.785779872306
 "AUG",6995,409,39.607719799857,41,34,45,31,47,6.47338624985307,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,626.669196021918
 "AUG",26707,412,42.2587336653312,42,38,46,34,50,5.88321380534429,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,2552.77402874192
 "AUG",34,425,27.2058823529412,27,23,35,16,37,7.52946920933969,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,2.09224491193215
-"AUG",24968,500,38.2089875040051,38,32,45,25,51,9.52769934235199,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2157.84414105199
+"AUG",24891,500,38.3265173380007,38,32,45,25,51,9.30202323200644,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2157.80646494648
 "AUG",687,502,23.1266375545852,18,17,29,16,42,10.0093102607667,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,35.9368509846249
 "AUG",15165,503,40.6504451038576,41,33,48,28,53,8.97499919684047,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,1394.3715323128
-"AUG",238972,800,38.3144636191688,39,34,43,28,47,7.50059186968416,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,20710.0217969982
+"AUG",238969,800,38.3149658045066,39,34,43,28,47,7.499410329429,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,20710.0332496916
 "AUG",9715,908,34.7000514668039,35,31,39,27,42,6.1748910486013,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,762.506783250118
-"AUG",224131,913,31.4164885714158,31,26,36,22,42,7.84227410968306,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,15926.8671925224
+"AUG",223793,913,31.4640971354568,31,26,36,22,42,7.75249733967209,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,15926.9479197799
 "AUG",36738,914,28.6881158473515,27,23,34,19,40,8.04850900688433,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,2383.9015907691
-"AUG",243042,916,24.9865661079155,25,20,30,16,35,7.37090076377351,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,13735.9497486572
-"AUG",15822,2002,44.9880546075085,47,36,54,28,60,12.1398821081945,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1610.01299519807
+"AUG",242898,916,25.0017981031753,25,20,30,16,35,7.34792760068628,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,13736.1799084112
+"AUG",15775,2002,45.1220919175911,47,36,54,28,60,11.9066278895391,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1610.01299519807
 "AUG",27238,2003,34.9121815111242,36,30,40,24,44,7.447305988055,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,2150.91372114912
-"AUG",104659,2004,45.6327406147584,47,38,54,31,59,10.5983915149024,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,10802.4911927176
-"AUG",271383,2005,28.5506129713357,28,23,33,19,40,8.35404336114015,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,17525.437304467
-"AUG",354099,2006,24.3133869341625,24,19,30,12,36,9.22284446158854,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,19473.3625552037
-"AUG",281434,2007,23.7279895108622,0,0,48,0,58,25.2724714094667,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,15104.5674425189
-"AUG",126029,2008,36.3415801125138,36,28,45,22,53,11.7889206585116,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,10359.6500274876
-"DEC",7238,0,4.3652942801879,5,3,6,0,7,2.12448202237283,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,71.4665624188197
-"DEC",389019,1,4.37914857629062,5,3,6,2,6,1.74302235603101,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,3853.28632336225
-"DEC",423096,23,5.88738725962902,6,5,7,4,8,1.73939746981311,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,5634.20066862611
-"DEC",29882,24,4.90452446288736,6,0,8,0,9,3.42923825332678,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,331.49528384653
-"DEC",5373,108,3.38190954773869,3,3,4,2,5,1.30056907529184,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,41.1007376159125
-"DEC",171555,109,5.4143102795022,5,5,6,4,7,1.16949527801173,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,2100.95769831135
-"DEC",18552,246,6.35101336783096,6,6,7,5,8,0.992430410290486,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,266.504502165939
-"DEC",17037,277,5.96754123378529,6,6,7,5,7,1.05806784288648,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,229.963727514843
-"DEC",163756,278,6.15356994552871,6,6,7,5,7,1.0786959656266,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,2279.26672630858
-"DEC",44833,279,5.96701090714429,6,6,7,4,7,1.43857813140749,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,605.097585508299
-"DEC",9307,403,4.66057805952509,5,4,5,3,6,0.99524852100917,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,98.1115841080745
-"DEC",6995,409,4.94210150107219,5,5,6,4,6,1.29316403080568,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,78.1934125464805
-"DEC",26707,412,4.58565170180103,5,4,5,3,6,1.11022138345487,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,277.010964453425
-"DEC",34,425,4.11764705882353,4,4,6,1,6,1.77837840680364,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,0.31666409477892
-"DEC",24968,500,6.48121595642422,7,6,7,5,8,1.31320027600423,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,366.02524149578
-"DEC",687,502,5.72780203784571,6,5,6,5,7,0.695273061745426,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,8.90052294967893
-"DEC",15165,503,5.24101549620837,5,5,6,4,7,1.18647417173535,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,179.774730378775
-"DEC",238972,800,4.26112682657382,4,3,5,2,6,1.55418559923082,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,2303.25629337447
-"DEC",9715,908,3.79897066392177,4,1,6,0,7,2.7963727278395,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,83.4794410428972
-"DEC",224131,913,5.27490619325305,5,5,6,4,7,1.50982205697687,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,2674.16042381624
-"DEC",36738,914,5.55079209537808,6,5,6,4,7,1.24518476919056,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,461.255182341366
-"DEC",243042,916,5.43455040692555,6,5,6,3,7,1.72016019612007,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,2987.55383087337
-"DEC",15822,2002,5.47042093287827,6,4,7,2,8,2.34316765250437,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,195.773052824285
-"DEC",27238,2003,4.63943755048095,5,4,6,1,7,1.97496925746449,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,285.83232137941
-"DEC",104659,2004,5.66387983833211,6,5,7,3,8,1.87489850721493,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,1340.79196747621
-"DEC",271383,2005,4.87295814402523,5,4,6,3,7,1.73534730207764,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,2991.2045155089
-"DEC",354099,2006,3.99654333957453,4,3,5,0,6,2.13657141275962,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,3200.95828811767
-"DEC",281434,2007,2.69918346752702,0,0,6,0,7,3.67025678687116,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,1718.2239020432
-"DEC",126029,2008,5.6809385141515,6,5,7,0,8,2.51782435505676,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1619.42696635857
-"FEB",7238,0,12.7428847747997,13,10,15,6,19,4.98750176772935,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",28,188.431480346736
-"FEB",389019,1,13.6862903868449,14,12,15,10,17,2.84518191320403,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",28,10877.3646667902
-"FEB",423096,23,14.2287636848375,14,12,17,9,20,4.16391135241167,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",28,12299.0965606045
+"AUG",104540,2004,45.6846852879281,47,38,54,31,59,10.49193449788,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,10802.4911927176
+"AUG",271336,2005,28.5557054794169,28,23,33,19,40,8.34631111288007,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,17525.5275581743
+"AUG",348438,2006,24.7065064292589,25,19,30,13,36,8.75686289575851,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,19471.8690026631
+"AUG",137683,2007,48.5015543916302,48,41,56,36,62,10.1968411547509,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,15104.5143182782
+"AUG",124358,2008,36.8291653021442,36,29,45,23,53,11.0842792622478,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,10359.442699914
+"DEC",7172,0,4.01045733407697,4,2,6,0,8,2.80183530053122,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,65.0586382723291
+"DEC",388986,1,3.73687551098892,4.00347440116557,3,5,1,7,2.01766741733929,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,3287.86054574598
+"DEC",421887,23,2.77997349916664,3,1,4,0,6,2.4635660311183,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,2652.8188011032
+"DEC",22702,24,3.50220244912343,3,1,5,0,9,3.27683038699659,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,179.83580131134
+"DEC",5373,108,4.61325144239717,5,2,7,0,8,2.93125962489113,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,56.0653779806078
+"DEC",171493,109,5.44876201366603,5,4,7,2,9,2.38097620165479,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,2113.56215977153
+"DEC",18552,246,2.73253557567917,2,1,4,0,7,2.45132478116582,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,114.664068719447
+"DEC",17037,277,2.52374244291835,3,1,4,0,5,1.93003839337678,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,97.2543291657802
+"DEC",163756,278,2.252937296954,2,1,4,0,4,1.81473120027374,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,834.482270106975
+"DEC",44475,279,3.21348169839772,3,1,4,0,7,2.31665786246391,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,323.267894976034
+"DEC",9307,403,5.25239067368647,5,4,7,3,8,1.98008062376785,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,110.570054351234
+"DEC",6995,409,6.90436025732666,7,4,9,3,11,2.89494437466455,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,109.240065153162
+"DEC",26707,412,6.61789044070843,7,4,8,4,10,2.45911315341687,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,399.774848340039
+"DEC",34,425,4.32352941176471,4,4,5,3,6,1.76102557410855,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,0.332497299517866
+"DEC",24891,500,7.0951905249088,7,5,9,4,11,2.64974985364029,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,399.463584172187
+"DEC",687,502,4.09315866084425,3,3,5,2,8,2.25778222187951,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,6.36042453227374
+"DEC",15165,503,7.08796571051764,8,5,9,3,10,2.47858821134313,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,243.127906312081
+"DEC",238958,800,3.13399035868728,3,2,4,0,6,2.0841178650575,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,1693.90877744199
+"DEC",9696,908,1.8680899339934,1,0,3,-1,6,2.77891873548805,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,40.9695482052184
+"DEC",222059,913,3.78462438590814,4,3,5,1,7,2.19073782372468,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,1900.91173063103
+"DEC",36738,914,4.12240731667483,4,3,5,1,7,1.98529170491362,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,342.560432072662
+"DEC",242358,916,2.39368642312971,2,0,4,0,5,2.18270322969603,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,1312.18601273717
+"DEC",15441,2002,6.08179522051681,6,4,8,3,10,2.97259564869618,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,212.411489118526
+"DEC",27017,2003,2.61661176296406,3,1,4,0,5,2.16950966907195,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,159.899534658616
+"DEC",103890,2004,6.40591009721821,6,4,8,3,10,2.7731034449399,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,1505.30801225942
+"DEC",268663,2005,3.1501577034731,3,1,4,0,6,2.51570280439164,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,1914.30416221475
+"DEC",330694,2006,3.42750628745898,3,2,5,0,7,2.46566273074491,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,2563.74816821604
+"DEC",131376,2007,7.07333057237408,7,4,9,3,12,3.80961905826446,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,2101.89384169009
+"DEC",119525,2008,5.98722704210072,5.04098211959536,4,8,2,11,3.27329506148733,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1618.6586311625
+"FEB",7172,0,12.8601505856107,13,10,15,7,20,4.85757455327509,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",28,188.431480346736
+"FEB",389000,1,13.6869707865116,14,12,15,10,17,2.84364308967291,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",28,10877.3741380152
+"FEB",421897,23,14.26926586965,14.0236031018924,12.0321852461748,17,9,20,4.10005201554753,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",28,12299.1526665518
 "FEB",29882,24,16.0605381165919,16,14,19,11,21,3.54739528913302,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",28,980.475800196091
 "FEB",5373,108,11.78671133445,12,9,14,8,16,3.1508264431941,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",28,129.382820144187
-"FEB",171555,109,13.0692664160182,13,12,14,10,16,2.32575941834372,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",28,4580.59311984275
+"FEB",171493,109,13.0739381718715,13,12,14,10,16,2.31286372164467,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",28,4580.57448550662
 "FEB",18552,246,14.1531910306166,14,12,16,10,19,3.63991153278838,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",28,536.428976555491
 "FEB",17037,277,12.547396842167,13,11,14,9,16,3.16436489731794,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",28,436.730861554127
 "FEB",163756,278,13.1906067563937,13,12,15,10,17,2.78811101877854,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",28,4412.9511480668
-"FEB",44833,279,13.3555416768898,13,12,15,10,17,3.08941777158498,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",28,1223.28157010761
+"FEB",44475,279,13.4637118469142,14,12,15,10,17,2.85901832300731,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",28,1223.34201084668
 "FEB",9307,403,13.1400021489202,13,12,14,11,16,1.7268811581669,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",28,249.845927786408
 "FEB",6995,409,17.9306647605432,19,16,20,13,21,3.16059033964359,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",28,256.242542500942
 "FEB",26707,412,13.7936870483394,13,13,15,11,17,2.36462756006579,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",28,752.614532563979
 "FEB",34,425,12.3823529411765,13,11,14,8,15,2.90045337107589,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",28,0.860100541302744
-"FEB",24968,500,16.9856215956424,17,15,19,13,21,3.54766733697464,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",28,866.427694215843
+"FEB",24891,500,17.0382532526231,17,15,19,13,22,3.42485193542567,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",28,866.432110578878
 "FEB",687,502,14.1295487627365,14,14,15,13,16,1.36149489728639,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",28,19.8313443097999
 "FEB",15165,503,14.0427299703264,14,12,16,11,17,2.68102355545931,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",28,435.071950296318
-"FEB",238972,800,11.2021910516713,11,9,14,5,16,4.2502317622883,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",28,5469.11579589753
+"FEB",238968,800,11.2023686726343,11,9,14,5,16,4.25002021827592,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",28,5469.11096822485
 "FEB",9715,908,8.8036026762738,9,5,13,0,15,5.37514220957626,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",28,174.731161510688
-"FEB",224131,913,13.8410795472291,14,12,15,10,18,3.17657057871484,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",28,6337.8071276425
+"FEB",223679,913,13.8690690692586,14.0081525210229,12,16,10,18,3.11818572921611,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",28,6337.81632181635
 "FEB",36738,914,13.0562088300942,13,12,14,10,16,2.12017757311221,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",28,979.940535726206
-"FEB",243042,916,12.7699944865496,13,11,15,8,18,3.79722546917932,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",28,6340.7286092911
-"FEB",15822,2002,19.1782960434838,19,16,22,14,25,4.45786767163533,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",28,619.924104874972
-"FEB",27238,2003,14.1570967031353,14,12,16,10,19,3.77424260386242,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",28,787.801020979317
-"FEB",104659,2004,18.2115154931731,18,16,21,13,23,4.10547161197634,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",28,3893.94482570663
-"FEB",271383,2005,13.0173371213377,13,10,16,6,19,5.00948034246184,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",28,7217.252780645
-"FEB",354099,2006,11.978599205307,13,10,15,5,17,4.53680185217382,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",28,8665.58445842074
-"FEB",281434,2007,8.51769153691452,0,0,19,0,23,10.2457731736472,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",28,4897.40022421286
-"FEB",126029,2008,17.8514072157995,19,15,22,11,24,5.33502420437206,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",28,4596.31804589123
-"JAN",7238,0,9.08179054987566,9,7,11,4,15,3.98199144537306,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,148.682840044268
-"JAN",389019,1,8.62071004244009,9,8,10,6,11,2.33884293121571,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,7585.50743951773
-"JAN",423096,23,9.55157222001626,9,8,12,5,14,3.57555245443738,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,9140.80766479718
+"FEB",242900,916,12.777438438275,13.0053592315991,11,15,8,18,3.78575779658656,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",28,6340.71797889174
+"FEB",15762,2002,19.251300596371,19,16,22,14,25,4.3061350456886,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",28,619.924104874972
+"FEB",27237,2003,14.1576164775856,14,12,16,10,19,3.77333691364566,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",28,787.801020979317
+"FEB",104395,2004,18.2575698069831,18,16,21,13,23,4.00707885220924,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",28,3893.94482570662
+"FEB",271112,2005,13.030364046365,13,10,16,6,19,4.99504028546938,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",28,7217.26106976303
+"FEB",348179,2006,12.1822468065764,13,10.0259239585236,15,6,17,4.29550690517119,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",28,8665.56915816566
+"FEB",120655,2007,19.8680029066605,20,17,23,15,25,4.39944564647831,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",28,4897.41225888494
+"FEB",123879,2008,18.161451446235,19.049008297596,15,22,11,24,4.83008352423935,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",28,4596.3741132267
+"JAN",7170,0,9.16792189679219,9,7,11,4,15,3.90089611770123,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,148.682840044268
+"JAN",389000,1,8.62114599243601,9,8,10,6,11,2.33812390588348,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,7585.52053823212
+"JAN",421889,23,9.57900283175974,9,8,12,5,14,3.54392346925518,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,9140.90701971373
 "JAN",29882,24,10.8930125158959,10,9,13,7,15,3.32659373165337,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,736.255329792946
 "JAN",5373,108,7.85166573608785,8,6,10,4,11,2.78575440734239,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,95.422201188845
-"JAN",171555,109,8.60155635219026,9,8,10,6,11,1.98138782836885,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,3337.73003442547
+"JAN",171490,109,8.60479743675922,9,8.01278956653611,10,6,11,1.97467259684449,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,3337.72259831526
 "JAN",18552,246,10.0691030616645,10,8,12,6,15,3.3621550150365,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,422.524901663513
 "JAN",17037,277,7.90385631273111,8,7,9,4,11,2.72872537341912,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,304.581097676713
 "JAN",163756,278,8.28682918488483,8,7,9,6,11,2.29706214522967,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,3069.42054691929
-"JAN",44833,279,8.64820556286664,9,8,10,5,12,2.6531954975828,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,876.989901058263
+"JAN",44475,279,8.71842908678638,9,8,10,6,12,2.54739725846235,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,877.051274257618
 "JAN",9307,403,8.55270226711078,8,8,9,7,11,1.5430813969081,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,180.046156745729
 "JAN",6995,409,12.7013581129378,13,11,15,9,16,2.81914056979094,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,200.959558319485
 "JAN",26707,412,9.13648107237803,9,8,10,7,12,2.10183264592028,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,551.918374562962
 "JAN",34,425,7.64705882352941,8,6,9,4,10,2.71035436082548,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,0.58809046173228
-"JAN",24968,500,11.2804790131368,11,9,13,8,15,3.139491745748,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,637.06256398984
+"JAN",24891,500,11.3154261731637,11,9,14,8,15,3.0809150463069,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,637.065443091233
 "JAN",687,502,9.14556040756914,9,9,9,8,11,1.16063775524417,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,14.2114321963997
 "JAN",15165,503,9.19169139465875,9,8,11,6,12,2.17711856438077,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,315.288867853023
-"JAN",238972,800,6.86125571196626,7,5,9,2,11,3.58078601687918,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,3708.69749768619
+"JAN",238963,800,6.86150486070463,7,5,9,2,11,3.58060585689226,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,3708.69248993432
 "JAN",9715,908,4.74781266083376,5,0,9,-1,11,4.55062608191673,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,104.329509797698
-"JAN",224131,913,8.97613003109788,9,8,10,6,12,2.71306531378829,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,4550.52863667843
+"JAN",223672,913,8.99457323235418,9,8.01191042628146,10,6,12,2.68517198609251,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,4550.54036235883
 "JAN",36738,914,8.1374326310632,8,7,9,6,10,1.77026619893592,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,676.197722331732
-"JAN",243042,916,8.1925634252516,8,7,10,4,12,3.06796370737878,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,4503.7256834701
-"JAN",15822,2002,13.4550625711035,14,11,16,9,18,3.79535563577056,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,481.523946293608
-"JAN",27238,2003,9.04552463470152,9,7,11,6,13,3.00737980047396,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,557.288092855856
-"JAN",104659,2004,12.8292932284849,13,10,15,9,17,3.61098128754899,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,3037.03711945536
-"JAN",271383,2005,8.23441777856388,8,6,11,2,14,4.09399733943055,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,5054.59454274751
-"JAN",354099,2006,8.04114668496663,8,7,10,2,12,3.49795870941521,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,6440.40935884211
-"JAN",281434,2007,6.09730522964532,0,0,13,0,17,7.49215268125971,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,3881.37216668274
-"JAN",126029,2008,12.2131255504685,13,10,15,7,17,4.29277451095254,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,3481.51362854623
-"JUL",7238,0,32.2468914064659,30,24,40,17,52,13.2464669678877,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,527.931069383459
-"JUL",389019,1,43.7901824846601,44,38,50,32,55,8.68940708643021,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,38531.7164572221
-"JUL",423096,23,51.1876288123736,54,46,58,36,62,10.4549779626703,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,48986.3091659836
-"JUL",29882,24,60.3692189277826,61,55,66,48,72,8.82734805830037,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,4080.33674120512
+"JAN",242886,916,8.19780615956049,8,7,10,4,12,3.06191289945911,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,4503.71515862096
+"JAN",15761,2002,13.5071378719624,14,11,16,9,18,3.7090547209156,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,481.523946293608
+"JAN",27237,2003,9.04585673899475,9,7,11,6,13,3.00693550928386,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,557.288092855856
+"JAN",104393,2004,12.8619830831569,13,10,15,9,17,3.55695855692521,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,3037.03711945536
+"JAN",270800,2005,8.25216812733882,8,6,11,2,14,4.08051547589195,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,5054.60840558536
+"JAN",348153,2006,8.17860538284992,8,7,10.0051351914278,3,12,3.36474601518873,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,6440.50888151614
+"JAN",120636,2007,14.2245941337377,14,12,17,9,19,3.91746466355691,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,3881.39283561417
+"JAN",123823,2008,12.431034608932,13.0300088719375,10.0552497846798,15,7,17,4.00642870530367,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,3481.60410034167
+"JUL",7146,0,32.6620486985726,31,24,40,17,52,12.8128078392407,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,527.931069383459
+"JUL",388978,1,43.7951015637118,44,38,50,32.0083895367506,55,8.6782262841972,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,38531.9833961184
+"JUL",421847,23,51.3389104278113,54,46.0101125833021,58,36,62,10.0920487539827,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,48986.0475725817
+"JUL",29881,24,60.3712392490211,61,55,66,48,72,8.82058457201384,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,4080.33674120512
 "JUL",5373,108,37.1405174018239,38,33,42,27,47,7.64257021323905,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,451.373000697873
-"JUL",171555,109,34.4547404622424,34,30,39,26,43,6.5361250818192,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,13369.7458181365
-"JUL",18552,246,41.4657718844329,43,35,49,25,54,10.5981578606966,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,1740.0081298776
+"JUL",171484,109,34.4691952175943,34,30,39,26,43,6.49976192279803,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,13369.819267681
+"JUL",18551,246,41.4680071155194,43,35,49,25,54,10.5940697644005,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,1740.0081298776
 "JUL",17037,277,37.8386453014028,38,31,44,26,49,8.68353241260385,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,1458.1408953421
-"JUL",163756,278,42.9422494442952,43,37,49,30,55,9.23686769374396,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,15905.7004596729
-"JUL",44833,279,36.053108201548,35,29,43,23,51,10.3511588326729,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3656.04304438363
+"JUL",163742,278,42.9459210220957,43,37,49,30,55,9.22872365870241,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,15905.7004596729
+"JUL",44469,279,36.347909888324,35,29,43.0064271500027,24,51,9.86391108088645,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3656.0118412625
 "JUL",9307,403,44.0832706564951,44,38,50,33,56,8.83538837908705,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,928.013534272712
-"JUL",6995,409,46.0467476769121,48,41,52,36,55,7.98250153383133,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,728.54682097147
+"JUL",6992,409,46.066504576659,48,41,52,36,55,7.92701327006877,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,728.54682097147
 "JUL",26707,412,52.4766915041,53,48,58,42,62,7.40419075124144,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,3170.02246794416
 "JUL",34,425,36.6764705882353,36,32,40,30,49,7.29512564192611,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,2.82057232992367
-"JUL",24968,500,47.7350208266581,48,39,57,29,65,12.9884553306222,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2695.8247716719
+"JUL",24891,500,47.8817753363945,48,39,57,29,65,12.7338571096507,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2695.77335876396
 "JUL",687,502,30.1441048034934,23,21,40,20,56,13.9520249752127,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,46.8414052769761
 "JUL",15165,503,48.6452357401912,50,39,58,31,65,12.2475008540496,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,1668.60490027774
-"JUL",238972,800,45.3052617043001,46,40,51,32,57,9.38227903735413,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,24488.7405116992
-"JUL",9715,908,41.3394750386001,42,36,48,30,52,8.63198764105799,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,908.402979260332
-"JUL",224131,913,37.37746228768,37,31,43,26,50,9.25952538722143,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,18948.8356248391
-"JUL",36738,914,34.3551635908324,33,26,41,22,50,10.2041865898592,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,2854.81728988762
-"JUL",243042,916,28.7445955843023,28,23,34,19,39,8.01466920510823,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,15801.8640411085
-"JUL",15822,2002,53.5612438376943,56,44,64,33,72,15.3760763394006,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1916.82657474298
-"JUL",27238,2003,45.2177472648506,46,40,52,31,57,9.66970409136872,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,2785.83201684003
-"JUL",104659,2004,54.5151491988267,56,46,64,36,71,13.1641803120679,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,12905.195067323
-"JUL",271383,2005,32.9086236057528,32,27,38,22,46,9.87302980772787,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,20200.5477205676
-"JUL",354099,2006,29.3070638437273,30,23,36,14,43,11.1236813791952,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,23472.9567378994
-"JUL",281434,2007,17.6873760810705,0,0,45,0,69,28.4603776771877,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,11259.283673209
-"JUL",126029,2008,43.677669425291,43,35,53,27,62,13.9288494130873,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,12450.8997094076
-"JUN",7238,0,32.2162199502625,31,23,40,15,52,14.1401162284707,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,510.415094133479
-"JUN",389019,1,41.9582154085019,41,33,52,25,60,12.4502704997395,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,35728.7785962097
-"JUN",423096,23,41.5434794940155,42,33,50,26,57,11.6941999057554,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,38474.4248449611
-"JUN",29882,24,58.2035004350445,61,52,67,38,72,12.5432649475442,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,3807.05467887791
-"JUN",5373,108,35.249395123767,36,29,41,25,45,7.80778065613206,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,414.570941686545
-"JUN",171555,109,33.4912185596456,33,28,38,24,43,7.43843863928056,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,12576.6414032104
-"JUN",18552,246,39.7781910306166,39,30,49,24,58,12.1775492041282,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,1615.34805555433
+"JUL",238958,800,45.3079652901976,46,40,51,32,57,9.3761428653101,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,24488.7671336837
+"JUL",9712,908,41.352244645799,42,36,48,30,52,8.60268417094866,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,908.402979260331
+"JUL",223679,913,37.4531262996238,37,31,43,26,50,9.1149997079519,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,18948.9031140407
+"JUL",36735,914,34.3579692391452,33,26,41,22,50,10.1998789741674,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,2854.81728988762
+"JUL",242875,916,28.7646997919811,28,23,34,19,39,7.9818902337388,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,15802.050560733
+"JUL",15593,2002,54.3478483935099,56,45,64,34,72,14.0408545138682,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1916.82657474298
+"JUL",27235,2003,45.222728107215,46,40,52,31,57,9.65858320520729,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,2785.83201684003
+"JUL",104114,2004,54.8005167412644,56,46,64,37,71,12.5922395132188,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,12905.195067323
+"JUL",271129,2005,32.9395417658958,32,27,38,22,46,9.82611453681582,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,20200.6020498246
+"JUL",348152,2006,29.8059622472287,30.0447526721656,23,36,16,43,10.5322276816059,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,23471.6072247701
+"JUL",82652,2007,60.2260989777192,61,50,71,41,78,14.0034667995016,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,11259.2351166298
+"JUL",124275,2008,44.2946278358584,43,35,53,28,62,13.017124622448,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,12451.0396620477
+"JUN",7137,0,32.672131147541,32,23,40,16,52,13.7068161564761,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,510.415094133479
+"JUN",388975,1,41.9630614162343,41,33,52,25,60,12.4429740944206,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,35728.8635578716
+"JUN",421844,23,41.6674153148583,42,34,50.0122144519663,26.0085474776964,57,11.4901159978546,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,38475.0139848237
+"JUN",29877,24,58.2132409545804,61,52,67,38,72,12.5216931178101,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,3807.05467887791
+"JUN",5371,108,35.2625209458201,36,29,41,25,45,7.77954300832839,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,414.570941686545
+"JUN",171485,109,33.5052679666654,33,28,38,24,43,7.40910973970202,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,12576.7834145004
+"JUN",18549,246,39.7846245080597,39,30,49,24,58,12.1680210007704,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,1615.34805555433
 "JUN",17037,277,32.5636555731643,31,26,37,21,46,10.0133977736211,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",30,1214.38564389479
-"JUN",163756,278,34.3163609272332,34,27,40,22,48,9.77680666894384,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,12300.6708335329
-"JUN",44833,279,32.0983650436063,31,24,39,19,48,11.2050460564256,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,3150.00367892019
+"JUN",163742,278,34.3192949884575,34,27,40,22,48,9.77207380049323,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,12300.6708335329
+"JUN",44466,279,32.3630944431929,31,25,39,20,48,10.8634941301006,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,3149.98476118321
 "JUN",9307,403,44.2209089932309,44,38,50,32,56,9.15088361919944,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",30,900.881623296715
 "JUN",6995,409,44.7962830593281,47,39,51,34,53,8.08796088477816,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",30,685.898807135769
-"JUN",26707,412,54.2473508817913,55,48,61,42,65,8.5084211368542,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,3171.27562596901
+"JUN",26704,412,54.2534451767525,55,48,61,42,65,8.48944795595711,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,3171.27562596901
 "JUN",34,425,33.7058823529412,35,29,37,26,41,6.17170684640188,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",30,2.50850497200444
-"JUN",24968,500,46.7067446331304,47,37,55,31,63,12.0403818039318,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,2552.6642907699
+"JUN",24891,500,46.8507678177538,47,38,55,31,63,11.7749682741739,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,2552.63903444075
 "JUN",687,502,27.9344978165939,21,20,33,18,52,13.7340116069775,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",30,42.0076081306607
 "JUN",15165,503,45.4226178700956,44,37,55,29,63,12.4375828837498,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",30,1507.80411333831
-"JUN",238972,800,47.0135538891586,48,41,54,32,59,10.0775230818431,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,24592.3736523447
-"JUN",9715,908,37.7291816778178,38,31,44,26,51,9.47820577231312,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,802.325396102562
-"JUN",224131,913,36.708545448867,36,30,43,25,50,9.94825098018867,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,18009.4086848001
+"JUN",238955,800,47.0169684993554,48,41,54,32,59,10.0700764422931,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,24592.410224341
+"JUN",9712,908,37.7408360790774,38,31,44,26,51,9.45644161054205,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,802.325396102562
+"JUN",223628,913,36.7914695807888,36,30,43,25,50,9.805740849424,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,18009.5832719581
 "JUN",36738,914,33.9020088192063,32,26,39,21,51,11.0577119426212,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",30,2726.28523088286
-"JUN",243042,916,32.1285004237951,30,24,40,20,49,10.7428764049301,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,17092.3640591358
-"JUN",15822,2002,53.3141827834661,57,42,66,30,74,17.5107659561219,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1846.43696210271
-"JUN",27238,2003,43.7982597841251,45,37,51,26,59,11.156333623639,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,2611.3339755558
-"JUN",104659,2004,54.915840969243,57,45,66,35,73,14.5209764736757,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,12580.6930984139
-"JUN",271383,2005,34.4414241127852,33,28,40,23,49,10.3922007065622,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,20459.4562974831
-"JUN",354099,2006,29.1276027325691,30,22,37,11,45,12.3726161678957,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,22576.6651387672
-"JUN",281434,2007,16.0797238428903,0,0,33,0,70,28.1334958236117,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,9905.70745088519
-"JUN",126029,2008,46.8058304041133,47,38,57,29,66,14.8749301273473,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,12912.2163275019
-"MAR",7238,0,17.4434926775352,17,14,21,9,26,6.09127847501864,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,285.576728217195
-"MAR",389019,1,19.882388777926,20,18,22,15,24,3.51075825480405,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,17494.8475529114
-"MAR",423096,23,20.0810927070925,20,17,23,15,26,4.46795612184735,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,19217.5070141679
+"JUN",242753,916,32.1672994786591,30,24,40,20.0081902898175,49,10.6918863311332,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,17092.6561715692
+"JUN",15499,2002,54.4252532421447,57,43,66,32,74,15.8917196995409,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1846.43696210271
+"JUN",27235,2003,43.8030842665688,45,37,51,26,59,11.1474733770565,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,2611.33397555579
+"JUN",103841,2004,55.3484365520363,57,45,66,36,73,13.7323083734137,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,12580.6930984139
+"JUN",271003,2005,34.4898300875971,33,28,40,23,49,10.319090724807,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,20459.5228915681
+"JUN",348132,2006,29.6237629755304,30.029263258793,22,37.0190993538562,13,45,11.8707326794179,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,22574.311723751
+"JUN",73908,2007,61.229512279839,64,50,73,39,81,15.791849224562,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,9905.64133137479
+"JUN",124103,2008,47.5317381118333,47,38,57,30,66,13.7902195738575,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,12912.0834487383
+"MAR",7172,0,17.6040156162856,17,14,21,10,26,5.88381423801654,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,285.576728217195
+"MAR",389000,1,19.8834102806199,20,18.0040305580122,22,15,24,3.50809298952768,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,17494.8918839872
+"MAR",421897,23,20.1378054453002,20.0113934537601,17,23,15,26,4.34397282939191,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,19217.1670615909
 "MAR",29882,24,19.8628605849675,21,18,22,14,24,4.0605895812941,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,1342.52457245193
 "MAR",5373,108,16.4706867671692,17,13,19,11,21,3.85312500924091,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,200.170159968929
-"MAR",171555,109,17.2355804261024,17,16,19,14,20,2.57414094588358,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,6688.05877605036
+"MAR",171493,109,17.2417081298478,17,16,19,14,20,2.55365622760535,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,6688.01863279638
 "MAR",18552,246,18.3452457956016,18,16,20,14,23,3.37744928677446,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,769.812676293946
 "MAR",17037,277,17.037037037037,17,15,19,13,22,3.2267120200218,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,656.535143932352
 "MAR",163756,278,16.6123134419502,16,15,18,13,21,3.00449858041691,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,6153.15883469537
-"MAR",44833,279,17.4997881025138,17,15,20,13,23,3.97129712514959,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,1774.6036822322
+"MAR",44475,279,17.6409464437193,17,15,20,13,23,3.66240613349874,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,1774.63329730166
 "MAR",9307,403,19.6332867733964,20,18,21,17,22,2.06786668029081,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,413.307714619055
 "MAR",6995,409,24.8731951393853,26,22,28,19,29,3.95591366280865,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,393.541089445677
 "MAR",26707,412,18.9997004530647,19,18,20,16,22,2.32343708561284,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,1147.73770209424
 "MAR",34,425,17.4411764705882,18,16,19,15,20,2.48751206288046,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,1.34129863002785
-"MAR",24968,500,25.0185437359821,25,22,29,19,31,4.92942995162311,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,1412.91673883489
+"MAR",24891,500,25.0958148066972,25.1116730257313,22,29,19,31,4.73626014835436,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,1412.9097865957
 "MAR",687,502,18.8544395924309,18,17,20,17,23,2.49641488477348,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,29.2982144262239
 "MAR",15165,503,18.7287174414771,19,16,21,14,23,3.47134607289639,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,642.423234737169
-"MAR",238972,800,18.3297750364059,18,15,21,12,24,4.71190607895394,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,9907.7477453742
+"MAR",238968,800,18.3300940472927,18,15,21,12,24,4.71134870020619,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,9907.75433717488
 "MAR",9715,908,15.4670097786927,16,12,19,8,22,5.13280325325759,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,339.875572926215
-"MAR",224131,913,19.3554483761729,19,17,22,15,24,3.82034470724261,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,9812.416019641
+"MAR",223679,913,19.3945103995853,19,17,22.0015728561764,15,24,3.72370183187115,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,9812.39044148063
 "MAR",36738,914,18.0590669062007,18,16,20,15,22,2.70605115501264,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,1500.65757383895
-"MAR",243042,916,19.274034940463,20,17,22,14,25,4.27189699794182,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,10595.5806113027
-"MAR",15822,2002,27.0325496144609,28,23,31,19,34,5.75916737978594,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,967.429166527122
+"MAR",242900,916,19.2851830281912,20,17,22.0047882271032,14,25,4.24764315066152,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,10595.5149205749
+"MAR",15762,2002,27.1354523537622,28,23,31,20,34,5.52285747163488,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,967.429166527122
 "MAR",27238,2003,20.1839342095602,20,17,23,14,26,4.42032403970359,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,1243.51728133291
-"MAR",104659,2004,26.0683362157101,27,23,30,19,32,5.04499789292556,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,6171.07297491429
-"MAR",271383,2005,19.0917153985327,19,16,22,11,26,5.64775062801748,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,11719.2111282387
-"MAR",354099,2006,16.0351201217739,17,13,20,8,23,5.74584615033995,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,12843.0361674043
-"MAR",281434,2007,12.1507138440984,0,0,27,0,32,14.4000082762607,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,7734.80098888764
-"MAR",126029,2008,24.6986963317967,26,21,29,16,33,6.72023709296667,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,7040.69138822338
-"MAY",7238,0,31.2438518927881,29,24,37,18,49,11.9170280262463,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,511.509774182781
-"MAY",389019,1,39.1527508939152,39,34,44,29,49,7.78698175026576,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,34451.1625749234
-"MAY",423096,23,28.5374832189385,28,23,34,18,41,8.68385151977718,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,27310.2311674977
+"MAR",104395,2004,26.1342593036065,27,23,30,19,32,4.87785989321139,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,6171.07297491429
+"MAR",271112,2005,19.1108095337938,19,16,22,11,26,5.61820824232599,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,11719.2174486864
+"MAR",348191,2006,16.306202686412,17.0224857696735,13,20,9.00151243490389,23,5.39797039594185,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,12842.2513371244
+"MAR",120656,2007,28.3418922466966,28,25,32,22,34,4.9783606328409,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,7734.79047319102
+"MAR",123879,2008,25.1258305208231,26,21,29.040863631498,17,33,5.93078882549761,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,7040.26334678221
+"MAY",7174,0,31.5225815444661,30,24,37,19,49,11.5972502928918,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,511.509774182781
+"MAY",388993,1,39.1555561223656,39,34,44,29,49,7.78066002660313,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,34451.3282416065
+"MAY",421896,23,28.6188473441347,28.0156596687489,23,34.0023813153513,18,41,8.56158919956085,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,27310.4171377635
 "MAY",29882,24,32.715547821431,31,26,40,16,50,11.9994201448404,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,2211.23370743172
 "MAY",5373,108,31.856690861716,32,25,39,18,45,9.8686294768076,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,387.15804604949
-"MAY",171555,109,31.296464690624,31,28,35,24,39,5.90106703958008,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,12144.215057387
+"MAY",171493,109,31.3080549138403,31,28,35,24,39,5.87204781392121,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,12144.321957167
 "MAY",18552,246,32.0442000862441,31,26,37,22,44,8.08242279337921,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,1344.65526943251
 "MAY",17037,277,27.237835299642,27,23,31,19,36,6.43248806480595,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,1049.63064175895
-"MAY",163756,278,29.4014387259093,29,24,34,20,40,7.42594311618938,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,10890.2184564033
-"MAY",44833,279,30.5852385519595,29,23,37,19,45,9.92507396607585,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3101.56195253935
+"MAY",163755,278,29.4016182711978,29,24,34,20,40,7.4256103448584,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,10890.2184564033
+"MAY",44473,279,30.8336699472004,29,24,37,19,45,9.57448989950448,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,3101.64745990142
 "MAY",9307,403,40.654346191039,40,36,46,31,51,7.4347636050634,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,855.829953867857
 "MAY",6995,409,42.214010007148,43,38,48,30,51,7.7333937653987,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,667.905646821307
 "MAY",26707,412,45.5220354214251,46,41,51,36,55,7.30625434371704,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,2749.90421340097
 "MAY",34,425,33.1176470588235,33.5,28,36,25,44,6.08645896223428,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,2.54688407657903
-"MAY",24968,500,45.5734540211471,46,38,53,31,60,10.7518492506528,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2573.75076313463
+"MAY",24891,500,45.7141659180905,46,38,53,31,60,10.4649421212156,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,2573.73561724295
 "MAY",687,502,29.707423580786,25,23,37,22,48,10.1996226875827,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,46.1628393595927
 "MAY",15165,503,42.6311242993736,43,34,52,28,58,10.9442567725139,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,1462.31181384762
-"MAY",238972,800,42.2457359021141,43,38,47,31,51,7.61826325409133,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,22834.9826336938
+"MAY",238969,800,42.2463109051404,43,38,47,31,51,7.61684044113673,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,22835.0067695835
 "MAY",9715,908,35.9296963458569,36,31,41,26,45,7.25343713299622,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,789.527278080325
-"MAY",224131,913,33.6181295760069,33,28,39,23,44,8.2253219017312,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,17043.0086036169
+"MAY",223778,913,33.6712840776432,33,28,39,23,44,8.12262426867933,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,17043.0710505157
 "MAY",36738,914,31.9641787794654,31,26,37,22,43,8.02659859627286,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,2656.13318927776
-"MAY",243042,916,35.3989063618634,35,27,44,22,49,10.342295233699,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,19459.9608783354
-"MAY",15822,2002,50.0485400075844,51,41,60,32,66,13.0630568206611,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1791.11545288853
+"MAY",242897,916,35.4204465033727,35,27,44,22,49,10.3091433046699,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,19460.1852446398
+"MAY",15773,2002,50.2040195270399,51,41,60,32,66,12.7815442445234,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,1791.11545288853
 "MAY",27238,2003,36.7239518319994,37,32,42,26,47,7.58071672682737,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,2262.5355526723
-"MAY",104659,2004,49.6120734958293,51,42,58,33,64,11.6482468036253,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,11744.5058037523
-"MAY",271383,2005,33.2350073512342,32,28,38,23,45,8.7479522584444,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,20400.8943076751
-"MAY",354099,2006,27.3489419625585,28,22,34,13,40,10.5722624016744,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,21904.6348326653
-"MAY",281434,2007,23.2455460250005,0,0,52,0,63,27.6870168046839,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,14797.4575558567
-"MAY",126029,2008,42.3693356291012,42,34,51,27,59,12.7273440043991,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,12077.9417861226
-"NOV",7238,0,7.00428295109146,7,5,9,3,10,2.7732505078304,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,110.971794559956
-"NOV",389019,1,6.64265241543472,7,5,8,3,10,2.36836788864429,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,5656.43355257083
-"NOV",423096,23,8.53612182577949,8,7,9,6,11,2.16253233578945,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,7905.50964082571
-"NOV",29882,24,9.73100863396024,10,8,12,6,14,2.70984842294338,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,636.499208350258
-"NOV",5373,108,6.56560580681184,7,5,8,4,9,2.01594813733972,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,77.2186124759168
-"NOV",171555,109,9.81258488531375,10,9,11,8,12,1.60330716257166,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,3684.82744577865
-"NOV",18552,246,8.41316300129366,8,8,9,7,10,1.77244288283519,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,341.649183713285
-"NOV",17037,277,8.22222222222222,8,7,9,7,10,1.34705622244797,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",30,306.628615609359
-"NOV",163756,278,7.96755538728352,8,7,9,6,10,1.60621529876841,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,2855.96355553945
-"NOV",44833,279,8.32384627394999,8,7,9,6,11,1.94588692963153,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,816.868595957708
-"NOV",9307,403,7.65767701729881,8,7,9,5,10,1.85777065480573,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",30,156.004493328758
-"NOV",6995,409,8.82416011436741,9,8,10,7,11,1.62607931674379,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",30,135.111229840292
-"NOV",26707,412,8.52390758977047,9,7,10,6,11,1.82167819306699,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,498.303786969343
-"NOV",34,425,6.20588235294118,6,6,7,4,8,1.92169367340231,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",30,0.46186260828354
-"NOV",24968,500,10.7459548221724,11,9,12,8,14,2.23755047912427,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,587.298801495333
-"NOV",687,502,8.14701601164483,7,6,11,6,13,2.65430670417001,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",30,12.2513981922416
-"NOV",15165,503,9.90893504780745,10,8,12,7,13,2.24554714599825,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",30,328.927167223504
-"NOV",238972,800,6.97607669517768,7,5,8,4,10,2.48273942903874,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,3649.12393391271
-"NOV",9715,908,6.94225424601132,7,5,9,3,11,2.88893045247537,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,147.629676554858
-"NOV",224131,913,8.3037866247864,8,7,9,6,11,1.95320707992904,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,4073.88212004926
-"NOV",36738,914,8.71862921225978,9,7,10,6,11,2.00453016098265,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",30,701.122761830613
-"NOV",243042,916,8.09747286477234,8,7,9,6,10,1.85370116597711,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,4307.85602620769
-"NOV",15822,2002,10.0588421185691,10,8,13,5,15,3.61091319419953,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,348.369175217695
-"NOV",27238,2003,7.9894632498715,8,7,9,5,10,2.32584908706376,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,476.346707236204
-"NOV",104659,2004,10.0221003449297,10,8,12,6,14,2.93824669949153,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,2295.96718206839
-"NOV",271383,2005,7.86906327957168,8,6,9,5,11,2.4061911367105,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,4674.5092695154
-"NOV",354099,2006,6.75125318060768,7,5,9,2,11,3.1630943067258,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,5232.86395125085
-"NOV",281434,2007,5.52419750278929,0,0,11,0,14,6.30713069859851,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,3403.11095502652
-"NOV",126029,2008,10.4791992319228,10,8,13,6,15,3.43499791326064,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,2890.87248860536
-"OCT",7238,0,12.5652113843603,12,9,16,7,19,4.70234078662171,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,205.71178162756
-"OCT",389019,1,14.7507293988211,15,12,17,9,20,3.96676488834304,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,12979.41434548
-"OCT",423096,23,13.5037981923724,13,10,17,8,20,4.47027415837924,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,12923.0684935869
-"OCT",29882,24,15.4608794592062,16,13,18,10,21,3.89046175417853,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,1044.99603654322
-"OCT",5373,108,17.3424530057696,17,15,21,12,22,3.69450088249777,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,210.764835825675
-"OCT",171555,109,16.1386902159657,16,14,18,12,21,3.42951879406148,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,6262.42378059883
-"OCT",18552,246,11.2731241914618,11,9,13,7,16,3.11310331207715,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,473.04865798549
-"OCT",17037,277,11.4686271057111,11,10,13,8,15,2.63652271955189,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,441.9522438782
-"OCT",163756,278,10.5458975548988,10,9,12,7,15,2.99800045927496,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,3906.17375096311
-"OCT",44833,279,12.1150045725247,12,10,14,8,18,3.78374868309851,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,1228.54811719543
-"OCT",9307,403,17.4916729343505,18,16,20,13,21,2.98803359366892,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,368.223795068102
-"OCT",6995,409,18.4823445318084,19,16,21,14,22,3.12490902340032,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,292.425720209985
-"OCT",26707,412,18.8528101246864,19,17,21,14,24,3.58084081757373,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,1138.86432178126
-"OCT",34,425,12.1764705882353,12.5,10,14,10,15,2.51431885566618,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,0.936420965989092
-"OCT",24968,500,19.4753684716437,20,17,23,14,24,4.09861639392166,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,1099.86713850923
-"OCT",687,502,11.9330422125182,9,8,18,7,23,6.15507032818822,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,18.542944635697
-"OCT",15165,503,19.4475436861194,20,17,23,13,24,4.22274250965208,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,667.08005828849
-"OCT",238972,800,14.3489446462347,14,12,17,9,19,3.90192233697348,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,7755.9993881467
-"OCT",9715,908,14.4442614513639,14,12,17,10,19,3.52119627674213,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,317.401469742477
-"OCT",224131,913,13.6373638630979,13,11,16,9,19,3.83734274860883,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,6913.58242057912
-"OCT",36738,914,14.230388153955,14,11,17,9,20,3.95374473258516,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,1182.50515781457
-"OCT",243042,916,10.8049308349997,10,8,13,7,16,3.55366811679427,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,5939.83128158837
-"OCT",15822,2002,20.7763873088105,21,17,25,13,28,5.72530314373271,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,743.536342086469
-"OCT",27238,2003,14.0700491959762,14,11,17,10,19,3.61734541214328,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,866.845340593381
-"OCT",104659,2004,20.5868391633782,21,17,24,14,27,4.80453854547488,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,4873.4558948748
-"OCT",271383,2005,12.456760371873,12,9,15,7,19,4.56478082465343,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,7646.42682569402
-"OCT",354099,2006,12.3631639739169,13,9,16,5,19,4.98638287779489,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,9902.05005355457
-"OCT",281434,2007,10.2143557636959,0,0,21,0,26,11.6439273477992,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,6502.17016675595
-"OCT",126029,2008,17.8370137031953,18,14,22,11,25,5.47972185692002,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,5084.67763175151
-"SEP",7238,0,17.9399005250069,17,13,23,8,30,7.98884322143271,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,284.229373568765
-"SEP",389019,1,24.3527334140492,25,20,29,15,33,6.61380476022298,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,20737.1407933326
-"SEP",423096,23,23.0363912681755,24,17,29,12,33,7.58040622769523,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,21334.5611716085
+"MAY",104486,2004,49.6942174071167,51,42,58,33,64,11.4814732334726,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,11744.5058037523
+"MAY",271321,2005,33.242673290925,32,28,38,23,45,8.73451155906592,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,20400.9380977211
+"MAY",348467,2006,27.7894546226543,28.0355144966305,22,34,14,40.0219997069251,10.0645456028833,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,21903.4470799141
+"MAY",121143,2007,54.002890289893,55,47,62,39,68,10.9483946782747,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,14797.4239405799
+"MAY",124341,2008,42.9450913741986,42,35,51,28,59,11.8102988020737,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,12078.101490138
+"NOV",7172,0,7.44868934746235,7,5,10,3,13,3.62187453352871,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,116.936607865987
+"NOV",389001,1,8.18715280431145,8.00386497536836,7,10,5,11,2.43994180954289,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,6971.303050005
+"NOV",421897,23,7.29203575798596,7,5.0078275737788,9,4,12,3.16976436812012,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,6734.1932546825
+"NOV",29882,24,7.84960845994244,7,5,10,3,14,3.7457074037964,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,513.437995849307
+"NOV",5373,108,9.28457100316397,9,7,12,4,14,3.33310694195365,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,109.196578563188
+"NOV",171493,109,10.3151044664523,10,9,12,6,14,2.75821412368261,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,3872.13398845404
+"NOV",18552,246,6.73598533850798,6,5,8,4,12,2.92416048503844,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,273.540865908819
+"NOV",17037,277,6.53113811116981,7,5,8,4,9,2.16739095851703,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",30,243.563574816672
+"NOV",163756,278,6.05599184152031,6,5,7,3,9,2.11825174762932,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,2170.76520354421
+"NOV",44475,279,7.23187285554451,7,5.00656964285123,9,4,11,2.64375408790336,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,704.039599863688
+"NOV",9307,403,10.4001289352101,10,9,12,7,13,2.2607483527258,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",30,211.874546474867
+"NOV",6995,409,11.7568263045032,12,9,15,8,16,3.09000930029436,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",30,180.014782192559
+"NOV",26707,412,12.1845583554873,12,10,14,9,16,2.58840986865966,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,712.30377701124
+"NOV",34,425,8.41176470588235,8.5,8,10,4,11,2.30239832832717,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",30,0.62603178184404
+"NOV",24891,500,11.5215905855407,12,9,14.0619259991584,8,15,2.84309532068734,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,627.747702703634
+"NOV",687,502,7.88791848617176,6,6,10,6,13,3.06227686967447,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",30,11.8617700203247
+"NOV",15165,503,11.6980547312892,12,10,14,8,15,2.76111657883612,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",30,388.31700745075
+"NOV",238969,800,7.97042504556891,8,6,9,4,11,2.63451511986987,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,4169.20640938854
+"NOV",9715,908,5.85795162120432,6,3,8,0,12,4.14182404959128,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,124.571568897707
+"NOV",223778,913,8.22177331651554,8,7,10,5,12,2.678522664631,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,4027.29307392556
+"NOV",36738,914,8.17521367521367,8,7,10,5,12,2.44710579848023,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",30,657.423116751122
+"NOV",242891,916,6.37313380083501,6.00461985423696,4,8,3,10,2.63338599327475,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,3388.40105126652
+"NOV",15747,2002,11.9775830316886,12,10,14,7,17,3.74214179981207,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,412.85482659226
+"NOV",27238,2003,7.13271899552096,7,5,9,4,10,2.55382774605421,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,425.266016113433
+"NOV",104536,2004,12.2505261345374,12,10,14,8,16,3.11274761309455,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,2803.17988285628
+"NOV",271326,2005,7.51254837858087,7,5,9,4,12,3.23328095575188,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,4461.78914534246
+"NOV",348389,2006,7.27949343002659,8,5,9,2,12.0093466643579,3.4934049636608,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,5551.31589194821
+"NOV",132779,2007,13.1611439521636,13,10,15,9,18,4.24688968645217,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,3825.19325548393
+"NOV",124357,2008,11.7204051628035,12.0335695727646,9,14,6,17,3.91093714221556,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,3190.38584769298
+"OCT",7173,0,10.3167433430922,10,7,14,2,19,5.75805655312572,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",31,167.384116727355
+"OCT",389001,1,13.6674225562345,14.004076957639,10,17,8,20,4.59166545751264,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",31,12025.6380197525
+"OCT",421897,23,12.6775122838524,12,9,16,6,20.0086700177266,5.20261257582905,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",31,12097.935504736
+"OCT",29882,24,15.5813867880329,16,12,19,9,21,4.49064264201842,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",31,1053.14108943821
+"OCT",5373,108,11.5414107574912,12,8,15,6,17,4.35405080833376,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",31,140.264098895931
+"OCT",171493,109,15.0355051428157,15,12,18,9,20,4.10064499763455,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",31,5832.23760612079
+"OCT",18552,246,11.4764445881846,10,8,15,7,18,4.38342428802462,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",31,481.58049345339
+"OCT",17037,277,10.8969302107178,10,8,13,6,16,4.00666382648836,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",31,419.921470427152
+"OCT",163756,278,9.2028444759276,9,7,11,5,15,3.60389203252331,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",31,3408.71029127016
+"OCT",44475,279,10.7228677629547,10,8,14,5,18,4.51823621854171,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",31,1078.69258803157
+"OCT",9307,403,15.9377887611475,16,14,18,12,20,3.4812268741551,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",31,335.51239407744
+"OCT",6995,409,14.9701215153681,15,12,18,9,20,3.83805025921222,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",31,236.855695349067
+"OCT",26707,412,18.4144980716666,18,16,21,13,24,3.85525307034983,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",31,1112.38667968496
+"OCT",34,425,9.97058823529412,11,8,12,6,13,2.94543808903399,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",31,0.766779486643242
+"OCT",24891,500,16.4977982328193,17,13,20.0407907701284,9,24,5.12257320322313,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",31,928.836172882939
+"OCT",687,502,10.7292576419214,9,8,13,7,19,4.53125036507912,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",31,16.6723645901101
+"OCT",15165,503,16.446027035938,16,14,20,11,23,4.53135082857345,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",31,564.123513530298
+"OCT",238969,800,14.6913254645618,14,11,18,8,22,4.99677483977301,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",31,7940.96595062939
+"OCT",9715,908,16.2192485846629,15,13,20,11,23,4.54749058992227,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",31,356.405438673674
+"OCT",223834,913,12.4069052789789,12,9,15,7,18,4.39823093065238,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",31,6281.45582698647
+"OCT",36738,914,11.0171756764113,10,8,13,6,17,4.27675778409064,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",31,915.496254983379
+"OCT",242898,916,10.1856481345214,9,7,13,5,17,4.40023794433569,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",31,5596.07331769432
+"OCT",15784,2002,21.5618981246832,22,16,27,11,31,7.28850092009332,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",31,769.794581202816
+"OCT",27238,2003,11.6442470078567,11,9,14,7,17,4.02430730992282,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",31,717.393459176078
+"OCT",104580,2004,20.1900745840505,20,16,25,12,29,6.20780859285416,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",31,4775.92335368289
+"OCT",271345,2005,10.7679978806869,10,7,14,4,18,5.38807695097182,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",31,6608.8755279437
+"OCT",348493,2006,11.1688773031523,11,7,15,2,20.0360585234476,6.43293568070131,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",31,8803.88511576107
+"OCT",144476,2007,22.8816801402228,23,19.0029929039362,27,15,31,6.46601057376891,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",31,7477.46531449674
+"OCT",124363,2008,17.4533020109828,17,12,23,8,28.0506473869455,7.20378803121698,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",31,4909.52619261432
+"SEP",7172,0,18.1049916341327,17,13,23,8,30,7.83708864004065,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson",NA,"no",30,284.229373568765
+"SEP",389001,1,24.353995176254,25,20.0050419058427,29,15,33,6.61188279613594,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Alfalfa","yes",30,20737.2556626303
+"SEP",421897,23,23.1024583619998,24,17,29,12,33,7.49089026467201,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Corn","yes",30,21335.1146965484
 "SEP",29882,24,32.2343885951409,33,29,36,25,39,5.56582967927766,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Rice","yes",30,2108.43126280444
 "SEP",5373,108,20.4101991438675,21,17,24,14,27,5.02385748899965,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Bush Berries","yes",30,240.045976657849
-"SEP",171555,109,21.3775582174813,22,19,24,15,27,4.84802151761236,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,8027.71279577952
+"SEP",171493,109,21.3853926480816,22,19,24,15,27,4.83182475929401,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Vineyards","yes",30,8027.75250588924
 "SEP",18552,246,17.1811125485123,16,13,20,10,26,5.70112040952859,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Potatoes","yes",30,697.70585409824
 "SEP",17037,277,19.6687210189587,19,16,23,13,27,5.16774018481708,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cucurbit","yes",30,733.499111779058
 "SEP",163756,278,18.4389152153204,18,15,22,12,26,5.47101529957964,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Tomatoes","yes",30,6609.41371586639
-"SEP",44833,279,19.8792630428479,19,15,24,12,29,6.58719256594251,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,1950.87044571033
+"SEP",44475,279,20.0394814830427,19,16,24,12,29,6.36661185649133,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Truck Crops","yes",30,1950.89001239568
 "SEP",9307,403,25.4142043623079,26,22,29,18,33,5.4570639369932,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Cherries","yes",30,517.745794963534
 "SEP",6995,409,27.0659042172981,28,23,31,19,33,5.4071752048856,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Olives","yes",30,414.41990604687
 "SEP",26707,412,27.7882203167709,28,24,32,20,35,5.59033211551692,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pears","yes",30,1624.48680621586
 "SEP",34,425,19.2058823529412,20,18,22,13,23,3.87889774947279,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Citrus","yes",30,1.42936627113342
-"SEP",24968,500,27.960269144505,28,23,33,18,37,7.03486245569593,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,1528.1129345689
+"SEP",24891,500,28.0463550499465,28,23,33,18,37,6.87142536557253,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Almonds","yes",30,1528.09065910652
 "SEP",687,502,16.5545851528384,11,10,24,9,35,10.208859857385,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pistachios","yes",30,24.8946134787142
 "SEP",15165,503,29.6836135839103,31,25,36,18,38,7.28060341940938,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Walnuts","yes",30,985.347757554749
-"SEP",238972,800,25.2296168588789,26,21,30,15,34,6.69555392232772,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,13197.3891265881
+"SEP",238969,800,25.2299584794621,26,21,30,15,34,6.69499918051651,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Pasture","yes",30,13197.4021460322
 "SEP",9715,908,24.2214101904272,25,21,28,17,31,5.36672374882774,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Turf","yes",30,515.077498662598
-"SEP",224131,913,20.2237263029211,20,16,24,13,28,6.02536436035677,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,9921.86826433049
+"SEP",223793,913,20.2543860571435,20,16,24,13,28,5.97839391352602,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Semi-agricultural/ROW","yes",30,9921.92477986687
 "SEP",36738,914,19.9071805759704,19,16,23,13,29,6.07311926957444,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Other Deciduous","yes",30,1600.86833444629
-"SEP",243042,916,14.7817373128924,14,11,17,9,22,5.70624495366752,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,7863.88509410002
-"SEP",15822,2002,32.4294020983441,34,26,39,19,44,9.25292658402463,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1123.13166154061
+"SEP",242898,916,14.7906045585283,14,11.0053303893732,17,9,22,5.69657112773803,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Fallow","yes",30,7863.94039953686
+"SEP",15775,2002,32.5260221870048,34,26,39,19,44,9.09555217015519,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Floating Vegetation","no",30,1123.13166154061
 "SEP",27238,2003,21.9113371025773,21,16,27,13,31,6.74798047121705,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Forage Grass","yes",30,1306.39480444735
-"SEP",104659,2004,31.7948958044698,32,26,38,20,43,8.4674932491347,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,7283.90604882318
-"SEP",271383,2005,17.6183475015016,17,13,21,10,27,6.81395519404197,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,10465.9380390439
-"SEP",354099,2006,16.1164504841866,17,12,21,6,25,7.15906623522855,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,12491.7834518581
-"SEP",281434,2007,17.2922816717241,0,0,34,0,43,18.5477371443252,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,10652.688135197
-"SEP",126029,2008,23.9615882058891,23,17,31,12,37,9.51937335910274,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,6610.22799496725
+"SEP",104540,2004,31.8310885785345,32,26,38,20,43,8.40404678211926,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Riparian","no",30,7283.90604882318
+"SEP",271336,2005,17.6214739036827,17,13,21,10,27,6.81059842584358,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Upland Herbaceous","no",30,10465.982349682
+"SEP",348438,2006,16.3772727275286,17,12,21,7,25,6.91349489138082,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Urban","no",30,12491.0067229197
+"SEP",137683,2007,35.3465163839813,35.004062650097,30,41,26,46,8.06449652897664,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Water","no",30,10652.6408879562
+"SEP",124358,2008,24.283621018089,23,17,31,13,38,9.16610496694973,"disalexi","legal",2015,"data/dsa_legal/disalexi-legal-2015.geojson","Wet herbaceous/sub irrigated pasture","yes",30,6610.24450506159
 "APR",7207,0,24.1651172471209,24,18,30,11,38,9.69454042860288,"disalexi","legal",2016,"data/dsa_legal/disalexi-legal-2016.geojson",NA,"no",30,381.218332385994
 "APR",316983,1,28.2927917270011,28,25,32,21,35,5.27057729212928,"disalexi","legal",2016,"data/dsa_legal/disalexi-legal-2016.geojson","Alfalfa","yes",30,19630.9864132604
 "APR",63028,12,22.224915910389,22,18,25,16,29,5.13438989928196,"disalexi","legal",2016,"data/dsa_legal/disalexi-legal-2016.geojson","Safflower","yes",30,3066.2248662688
