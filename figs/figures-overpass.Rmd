@@ -41,6 +41,13 @@ dates_grid_et
 dates_grid_et <- dates_grid_et %>% filter(mean < 20, mean > -20)
 
 
+# capitialize crop names
+capFirst <- function(s) {
+    paste(toupper(substring(s, 1, 1)), substring(s, 2), sep = "")
+}
+
+dates_grid_et$Crop <- capFirst(dates_grid_et$Crop)
+
 
 ```
 
@@ -49,22 +56,37 @@ dates_grid_et <- dates_grid_et %>% filter(mean < 20, mean > -20)
 ```{r pairwise_plot_function, fig.width = 7, fig.height = 6}
 
 model_x <- 'ucdmetric'
-model_y <- 'calsimetaw'
+model_y <- 'itrc'
 
 model_pair_alldays <- function(model_x, model_y){
 
 model_x_data <- dates_grid_et %>% filter(model==model_x)
 model_y_data <- dates_grid_et %>% filter(model==model_y)
 
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
+
+
+
+
 # join using site_id and date
 model_pair <- inner_join(model_x_data, model_y_data, by=c("date", "Station_ID"))
 
 axis_limit <- max(max(model_pair$mean.y), max(model_pair$mean.x)) 
 
-p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2.5)+
+p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2.5, alpha=0.35)+
   ggtitle(paste(toupper(model_x), "vs.", toupper(model_y)))+
-  ylab(paste(toupper(model_y), "\n", "(mm/day)", sep=""))+
-  xlab(paste(toupper(model_x), "\n", "(mm/day)", sep=""))+
+  ylab(paste(toupper(model_y), " ET", "\n", "(mm/day)", sep=""))+
+  xlab(paste(toupper(model_x), " ET", "\n", "(mm/day)", sep=""))+
   coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
   theme_bw()+
   geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
@@ -80,13 +102,17 @@ p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2
       axis.title.y=element_text(size=14),
       axis.title.x=element_text(size=14),
       axis.line = element_line(color="black", size=1)
-  )
+  )+ geom_smooth(method="lm", fill=NA, linetype="dashed", size=2)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-1,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Alfalfa")))), color="#F8766D", parse = TRUE, hjust=0)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-1.5,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Corn")))), color="#00BA38", parse = TRUE, hjust=0)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-2,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Pasture")))), color="#619CFF", parse = TRUE, hjust=0)
 p
 }
 
 #model_pair_alldays(model_x, model_y)
 
 ```
+
 
 ```{r, echo=FALSE, fig.width = 7, fig.height = 6}
 
@@ -137,26 +163,42 @@ field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "Island
 dates_grid_et_w_field <- left_join(dates_grid_et, field, by=c("date", "Station_ID"))
 
 
-
-
 ```
 
 
-```{r, fig.width = 15, fig.height = 6}
-selected_date <- '2016-07-13'
 
-dates_grid_et_date <- dates_grid_et_w_field %>% filter(date==selected_date)
+```{r model_field_lm_function, fig.width = 7, fig.height = 6}
 
-axis_limit <- max(max(dates_grid_et_date$mean), max(dates_grid_et_date$ET_SR_aH_qc_Dgf)) 
-axis_limit <- ifelse(is.na(axis_limit), 0, axis_limit)
 
-p <- ggplot(dates_grid_et_date, aes(x=mean, y=ET_SR_aH_qc_Dgf, color=model))+geom_point(size=4)+facet_wrap(~Station_ID, ncol=7)+theme_bw()+
-  ylab("Field ET\n(mm/day ET_SR_aH_qc_Dgf)")+
-  xlab("Model ET\n(mm/day)")+
-  ggtitle(selected_date)+
+model_field_lm <- function(selected_model){
+
+  
+common_overpass_dates <- as.Date(c('2016-05-10', '2016-05-26', '2016-06-27', '2016-07-13', '2016-07-29', '2016-08-14', '2016-08-30', '2016-09-15'))
+
+d <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA") %>% filter(model==selected_model) %>% filter(date %in% common_overpass_dates)
+
+
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
+
+axis_limit <- max(max(d$mean), max(d$ET_SR_aH_qc_Dgf)) 
+
+p <- ggplot(d, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=Crop.x))+geom_point(size=2.5, alpha=0.35)+
+  ggtitle(paste(toupper(selected_model), "vs.", "Field"))+
+  ylab(paste(toupper(selected_model), " ET", "\n", "(mm/day)", sep=""))+
+  xlab(paste("Field ET", "\n", "(mm/day)", sep=""))+
   coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
-  scale_color_manual(values=model_palette, labels=methods_named_list)+
-  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.5)+ #1:1 diagonal line
+  theme_bw()+
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
       plot.title = element_text(hjust = 0.5, size=16),
       panel.grid.minor = element_blank(),
@@ -169,129 +211,56 @@ p <- ggplot(dates_grid_et_date, aes(x=mean, y=ET_SR_aH_qc_Dgf, color=model))+geo
       axis.title.y=element_text(size=14),
       axis.title.x=element_text(size=14),
       axis.line = element_line(color="black", size=1)
-  )
-#p
-
-```
-
-## Single Station for overpass dates
-
-```{r, fig.width = 8, fig.height = 6}
-
-station_at_overpass <- function(selected_station){
-  single_station<- dates_grid_et_w_field %>% filter(Station_ID==selected_station, ET_SR_aH_qc_Dgf != "NA") 
-  
-  single_station_selected_dates <- single_station %>% filter(date %in% as.Date(c('2016-05-26', '2016-06-27', '2016-07-13', '2016-07-29', '2016-08-14', '2016-08-30', '2016-09-15')))
-  
-  axis_limit <- max(max(single_station_selected_dates$mean), max(single_station_selected_dates$ET_SR_aH_qc_Dgf)) 
-  
-  single_station_selected_dates$date <- as.factor(single_station_selected_dates$date)
-  
-  p <- ggplot(single_station_selected_dates, aes(y=mean, x=ET_SR_aH_qc_Dgf, color=model, shape=date))+geom_point(size=4)+
-    xlab("Field ET\n(mm/day)")+
-    ylab("Model ET\n(mm/day)")+
-    ggtitle(selected_station)+
-    coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
-    theme_bw()+
-    scale_color_manual(values=model_palette, labels=methods_named_list)+
-    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
-    theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-        plot.title = element_text(hjust = 0.5, size=16),
-        panel.grid.minor = element_blank(),
-        legend.position="bottom", # position of legend or none
-        legend.direction="horizontal", # orientation of legend
-        legend.title= element_blank(), # no title for legend
-        legend.key.size = unit(0.5, "cm"),
-        axis.text.y=element_text(size=14),
-        axis.text.x=element_text(size=14),
-        axis.title.y=element_text(size=14),
-        axis.title.x=element_text(size=14),
-        axis.line = element_line(color="black", size=1)
-    )
-  p
-}
-
-```
-
-
-```{r, fig.width = 8, fig.height = 6}
-stations <- c("D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12", "D13", "D14")
-
-for(s in stations){
-  p <- station_at_overpass(s)
-  plot(p)
-}
-
-```
-
-## Grouping field station by crop type
-
-```{r}
-
-crop_station_at_overpass <- function(selected_crop){
-  single_crop<- dates_grid_et_w_field %>% filter(Crop.x==selected_crop, ET_SR_aH_qc_Dgf != "NA") 
-  
-  single_crop_selected_dates <- single_crop %>% filter(date %in% as.Date(c('2016-05-26', '2016-06-27', '2016-07-13', '2016-07-29', '2016-08-14', '2016-08-30', '2016-09-15')))
-  
-  axis_limit <- max(max(single_crop_selected_dates$mean), max(single_crop_selected_dates$ET_SR_aH_qc_Dgf)) 
-  
-  single_crop_selected_dates$date <- as.factor(single_crop_selected_dates$date)
-  
-  p <- ggplot(single_crop_selected_dates, aes(y=mean, x=ET_SR_aH_qc_Dgf, color=model))+geom_point(size=4)+
-    xlab("Field ET\n(mm/day)")+
-    ylab("Model ET\n(mm/day)")+
-    ggtitle(toupper(selected_crop))+
-    coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
-    theme_bw()+
-    scale_color_manual(values=model_palette, labels=methods_named_list)+
-    geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.75, alpha=0.5)+ #1:1 diagonal line
-    theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-        plot.title = element_text(hjust = 0.5, size=16),
-        panel.grid.minor = element_blank(),
-        legend.position="bottom", # position of legend or none
-        legend.direction="horizontal", # orientation of legend
-        legend.title= element_blank(), # no title for legend
-        legend.key.size = unit(0.5, "cm"),
-        axis.text.y=element_text(size=14),
-        axis.text.x=element_text(size=14),
-        axis.title.y=element_text(size=14),
-        axis.title.x=element_text(size=14),
-        axis.line = element_line(color="black", size=1)
-    )
-  p
+  )+ geom_smooth(method="lm", fill=NA, linetype="dashed", size=2)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(d, Crop.x=="Alfalfa")))), color="#F8766D", parse = TRUE, hjust=0)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(d, Crop.x=="Corn")))), color="#00BA38", parse = TRUE, hjust=0)
+p <- p + geom_text(aes(x = 0.5, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(d, Crop.x=="Pasture")))), color="#619CFF", parse = TRUE, hjust=0)
+p
 }
 
 
+
 ```
 
-```{r, fig.width = 8, fig.height = 6}
-crops_at_fieldstations <- c("corn", "alfalfa", "pasture")
 
-for(c in crops_at_fieldstations){
-  p <- crop_station_at_overpass(c)
+
+```{r model_field_lm_plots, echo=FALSE, fig.width = 7, fig.height = 6}
+
+for(m in methods_list()){
+  p <- model_field_lm(m)
   plot(p)
 }
 
 ```
 
 
-# Fieldstation Level Analysis
+# Fieldstation vs Remote methods facet plot for Water Year 2016
 
-## Fieldstation vs Remote methods facet plot for Water Year 2016
 
-```{r, fig.width = 7, fig.height = 6}
-selected_crop <- "alfalfa"
+```{r alfalfa, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Alfalfa"
 dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
 
 p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
-  geom_point(size=1.75)+
+  geom_point(size=1.75, alpha=0.35)+
   ggtitle(toupper(selected_crop))+
   ylab("Model ET (mm/day)")+
   xlab("Field ET (mm/day)")+
-  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
   scale_color_manual(values=model_palette, labels=methods_named_list)+
   coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
   geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
@@ -313,43 +282,51 @@ p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color
   guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
          fill = guide_legend(keywidth = 1, keyheight = 1),
         linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
 p
-
-
-group_rsquared <- function(group){
-  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
-  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
-  rsq <- summary(lm_r)$r.squared
-}
-
-models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
-rs_holder <- c()
-for(m in models_rs){
-  rs <- group_rsquared(m)
-  rs_holder<-append(rs_holder, rs)
-}
-
-models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
-
-models_rsquared 
-
-
 
 ```
 
-```{r, fig.width = 7, fig.height = 6}
-selected_crop <- "corn"
+
+```{r corn, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Corn"
 dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
 
 p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
-  geom_point(size=1.75)+
+  geom_point(size=1.75, alpha=0.35)+
   ggtitle(toupper(selected_crop))+
   ylab("Model ET (mm/day)")+
   xlab("Field ET (mm/day)")+
-  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
   scale_color_manual(values=model_palette, labels=methods_named_list)+
   coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
   geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
@@ -371,43 +348,51 @@ p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color
   guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
          fill = guide_legend(keywidth = 1, keyheight = 1),
         linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
 p
 
-
-group_rsquared <- function(group){
-  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
-  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
-  rsq <- summary(lm_r)$r.squared
-}
-
-models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
-rs_holder <- c()
-for(m in models_rs){
-  rs <- group_rsquared(m)
-  rs_holder<-append(rs_holder, rs)
-}
-
-models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
-
-models_rsquared 
 ```
 
 
-`
-
-```{r, fig.width = 7, fig.height = 6}
-selected_crop <- "pasture"
+```{r pasture, echo=FALSE, fig.width = 7, fig.height = 6}
+selected_crop <- "Pasture"
 dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA", Crop.x==selected_crop)
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
+# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+lm_eqn = function(m) {
+
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  eq <- substitute(~~italic(R)^2~"="~r2,l)
+
+  as.character(as.expression(eq));                 
+}
 
 p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color=model))+
-  geom_point(size=1.75)+
+  geom_point(size=1.75, alpha=0.35)+
   ggtitle(toupper(selected_crop))+
   ylab("Model ET (mm/day)")+
   xlab("Field ET (mm/day)")+
-  geom_smooth(method=lm,se=FALSE, fullrange=FALSE, size=1.25, alpha=0.9) + # Add linear regression line
+  geom_smooth(method=lm,se=FALSE, fullrange=FALSE,  size=2, alpha=0.9) + # Add linear regression line
   scale_color_manual(values=model_palette, labels=methods_named_list)+
   coord_cartesian(xlim = c(0,axis_limit), ylim=c(0, axis_limit))+
   geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=2.25, alpha=0.5)+ #1:1 diagonal line
@@ -429,23 +414,22 @@ p <- ggplot(dates_grid_et_w_field_wo_nulls, aes(x=ET_SR_aH_qc_Dgf, y=mean, color
   guides(colour = guide_legend(nrow = 2, keywidth = 3, keyheight = 1),
          fill = guide_legend(keywidth = 1, keyheight = 1),
         linetype=guide_legend(keywidth = 3, keyheight = 1))
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="calsimetaw")))), color="#0072b2", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-0.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="detaw")))), color="#d55e00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="disalexi")))), color="#e69f00", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-1.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="itrc")))), color="#009e73", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="sims")))), color="#cc79a7", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-2.5,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdmetric")))), color="#56b4df", parse = TRUE, hjust=0)
+
+p <- p + geom_text(aes(x = 0, y = axis_limit-3,  label = lm_eqn(lm(mean ~ ET_SR_aH_qc_Dgf, subset(dates_grid_et_w_field_wo_nulls, model=="ucdpt")))), color="#f0e442", parse = TRUE, hjust=0)
+
+
 p
 
-
-group_rsquared <- function(group){
-  g <- dates_grid_et_w_field_wo_nulls %>% filter(model==group)
-  lm_r <- lm(ET_SR_aH_qc_Dgf~mean, data=g)
-  rsq <- summary(lm_r)$r.squared
-}
-
-models_rs <- unique(dates_grid_et_w_field_wo_nulls$model)
-rs_holder <- c()
-for(m in models_rs){
-  rs <- group_rsquared(m)
-  rs_holder<-append(rs_holder, rs)
-}
-
-models_rsquared <- do.call(rbind, Map(data.frame, model=models_rs, Rsquared=rs_holder))
-
-print(models_rsquared) 
 ```
