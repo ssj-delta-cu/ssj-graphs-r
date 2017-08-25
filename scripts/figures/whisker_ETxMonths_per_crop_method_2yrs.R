@@ -20,7 +20,11 @@ whisker_ETxMonths_per_crop_method_2yrs <- function(data, aoi_region, model_name,
     scale_fill_manual(values=model_palette, labels=methods_named_list)+
     ggtitle(paste(model_name, "\n", lookup_cropname(cropid), sep='')) + # plot title
     scale_y_continuous(labels = axis_units)+
-    scale_x_date(date_breaks="3 month", date_labels  = "%b")+
+    scale_x_date(date_breaks="3 month", date_labels  = "%b", limits=c(as.Date('2014-09-01'),  as.Date('2016-10-01')))+
+    theme_bw()+
+    geom_vline(xintercept = as.numeric(as.Date('2015-09-15')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
+    annotate("text", x=as.Date('2015-04-01') , y=95, label="2015", size=5)+
+    annotate("text", x=as.Date('2016-04-01') , y=95, label="2016", size=5)+
     coord_cartesian(ylim=c(0,100))+ # changes the plot visual zoom instead of rm data (http://stackoverflow.com/questions/11617267/how-to-get-geom-boxplot-to-apply-y-limits-before-calculating-boxes)
     ylab("ET (mm/day)") +
     theme_bw() +  

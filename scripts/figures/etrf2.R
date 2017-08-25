@@ -31,7 +31,7 @@ etrf2 <- function(data, crop_name){
     ggtitle(c)+
     ylab("ETrF\n(fraction of reference ET)")+
     scale_color_manual(values=model_palette, labels=methods_named_list)+
-    scale_x_date(date_breaks="3 month", date_labels  = "%b")+
+    scale_x_date(date_breaks="3 month", date_labels  = "%b", limits=c(as.Date('2014-10-01'),  as.Date('2016-10-01')))+
     theme_bw()+
     geom_hline(yintercept = 1,colour="black", linetype="dotted", size=1.25, alpha=0.5)+
     geom_vline(xintercept = as.numeric(as.Date('2015-10-01')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+

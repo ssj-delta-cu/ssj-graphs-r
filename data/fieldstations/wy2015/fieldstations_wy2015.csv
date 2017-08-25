@@ -1,445 +1,49 @@
-"month","count","level_2","mean","median","p25","p75","p9","p91","stdDev","model","region","wateryear","source","cropname","include","num_days","crop_acft"
-"APR",7207,0,31.7828500069377,31,26,38,20,44,8.65232083244419,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",30,501.392356354594
-"APR",316983,1,39.213427849443,40,36,43,31,46,5.66450218261076,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",30,27208.2824755371
-"APR",63028,12,24.4768356920734,23,18,29,16,36,7.6360138112538,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",30,3376.90736600395
-"APR",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",30,NA
-"APR",2594,22,22.0512721665382,20,17,23,16,35,6.8729572083015,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",30,125.208545291122
-"APR",329211,23,14.5967844330839,12,8,18,7,29,8.91520038448812,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",30,10518.6954446593
-"APR",30229,24,24.9673823149955,23,20,30,18,34,6.14974580084561,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",30,1652.06503845171
-"APR",5657,108,37.0705320841435,38,34,41,30,43,5.09452557757856,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",30,459.034520653671
-"APR",173301,109,28.9111257292226,29,25,33,21,36,5.74074342219771,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",30,10967.2165714381
-"APR",1396,201,17.6776504297994,17,16,19,14,22,2.98599197272561,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",30,54.0182248683469
-"APR",814,211,24.1093366093366,27,18,29,17,30,5.63697745190878,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",30,42.9576004149975
-"APR",17608,246,22.4284416174466,19,16,24,15,39,8.8955070249873,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",30,864.449200300169
-"APR",13905,277,20.6233728874506,18,16,23,15,30,6.82104219303609,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",30,627.712874181299
-"APR",112765,278,18.2462111470758,17,15,20,14,25,4.8926399539599,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",30,4503.78208470173
-"APR",12569,279,23.0793221417774,21,17,28,14,37,8.27260458500407,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",30,634.971340574988
-"APR",16,284,39.5,41.5,36.5,44,31,46,5.9791303715507,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",30,1.38339890253648
-"APR",12731,403,38.1315686120493,40,34,44,27,47,7.68114381806813,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",30,1062.61890416621
-"APR",7269,409,37.3071949374054,38,35,40,31,43,4.67971321116183,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",30,593.60508668237
-"APR",24842,412,37.9656629900974,38,34,42,31,45,5.31907486165484,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",30,2064.46675812494
-"APR",23,425,30.304347826087,29,27,31,26,38,4.59143609824142,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",30,1.52567885295558
-"APR",62468,500,34.3125440225395,34,21,46,15,56,14.5215183086682,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",30,4691.81488933099
-"APR",1244,502,23.6278135048232,23,17,26,16,36,7.48141736772995,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",30,64.338993579517
-"APR",23607,503,28.984199601813,29,23,35,18,40,7.50980242615181,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",30,1497.72631500401
-"APR",964,752,22.4896265560166,23,20,25,18,27,3.37965849780483,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",30,47.4558357705552
-"APR",25,756,25.88,26,18,32,18,35,7.27912082603387,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",30,1.41623273724858
-"APR",213731,800,41.2748829135689,42,39,44,36,46,4.09355147716067,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",30,19310.0641349398
-"APR",10069,908,29.2001191776741,28,22,36,18,41,8.47135206010162,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",30,643.578183114186
-"APR",223290,913,30.4172779793094,30,24,37,18,42,8.71326123845876,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",30,14866.8845534273
-"APR",7859,914,35.3188700852526,36,30,41,25,45,7.15291071999429,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",30,607.581355658154
-"APR",377439,916,35.3469461290434,38,24,46,17,50,12.2543053988908,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",30,29203.104292393
-"APR",12868,2002,41.2681846440783,42,37,46,31,51,7.60240161525634,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",30,1162.40311677859
-"APR",33358,2003,33.6600515618442,37,24,42,16,47,10.8609547872441,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",30,2457.79201983044
-"APR",109834,2004,37.9058397217619,39,33,44,26,48,8.19102591905709,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",30,9113.24971657477
-"APR",312265,2005,34.9930571789986,35,31,40,25,44,7.39142416339096,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",30,23918.5883412954
-"APR",356034,2006,27.7914637366094,28,23,33,17,38,7.64264849712252,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",30,21658.7427552549
-"APR",296333,2007,38.8802664569926,38,34,44,31,48,7.02983419097404,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",30,25219.6815758979
-"APR",113930,2008,37.4666022996577,38,32,43,26,48,7.82902044635161,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,9343.56812246858
-"AUG",7207,0,27.1351463854586,24,18,33,14,47,12.1225322626307,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,442.3412883375
-"AUG",316983,1,34.7870011956477,35,31,39,26,43,6.22995049591217,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,24941.5679053467
-"AUG",63028,12,27.8983626324808,27,23,32,20,38,7.1763687412018,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,3977.25126892263
-"AUG",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"AUG",2594,22,28.7532767925983,29,25,32,23,35,4.48101009629963,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,168.705058379861
-"AUG",329211,23,36.155028234172,39,30,44,18,48,10.9209196084023,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,26922.4036030764
-"AUG",30229,24,61.8722749677462,64,58,67,50,70,8.28732005011887,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,4230.48980740372
-"AUG",5657,108,33.7316598904013,34,29,38,24,43,6.77597607834647,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,431.613161183668
-"AUG",173301,109,30.4462870958621,31,27,34,22,38,6.04760719129592,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,11934.5540221203
-"AUG",1396,201,29.1984240687679,29,23,35,20,39,6.9472035010443,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,92.1967511948826
-"AUG",814,211,24.3513513513514,14,12,38,11,50,15.2174861236419,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,44.8351120479125
-"AUG",17608,246,32.0948432530668,30,18,46,14,52,14.7270632923587,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,1278.25080875737
-"AUG",13905,277,32.0922689679971,35,21,41,15,46,11.3088529913902,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,1009.35096890307
-"AUG",112765,278,37.1138119097238,40,31,46,17,50,11.1196343173695,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,9466.30894970682
-"AUG",12569,279,29.1121012013684,27,20,37,14,48,11.7783013748542,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,827.646849432533
-"AUG",16,284,27.6875,26,24,34.5,19,35,6.04895393849218,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,1.00201567133615
-"AUG",12731,403,37.4555808656036,38,32,44,25,50,8.84070192039808,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,1078.57374002174
-"AUG",7269,409,38.6501582060806,39,32,46,27,50,8.37870454320163,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,635.472457856772
-"AUG",24842,412,43.7637871346912,44,39,49,34,53,7.27084203000107,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,2459.07764686962
-"AUG",23,425,28.0869565217391,27,23,30,21,40,6.87094097396236,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,1.46117860876559
-"AUG",62468,500,27.4395530511622,24,16,37,13,48,13.4256498930802,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,3877.08589197127
-"AUG",1244,502,18.6101286173633,14,13,17,12,42,10.6833972965982,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,52.364931844477
-"AUG",23607,503,35.0025416190113,37,25,45,16,49,12.0036033467951,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,1869.00803454497
-"AUG",964,752,25.2365145228216,25,23,27,21,28,2.70662217885756,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,55.0271721270112
-"AUG",25,756,31.52,32,23,40,16,46,10.9366173929602,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,1.78236647632706
-"AUG",213731,800,37.3855594181471,38,35,41,28,44,6.22809427437527,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,18073.4969008465
-"AUG",10069,908,34.6714668785381,37,25,45,18,48,11.3198481616513,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,789.640372399889
-"AUG",223290,913,25.7297639840566,25,19,31,14,39,9.107947503576,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,12994.987433284
-"AUG",7859,914,35.3159435042626,36,25,46,18,51,12.3533386883905,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,627.782044126426
-"AUG",377439,916,24.0638619750476,18,14,34,11,47,13.5374357244979,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,20543.8998128772
-"AUG",12868,2002,47.1889182468138,49,42,54,31,59,10.1802290747687,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,1373.47848771657
-"AUG",33358,2003,36.1390371125367,37,32,42,24,45,7.60032554002847,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,2726.7628537318
-"AUG",109834,2004,41.5831709670958,44,33,50,23,56,11.7074107332937,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,10330.5915730189
-"AUG",312265,2005,20.3865146590236,19,14,25,10,34,8.75973531280036,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,14399.1574574438
-"AUG",356034,2006,23.0880533881596,23,17,28,13,34,8.34638773575859,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,18593.0047053088
-"AUG",296333,2007,43.6607060300405,43,37,50,32,59,10.5234106593283,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,29264.530414085
-"AUG",113930,2008,34.1664179759501,33,26,42,21,50,10.5218445951927,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,8804.57372896092
-"DEC",7207,0,3.9793256556126,4,3,5,2,6,1.33559354532493,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,64.8686398154618
-"DEC",316983,1,5.03138969597739,5,4,6,4,6,0.977013249376831,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,3607.40343942559
-"DEC",63028,12,2.76786507583931,3,2,3,2,4,1.16198262576944,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,394.592866617621
-"DEC",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"DEC",2594,22,2.3384734001542,2,2,2,2,3,0.644297790837878,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,13.7206028494923
-"DEC",329211,23,2.14446661867313,1,1,3,1,5,1.93278304265739,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,1596.85107828723
-"DEC",30229,24,5.9302987197724,6,3,9,2,10,2.98604680975588,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,405.481587705233
-"DEC",5657,108,4.1081845501149,4,3,5,3,6,1.30674478903417,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,52.5662397333007
-"DEC",173301,109,3.32397389513044,3,3,4,2,5,0.899344753577384,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,1302.95513192291
-"DEC",1396,201,3.47922636103152,4,3,4,3,4,0.636968534840402,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,10.9859822024372
-"DEC",814,211,3.06879606879607,3,3,3,2,4,0.78071615531435,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,5.65019220541244
-"DEC",17608,246,2.50062471603816,2,2,3,2,4,0.937203478114074,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,99.5931196943616
-"DEC",13905,277,2.83322545846818,3,2,3,2,4,1.04560688960007,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,89.1092762707881
-"DEC",112765,278,2.48454751030905,2,2,3,2,3,0.861768327745156,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,633.712710244357
-"DEC",12569,279,2.70037393587398,3,2,3,2,4,0.922815200472984,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,76.7706860063666
-"DEC",16,284,7,7,6,8,5,8,1.2747548783982,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,0.253331275823136
-"DEC",12731,403,3.52336815646846,4,3,4,3,4,0.737144582834819,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,101.459175967166
-"DEC",7269,409,6.61108818269363,7,6,7,5,8,1.4548530411585,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,108.697212419256
-"DEC",24842,412,3.55325658159568,3,3,4,2,5,0.937763011815436,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,199.656711758109
-"DEC",23,425,4.43478260869565,4,4,6,3,6,1.09648001851465,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,0.230712411910356
-"DEC",62468,500,3.92785105974259,4,3,5,2,6,1.58168457012541,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,554.987754395927
-"DEC",1244,502,3.62138263665595,4,3,4,3,4,0.73425116712115,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,10.1897981927074
-"DEC",23607,503,3.31782945736434,3,2,4,2,5,1.1253523112489,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,177.159989710458
-"DEC",964,752,3.30290456431535,3,3,3,3,4,0.667527694749196,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,7.20184626982915
-"DEC",25,756,3.56,3,3,5,2,5,1.09836241741968,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,0.201307888823742
-"DEC",213731,800,5.0864638260243,5,4,6,4,7,1.0459768333021,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,2458.97586198201
-"DEC",10069,908,3.60711093455159,4,3,5,2,5,1.14226536825953,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,82.151713731217
-"DEC",223290,913,3.68349679788616,4,3,4,2,5,1.16632801691426,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,1860.37441418946
-"DEC",7859,914,3.98358569792594,4,3,5,3,5,0.968053297103462,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,70.8128772517404
-"DEC",377439,916,3.27687917782741,3,2,4,2,5,1.32666499557906,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,2797.55085023324
-"DEC",12868,2002,5.68184644078334,6,4,7,3,8,1.70522518238582,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,165.3755616119
-"DEC",33358,2003,3.61613406079501,3,3,4,2,6,1.60259394483254,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,272.844569720691
-"DEC",109834,2004,4.63248174517909,5,4,5,3,6,1.35038535195529,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,1150.85684342781
-"DEC",312265,2005,3.64220453781244,4,3,4,2,5,1.18053424754311,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,2572.51803505138
-"DEC",356034,2006,3.80049377306662,4,3,4,2,5,1.29224686362158,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,3060.56978547022
-"DEC",296333,2007,6.49901293477271,6,5,8,4,10,2.29707501210843,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,4356.10366814335
-"DEC",113930,2008,4.42831563240586,4,3,5,3,7,1.60035723478915,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1141.16239835479
-"FEB",7207,0,16.2887470514777,16,13,19,10,22,4.36610488248458,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",29,248.398685316376
-"FEB",316983,1,18.473526971478,19,17,20,15,22,2.76279093722702,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",29,12390.6155484869
-"FEB",63028,12,11.229866091261,10,8,14,6,18,4.42641259395855,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",29,1497.66677631707
-"FEB",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",29,NA
-"FEB",2594,22,8.88126445643793,8,6,9,6,15,3.68964822571517,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",29,48.7474458640521
-"FEB",329211,23,9.88928680997901,8,5,14,4,19,5.65190946689724,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",29,6888.84482579441
-"FEB",30229,24,16.4542657712792,16,12,21,9,26,5.85926679638391,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",29,1052.46916325185
-"FEB",5657,108,15.5002651582111,15,14,17,12,19,2.52420664021392,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",29,185.53779801152
-"FEB",173301,109,13.5929913849314,14,10,16,8,19,3.85046652342681,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",29,4984.51838378264
-"FEB",1396,201,8.61962750716332,8,7,10,6,12,2.39043914128412,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",29,25.4613254658451
-"FEB",814,211,9.9987714987715,9,8,11,7,15,2.87602108168273,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",29,17.2217840909593
-"FEB",17608,246,11.9573489323035,10,9,14,7,19,4.59075385520925,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",29,445.504427009586
-"FEB",13905,277,11.3738223660554,10,8,13,7,19,4.28750030347531,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",29,334.645143056577
-"FEB",112765,278,9.39070633618587,8,7,10,6,14,3.50210363046506,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",29,2240.67916336561
-"FEB",12569,279,10.9312594478479,10,8,13,7,18,4.2566315623242,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",29,290.72208197289
-"FEB",16,284,22.125,22.5,20,25.5,15,27,4.01364858950058,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",29,0.749049215898708
-"FEB",12731,403,14.6370277275941,15,13,17,10,19,3.15249706997996,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",29,394.296121715901
-"FEB",7269,409,20.1370202228642,19,18,23,16,27,4.19240001576048,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",29,309.725502899405
-"FEB",24842,412,13.7105305530956,14,12,15,10,17,2.63045757021737,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",29,720.68902764817
-"FEB",23,425,13.4347826086957,12,12,16,11,18,2.88664220394745,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",29,0.653831095233618
-"FEB",62468,500,14.2195043862458,15,9,18,7,22,5.42575812080669,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",29,1879.52952743234
-"FEB",1244,502,12.6117363344051,13,10,15,8,17,3.40009795696766,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",29,33.1972687803244
-"FEB",23607,503,12.1569873342653,12,9,15,7,17,3.63866667278563,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",29,607.258854437204
-"FEB",964,752,9.69917012448133,9,8,10,8,13,2.03464784236166,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",29,19.7842095159687
-"FEB",25,756,11.64,12,8,15,7,16,3.65381991893416,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",29,0.615743846967582
-"FEB",213731,800,18.9117629169376,19,18,20,17,22,2.04474894533229,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",29,8552.76667270919
-"FEB",10069,908,14.8030588936339,15,12,18,8,21,4.51180534872952,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",29,315.387807141622
-"FEB",223290,913,15.2376192395539,16,12,18,9,21,4.22347457246155,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",29,7199.3532332415
-"FEB",7859,914,14.5467616745133,14,12,17,10,19,3.49229907499223,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",29,241.90269352878
-"FEB",377439,916,17.6637257941018,19,14,22,8,24,5.53522974243523,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",29,14107.0491309694
-"FEB",12868,2002,17.8975753807896,18,15,21,12,23,4.02333306073656,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",29,487.317877730983
-"FEB",33358,2003,16.2020504826428,18,12,20,8,22,5.11471668331826,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",29,1143.607716436
-"FEB",109834,2004,15.9467469089717,16,13,19,10,21,4.13228541499433,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",29,3706.09027231782
-"FEB",312265,2005,17.1989688245561,17,15,20,12,22,3.60931783211692,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",29,11364.0414821395
-"FEB",356034,2006,14.6116354056073,15,12,17,9,20,4.07613378922998,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",29,11007.720462903
-"FEB",296333,2007,20.2425649522665,21,18,23,15,26,4.05198526690771,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",29,12692.660122986
-"FEB",113930,2008,16.4373826033529,17,14,19,10,22,4.35768029785001,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",29,3962.57826597425
-"JAN",7207,0,6.66588039406133,7,5,8,4,9,1.94261506579843,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,108.663284123386
-"JAN",316983,1,7.40272191253159,7,6,8,6,9,1.36714017493638,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,5307.6001069303
-"JAN",63028,12,4.49565272577267,4,3,6,2,8,2.01175311933888,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,640.910032741404
-"JAN",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"JAN",2594,22,3.47764070932922,3,3,4,2,6,1.2831875248898,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,20.4044771357188
-"JAN",329211,23,3.98610617506705,3,2,6,1,8,2.63056061002952,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,2968.20565468238
-"JAN",30229,24,7.53491680174667,7,5,10,4,12,2.95746190891157,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,515.196649000564
-"JAN",5657,108,6.15662011666961,6,5,7,4,8,1.42698274532625,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,78.7769792354302
-"JAN",173301,109,5.19205313298827,5,4,6,3,8,1.80357669056276,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,2035.21823223525
-"JAN",1396,201,3.92621776504298,4,3,5,3,5,1.1123816152843,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,12.3973993105947
-"JAN",814,211,4.92260442260442,5,4,5,4,7,1.29263842643787,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,9.06337876985095
-"JAN",17608,246,5.01209677419355,5,4,6,3,8,1.90676632090522,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,199.618259689457
-"JAN",13905,277,4.70658036677454,4,4,6,3,7,1.59820215192145,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,148.029154877189
-"JAN",112765,278,4.02333170753337,4,3,5,3,6,1.5777507210034,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,1026.19749874531
-"JAN",12569,279,4.27854244569974,4,3,5,3,7,1.58102115288771,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,121.637464463757
-"JAN",16,284,9.9375,10,9,11,7,12,1.81895402635691,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,0.359639936213202
-"JAN",12731,403,5.23399575838504,5,4,6,4,7,1.29753658177183,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,150.718537796418
-"JAN",7269,409,9.2633099463475,9,8,11,7,13,2.23339086876682,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,152.304120156704
-"JAN",24842,412,4.87919652201916,5,4,6,4,6,1.15312725668692,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,274.160987600415
-"JAN",23,425,5.56521739130435,5,4,7,4,8,1.49858155996644,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,0.289521458083584
-"JAN",62468,500,5.6177562912211,6,4,7,3,9,2.17605261436815,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,793.763791291189
-"JAN",1244,502,5.53376205787781,6,5,6,4,7,1.30099578284668,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,15.5708259175578
-"JAN",23607,503,4.99927987461346,5,4,6,3,7,1.5487856998233,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,266.943308125847
-"JAN",964,752,4.600622406639,4,4,5,4,6,0.940799312845099,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,10.0314661453179
-"JAN",25,756,4.8,6,3,6,3,6,1.46969384566991,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,0.27142636695336
-"JAN",213731,800,7.60083937285653,7,7,8,6,9,1.23230637645941,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,3674.51360865481
-"JAN",10069,908,6.18393087694905,6,5,8,3,9,2.03259172991515,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,140.838618039316
-"JAN",223290,913,6.052156388553,6,5,7,4,9,1.7998096379489,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,3056.68160276361
-"JAN",7859,914,5.73444458582517,6,5,7,4,8,1.5233177576559,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,101.936433995726
-"JAN",377439,916,6.5207569964948,6,5,8,3,10,2.29590748594862,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,5566.92764357672
-"JAN",12868,2002,7.71075536213864,8,6,9,5,10,2.0350028289091,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,224.428891515386
-"JAN",33358,2003,6.20306972840098,6,4,8,3,9,2.13005978210345,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,468.034055856026
-"JAN",109834,2004,6.62222991059235,7,5,8,4,9,1.75946648254683,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,1645.17401915049
-"JAN",312265,2005,6.46867884649256,6,5,8,4,9,1.67093558416004,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,4568.87932097087
-"JAN",356034,2006,6.0790121168203,6,5,7,4,9,1.8296239669612,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,4895.47988266667
-"JAN",296333,2007,8.98225307340053,9,7,11,6,12,2.28579617475717,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,6020.54895934752
-"JAN",113930,2008,6.51801105942245,7,5,8,4,9,1.88013387107862,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,1679.67004850387
-"JUL",7207,0,32.7655057582906,30,22,39,18,56,14.3461619828075,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,534.124114322778
-"JUL",316983,1,42.9359019253398,43,38,48,34,53,7.20032881649603,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,30784.1629528604
-"JUL",63028,12,47.1744621438091,47,40,55,34,61,10.1400374472576,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,6725.29394982357
-"JUL",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"JUL",2594,22,48.6900539707016,50,40,58,34,62,10.2712030053316,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,285.680774991194
-"JUL",329211,23,47.7382803126263,52,39,60,22,64,15.3684778695051,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,35547.7318830741
-"JUL",30229,24,73.1443646829204,76,70,81,55,84,11.5105533210146,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,5001.21402391335
-"JUL",5657,108,45.0491426551176,46,40,51,33,55,8.01013961392623,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,576.425913612459
-"JUL",173301,109,35.9029492039861,36,31,41,26,45,7.20386140886738,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,14073.4955786004
-"JUL",1396,201,36.9312320916905,38,32,43,26,45,7.01172770549794,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,116.613814788729
-"JUL",814,211,41.2371007371007,43,30,49,26,58,11.2566245610431,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,75.9247404960286
-"JUL",17608,246,51.1870172648796,55,42,62,27,66,14.3603806844473,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,2038.64046634525
-"JUL",13905,277,40.7480043149946,42,30,51,24,56,11.7897224457753,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,1281.58709118451
-"JUL",112765,278,50.2957300580854,52,45,58,35,62,10.2902083215661,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,12828.5103329995
-"JUL",12569,279,38.122444108521,37,29,46,22,54,11.4660164337913,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,1083.80774513116
-"JUL",16,284,40.625,43,35,46.5,34,47,5.53257399408268,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,1.4702261543307
-"JUL",12731,403,46.1860812190716,47,39,54,32,59,10.1012553886473,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,1329.97788863951
-"JUL",7269,409,45.1829687714954,46,39,51,33,56,8.32339744607023,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,742.88265691939
-"JUL",24842,412,53.7186619434828,55,48,60,42,64,8.42861624865672,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,3018.43988954627
-"JUL",23,425,33.3913043478261,30,27,37,26,48,8.64135220112536,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,1.7371287485015
-"JUL",62468,500,37.4896907216495,32,21,51,17,69,19.1179958319037,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,5297.1253110523
-"JUL",1244,502,24.4935691318328,19,18,22,17,51,12.3960938171537,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,68.9196783422407
-"JUL",23607,503,43.1332655568264,45,32,55,20,61,14.2272236195302,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,2303.15903225965
-"JUL",964,752,35.4045643153527,35,31,40,27,44,5.73464212012079,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,77.1981825343181
-"JUL",25,756,38.28,38,28,47,22,56,12.0183859149222,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,2.16462527645305
-"JUL",213731,800,44.496474540427,46,40,50,33,53,7.62427841283073,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,21511.1638616978
-"JUL",10069,908,45.3161187804151,48,36,56,23,60,12.9659048293856,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,1032.07161770346
-"JUL",223290,913,31.7714004209772,31,24,38,18,47,10.7474194057985,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,16046.3558649145
-"JUL",7859,914,43.7854688891717,45,32,56,23,62,14.469577056863,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,778.337726102673
-"JUL",377439,916,24.7348684158235,22,17,30,14,42,10.7084594837697,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,21116.7542078778
-"JUL",12868,2002,56.8914361206093,59,52,65,39,69,11.5086205754207,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,1655.87952744041
-"JUL",33358,2003,41.0427183883926,43,32,51,23,54,11.4547574091769,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,3096.75544395788
-"JUL",109834,2004,50.1113316459384,52,40,60,29,67,13.5065045936614,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,12449.2598417739
-"JUL",312265,2005,25.7206539317567,23,18,32,14,42,10.5983565602197,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,18166.7024533719
-"JUL",356034,2006,28.2030143188572,28,21,34,16,42,9.93526123179933,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,22712.1260124652
-"JUL",296333,2007,50.05252536842,47,42,58,37,69,12.1616287092095,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,33548.7852610094
-"JUL",113930,2008,44.1920389712982,44,35,53,28,61,11.9742516773742,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,11388.1433409201
-"JUN",7207,0,34.4817538504232,31,24,41,20,57,13.7548424846029,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",30,543.969084286931
-"JUN",316983,1,46.4651038068288,46,42,51,37,57,7.36487097256341,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",30,32239.8662643135
-"JUN",63028,12,52.5799168623469,55,44,62,34,67,11.7008499093581,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",30,7254.10387151616
-"JUN",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",30,NA
-"JUN",2594,22,47.1283731688512,45,37,60,34,63,11.1978811007614,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",30,267.597941825929
-"JUN",329211,23,29.4360546883306,27,17,40,12,52,14.4097757070444,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",30,21212.130368734
-"JUN",30229,24,60.092262397036,65,51,71,33,77,15.7814199758311,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",30,3976.24086238242
-"JUN",5657,108,48.6720876789818,50,43,55,37,59,8.02451963921058,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",30,602.693492130679
-"JUN",173301,109,37.6983860450892,38,33,42,28,47,6.95818448633735,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",30,14300.5972172254
-"JUN",1396,201,35.9004297994269,37,31,41,27,44,6.27926727596532,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",30,109.702219617754
-"JUN",814,211,54.5773955773956,59,55,62,26,64,12.8265993623501,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",30,97.2450627279836
-"JUN",17608,246,47.4445706497047,48,37,60,28,65,13.4723915047573,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",30,1828.63445692181
-"JUN",13905,277,35.9850413520316,33,28,44,23,52,10.7937044278213,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",30,1095.27543617086
-"JUN",112765,278,38.9312730013745,38,30,46,25,56,10.7612412430667,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",30,9609.5550174713
-"JUN",12569,279,37.440210040576,35,27,43,23,61,12.7198287061605,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",30,1030.07619612189
-"JUN",16,284,42.1875,42,36.5,48,35,51,6.08500975759283,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",30,1.4775225620445
-"JUN",12731,403,49.0695939046422,50,42,57,36,62,9.78985197922996,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",30,1367.43071425483
-"JUN",7269,409,46.8937955702297,48,42,52,36,55,6.84709089758796,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",30,746.140138143216
-"JUN",24842,412,53.3209081394413,54,48,60,41,63,8.13555482107361,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",30,2899.44211946522
-"JUN",23,425,35.3478260869565,33,30,39,28,49,7.8552596373229,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",30,1.77959384139582
-"JUN",62468,500,42.0842991611705,38,26,56,21,73,19.0223646446096,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",30,5754.50602793356
-"JUN",1244,502,28.1921221864952,24,20,28,20,55,12.1903803067688,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",30,76.7676944792039
-"JUN",23607,503,45.3114754098361,47,35,57,24,63,13.5482843826703,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",30,2341.42015392151
-"JUN",964,752,30.9626556016598,31,29,33,26,35,2.95095729626462,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",30,65.3349532324507
-"JUN",25,756,33.64,31,28,38,27,44,6.79340857007732,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",30,1.84088366619174
-"JUN",213731,800,48.8373048364533,50,45,54,38,57,7.12355511375221,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",30,22848.0718054198
-"JUN",10069,908,49.6166451484755,50,41,61,30,65,12.4965473442934,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",30,1093.5636989212
-"JUN",223290,913,33.84770925702,33,27,40,22,47,9.61371719948689,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",30,16543.5574565346
-"JUN",7859,914,44.8018831912457,45,34,56,27,61,12.809400436815,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",30,770.715168964066
-"JUN",377439,916,27.0596573221103,26,22,32,18,38,7.55628323058682,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",30,22356.2734955681
-"JUN",12868,2002,58.0997046938141,61,53,65,42,69,10.2272784275508,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",30,1636.49742295355
-"JUN",33358,2003,33.6950356736015,33,25,41,21,48,10.0137213223822,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",30,2460.34649217105
-"JUN",109834,2004,51.0893894422492,53,43,60,33,66,12.2339071819251,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",30,12282.8136052941
-"JUN",312265,2005,30.2505756328759,28,23,36,18,47,10.4468971560631,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",30,20676.98920814
-"JUN",356034,2006,30.0342635815681,30,23,36,17,43,9.7362120931457,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",30,23406.6256790858
-"JUN",296333,2007,45.7196026092268,43,41,48,38,62,9.62165817564464,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",30,29656.016397334
-"JUN",113930,2008,48.3542613885719,49,41,57,32,62,11.148894015142,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,12058.7752175196
-"MAR",7207,0,21.9213264881365,22,17,27,12,30,6.42939249445509,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,357.348645298837
-"MAR",316983,1,26.1022389213302,27,24,28,21,30,3.68618686680424,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,18714.7710972969
-"MAR",63028,12,14.5836294980009,13,10,18,9,24,5.78490258135795,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,2079.07394747574
-"MAR",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"MAR",2594,22,13.0717039321511,11,10,13,9,23,5.42271213401952,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,76.6960437554544
-"MAR",329211,23,12.0197806270143,9,6,16,5,25,7.34108769832363,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,8950.38397328826
-"MAR",30229,24,20.727083264415,18,15,25,12,35,8.06248226435504,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,1417.20527543275
-"MAR",5657,108,22.5121088916387,23,20,25,18,27,3.35273589707973,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,288.053493815645
-"MAR",173301,109,18.9087022002181,19,15,23,11,27,5.65470330082186,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,7411.96872991971
-"MAR",1396,201,10.6561604584527,10,9,11,9,14,2.30623873880934,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,33.6478219566515
-"MAR",814,211,11.0982800982801,12,9,12,8,13,2.51973478386206,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,20.4338816588055
-"MAR",17608,246,14.078316674239,12,9,18,8,25,6.61755870530886,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,560.701279420295
-"MAR",13905,277,14.4368212873067,11,9,18,9,27,7.02634252030017,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,454.060121730711
-"MAR",112765,278,11.0574823748504,10,9,11,8,16,4.19691702660813,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,2820.33935562536
-"MAR",12569,279,14.8531307184342,13,10,19,8,26,6.69481151176012,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,422.269308501299
-"MAR",16,284,26.25,29,23,29.5,21,31,4.81534007106456,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,0.94999228433676
-"MAR",12731,403,22.6525017673396,23,20,26,15,29,5.1820571919016,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,652.303154494271
-"MAR",7269,409,25.6286972073188,26,24,28,21,31,3.90129372001835,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,421.378125263135
-"MAR",24842,412,21.8428870461316,22,19,25,17,27,3.99516548345624,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,1227.34705552166
-"MAR",23,425,18.6521739130435,18,16,21,16,23,3.01602525148254,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,0.970349261858262
-"MAR",62468,500,21.8034993916885,22,13,30,9,35,9.40867488757345,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,3080.73676453485
-"MAR",1244,502,15.1688102893891,16,10,18,10,21,4.56856921033322,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,42.6817962034159
-"MAR",23607,503,14.5103994577879,13,10,18,9,23,5.26198944623733,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,774.802397673105
-"MAR",964,752,11.3278008298755,10,10,12,9,16,2.73452168698601,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,24.6997993927558
-"MAR",25,756,16.12,16,9,22,9,24,6.35811292759102,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,0.911540215685034
-"MAR",213731,800,26.585483621936,26,25,28,24,31,2.80168709494741,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,12852.3596631092
-"MAR",10069,908,18.4937928294766,19,11,25,9,28,6.92508371017083,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,421.194912465442
-"MAR",223290,913,20.5515114873035,21,16,25,11,29,6.39205402611134,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,10379.676769596
-"MAR",7859,914,21.203588242779,21,18,25,15,27,4.60124209140944,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,376.918486356175
-"MAR",377439,916,24.4131290089259,28,18,31,10,33,8.44581147276258,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,20842.0775101802
-"MAR",12868,2002,24.6979328566988,25,22,28,18,31,5.14685535704718,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,718.856899671235
-"MAR",33358,2003,23.0275196354698,26,17,29,10,32,7.74987208451969,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,1737.47255523298
-"MAR",109834,2004,22.5685124824736,23,19,27,13,30,6.13274393174522,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,5606.741367836
-"MAR",312265,2005,24.2941123725041,25,22,28,17,31,5.30587635640804,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,17159.1248033996
-"MAR",356034,2006,18.6712533072684,19,15,22,11,26,5.35844932972757,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,15036.118236546
-"MAR",296333,2007,25.8434092726763,26,23,29,20,32,4.69033471895053,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,17322.1027654367
-"MAR",113930,2008,23.6642850873343,24,20,27,14,32,6.24751022190388,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,6098.20856670566
-"MAY",7207,0,34.7892326904399,33,27,40,22,52,11.2448242535383,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,567.113727339568
-"MAY",316983,1,43.7917301558759,45,36,51,31,55,8.74555365739551,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,31397.7742787455
-"MAY",63028,12,39.7959795646379,40,27,52,22,58,13.3555559550569,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,5673.40142167335
-"MAY",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"MAY",2594,22,28.5397070161912,28,24,32,22,37,5.27181044985231,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,167.451973319093
-"MAY",329211,23,14.4417015227316,12,9,17,8,25,7.73494495330392,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,10753.8380164412
-"MAY",30229,24,30.13824473188,25,21,35,19,56,12.9057063138306,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,2060.68933488743
-"MAY",5657,108,46.7081491956868,48,42,51,36,55,6.61391596922387,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,597.653717394603
-"MAY",173301,109,35.7362911927802,36,32,40,28,43,5.97842413347465,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,14008.1677758475
-"MAY",1396,201,23.6518624641834,23,22,25,19,28,3.4500950069549,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,74.682964867217
-"MAY",814,211,44.7985257985258,51,41,52,22,53,11.0417433454518,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,82.4819491443436
-"MAY",17608,246,31.3828941390277,27,20,43,18,51,12.448888069188,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,1249.89580095631
-"MAY",13905,277,24.3480043149946,22,19,26,18,36,7.75077918677464,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,765.781994744688
-"MAY",112765,278,24.9928878641422,22,20,27,18,41,8.61093414807934,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,6374.72643992579
-"MAY",12569,279,28.9492401941284,25,21,35,19,48,10.5996651458835,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,823.016767989587
-"MAY",16,284,41.875,42.5,37.5,45,34,48,5.20666639991463,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,1.51546388215626
-"MAY",12731,403,47.0847537506873,49,41,54,34,57,8.66562430481366,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,1355.85613084212
-"MAY",7269,409,43.5263447516852,44,40,48,35,50,6.03057971751212,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,715.64502099562
-"MAY",24842,412,48.2417277191852,49,44,53,39,57,6.80146008682754,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,2710.69215092177
-"MAY",23,425,34.5217391304348,33,30,37,29,44,5.88195150414933,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,1.79593779467473
-"MAY",62468,500,40.5575974899148,39,24,55,18,68,17.9498127139324,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,5730.60679039516
-"MAY",1244,502,27.387459807074,23,21,26,20,51,10.9959523528201,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,77.0624693508415
-"MAY",23607,503,40.9472614055153,41,32,52,23,57,11.9780042626642,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,2186.43438503775
-"MAY",964,752,29.2935684647303,29,26,32,25,35,3.867880305082,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,63.8734098032995
-"MAY",25,756,28.72,28,27,32,24,32,3.11794804318482,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,1.6240344289376
-"MAY",213731,800,46.6192737600067,47,44,50,39,52,5.0523265014354,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,22537.3998125117
-"MAY",10069,908,40.8366272718244,42,34,49,24,55,10.3549971521325,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,930.051493911253
-"MAY",223290,913,32.7118814098258,32,26,39,21,46,9.01177323674569,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,16521.3520070829
-"MAY",7859,914,42.2303091996437,43,34,51,27,56,10.6783720441723,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,750.692950628473
-"MAY",377439,916,32.3348514594411,30,22,42,19,48,11.1122258115455,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,27605.0431778505
-"MAY",12868,2002,53.0603046316444,54,49,59,40,64,9.1091676520337,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,1544.37079023679
-"MAY",33358,2003,30.8962767552011,27,22,39,19,48,10.7039295908915,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,2331.18606653398
-"MAY",109834,2004,47.9388258644864,49,41,55,33,61,10.1728250784387,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,11909.5398205191
-"MAY",312265,2005,33.4040286295294,32,27,40,22,47,9.25267303080178,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,23593.5311157592
-"MAY",356034,2006,31.0884718875164,31,25,37,19,43,8.83953255707108,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,25035.8094018393
-"MAY",296333,2007,44.9125308352428,43,40,49,37,57,8.18049143865698,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,30103.5930041343
-"MAY",113930,2008,45.9403230053542,47,41,51,33,57,8.82678693595166,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,11838.6703961076
-"NOV",7207,0,4.37796586651866,4,3,5,2,7,1.67848723821569,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",30,69.0648768557453
-"NOV",316983,1,6.66570762469912,7,6,8,4,8,1.32538616654137,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",30,4625.00898030343
-"NOV",63028,12,3.14923526051913,3,3,3,2,4,1.02183353033507,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",30,434.479190133649
-"NOV",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",30,NA
-"NOV",2594,22,2.88396299151889,3,3,3,2,3,0.666430687611688,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",30,16.3753278320813
-"NOV",329211,23,1.78899550744052,1,1,2,1,4,1.45375067518006,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",30,1289.18111936895
-"NOV",30229,24,5.8105130834629,4,3,7,3,12,3.35839135825519,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",30,384.475448789435
-"NOV",5657,108,6.21177302457133,6,5,7,4,8,1.67641755026065,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",30,76.9187301188796
-"NOV",173301,109,5.26520908707971,5,5,6,4,7,1.15653238294815,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",30,1997.31718829407
-"NOV",1396,201,6.6525787965616,7,6,7,5,8,0.927338952697114,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",30,20.3285215314182
-"NOV",814,211,2.86609336609337,3,3,3,2,3,0.4602159744354,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",30,5.10675575888862
-"NOV",17608,246,2.79702407996365,3,2,3,2,4,1.11300815168501,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",30,107.804423971395
-"NOV",13905,277,3.04142394822006,3,3,3,2,4,0.868570633099913,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",30,92.5717135872947
-"NOV",112765,278,2.66967587460648,3,2,3,2,3,0.749375694007651,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",30,658.966306982591
-"NOV",12569,279,3.53616039462169,3,2,4,2,7,1.66790559384674,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",30,97.2888411742665
-"NOV",16,284,6.3125,6,5.5,7,4,8,1.35640840088817,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",30,0.22108115372814
-"NOV",12731,403,6.11648731442935,6,5,7,4,8,1.34970910130064,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",30,170.449191679768
-"NOV",7269,409,6.8594029440088,7,6,8,5,8,1.19890752586483,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",30,109.141855505335
-"NOV",24842,412,6.68017872957089,7,6,8,5,9,1.41173529331111,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",30,363.249469109219
-"NOV",23,425,5.47826086956522,6,5,6,4,7,0.97220346847817,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",30,0.27580421158164
-"NOV",62468,500,4.61530703720305,4,3,6,2,8,2.22426170508876,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",30,631.086003467389
-"NOV",1244,502,3.58199356913183,3,3,3,3,6,1.35459105489578,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",30,9.75383783180784
-"NOV",23607,503,5.45558520777735,6,4,7,3,8,1.8711080938331,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",30,281.911304838091
-"NOV",964,752,4.32780082987552,4,4,5,3,5,0.743167311765876,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",30,9.13218389459208
-"NOV",25,756,4.48,4,3,6,3,6,1.17029910706622,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",30,0.24515929918368
-"NOV",213731,800,6.30689511582316,6,6,7,5,7,1.03450451446878,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",30,2950.62131209212
-"NOV",10069,908,4.92263382659648,5,3,6,2,7,1.72076784761706,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",30,108.496123422663
-"NOV",223290,913,4.19213130905997,4,3,5,3,6,1.46479485357255,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",30,2048.9648102962
-"NOV",7859,914,5.50731645247487,6,4,7,3,8,1.6549358711129,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",30,94.7409356006075
-"NOV",377439,916,3.19425920479866,3,3,3,2,5,1.15433763360268,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",30,2639.04792097512
-"NOV",12868,2002,7.43495492695058,8,6,9,5,9,1.74105818194932,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",30,209.420764560716
-"NOV",33358,2003,3.77783440254212,3,3,4,2,7,1.76672186723367,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",30,275.850178950237
-"NOV",109834,2004,6.14643917184114,6,5,7,4,8,1.76781181817258,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",30,1477.71518720814
-"NOV",312265,2005,3.66257505644244,3,3,4,2,6,1.40975790997215,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",30,2503.45731714803
-"NOV",356034,2006,4.20835369655707,4,3,5,2,6,1.47623212635272,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",30,3279.6995149553
-"NOV",296333,2007,6.79066793101005,7,6,8,5,9,1.78344067811691,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",30,4404.76618382161
-"NOV",113930,2008,5.83932239094181,6,4,7,3,9,2.04545175122081,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,1456.23310361717
-"OCT",7207,0,13.1554044678785,12,9,16,7,22,5.95906608216951,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",31,214.451710643459
-"OCT",316983,1,18.8628696176136,19,16,22,11,25,5.00376415304746,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",31,13524.2914677069
-"OCT",63028,12,10.1983404201307,9,7,12,6,17,4.33068492532605,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",31,1453.89759647206
-"OCT",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",31,NA
-"OCT",2594,22,10.4421742482652,10,8,12,7,16,3.11634003702803,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",31,61.2677166805472
-"OCT",329211,23,7.71448098635829,7,5,10,3,13,4.31683013173228,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",31,5744.49477283761
-"OCT",30229,24,17.8549075391181,16,12,22,9,30,8.5814601140208,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",31,1220.82151328282
-"OCT",5657,108,16.6911790701785,17,13,20,9,23,4.97566092775136,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",31,213.571836837251
-"OCT",173301,109,16.5104413707942,17,13,20,10,23,4.51268392075369,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",31,6471.88124609035
-"OCT",1396,201,21.4541547277937,22,19,24,17,25,3.33644307095807,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",31,67.7434974187761
-"OCT",814,211,6.87469287469288,7,5,9,5,9,1.82166145551241,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",31,12.6575162455917
-"OCT",17608,246,9.57911176737846,8,7,11,6,15,4.0864257436357,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",31,381.510115730469
-"OCT",13905,277,9.89744696152463,10,7,12,5,15,4.09284339898448,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",31,311.289852713243
-"OCT",112765,278,8.52599654148007,8,6,10,5,13,3.19889607773664,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",31,2174.65448071197
-"OCT",12569,279,11.6878828864667,10,7,15,5,21,5.57028992855007,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",31,332.282420310695
-"OCT",16,284,18.4375,18,16.5,21,14,23,2.93616991163659,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",31,0.66725648542701
-"OCT",12731,403,20.8417249234153,22,17,25,12,27,5.69109009402461,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",31,600.15988751614
-"OCT",7269,409,20.7373779061769,21,18,25,15,26,4.34762747815411,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",31,340.956754621246
-"OCT",24842,412,22.8680863054504,23,20,26,17,30,4.64562004883649,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",31,1284.95277813473
-"OCT",23,425,17.7826086956522,17,16,19,14,22,2.73394955169783,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",31,0.925111534032702
-"OCT",62468,500,12.2605494012935,11,7,17,5,22,6.33911185804107,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",31,1732.36069198869
-"OCT",1244,502,9.73231511254019,7,7,8,6,22,5.70594129157412,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",31,27.3846585392027
-"OCT",23607,503,16.2898716482399,17,12,20,7,24,5.98021833408971,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",31,869.819721197911
-"OCT",964,752,13.1960580912863,13,11,15,10,17,2.64220944824774,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",31,28.7734567834474
-"OCT",25,756,14.76,14,12,18,11,19,3.01038203555629,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",31,0.834636078381582
-"OCT",213731,800,21.1685483154058,22,19,24,14,27,5.00322788391595,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",31,10233.6222415384
-"OCT",10069,908,15.9520309861953,16,10,22,7,24,6.16818145852944,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",31,363.306454053464
-"OCT",223290,913,12.6483093734605,12,9,16,6,20,5.26562093114712,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",31,6388.11228358937
-"OCT",7859,914,18.1432752258557,19,12,23,8,27,6.92690530198665,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",31,322.517856759547
-"OCT",377439,916,10.1150040138936,9,7,12,5,18,4.76240423752717,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",31,8635.42307896198
-"OCT",12868,2002,24.6924152937519,26,21,29,15,33,6.5015993568845,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",31,718.696305737454
-"OCT",33358,2003,12.8221416152047,13,8,16,7,21,5.28507930491856,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",31,967.456309163818
-"OCT",109834,2004,21.0921663601435,22,17,26,11,29,6.54320399972429,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",31,5239.96970383109
-"OCT",312265,2005,10.9343410244504,10,7,14,5,19,5.50307593915998,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",31,7723.0120370163
-"OCT",356034,2006,12.2376177556076,12,9,15,6,19,4.98771629003761,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",31,9855.05710188938
-"OCT",296333,2007,23.0756345057756,23,20,26,15,31,5.82590307406163,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",31,15466.9419993791
-"OCT",113930,2008,18.7343017642412,18,13,23,10,28,6.71853142580197,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",31,4827.76805165737
-"SEP",7207,0,21.4687109754405,20,14,27,11,36,9.21002565382144,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson",NA,"no",30,338.681005055312
-"SEP",316983,1,27.989772322175,28,25,32,21,35,5.37940422970328,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Alfalfa","yes",30,19420.7360471427
-"SEP",63028,12,15.1215491527575,14,12,18,10,22,4.89519176249991,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Safflower","yes",30,2086.22026808287
-"SEP",0,14,NA,NA,NA,NA,NA,NA,NA,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sudan Grass","no",30,NA
-"SEP",2594,22,15.594834232845,15,13,17,12,21,3.22439924527857,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Sunflower","yes",30,88.5484743739054
-"SEP",329211,23,18.1689038337115,18,13,23,8,28,7.55643630713121,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Corn","yes",30,13092.8264965639
-"SEP",30229,24,43.728836547686,44,39,50,34,53,7.50576933188518,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Rice","yes",30,2893.49043969307
-"SEP",5657,108,26.7249425490543,27,23,31,19,34,5.50417282054742,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Bush Berries","yes",30,330.927842218628
-"SEP",173301,109,24.5011280950485,24,21,28,17,32,5.5669932596451,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Vineyards","yes",30,9294.31737040043
-"SEP",1396,201,17.9570200573066,15.5,7,30,6,32,10.8719237391746,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Asparagus","yes",30,54.8719045708615
-"SEP",814,211,15.6461916461916,12,11,16,10,34,8.30633570048602,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Carrots","yes",30,27.878114592887
-"SEP",17608,246,17.6744661517492,14,11,22,8,34,9.42998916181138,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Potatoes","yes",30,681.218891228138
-"SEP",13905,277,23.6267529665588,25,15,30,12,34,8.24403436973815,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cucurbit","yes",30,719.126647864414
-"SEP",112765,278,19.0779940584401,17,13,25,10,30,7.48589595505799,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Tomatoes","yes",30,4709.09424207881
-"SEP",12569,279,21.4318561540298,20,13,28,11,35,9.12517544266466,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Truck Crops","yes",30,589.645326216091
-"SEP",16,284,23.1875,22.5,19.5,28.5,14,32,5.92894119974216,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Eucalyptus","no",30,0.81209017854594
-"SEP",12731,403,29.9227868981227,30,25,36,19,40,7.59112990805946,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Cherries","yes",30,833.863388804691
-"SEP",7269,409,32.2539551520154,33,28,38,22,40,6.63460994209118,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Olives","yes",30,513.20159223938
-"SEP",24842,412,34.7850817164479,35,31,39,26,43,6.22636599430626,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pears","yes",30,1891.51562824011
-"SEP",23,425,23.304347826087,23,20,26,18,31,4.99072864427191,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Citrus","yes",30,1.17326236037904
-"SEP",62468,500,21.4055196260485,20,13,27,11,36,9.10409110677534,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Almonds","yes",30,2926.93936157544
-"SEP",1244,502,15.4075562700965,12,11,14,10,33,8.16531213879813,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pistachios","yes",30,41.9550739951214
-"SEP",23607,503,27.936247723133,29,20,36,14,40,9.45360091655351,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Walnuts","yes",30,1443.5745658745
-"SEP",964,752,25.3910788381743,25,22,29,20,33,4.56574418884084,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Young Orchard","yes",30,53.5782514832048
-"SEP",25,756,21.6,22,19,27,13,30,5.69209978830308,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Nursery","no",30,1.1820180496356
-"SEP",213731,800,29.2420612826403,30,27,33,21,35,5.30110731035211,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Pasture","yes",30,13680.6221834246
-"SEP",10069,908,24.3053927897507,26,16,32,12,36,8.79108287212142,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Turf","yes",30,535.697146861796
-"SEP",223290,913,19.549576783555,19,14,24,11,30,6.96087595794292,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Semi-agricultural/ROW","yes",30,9555.13840874178
-"SEP",7859,914,27.4640539508843,28,19,36,13,40,10.052658119332,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Other Deciduous","yes",30,472.456992283978
-"SEP",377439,916,19.055958711209,14,11,28,9,37,10.795652842223,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Fallow","yes",30,15743.740565404
-"SEP",12868,2002,37.127991917936,39,33,42.5,24,47,8.19457672861771,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Floating Vegetation","no",30,1045.78609157047
-"SEP",33358,2003,24.5151987529228,25,19,30,14,34,7.19512502720361,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Forage Grass","yes",30,1790.05251221278
-"SEP",109834,2004,32.4497332337892,34,26,39,18,44,9.34551676603443,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Riparian","no",30,7801.50299706935
-"SEP",312265,2005,15.6376795350103,14,11,19,8,26,6.97604022232193,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Upland Herbaceous","no",30,10688.726552177
-"SEP",356034,2006,18.8944791789548,18,14,23,10,29,6.98412289241984,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Urban","no",30,14725.048954238
-"SEP",296333,2007,35.3477135519837,35,31,40,25,47,8.64966117964157,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Water","no",30,22928.2914303884
-"SEP",113930,2008,25.9728078644782,24,19,32,15,39,8.83691625531204,"ucdpt","legal",2016,"data/dsa_legal/ucdpt-legal-2016.geojson","Wet herbaceous/sub irrigated pasture","yes",30,6477.20061917002
+"Station","model","wateryear","month","date","ET_mean","measure_type","field_mean_et"
+"D2","calsimetaw","2015","SEP",2015-09-01,0.4,"SR",0.35316227925
+"D1","calsimetaw","2015","SEP",2015-09-01,0.4,"SR",0.17316805935
+"D5","calsimetaw","2015","SEP",2015-09-01,0.4,"EC",0.144067827
+"D5","calsimetaw","2015","SEP",2015-09-01,0.4,"SR",0.389452147411765
+"D3","calsimetaw","2015","SEP",2015-09-01,NA,"SR",0.0511279259047619
+"D4","calsimetaw","2015","SEP",2015-09-01,NA,"SR",0.406077636380952
+"D2","detaw","2015","SEP",2015-09-01,0.4,"SR",0.35316227925
+"D1","detaw","2015","SEP",2015-09-01,0.4,"SR",0.17316805935
+"D5","detaw","2015","SEP",2015-09-01,2.9,"EC",0.144067827
+"D5","detaw","2015","SEP",2015-09-01,2.9,"SR",0.389452147411765
+"D3","detaw","2015","SEP",2015-09-01,NA,"SR",0.0511279259047619
+"D4","detaw","2015","SEP",2015-09-01,NA,"SR",0.406077636380952
+"D2","disalexi","2015","SEP",2015-09-01,1.7,"SR",0.35316227925
+"D1","disalexi","2015","SEP",2015-09-01,1.8,"SR",0.17316805935
+"D5","disalexi","2015","SEP",2015-09-01,1.3,"EC",0.144067827
+"D5","disalexi","2015","SEP",2015-09-01,1.3,"SR",0.389452147411765
+"D3","disalexi","2015","SEP",2015-09-01,1.6,"SR",0.0511279259047619
+"D4","disalexi","2015","SEP",2015-09-01,1.6,"SR",0.406077636380952
+"D2","eto","2015","SEP",2015-09-01,4.7,"SR",0.35316227925
+"D1","eto","2015","SEP",2015-09-01,4.7,"SR",0.17316805935
+"D5","eto","2015","SEP",2015-09-01,4.9,"EC",0.144067827
+"D5","eto","2015","SEP",2015-09-01,4.9,"SR",0.389452147411765
+"D3","eto","2015","SEP",2015-09-01,4.8,"SR",0.0511279259047619
+"D4","eto","2015","SEP",2015-09-01,4.8,"SR",0.406077636380952
+"D2","itrc","2015","SEP",2015-09-01,1.6,"SR",0.35316227925
+"D1","itrc","2015","SEP",2015-09-01,1.6,"SR",0.17316805935
+"D5","itrc","2015","SEP",2015-09-01,0.7,"EC",0.144067827
+"D5","itrc","2015","SEP",2015-09-01,0.7,"SR",0.389452147411765
+"D3","itrc","2015","SEP",2015-09-01,1,"SR",0.0511279259047619
+"D4","itrc","2015","SEP",2015-09-01,1.4,"SR",0.406077636380952
+"D2","sims","2015","SEP",2015-09-01,1.3,"SR",0.35316227925
+"D1","sims","2015","SEP",2015-09-01,1.3,"SR",0.17316805935
+"D5","sims","2015","SEP",2015-09-01,1.3,"EC",0.144067827
+"D5","sims","2015","SEP",2015-09-01,1.3,"SR",0.389452147411765
+"D2","ucdmetric","2015","SEP",2015-09-01,2.8,"SR",0.35316227925
+"D1","ucdmetric","2015","SEP",2015-09-01,1.9,"SR",0.17316805935
+"D5","ucdmetric","2015","SEP",2015-09-01,1.8,"EC",0.144067827
+"D5","ucdmetric","2015","SEP",2015-09-01,1.8,"SR",0.389452147411765
+"D3","ucdmetric","2015","SEP",2015-09-01,1.2,"SR",0.0511279259047619
+"D4","ucdmetric","2015","SEP",2015-09-01,1.9,"SR",0.406077636380952
+"D2","ucdpt","2015","SEP",2015-09-01,1.7,"SR",0.35316227925
+"D1","ucdpt","2015","SEP",2015-09-01,1.1,"SR",0.17316805935
+"D5","ucdpt","2015","SEP",2015-09-01,1.8,"EC",0.144067827
+"D5","ucdpt","2015","SEP",2015-09-01,1.8,"SR",0.389452147411765
+"D3","ucdpt","2015","SEP",2015-09-01,1.3,"SR",0.0511279259047619
+"D4","ucdpt","2015","SEP",2015-09-01,1.4,"SR",0.406077636380952
+"D3","sims","2015","SEP",2015-09-01,1.0213,"SR",0.0511279259047619
+"D4","sims","2015","SEP",2015-09-01,0.9714,"SR",0.406077636380952

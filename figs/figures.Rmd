@@ -150,40 +150,6 @@ for(i in 1:length(crops_2_gen)){
 ```
 
 
-## Boxplot whisker_ETxMonths_per_crop_method
-
-```{r whisker_ETxMonths_per_crop_method, echo=FALSE, fig.width = 7, fig.height = 4}
-
-# list of crops to generate
-crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
-
-# list of methods to use for the plots
-methods_2_gen <- methods_names
-
-# loop through all crops types
-for(i in 1:length(crops_2_gen)){
-
-  # get the id from the crop name
-  cropid <- lookup_cropid(crops_2_gen[i])
-  
-  # loop through the months
-  for(m in 1:length(methods_2_gen)){
-    mod <- methods_2_gen[m]
-    
-    # plot
-    p <- whisker_ETxMonths_per_crop_method_2yrs(dsa_legal_data, 'dsa', mod, cropid)
-    
-    # add footer
-    p <- p + labs(caption=footer)
-
-    # add plot to rmarkdown output
-    plot(p)
-  }
-}
-
-```
-
-
 ## Grid coefficient variation
 
 ```{r coefficient_variation_grid, echo=FALSE, fig.width = 6, fig.height = 5}
@@ -272,22 +238,6 @@ for(y in 1:length(water_years)){
 
 # Fieldstation Level Analysis
 
-## Fieldstation vs Remote methods facet plot for Water Year 2016
-
-```{r field_v_remote_facet, echo=FALSE, fig.width = 6, fig.height = 11}
-
-# facet version
-p <- lm_fieldxremote_facet_crop(fieldstations_data)
-
-# add footer
-p <- p + labs(caption=footer)
-
-
-# add plot to rmarkdown output
-plot(p)
-
-
-```
 
 ## Fieldstation vs Remote methods facet plot for Water Year 2015
 ```{r field_v_remote_2015, echo=FALSE, fig.width = 7, fig.height = 5}
@@ -349,26 +299,6 @@ p <- p + labs(caption=footer)
 # add plot to rmarkdown output
 plot(p)
 
-```
-
-
-
-## ETrF plots - using spatial cimis for all methods
-
-```{r etrf, echo=FALSE, fig.width = 7, fig.height = 4}
-# list of crops to generate
-crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
-
-# loop through the crops
-for(c in crops_2_gen){
-  p <- etrf(dsa_legal_data, c)
-
-  # add footer
-  p <- p + labs(caption=footer)
-  
-  # add plot to rmarkdown output
-  plot(p)
-}
 ```
 
 ## ETRF plots (pixel level calc in EE)
@@ -449,28 +379,6 @@ af_select_percent <- round(mean(af_both$percent), 1)
 print(paste("We employed the coefficient of variation to calculate degree of discrepancy among models by crop are higher from September to January. Evapotranspiration estimates in these months represent about", af_select_percent, "% of the annual ET"))
 ```
 
-
-
-## Region Level Analysis (North, South, West, Yolo, Central)
-
-```{r regions_taf, echo=FALSE}
-
-# loop through both water years 
-for(y in 1:length(water_years)){
-  wy <- water_years[y]
-  
-  p <- barchart_TAFxDeltaregions(delta_regions, wy)
-  
-  # add footer
-  p <- p + labs(caption=footer)
-  
-  # add plot to rmarkdown output
-  plot(p)
-}
-
-```
-
-## ETO
 
 ```{r eto, echo=FALSE}
 
