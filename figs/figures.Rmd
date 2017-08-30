@@ -419,3 +419,21 @@ p
 
 ```
 
+## Region Level Analysis (North, South, West, Yolo, Central)
+
+```{r regions_taf, echo=FALSE}
+
+# loop through both water years 
+for(y in 1:length(water_years)){
+  wy <- water_years[y]
+  
+  p <- barchart_TAFxDeltaregions(delta_regions, wy)
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  # add plot to rmarkdown output
+  plot(p)
+ }
+ 
+```
