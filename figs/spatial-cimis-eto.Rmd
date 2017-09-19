@@ -20,7 +20,7 @@ Preliminary work to compare the spatial cimis values at the cimis locations to t
 
 ## Data processing for EE data (daily spatial cimis from cimis.casil.ucdavis.edu)
 
-```{r spatialcimis}
+```{r spatialcimis, include=FALSE}
 
 sp_cimis_raw <- read.csv('data/spatialcimis/spatial_cimis_eto_at_cimis_stations.csv')
 
@@ -41,46 +41,96 @@ sp_cimis_data$id <- as.numeric(sp_cimis_data$id)
 
 This assumes that you already have a local copy of ssj-weather cloned. If not get it from https://github.com/ssj-delta-cu/ssj-weather
 
-```{r cimis}
+```{r cimis, include=FALSE}
 
-st_name <- 'tracy'
-pull_cimis_data <- function(station_name){
-  wy2015 <- read.csv(paste('../ssj-weather/daily_station/2015.wy/', station_name, '.csv', sep=""), stringsAsFactors = FALSE)
-  wy2016 <- read.csv(paste('../ssj-weather/daily_station/2016.wy/', station_name, '.csv', sep=""), stringsAsFactors = FALSE)
-  bothyears <- dplyr::bind_rows(wy2015, wy2016)
-}
+# pull_cimis_data <- function(station_name){
+#   wy2015 <- read.csv(paste('../ssj-weather/daily_station/2015.wy/', station_name, '.csv', sep=""), stringsAsFactors = FALSE)
+#   wy2016 <- read.csv(paste('../ssj-weather/daily_station/2016.wy/', station_name, '.csv', sep=""), stringsAsFactors = FALSE)
+#   bothyears <- dplyr::bind_rows(wy2015, wy2016)
+# }
+# 
+# pull_cimis_data_wy16 <- function(station_name){
+#   wy2016 <- read.csv(paste('../ssj-weather/daily_station/2016.wy/', station_name, '.csv', sep=""), stringsAsFactors = FALSE)
+# }
+# 
+# station_name_list <- c('brentwood', 'bryte', 'concord', 'davis', 'dixon', 'esparto', 'fair_oaks', 'hastings_east', 'manteca', 'modesto', 'pleasanton', 'tracy', 'twitchell_island', 'winters')
+# 
+# df_holder = list()
+# for(i in 1:length(station_name_list)){
+#   print(station_name_list[i])
+#   d <- pull_cimis_data(station_name_list[i]) 
+#   df_holder[[i]]<-d 
+# }
+# 
+# stations_16only <- c('staten_island', 'ryde', 'jersey_island', 'holt', 'ripon')
+# df_holder2 = list()
+# for(i in 1:length(stations_16only)){
+#   print(stations_16only[i])
+#   d <- pull_cimis_data_wy16(stations_16only[i]) 
+#   df_holder2[[i]]<-d 
+# }
+# 
+# cimis_data <- dplyr::bind_rows(df_holder, df_holder2)
+# 
+# write.csv(cimis_data, file="data/spatialcimis/cimis_data_delta_stations.csv", row.names=FALSE)
 
-
-
-station_name_list <- c('brentwood', 'bryte', 'concord', 'davis', 'dixon', 'esparto', 'fair_oaks', 'hastings_east', 'manteca', 'modesto', 'pleasanton', 'tracy', 'twitchell_island', 'winters')
-
-df_holder = list()
-for(i in 1:length(station_name_list)){
-  print(station_name_list[i])
-  d <- pull_cimis_data(station_name_list[i]) 
-  df_holder[[i]]<-d 
-}
-
-cimis_data <- dplyr::bind_rows(df_holder)
-
+cimis_data <- read.csv("data/spatialcimis/cimis_data_delta_stations.csv", stringsAsFactors = FALSE)
 cimis_data$Date <- as.Date(cimis_data$Date)
 
 ```
+
+
+```{r}
+new_stations <- read.csv("data/spatialcimis/cimis_newdeltastations_wy2016.csv", stringsAsFactors = FALSE)
+
+ns <- new_stations %>% select(Stn.Id, Date, cimis_eto_new=ETo..mm.)
+ns$Date <- as.Date(ns$Date, "%m/%d/%Y")
+ns$Stn.Id <- as.numeric(ns$Stn.Id)
+
+```
+
+
 
 ```{r join}
 
 join_df <- dplyr::inner_join(cimis_data, sp_cimis_data, by=c("Date"="date", "Station"="id"))
 
-cimis_both_eto <- join_df %>% select(Station, Date, cimis_eto=DayEtoValue, spatial_cimis_eto)
+join_df2 <- dplyr::left_join(join_df, ns, by=c("Date", "Station"="Stn.Id"))
+
+
+cimis_both_eto <- join_df2 %>% select(Station, Date, cimis_eto_api=DayEtoValue, spatial_cimis_eto, cimis_eto_new)
+
+cimis_both_eto <- cimis_both_eto %>% mutate(cimis_eto=ifelse(is.na(cimis_eto_api), cimis_eto_new, cimis_eto_api))
+
+cimis_both_eto <- cimis_both_eto %>%  select(Station, Date, cimis_eto, spatial_cimis_eto)
 
 cimis_both_eto_long <- gather(cimis_both_eto, 'Type', 'eto', 3:4)
 
 ```
 
 
-```{r timeseries, fig.width = 12, fig.height = 9}
+```{r timeseries, fig.width = 12, fig.height = 12}
 
-ts <- ggplot(cimis_both_eto_long, aes(Date, eto, colour=Type, group=Type))+ geom_line()+scale_x_date()+ylab("ETO (mm/day)")+facet_wrap(~Station)
+ts <- ggplot(cimis_both_eto_long, aes(Date, eto, colour=Type, group=Type))+ geom_line(size=1.15, alpha=0.7)+scale_x_date()+ylab("ETO (mm/day)")+
+   theme_bw()+
+  scale_color_manual(labels=c("CIMIS ETo", "Spatial CIMIS ETo"), values=c("cimis_eto"="red3", "spatial_cimis_eto"="royalblue1"))+
+  theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+        panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        legend.direction="horizontal", # orientation of legend
+        legend.title= element_blank(), # no title for legend
+        legend.key.size = unit(2, "cm"),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12),
+        axis.title = element_text(size=14))+ 
+        guides(colour = guide_legend(nrow = 1),
+        fill = guide_legend(keywidth = 1, keyheight = 1),
+        linetype=guide_legend(keywidth = 1, keyheight = 1))+
+        facet_wrap(~Station, ncol=3)+theme(strip.background = element_blank(),
+        strip.placement = "outside", 
+        strip.text.x = element_text(size = 16))
 ts
 
 
@@ -88,17 +138,47 @@ ts
 ```
 
 ## Time series for station # 212 only
-```{r}
-cimis_both_eto_long_single <- cimis_both_eto_long %>% filter(Station == 212)
-ts_select <- ggplot(cimis_both_eto_long, aes(Date, eto, colour=Type, group=Type))+ geom_line()+scale_x_date()+ylab("ETO (mm/day)")
+```{r, fig.width = 7, fig.height = 5}
+
+station_timeseries <- function(station_num){
+  cimis_both_eto_long_single <- cimis_both_eto_long %>% filter(Station == station_num)
+  
+  ts <- ggplot(cimis_both_eto_long_single, aes(Date, eto, colour=Type, group=Type))+ geom_line(size=1.1)+scale_x_date()+ylab("ETO (mm/day)")+
+     theme_bw()+
+    scale_color_manual(labels=c("CIMIS ETo", "Spatial CIMIS ETo"), values=c("cimis_eto"="red3", "spatial_cimis_eto"="royalblue1"))+
+    theme(panel.border = element_rect(colour = "black", fill="NA", size=1),
+          panel.grid.major = element_blank(),
+          plot.title = element_text(hjust = 0.5),
+          panel.grid.minor = element_blank(),
+          legend.position="none", # position of legend or none
+          legend.direction="horizontal", # orientation of legend
+          legend.title= element_blank(), # no title for legend
+          legend.key.size = unit(2, "cm"),
+          axis.text.y = element_text(size=12),
+          axis.text.x = element_text(size=12),
+          axis.title = element_text(size=14))+ 
+          guides(colour = guide_legend(nrow = 1),
+          fill = guide_legend(keywidth = 1, keyheight = 1),
+          linetype=guide_legend(keywidth = 1, keyheight = 1))
+  ts
+  
+}
+```
 
 
-ts_select<-ggplotly(ts_select)%>%
-  layout(autosize = F, width = 800, height = 600)
 
-ts_select
+```{r singlets}
+
+stations <- unique(cimis_both_eto_long$Station)
+
+for(s in 1:length(stations)){
+  print(stations[s])
+  p <- station_timeseries(stations[s])
+  print(p)
+}
 
 ```
+
 
 
 

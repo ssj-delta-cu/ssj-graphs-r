@@ -6,5 +6,6 @@ rmarkdown::render('figs/figures.Rmd', 'html_document', output_file = 'report-fig
 rmarkdown::render('figs/figures-daily.Rmd', 'html_document', output_file = 'daily-figures.html', output_dir = 'docs')
 rmarkdown::render('figs/figures-overpass.Rmd', 'html_document', output_file = 'overpass-figures.html', output_dir = 'docs')
 rmarkdown::render('figs/appendixK.Rmd', 'html_document', output_file = 'appendixK.html', output_dir = 'docs')
+rmarkdown::render('figs/spatial-cimis-eto.Rmd', 'html_document', output_file = 'spatial-cimis-eto.html', output_dir = 'docs')
 
 
