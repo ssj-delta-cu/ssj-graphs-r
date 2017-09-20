@@ -112,6 +112,29 @@ for(i in 1:length(crops_2_gen)){
 }
 ```
 
+## Cumulative+standaridized area Lineplot Monthly ET by Model for a single crop for two water years
+
+```{r lineplot_cumET2, echo=FALSE, fig.width = 7, fig.height = 4}
+
+# list of crops to generate
+crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
+
+# loop through the crops
+for(i in 1:length(crops_2_gen)){
+
+  # get the id from the crop name
+  cropid <- lookup_cropid(crops_2_gen[i])
+  
+  #plot
+  p <- line_ETxMonths_cumulative2(dsa_legal_data, cropid,  "dsa")
+  
+  # add footer
+  p <- p + labs(caption=footer)
+  
+  plot(p)
+}
+```
+
 
 ## Boxplot whisker_ETxModel_per_crop_month
 
