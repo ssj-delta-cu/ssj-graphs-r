@@ -37,7 +37,7 @@ barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi)
 
   p <- ggplot(af_crops_w_others, aes(x=model, y=sum_af, fill=cropname))+geom_bar(stat = "identity") +
     facet_grid(. ~ month)+
-    scale_x_discrete(limit=c("calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"), labels=methods_first_letter_list)+
+    scale_x_discrete(limit=c("calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"), labels=methods_named_list)+
     theme_bw() +
     ggtitle(paste("Water Year", water_year))+
     scale_fill_manual(values=crop_palette)+
@@ -48,6 +48,7 @@ barchart_TAFxModel_sum_monthsfacet_by_topcrop <- function(data, water_year, aoi)
           plot.title = element_text(hjust = 0.5),
           panel.grid.minor = element_blank(),
           axis.title.x = element_blank(),
+          axis.text.x=element_text(angle=90, hjust=1, vjust=0.5),
           legend.position="bottom", # position of legend or none
           legend.direction="horizontal", # orientation of legend
           legend.title= element_blank(), # no title for legend
