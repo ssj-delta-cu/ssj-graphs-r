@@ -9,26 +9,12 @@ etrf2 <- function(data, crop_name){
   data <- data %>% filter(region=="dsa") %>% 
     filter(cropname == crop_name) %>% 
     mutate(date=date_from_wy_month(wateryear, month))
-  
 
-  # split eto data from the data frame
-  # eto_data <- data %>% filter(model=="eto")
-  # method_data <- data %>% filter(!model=="eto")
-  # 
-  # # join eto data to the method_data df 
-  # j <- dplyr::left_join(method_data, eto_data, by=c("wateryear", "month", "cropname"))
-  # 
-  # j_ETrF <- j %>% mutate(etrf = mean.x/mean.y)
-  # 
-  # j_ETrF_crops <- j_ETrF  # add a date field by combining month and water year
-  # 
-  # # factor to change the order of the plot by order of the crop list
-  # j_ETrF_crops$cropname <- factor(j_ETrF_crops$cropname, levels=rev(c))
   
   p <- ggplot(data, aes(x=date, y=mean, group=model, colour=model))+
     geom_line(size=1.25)+
     geom_point(size=2.5)+
-    ggtitle(c)+
+    ggtitle(crop_name)+
     ylab("ETrF\n(fraction of reference ET)")+
     scale_color_manual(values=model_palette, labels=methods_named_list)+
     scale_x_date(date_breaks="3 month", date_labels  = "%b", limits=c(as.Date('2014-10-01'),  as.Date('2016-10-01')))+

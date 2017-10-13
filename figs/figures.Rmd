@@ -258,6 +258,83 @@ for(y in 1:length(water_years)){
 
 ```
 
+```{r, fig.width = 11, fig.height = 4}
+data <- dsa_legal_data
+water_year <- 2015
+aoi <- 'dsa'
+
+  top_crops <- c("Alfalfa", "Corn",  "Pasture", "Tomatoes", "Vineyards")
+
+  af_crops_top_only <- data %>%
+    filter_no_eto() %>%
+    filter(wateryear == water_year) %>%
+    filter(region == aoi) %>%
+    filter(include == "yes") %>%
+    filter(cropname %in% top_crops) %>%
+    dplyr::group_by(model, cropname, month) %>%
+    dplyr::summarise(sum_af=sum(crop_acft))
+
+  af_crops_others <- data %>%
+    filter_no_eto() %>%
+    filter(wateryear == water_year) %>%
+    filter(region == aoi) %>%
+    filter(include == "yes") %>%
+    filter(!cropname %in% top_crops) %>%
+    mutate(cropname = "Other") %>%
+    dplyr::group_by(model, cropname, month) %>%
+    dplyr::summarise(sum_af=sum(crop_acft))
+
+  #  merge af_crops_top_only and af_crops_others
+  af_crops_w_others <- dplyr::union(af_crops_top_only, af_crops_others)
+
+  # modify axis units (acre-ft -> thousands acre-feet)
+  axis_units <-function(x){
+    x/1000
+  }
+  
+  methods_first_letter_list <- c("calsimetaw"="C", "detaw"="D", "disalexi"="D", "itrc"="I", "sims"="S", "ucdmetric"="M", "ucdpt"="P")
+  
+   months_first_letter_list <- c("O", "N", "D", "J", "F", "M", "A", "M", "J", "J", "A", "S")
+  
+   facet_labels <- function(variable,value){
+    return(methods_named_list[value])
+  }
+   
+
+  # change order of months to follow water year Oct -> Sept
+  af_crops_w_others$month <- factor(af_crops_w_others$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
+
+  levels(af_crops_w_others$model) <- c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
+  
+  p <- ggplot(af_crops_w_others, aes(x=month, y=sum_af, fill=cropname))+geom_bar(stat = "identity") +
+    facet_grid(. ~ model, labeller=facet_labels)+
+    scale_x_discrete(labels=months_first_letter_list)+
+    theme_bw() +
+    ggtitle(paste("Water Year", water_year))+
+    scale_fill_manual(values=crop_palette)+
+    scale_y_continuous(labels = axis_units, limits = c(0, 300000)) +
+    ylab("Thousand Acre-Feet") +
+    theme(#panel.border = element_blank(),
+          panel.grid.major = element_blank(),
+          plot.title = element_text(hjust = 0.5),
+          panel.grid.minor = element_blank(),
+          axis.title.x = element_blank(),
+          #axis.text.x=element_text(angle=90, hjust=1, vjust=0.5),
+          legend.position="bottom", # position of legend or none
+          legend.direction="horizontal", # orientation of legend
+          legend.title= element_blank(), # no title for legend
+          legend.key.size = unit(0.5, "cm"))+ # size of legend
+          theme(strip.background = element_blank(), strip.placement = "outside",
+                axis.line.x = element_line(color="black", size = 1),
+                axis.line.y = element_line(color="black", size = 1))
+p
+
+```
+
+
+
+
+
 
 # Fieldstation Level Analysis
 
@@ -377,18 +454,18 @@ print(paste("Not all methods are capable of estimating ET for other land uses (i
 # text after coefficient of variation grids
 
 # summarize total acre-ft just using crops (ie include = "yes")
-af_annual <- dsa_legal_data %>% filter(include == "yes", crop_acft > 0) %>%
+af_annual <- dsa_legal_data %>% filter(region == "dsa") %>% filter(include == "yes", crop_acft > 0) %>% filter(!model == 'eto') %>% 
     dplyr::group_by(model, region, wateryear) %>% 
-    dplyr::summarise(sum_af=sum(crop_acft)) %>% filter(region == "dsa")
+    dplyr::summarise(sum_af=sum(crop_acft)) 
 
 af_annual_mean <- af_annual %>% group_by(wateryear) %>% summarize(total=mean(sum_af))
 
 
 # Between selected months (Sept to Jan)
-af_select <- dsa_legal_data %>% filter(include == "yes", crop_acft > 0) %>%
-    filter(month %in% c("SEP", "OCT", "NOV", "DEC", "JAN"))%>%
+af_select <- dsa_legal_data %>% filter(region == "dsa") %>% filter(include == "yes", crop_acft > 0) %>% filter(!model == 'eto') %>% 
+    filter(month %in% c("OCT", "NOV", "DEC", "JAN"))%>%
     dplyr::group_by(model, region, wateryear) %>% 
-    dplyr::summarise(sum_af=sum(crop_acft)) %>% filter(region == "dsa")
+    dplyr::summarise(sum_af=sum(crop_acft)) 
 
 af_select_mean <- af_select %>% group_by(wateryear) %>% summarize(select=mean(sum_af))
 
@@ -457,6 +534,63 @@ for(y in 1:length(water_years)){
   
   # add plot to rmarkdown output
   plot(p)
- }
+}
+
  
 ```
+
+
+
+```{r regions_taf_table}
+
+water_year <- 2016
+
+af <- delta_regions %>%
+    filter(!model=='eto')%>%
+    filter(include == "yes", wateryear==water_year, crop_acft > 0) %>%
+    dplyr::group_by(model, region) %>% 
+    dplyr::summarise(sum_af=sum(crop_acft)) 
+  
+  
+  # sims doesn't include wet herbaceous or semi ag so we'll add a point 
+  # that represents the average of all methods for herbaceous/sub irrigated pasture.
+  
+  # To calculate the estimate, take the total acre-feet for the sims and subtract the values for the herb and semi-ag classes. Then,
+  # calculate the mean value from the other models for these two classes and add it to the total.
+  
+  # total acre-feet for sims for the two classes (to subtract from the total since the EE output has a non-zero value)
+  sims_herb_semi <- delta_regions %>% filter(model=="sims", wateryear==water_year, level_2 %in% c(2008, 913)) %>%
+    dplyr::group_by(region) %>% 
+    dplyr::summarise(sum_wetherb_semiag=sum(crop_acft))
+  
+  # Calculate the average for herb + semi-ag for the other models for the two regions
+  mean_herb_semi <- delta_regions %>% filter(!model=="sims", !model=="eto") %>%
+    filter(wateryear==water_year, level_2 %in% c(2008, 913)) %>%
+    dplyr::group_by(model, region) %>%
+    dplyr::summarise(sum_af=sum(crop_acft)) %>%
+    dplyr::group_by(region) %>%
+    dplyr::summarise(mean_2classes=mean(sum_af))
+  
+  # get sims TAF results for DSA
+  sims <- af %>% filter(model=="sims")
+  
+  # join the sims sum for herb_semi and the mean value for herb_semi for the two regions
+  sims_joined <- dplyr::left_join(dplyr::left_join(sims, sims_herb_semi, by="region"), mean_herb_semi, by="region")
+  
+  # subtract the herb_sumi total from the orignal value and add the mean for the two crops
+  sims_joined_est <- sims_joined %>% mutate(sum_af_est=(sum_af - sum_wetherb_semiag + mean_2classes))
+  
+  # clean up columns by droping intermediate columns and renaming estimate to sum_af
+  sims_est <- sims_joined_est %>% dplyr::select(c(model, region, sum_af_est)) %>% rename(sum_af=sum_af_est)
+  
+  # remove sims from af_crop_filter and add in the new estimated results
+  af_wo_sims <- af %>% filter(!model=="sims")
+  bind <- bind_rows(af_wo_sims,  sims_est)
+
+  
+region_avg <- bind %>% group_by(region) %>% summarize(mean(sum_af))
+
+print(region_avg)
+
+```
+

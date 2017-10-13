@@ -1,38 +1,37 @@
 line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
   # creates a cumulative line plot for ET and facet by water year for a specifc crop and region
-
+  
   # subset data by selected crop id number, water year, region
   sub<-filter_cropid_region(data, crop_id, aoi_region) %>% 
     filter_no_eto %>%
     mutate(date=date_from_wy_month(wateryear, month)) # add a date field by combining month and water year
-
-
+  
+  
   # look up the cropname
   cropname <- lookup_cropname(crop_id)
-
+  
   # change order of months to follow water year Oct -> Sept
   sub$month <- factor(sub$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
-
+  
   # calculate the monthly cumulative et
   cumulative_et <- sub %>% 	group_by(wateryear, model) %>%
-  													arrange(month) %>%
-  													mutate(cum_et=cumsum(crop_acft))
-  
-  # modify axis units (acre-ft -> thousands acre-feet)
-  axis_units <-function(x){
-    x/1000
-  }
+    arrange(month) %>%
+    mutate(cum_et=cumsum((mean/10)*num_days))
   
   
   # construct the plot object
   p <- ggplot(cumulative_et, aes(date, cum_et, color=model, group=model)) +
     geom_line(size=1.25)+
-    #coord_cartesian(ylim=c(0, 1200))+
-    scale_y_continuous(labels = axis_units) +
+    coord_cartesian(ylim=c(0, 1400))+
+    #scale_y_continuous() +
     ggtitle(cropname) +
-    ylab("Cumulative ET\n(thousands acre-feet)") +
+    ylab("Cumulative ET\n(mm)") +
     scale_color_manual(values=model_palette) +
     scale_x_date(date_breaks="3 month", date_labels  = "%b")+
+    scale_y_continuous(
+      "Cumulative ET\n(mm)", 
+      sec.axis = sec_axis(~ . * 0.00328084, name = "Cumulative ET\n(feet)")
+    )+
     theme_bw() +  # change theme simple with no axis or tick marks
     theme(panel.border = element_blank(), panel.grid.major = element_blank(),
           plot.title = element_text(hjust = 0.5),
@@ -50,7 +49,7 @@ line_ETxMonths_cumulative<- function(data, crop_id, aoi_region){
           axis.line.x = element_line(color="black", size = 1),
           axis.line.y = element_line(color="black", size = 1))
   
-
+  
   p
 }
 
