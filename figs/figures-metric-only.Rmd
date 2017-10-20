@@ -36,6 +36,57 @@ footer <- paste('Updated ', Sys.Date())
 ```
 
 
+```{r, fig.width = 10, fig.height = 4}
+line_AFxMonths_bars<- function(data, crop_id, aoi_region){
+  # creates a line plot for ET by months for a specifc crop and region
+  
+  # subset data by selected crop id number, region
+  sub_data <- filter(data, region == aoi_region, level_2 == crop_id) %>% 
+    mutate(date=date_from_wy_month(wateryear, month)) # add a date field by combining month and water year
+
+  # look up the cropname 
+  cropname <- lookup_cropname(crop_id)
+
+  # construct the plot object
+  p <- ggplot(sub_data, aes(date, crop_acft, group=model)) + 
+    #geom_line(aes(linetype=model),size=1.25)+
+    geom_bar(aes(fill=model), stat="identity", position="dodge")+
+    geom_text(aes(label=round(mean/10, 2)), hjust=0.5)+
+    scale_x_date(date_breaks="3 month", date_labels  = "%b")+
+    #coord_cartesian(ylim=c(0, 9))+
+    ggtitle(cropname) +
+    ylab("Acre-Feet") +
+    geom_vline(xintercept = as.numeric(as.Date('2015-09-16')),colour="black", linetype="dashed", size=1.25, alpha=0.5)+
+    #annotate("text", x=as.Date('2015-04-01') , y=9, label="2015", size=5)+
+    #annotate("text", x=as.Date('2016-04-01') , y=9, label="2016", size=5)+
+    scale_fill_manual(values=model_palette, labels=methods_named_list) +
+    #scale_color_manual(values=model_palette, labels=methods_named_list) +
+    #scale_linetype_manual(values=model_lny)+
+    theme_bw() +  # change theme simple with no axis or tick marks
+    theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+          plot.title = element_text(hjust = 0.5, size=16),
+          panel.grid.minor = element_blank(),
+          axis.title.x = element_blank(),
+          legend.position="bottom", # position of legend or none
+          legend.direction="horizontal", # orientation of legend
+          legend.title= element_blank(), # no title for legend
+          legend.key.size = unit(0.5, "cm"),
+          axis.text.y=element_text(size=14),
+          axis.text.x=element_text(size=12),
+          axis.title.y=element_text(size=14),
+          axis.line = element_line(color="black", size=1)
+          )
+}
+
+
+dsa_legal_data_metric <- dsa_legal_data %>% filter(model %in% c("itrc", "ucdmetric"))
+p <- line_AFxMonths_bars(dsa_legal_data_metric, 1, 'dsa')
+p
+
+```
+
+
+
 
 ```{r lineplot_ET, echo=FALSE, fig.width = 7, fig.height = 4}
 
@@ -52,7 +103,7 @@ for(i in 1:length(crops_2_gen)){
   cropid <- lookup_cropid(crops_2_gen[i])
   
   # generate plot for the crop for the delta service area
-  p <- line_ETxMonths_2wateryears(dsa_legal_data_metric, cropid,  "dsa")
+  p <- line_AFxMonths_bars(dsa_legal_data_metric, cropid,  "dsa")
   
   # add footer with the date
   p <- p + labs(caption=footer)
@@ -62,43 +113,5 @@ for(i in 1:length(crops_2_gen)){
 }
 ```
 
-
-## Boxplot whisker_ETxModel_per_crop_month
-
-```{r whisker_ETxModel_per_crop_month_2yrs, echo=FALSE, fig.width = 7, fig.height = 4}
-
-# list of crops to generate
-crops_2_gen <- c("Alfalfa", "Almonds", "Corn", "Pasture", "Potatoes", "Rice", "Tomatoes", "Vineyards")
-
-# list of the months in the water year to generate (Oct-> sept)
-month_2_gen <- c('JUL') #month_list()
-
-dsa_legal_data_metric <- dsa_legal_data %>% filter(model %in% c("itrc", "ucdmetric"))
-
-
-# loop through the crops
-for(i in 1:length(crops_2_gen)){
-
-  # get the id from the crop name
-  cropid <- lookup_cropid(crops_2_gen[i])
-
-  # loop through the months
-  for(m in 1:length(month_2_gen)){
-    month <- month_2_gen[m]
-
-    #plot
-    p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data_metric, 'dsa', month, cropid)
-    
-    # add footer
-    p <- p + labs(caption=footer)
-
-    # add plot to rmarkdown output
-    plot(p)
-    
-  }
-}
-
-
-```
 
 

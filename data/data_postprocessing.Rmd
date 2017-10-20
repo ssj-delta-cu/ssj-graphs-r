@@ -481,7 +481,7 @@ df_dsa_etrf <- ldply(listofdfs, data.frame)
 ####################################################################
 
 saveRDS(df_dsa_etrf, file="data/dsa_etrf/dsa_etrf.rds")
-write.csv(df_dsa_legal, 'data/dsa_etrf/dsa_etrf.csv', row.names = FALSE)
+write.csv(df_dsa_etrf, 'data/dsa_etrf/dsa_etrf.csv', row.names = FALSE)
 
 ```
 
