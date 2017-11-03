@@ -27,3 +27,4 @@ packrat/lib*/
 
 # figs folder
 /figs/output/*/*.png
+.Rproj.user

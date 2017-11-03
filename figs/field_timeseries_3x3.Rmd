@@ -1,0 +1,131 @@
+---
+title: "Field timeseries 3x3"
+author: "Andy Bell"
+date: "October 24, 2017"
+output: html_document
+---
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE, echo=FALSE)
+library(tidyverse)
+
+```
+
+```{r}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+```
+
+
+```{r}
+# load in the daily csv files for the 3x3 grids 
+list_of_files_3x3 <- list.files(path="data/fieldstations/daily", pattern=".csv", full.names=TRUE)
+df3x3 <- do.call(rbind, lapply(list_of_files_3x3, read.csv, stringsAsFactors=FALSE))
+df3x3$date <- as.Date(df3x3$date)
+
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+# field stations measurements
+# pull in the dates csv from the ssj-field-measurements-2016 repo (assumes that there is a local copy)
+# the local copy should have the same directory folder as ssj-graphs-r
+list_of_csvs <- list.files(path="../ssj-field-measurements-2016/daily data", pattern="D[0-9][0-9](.*?)(.csv)", full.names=TRUE)
+
+# for loop to load in all the raw csv files to single data frame
+load_csv <- function(file_list) {
+  listofdfs <- list() #Create a list in which you intend to save your df's.
+  for (i in 1:length(file_list)) {
+    #print(file_list[i])
+    g <- read.csv(file_list[i], stringsAsFactors = FALSE)
+    listofdfs[[i]]<-g
+  }
+  df <- ldply(listofdfs, data.frame) # make into one dataframe 
+}
+
+raw_field_data <- load_csv(list_of_csvs)
+
+# clean up station name and set model name to field
+field <- raw_field_data %>% separate(stationName, into = c("Station_ID", "IslandName", "Crop"), sep='_') %>% mutate(date=as.Date(date), mean=ET_SR_aH_qc_Dgf, model="field") %>% filter(date>=as.Date('2016-05-01'), date<as.Date('2016-10-01'))
+
+field_select <- field %>% select(Crop, Station_ID, date, mean, model)
+
+daily_grid_w_field <- bind_rows(df3x3, field_select)
+
+# there likey is some bad data with extreamly high/low values. Let's filter it out of the df
+
+daily_grid_w_field <- daily_grid_w_field %>% filter(mean < 10, mean > -10) %>% filter(date > as.Date("2014-09-30"), date < as.Date("2016-10-01") )
+
+
+
+
+
+```
+
+
+```{r}
+# overpass dates
+dates_grid_et <- readRDS("data/fieldstations/grid/fieldstation_grid_dates.rds")
+
+dates_grid_et <- dates_grid_et %>% filter(mean < 10, mean > -10) %>% filter(date > as.Date("2014-09-30"), date < as.Date("2016-10-01") ) %>% filter(!model %in% c("detaw", "calsimetaw"))
+```
+
+
+
+```{r}
+
+
+station_timeseries <- function(selected_station){
+
+# lines
+daily_grid_w_field_station <- daily_grid_w_field %>% filter(Station_ID == selected_station)
+daily_grid_w_field_station <- daily_grid_w_field_station %>% filter(!model %in% c("itrc", "ucdmetric"))
+
+# points 
+dates_grid_et_station <- dates_grid_et %>% filter(Station_ID == selected_station)
+
+# field measures
+daily_grid_w_field_only <- daily_grid_w_field_station %>% filter(model %in% c("field"))
+
+
+p <- ggplot(daily_grid_w_field_station, aes(x=date, y=mean, color=model))+
+  geom_line(alpha=0.6, size=0.5)+
+  geom_line(data=daily_grid_w_field_only, size=0.5)+
+  geom_point(data=dates_grid_et_station)+
+  ylab("ET (mm/day)")+
+  theme_bw()+
+  ggtitle(selected_station)+
+  scale_color_manual(values=model_palette, labels=methods_named_list) +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+      plot.title = element_text(hjust = 0.5, size=16),
+      panel.grid.minor = element_blank(),
+      legend.position="right", # position of legend or none
+      legend.direction="vertical", # orientation of legend
+      legend.title= element_blank(), # no title for legend
+      legend.key.size = unit(0.5, "cm"),
+      axis.text.y=element_text(size=14),
+      axis.text.x=element_text(size=14),
+      axis.title.y=element_text(size=14),
+      axis.title.x=element_blank(),
+      axis.line = element_line(color="black", size=1))
+  
+p}
+```
+
+
+```{r}
+for(i in 1:14){
+  if(i<10){
+    id <- paste("D0", i, sep='')
+  }else{id <- paste("D", i, sep='')} 
+  #print(id)
+  
+  p<-station_timeseries(id)
+  plot(p)
+}
+```
+
+

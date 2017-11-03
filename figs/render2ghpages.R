@@ -7,5 +7,6 @@ rmarkdown::render('figs/figures-daily.Rmd', 'html_document', output_file = 'dail
 rmarkdown::render('figs/figures-overpass.Rmd', 'html_document', output_file = 'overpass-figures.html', output_dir = 'docs')
 rmarkdown::render('figs/appendixK.Rmd', 'html_document', output_file = 'appendixK.html', output_dir = 'docs')
 rmarkdown::render('figs/spatial-cimis-eto.Rmd', 'html_document', output_file = 'spatial-cimis-eto.html', output_dir = 'docs')
+rmarkdown::render('figs/field_timeseries_3x3.Rmd', 'html_document', output_file = 'field-timeseries-3x3.html', output_dir = 'docs')
 
 

@@ -137,7 +137,7 @@ methods_list <- function(){
 methods_names<-c("CalSIMETAW", "DETAW", "DisALEXI", "ITRC", "SIMS", "UCD-METRIC", "UCD-PT")
 
 methods_named_list <-c("calsimetaw"="CalSIMETAW", "detaw"="DETAW", "disalexi"="DisALEXI", "itrc"="ITRC",
-                       "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT", "eto"="ETo", "landuse"="Landuse")
+                       "sims"="SIMS", "ucdmetric"="UCD-METRIC", "ucdpt"="UCD-PT", "eto"="ETo", "landuse"="Landuse", "field"="Field SR")
 
 # get the actual date from the water year and the month
 date_from_wy_month <- function(water_year, month){
@@ -185,7 +185,7 @@ crop_palette <- c(Alfalfa = "#0ab54e", Almonds = "#feaca7", Corn = "#fffb58",
 
 model_palette = c("calsimetaw"="#0072b2", "detaw"="#d55e00", "disalexi"="#e69f00",
                   "itrc"="#009e73", "sims"="#cc79a7",
-                  "ucdmetric"="#56b4df", "ucd_metric"="#56b4df", "ucdpt"="#f0e442", "ucd_pt"="#f0e442", 'eto'='#000000')
+                  "ucdmetric"="#56b4df", "ucd_metric"="#56b4df", "ucdpt"="#f0e442", "ucd_pt"="#f0e442", 'eto'='#000000', 'field'='#000000')
 
 model_lny = c("calsimetaw"=1, "detaw"=1, "disalexi"=1,
                   "itrc"=1, "sims"=1,"ucdmetric"=1,

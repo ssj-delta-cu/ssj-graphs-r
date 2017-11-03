@@ -15,7 +15,7 @@ etrf2 <- function(data, crop_name){
     geom_line(size=1.25)+
     geom_point(size=2.5)+
     ggtitle(crop_name)+
-    ylab("ETrF\n(fraction of reference ET)")+
+    ylab("EToF\n(fraction of reference ET)")+
     scale_color_manual(values=model_palette, labels=methods_named_list)+
     scale_x_date(date_breaks="3 month", date_labels  = "%b", limits=c(as.Date('2014-10-01'),  as.Date('2016-10-01')))+
     theme_bw()+

@@ -1,0 +1,125 @@
+---
+title: "SSJ-DELTA-CU same landuse ETo
+output:
+  html_document: default
+---
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+
+```
+
+
+```{r project_settings, echo=FALSE, include=FALSE}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
+
+# data sources
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
+common_landuse <- readRDS("data/common_landuse/common_landuse.rds")
+
+# vector containing the water years
+water_years <- c(2015, 2016)
+
+# footer 
+footer <- paste('Updated ', Sys.Date())
+
+```
+
+# About 
+ET reduced for the commmon landuse between the two water years. Only pixels with the same landuse type in the LandIQ landuse rasters were included in the analysis. This was done in EarthEngine by creating a mask for each of the ET estimate rasters to mask out any pixels that had different landuse types.
+
+
+# Figure showing scatter plot of the mm/day of the two water years
+
+```{r}
+
+# need to rearrange common_landuse data frame so that for each month, crop, model there are two columns representing the average mm/day for the two water years. Likely will be a split and join or gather operation.
+
+common_landuse <- common_landuse %>% filter(include=="yes") 
+
+d_15 <- common_landuse %>% filter(wateryear==2015) %>% mutate(mean15=mean/10) %>% select(month, model, cropname, mean15)
+d_16 <- common_landuse %>% filter(wateryear==2016) %>% mutate(mean16=mean/10) %>% select(month, model, cropname, mean16)
+
+common_join <- inner_join(d_15, d_16, by=c("month", "model", "cropname"))
+
+
+```
+
+
+
+
+```{r, fig.width = 8, fig.height = 8}
+#construct the plot object
+p <- ggplot(common_join, aes(mean15, mean16, color=model)) +
+  geom_point(size=1.55, alpha=0.8)+
+  ylab("WY 2016 ET mm/day")+
+  xlab("WY 2015 ET mm/day")+
+  #geom_smooth(method="lm", fill=NA)+
+  scale_color_manual(values=model_palette, labels=methods_named_list) +
+  theme_bw() +  # change theme simple with no axis or tick marks
+  theme( panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        axis.text.y=element_text(size=14),
+        axis.text.x=element_text(size=12),
+        axis.title.y=element_text(size=14)
+  )
+p
+```
+
+
+```{r, fig.width = 8, fig.height = 8}
+#construct the plot object
+
+
+p <- ggplot(filter(common_join, cropname=="Alfalfa"), aes(mean15, mean16, color=model)) +
+  geom_point(size=1.8, alpha=0.8)+
+  ylab("WY 2016 ET mm/day")+
+  xlab("WY 2015 ET mm/day")+
+  ggtitle("Alfalfa")+
+  geom_line(stat="smooth",method = "lm", formula = y ~ x,
+              size = 1.0,
+              alpha = 0.5)+
+  scale_color_manual(values=model_palette, labels=methods_named_list) +
+  geom_abline(intercept = 0, slope = 1, colour="black", linetype="dashed", size=1.25, alpha=0.75)+ #1:1 diagonal line
+  theme_bw() +  # change theme simple with no axis or tick marks
+  theme( panel.grid.major = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        legend.position="bottom", # position of legend or none
+        axis.text.y=element_text(size=14),
+        axis.text.x=element_text(size=12),
+        axis.title.y=element_text(size=14)
+  )
+p
+```
+
+
+
+```{r}
+
+common_lu_only <- common_landuse %>%  select(wateryear, month, model, cropname, mean)
+dsa_legal_data_only <- dsa_legal_data %>% filter(region=="dsa") %>%  select(wateryear, month, model, cropname, mean)
+
+common_joined_all <- inner_join(common_lu_only, dsa_legal_data_only, by=c("wateryear", "month", "model", "cropname"))
+
+common_joined_all_mm <- common_joined_all %>% mutate(no_lu_change_et=mean.x/10, all_lu_et=mean.y/10, diff=no_lu_change_et-all_lu_et)
+
+common_joined_all_mm
+
+
+```
+
+
+```{r}
+print(max(common_joined_all_mm$diff, na.rm=T))
+print(min(common_joined_all_mm$diff, na.rm=T))
+```
+

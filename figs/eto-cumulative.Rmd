@@ -1,0 +1,127 @@
+---
+title: "SSJ-DELTA-CU cumulative ETo"
+output:
+  html_document: default
+---
+
+
+
+```{r "setup", include=FALSE}
+# knitr settings
+require("knitr")
+opts_knit$set(root.dir = "..") # set working directory to be ssj-graph-r directory
+knitr::opts_chunk$set(error = TRUE)
+
+```
+
+```{r project_settings, echo=FALSE, include=FALSE}
+# source scripts for plots and helper functions
+source("scripts/helper_functions.R") # load all the helper functions
+source("scripts/figures.R") # load all the functions that generate the graphs
+source("scripts/tables.R") # load in the table file to calc acre-ft totals to export to csv.
+
+# data sources
+dsa_legal_data <- readRDS("data/dsa_legal/dsa_legal.rds")
+dsa_etrf <- readRDS("data/dsa_etrf/dsa_etrf.rds")
+delta_regions <- readRDS("data/delta_regions/delta_regions.rds")
+fieldstations_data <- readRDS("data/fieldstations/wy2016/fieldstations_wy2016.rds")
+fieldstations_data_2015 <- readRDS("data/fieldstations/wy2015/fieldstations_wy2015.rds")
+subregions <- readRDS("data/subregions/subregions.rds")
+eto <- readRDS('data/eto/eto.rds')
+
+# vector containing the water years
+water_years <- c(2015, 2016)
+
+# footer 
+footer <- paste('Updated ', Sys.Date())
+
+```
+
+# About
+The cumulative ETo numbers are for the entire DSA for the two water years. The figure and table use the data extracted from EarthEngine by landuse type but this is not relevant since the ETo rasters are built on theoretical well irrigated alfafa. As such, all landuse types are included in the analysis. The primary purpose of this analysis was to see if there was major climate differences between the two water years that are represented in the spatial cimis rasters.  
+
+
+# Cumulative ETo for 2 water years
+
+```{r}
+line_ETxMonths_cumulative_eto<- function(data, aoi_region){
+  # creates a cumulative line plot for ET and facet by water year for a specifc crop and region
+  
+  # subset data by selected crop id number, water year, region
+  sub<-filter(data, region == aoi_region) %>% 
+    filter(model=='eto') %>%
+    mutate(date=date_from_wy_month(wateryear, month)) # add a date field by combining month and water year
+  
+  
+  # change order of months to follow water year Oct -> Sept
+  sub$month <- factor(sub$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
+  
+  # calculate the monthly cumulative et
+  cumulative_et <- sub %>% 	group_by(wateryear, model,month) %>% 
+    summarize(crop_acft=sum(crop_acft, na.rm=TRUE)) %>%
+    arrange(month) %>%
+    mutate(cum_et=cumsum(crop_acft))
+  
+  cumulative_et$wateryear <- factor(cumulative_et$wateryear)
+  
+    # modify axis units (acre-ft -> thousands acre-feet)
+  axis_units <-function(x){
+    x/1000
+  }
+  
+  
+  
+  # construct the plot object
+  p <- ggplot(cumulative_et, aes(month, cum_et, color=wateryear, group=wateryear)) +
+    #geom_point(size=1.55, alpha=0.7)+
+    geom_line(size=1, alpha=0.7)+
+    # coord_cartesian(ylim=c(0, 1400))+
+    scale_y_continuous() +
+    ggtitle("Cumulative ETo for DSA") +
+    ylab("Cumulative ETo\n(thousands acre-feet)") +
+    scale_y_continuous(labels = axis_units) + #, limits = c(0, 300000)) +
+    theme_bw() +  # change theme simple with no axis or tick marks
+    theme( panel.grid.major = element_blank(),
+          plot.title = element_text(hjust = 0.5),
+          panel.grid.minor = element_blank(),
+          axis.title.x = element_blank(),
+          legend.position="bottom", # position of legend or none
+          axis.text.y=element_text(size=14),
+          axis.text.x=element_text(size=12),
+          axis.title.y=element_text(size=14)
+    )
+  p
+}
+
+
+p <- line_ETxMonths_cumulative_eto(dsa_legal_data, "dsa")
+p
+
+```
+
+
+
+## Cumulative ETo numbers by month table
+
+ 
+
+```{r}
+# subset data by selected crop id number, water year, region
+  sub<-filter(dsa_legal_data, region == "dsa") %>% 
+    filter(model=='eto') %>%
+    mutate(date=date_from_wy_month(wateryear, month)) # add a date field by combining month and water year
+  
+  
+  # change order of months to follow water year Oct -> Sept
+  sub$month <- factor(sub$month, levels=c("OCT", "NOV", "DEC", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"))
+  
+  # calculate the monthly cumulative et
+  cumulative_et <- sub %>% 	group_by(wateryear, model,month) %>% 
+    summarize(crop_acft=sum(crop_acft, na.rm=TRUE)) %>%
+    arrange(month) %>%
+    mutate(cum_et=cumsum(crop_acft))
+  
+  cumulative_et
+
+```
+
