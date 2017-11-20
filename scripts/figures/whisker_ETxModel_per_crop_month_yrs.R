@@ -46,5 +46,4 @@ whisker_ETxModel_per_crop_month_2yrs <- function(data, aoi_region, selected_mont
 
 # p <- whisker_ETxModel_per_crop_month_2yrs(dsa_legal_data, 'dsa', 'JUL', 1)
 # p
-# ggsave("name.png", p, width=7, height=4, units="in")
-# print(name)
+

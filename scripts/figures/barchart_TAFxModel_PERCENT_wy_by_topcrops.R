@@ -81,7 +81,7 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi){
   af_crop_percent$model <- factor(af_crop_percent$model, levels=c("landuse", "calsimetaw", "detaw", "disalexi", "itrc", "sims", "ucdmetric", "ucdpt"))
   
   
-  p <- ggplot(af_crop_percent, aes(x=model, y=model_percent, fill=reorder(cropname, rank)))+ # reorder uses the percentage to change stack order
+  p <- ggplot(af_crop_percent, aes(x=model, y=model_percent, fill=cropname))+ # reorder uses the percentage to change stack order
     geom_bar(stat="identity") +  
     scale_x_discrete(labels=methods_named_list)+ 
     theme_bw() + 
@@ -108,3 +108,6 @@ barchart_TAFxModel_PERCENT_wy_by_topcrops<- function(data, wy, aoi){
   p <- p + geom_text(aes(label=paste(round(model_percent*100, 1), '%')), size = 4, position = position_stack(vjust = 0.5))
   p
 }
+
+# p <- barchart_TAFxModel_PERCENT_wy_by_topcrops(dsa_legal_data_wo_wetsemi, 2015, 'dsa')
+# p
