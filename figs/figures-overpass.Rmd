@@ -38,7 +38,7 @@ dates_grid_et
 ```{r exclude_outliers}
 # there likey is some bad data with extreamly high/low values. Let's filter it out of the df
 
-dates_grid_et <- dates_grid_et %>% filter(mean < 20, mean > -20)
+dates_grid_et <- dates_grid_et %>% filter(mean < 15, mean > -15)
 
 
 # capitialize crop names
@@ -55,8 +55,8 @@ dates_grid_et$Crop <- capFirst(dates_grid_et$Crop)
 
 ```{r pairwise_plot_function, fig.width = 7, fig.height = 6}
 
-model_x <- 'ucdmetric'
-model_y <- 'itrc'
+model_x <- 'calsimetaw'
+model_y <- 'disalexi'
 
 model_pair_alldays <- function(model_x, model_y){
 
@@ -126,7 +126,7 @@ for(comb in combinations){
   #print(comb)
   x <- comb[1]
   y <- comb[2]
-
+  print(paste(x, "vs", y))
   p <- model_pair_alldays(x, y)
   plot(p)
 }

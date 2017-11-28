@@ -45,7 +45,8 @@ head(rs_drop)
 ```
 
 ```{r}
-rs_drop2 <- rs_drop %>% mutate(date= date %m-% months(1))
+#rs_drop2 <- rs_drop %>% mutate(date= date %m-% months(1))
+rs_drop2 <- rs_drop
 
 ```
 

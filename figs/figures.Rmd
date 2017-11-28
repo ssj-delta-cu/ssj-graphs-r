@@ -217,8 +217,6 @@ for(y in 1:length(water_years)){
 
 Note: this doesn't include wet herb or semi-ag landuse classes.
 
-The abberivation for the model groups are: "calsimetaw"="C", "detaw"="D", "disalexi"="D", "itrc"="I", "sims"="S", "ucdmetric"="M", "ucdpt"="P".
-
 ```{r crop breakdown_facet, echo=FALSE, fig.width = 11, fig.height = 4}
 
 # filter out wet herb and landuse
@@ -235,6 +233,7 @@ for(y in 1:length(water_years)){
 }
 
 ```
+
 
 ```{r, fig.width = 11, fig.height = 4}
 data <- dsa_legal_data
