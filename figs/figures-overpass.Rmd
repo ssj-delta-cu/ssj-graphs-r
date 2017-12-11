@@ -63,25 +63,27 @@ model_pair_alldays <- function(model_x, model_y){
 model_x_data <- dates_grid_et %>% filter(model==model_x)
 model_y_data <- dates_grid_et %>% filter(model==model_y)
 
-# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 lm_eqn = function(m) {
-
+  #https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
   l <- list(a = format(coef(m)[1], digits = 2),
       b = format(abs(coef(m)[2]), digits = 2),
       r2 = format(summary(m)$r.squared, digits = 3));
 
-  eq <- substitute(~~italic(R)^2~"="~r2,l)
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
 
   as.character(as.expression(eq));                 
 }
 
 
 
-
 # join using site_id and date
 model_pair <- inner_join(model_x_data, model_y_data, by=c("date", "Station_ID"))
 
-axis_limit <- max(max(model_pair$mean.y), max(model_pair$mean.x)) 
+axis_limit <- max(max(model_pair$mean.y), max(model_pair$mean.x))
 
 p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2.5, alpha=0.35)+
   ggtitle(paste(toupper(model_x), "vs.", toupper(model_y)))+
@@ -102,14 +104,16 @@ p <- ggplot(model_pair, aes(x=mean.x, y=mean.y, color=Crop.x))+geom_point(size=2
       axis.title.y=element_text(size=14),
       axis.title.x=element_text(size=14),
       axis.line = element_line(color="black", size=1)
-  )+ geom_smooth(method="lm", fill=NA, linetype="dashed", size=2)
-p <- p + geom_text(aes(x = 0.5, y = axis_limit-1,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Alfalfa")))), color="#F8766D", parse = TRUE, hjust=0)
-p <- p + geom_text(aes(x = 0.5, y = axis_limit-1.5,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Corn")))), color="#00BA38", parse = TRUE, hjust=0)
-p <- p + geom_text(aes(x = 0.5, y = axis_limit-2,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Pasture")))), color="#619CFF", parse = TRUE, hjust=0)
+  )+ geom_smooth(method="lm", fill=NA, linetype="dashed", size=2)+
+ geom_text(aes(x = 0.5, y = axis_limit-1,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Alfalfa")))), color="#F8766D", parse = TRUE, hjust=0) + 
+  geom_text(aes(x = 0.5, y = axis_limit-1.5,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Corn")))), color="#00BA38", parse = TRUE, hjust=0) + 
+  geom_text(aes(x = 0.5, y = axis_limit-2,  label = lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Pasture")))), color="#619CFF", parse = TRUE, hjust=0)
 p
+
+#print(lm_eqn(lm(mean.y ~ mean.x, subset(model_pair, Crop.x=="Alfalfa"))))
 }
 
-#model_pair_alldays(model_x, model_y)
+model_pair_alldays(model_x, model_y)
 
 ```
 
@@ -178,14 +182,17 @@ common_overpass_dates <- as.Date(c('2016-05-10', '2016-05-26', '2016-06-27', '20
 d <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_Dgf != "NA") %>% filter(model==selected_model) %>% filter(date %in% common_overpass_dates)
 
 
-# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 lm_eqn = function(m) {
-
+  #https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
   l <- list(a = format(coef(m)[1], digits = 2),
       b = format(abs(coef(m)[2]), digits = 2),
       r2 = format(summary(m)$r.squared, digits = 3));
 
-  eq <- substitute(~~italic(R)^2~"="~r2,l)
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
 
   as.character(as.expression(eq));                 
 }
@@ -243,14 +250,17 @@ dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_D
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
-# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 lm_eqn = function(m) {
-
+  #https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
   l <- list(a = format(coef(m)[1], digits = 2),
       b = format(abs(coef(m)[2]), digits = 2),
       r2 = format(summary(m)$r.squared, digits = 3));
 
-  eq <- substitute(~~italic(R)^2~"="~r2,l)
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
 
   as.character(as.expression(eq));                 
 }
@@ -309,14 +319,17 @@ dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_D
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
-# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 lm_eqn = function(m) {
-
+  #https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
   l <- list(a = format(coef(m)[1], digits = 2),
       b = format(abs(coef(m)[2]), digits = 2),
       r2 = format(summary(m)$r.squared, digits = 3));
 
-  eq <- substitute(~~italic(R)^2~"="~r2,l)
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
 
   as.character(as.expression(eq));                 
 }
@@ -375,14 +388,17 @@ dates_grid_et_w_field_wo_nulls <- dates_grid_et_w_field %>% filter(ET_SR_aH_qc_D
 
 axis_limit <- max(max(dates_grid_et_w_field_wo_nulls$mean), max(dates_grid_et_w_field_wo_nulls$ET_SR_aH_qc_Dgf)) 
 
-# https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 lm_eqn = function(m) {
-
+  #https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
   l <- list(a = format(coef(m)[1], digits = 2),
       b = format(abs(coef(m)[2]), digits = 2),
       r2 = format(summary(m)$r.squared, digits = 3));
 
-  eq <- substitute(~~italic(R)^2~"="~r2,l)
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
 
   as.character(as.expression(eq));                 
 }
