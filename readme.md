@@ -1,8 +1,24 @@
 # Code for creating report graphs in R
 
-Porting over all figures that were created using google sheets. R allows for more flexibility and transparency.
+This repository contains the code used to make figures and graphs in the
+Sacramento San-Joaquin Delta Consumptive Use reports, starting with the report
+for the 2015-2016 water year. Code for 2014-2015 water year report was in Google
+Sheets. Code to make maps is in the repository [ssj-data-viz](ssj-data-viz).
 
-## Reqs
+## General Procedure
+As a quick overview of the process, generating graphs and figures involves
+the following:
+
+* Retrieving data from the various modeling groups
+* Processing that data to monthly rasters, as appropriate and uploading
+those data to Earth Engine
+* Running Earth Engine-based scripts that output necessary data tables for
+graphs
+* Downloading those data tables to directories within this repository
+* Running a R-Markdown file that generates all of the graphs
+* Manually inserting generated graphs into the report
+
+## Requirements
 
 R
   - ggplot
