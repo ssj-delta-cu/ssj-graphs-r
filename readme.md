@@ -18,6 +18,9 @@ graphs
 * Running a R-Markdown file that generates all of the graphs
 * Manually inserting generated graphs into the report
 
+For a detailed overview of the process for creating the graphs as of mid-2017,
+see [this full video training](https://ucdavis.box.com/s/pyg3m4xr8jhx1sen2scxfh10zukt5hsj).
+
 ## Requirements
 
 R
@@ -25,6 +28,45 @@ R
   - dplyr
   - plyr
   - rjson
+
+Access to Earth Engine
+
+## Specific Procedure
+Again, for a detailed overview of the process for creating the graphs as of mid-2017,
+see [this full video training](https://ucdavis.box.com/s/pyg3m4xr8jhx1sen2scxfh10zukt5hsj).
+
+### Retrieve Data from Modeling Groups
+The first step is to obtain data from each modeling group. This process
+will vary by group and their data format, but some groups will upload their
+data directly to GitHub, some prefer delivering via FTP, and others prefer
+sending some other form of link, such as a Google Drive folder. This portion
+of the process isn't usually too complicated, though for groups that deliver
+via GitHub, be careful that they don't commit daily rasters, especially
+not in multiple versions as it can use up our GitHub LFS allocation very
+quickly.
+
+### Process Data to Monthly Rasters
+Once the data have been retrieved, they need to be processed into monthly
+rasters. Some groups will deliver monthly data, so this step can be skipped
+for those groups, but others will deliver daily data (DisALEXI) or landsat
+date data (UCD METRIC). Each of these models has a different procedure for
+generating monthly rasters.
+
+#### Uploading Data to Earth Engine
+Regardless, for all models, data should be uploaded to Earth Engine.
+We keep Earth Engine data in a shared account (ucd-cws-ee-data@gmail.com)
+that allows assets to be
+jointly managed. We do this, rather than uploading to individual accounts
+and sharing because when a staff changeover occurred, it was a nightmare
+to get assets needed for model runs reshared. Keeping the assets in a shared
+account, with a shared username and password in a database managed by CWS
+IT minimizes these problems as we always have someone on staff with direct
+access to the assets.
+
+#### DisALEXI
+
+
+#### UCD-METRIC
 
 ## Input Data
 
