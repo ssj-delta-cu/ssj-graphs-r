@@ -1,4 +1,7 @@
-
+library(sf)
+library(plyr)
+library(tidyverse)
+library(lazyeval)
 
 ####################################################################
 # data loading functions for processsing EE geojson for subregions
@@ -39,6 +42,15 @@ acre_feet_per_month <- function(df, wy, month, reducer_size){
   names(d)[names(d) == "xyz"] <- output_fieldname
   return(d)
 } 
+
+# calculate acre-feet from monthly avg daily ET
+acre_feet <- function(mean_et, cell_count, number_days, reducer_size){
+  # Crop_acre_feet = (count) * (reducer pixel size) ^2 * (sq m to acres) * (mean daily ET) /10* (mm to feet) * (num days in month)
+  mm2ft <- 0.00328084
+  sqm2acres <- 0.000247105
+  crop_acft <- cell_count * reducer_size^2 * sqm2acres * mean_et / 10 * mm2ft * number_days 
+  return(crop_acft)
+}
 
 # read in geojson export and add fields parsed from filename and calculate monthly and wy acre-feet
 subregions_add_fields <- function(geojson, reducer_size){
@@ -84,7 +96,10 @@ for (i in 1:length(list_of_files)) {
   g <- subregions_add_fields(list_of_files[i], 30)
   listofdfs[[i]]<-g
 }
-df_subregions <- ldply(listofdfs, data.frame) # make into one dataframe 
+subregions <- ldply(listofdfs, data.frame) # make into one dataframe 
+
+# drop geo and ID columns
+df_subregions <- subregions %>% select(-c(id, geometry))
 
 saveRDS(df_subregions, file="data/subregions/subregions.rds")
 write.csv(df_subregions, file="data/subregions/subregions.csv", row.names = FALSE)
