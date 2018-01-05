@@ -75,11 +75,11 @@ access to the assets.
 All data for the charts and figures are exported from Google Earth Engine as .json file (see et_comparisons.js for more info). These files are then processed in R to standardize data and add additional attributes (ie crop names and the number of days in the month). The tidy results are then saved to disk which is then used to build the plots and figures.
 
 
-### Overview of the EarthEngine Scripts to produce summaries
+### Overview of the EarthEngine Scripts
 
 #### `ssj-delta-et/ssj-overview/et_comparisons.js`
 
-Main script for analyzing the monthly ET data. The script runs through all the landuse types and calculates various statistics for a given area of interest (Delta Service Area or Legal Delta). The .json export contains the landuse type, the count of the number of cells in the region of interest, the mean daily ET value for the month, the median ET value, the value of the 9th, 25th, 75th & 91th percentiles. Script creates a task for each model to export, so make sure to start the process in the Tasks tab.
+This is the main script for analyzing the monthly ET data. The script runs through all the landuse types and calculates various statistics for a given area of interest (Delta Service Area or Legal Delta). The .json export contains the landuse type, the count of the number of cells in the region of interest, the mean daily ET value for the month, the median ET value, the value of the 9th, 25th, 75th & 91th percentiles. Script creates a task for each model to export, so make sure to start the process in the Tasks tab.
 
 #### `ssj-delta-et/ssj-overview/et_comparisons_regional.js`
 
@@ -87,7 +87,7 @@ Similar to et_comparisons.js but includes several additional subregions for anal
 
 #### `ssj-delta-et/ssj-overview/et_fieldpoints.js`
 
-Extracts the monthly ET value at each of the fieldstations. This is depreciated since the final report used the daily values for the overpass days.
+Extracts the monthly ET value at each of the fieldstations. This is depreciated since the final report used the daily values for the overpass days (see daily_charts).
 
 #### `ssj-delta-et/ssj-overview/et_comparisons_subregions_cropmask.js`
 
@@ -95,11 +95,11 @@ Summarizes the agricultural area only (all non-ag landuses are masked) for all 1
 
 #### `ssj-delta-et/ssj-overview/etrf_comparisons_2json.js`
 
-Calculates ETrF (ETof) by dividing the monthly ET by monthly ETo. Spatial CIMIS was used as the ETo reference for the models except when the modeling group provided their own reference ETo.
+Calculates ETrF (EToF) per pixel by dividing the monthly ET by monthly reference ETo. Spatial CIMIS was used as the ETo reference for the models except when the modeling group provided their own reference ETo.
 
 #### `ssj-delta-et/daily_charts/*_daily`
 
-Various scripts to produce daily time series data for the models that were able to provide additional data for the overpasses and/or the daily interpolated values between the overpass dates. Values are extracted from the raster stack at the 3x3 grid around the field stations as well as for the CIMIS stations. Function can export Rn values as well as ET.
+Scripts to produce daily time series for the models that were able to provide additional data for the overpasses and/or the daily interpolated values between the overpass dates. Values are extracted from the raster stack at the 3x3 grid around the field stations as well as for the CIMIS stations. Function can export Rn values as well as ET.
 
 ### Data Post Processing
 
